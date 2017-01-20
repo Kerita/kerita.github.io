@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
   <title>Kerita</title>
-  <subtitle>&lt;br&gt;自律谦逊，承担责任，推迟满足感，你要热爱它</subtitle>
+  <subtitle>自律谦逊，承担责任，推迟满足感，你要热爱它</subtitle>
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://kerita.github.io/"/>
