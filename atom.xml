@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://kerita.github.io/"/>
-  <updated>2017-04-01T03:02:47.259Z</updated>
+  <updated>2017-06-12T12:26:30.976Z</updated>
   <id>https://kerita.github.io/</id>
   
   <author>
@@ -16,11 +16,57 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>前端模块化与模块加载器</title>
+    <link href="https://kerita.github.io/2017/06/12/about-module/"/>
+    <id>https://kerita.github.io/2017/06/12/about-module/</id>
+    <published>2017-06-11T16:00:00.000Z</published>
+    <updated>2017-06-12T12:26:30.976Z</updated>
+    
+    <content type="html"><![CDATA[<p>前端模块化这个概念自从去年开始一直出现在视野里，在某次面试的时候还被问傻眼了，但都整理这方面的知识，这一次决定彻底清楚。跑题了，回到正题。模块化是啥？简单来说，前端JS文件越来越多，而且相互之间还存在着依赖关系，利用模块化可以更好地管理和加载这些JS文件。<br><a id="more"></a></p>
+<p>本文主要是对前端模块化common.js,AMD,CMD和模块加载器require.js,sea.js和webpack进行梳理。</p>
+<h2 id="common-js-AMD-CMD"><a href="#common-js-AMD-CMD" class="headerlink" title="common.js,AMD,CMD"></a>common.js,AMD,CMD</h2><p> 这三个东西都是模块化的规范，主要规定怎么组织模块和如何引入模块，区别如下：</p>
+<ul>
+<li><p>common.js:common.js通过require同步加载所有模块，通过exports或module.exports来导出需要暴露的接口，服务器端的Node.js遵循这种规范。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">require(&quot;module&quot;);</div><div class="line">require(&quot;../file.js&quot;);</div><div class="line">exports.doStuff = function() &#123;&#125;;</div><div class="line">module.exports = someValue;</div></pre></td></tr></table></figure>
+</li>
+<li><p>AMD:服务器端的资源都是在本地磁盘，使用同步加载没有什么问题，但是浏览器不能这样，假如文件过大，会一直处于加载状态，浏览器进入“假死”状态。所以就出现了AMD这种适用于浏览器端的异步加载的模块化标准，require.js这个模块加载器就是这种规范的实现。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">define(&quot;module&quot;, [&quot;dep1&quot;, &quot;dep2&quot;], function(d1, d2) &#123;</div><div class="line">  return someExportedValue;</div><div class="line">&#125;);</div><div class="line">require([&quot;module&quot;, &quot;../file&quot;], function(module, file) &#123; /* ... */ &#125;);</div></pre></td></tr></table></figure>
+</li>
+</ul>
+<ul>
+<li>CMD：与AMD一样，CMD也是一个用于浏览器的模块加载器，不同之处在于，AMD会一口气把需要的模块加载出来，而CMD则是用到时再加载。同时呢，CMD与common.js的规范保持很大的兼容，sea.js这种模块加载器就是这种规范的实现。<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">define(function(require, exports, module) &#123;</div><div class="line">  var $ = require(&apos;jquery&apos;);</div><div class="line">  var Spinning = require(&apos;./spinning&apos;);</div><div class="line">  exports.doSomething = ...</div><div class="line">  module.exports = ...</div><div class="line">&#125;)</div></pre></td></tr></table></figure>
+</li>
+</ul>
+<h2 id="require-js，sea-js与webpack"><a href="#require-js，sea-js与webpack" class="headerlink" title="require.js，sea.js与webpack"></a>require.js，sea.js与webpack</h2><p>如上面所言，require.js与sea.js是模块加载器，webpack相比较下，更像是模块加载器+gulp/grunt，同时更具备多种优点，例如可以对图片、css进行打包、兼容AMD、CMD、common.js、ES6格式的模块，通过强大的插件系统更能实现各种强大的功能。</p>
+<p>webpacke重要的两个组成——loader和插件，loader更针对某一类型文件，插件更像是在整个打包过程起作用。详细学习webpack，可以看 <a href="https://github.com/Kerita/webpack-tutorial" target="_blank" rel="external">https://github.com/Kerita/webpack-tutorial</a></p>
+<ul>
+<li><p>loader: 用于加载各种文件——css,less,vue,jsx，图片等</p>
+</li>
+<li><p>插件：开启服务器、实现热加载等功能。</p>
+</li>
+</ul>
+<h2 id="小结"><a href="#小结" class="headerlink" title="小结"></a>小结</h2><p>common.js,AMD,CMD是模块化规范，require.js,sea.js,webpack模块加载器，现在比较流行是使用webpack构建项目，React和Vue.js官方脚手架都是采用这种方式。</p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;前端模块化这个概念自从去年开始一直出现在视野里，在某次面试的时候还被问傻眼了，但都整理这方面的知识，这一次决定彻底清楚。跑题了，回到正题。模块化是啥？简单来说，前端JS文件越来越多，而且相互之间还存在着依赖关系，利用模块化可以更好地管理和加载这些JS文件。&lt;br&gt;
+    
+    </summary>
+    
+      <category term="前端开发" scheme="https://kerita.github.io/categories/%E5%89%8D%E7%AB%AF%E5%BC%80%E5%8F%91/"/>
+    
+    
+      <category term="模块化" scheme="https://kerita.github.io/tags/%E6%A8%A1%E5%9D%97%E5%8C%96/"/>
+    
+  </entry>
+  
+  <entry>
     <title>2017年度计划</title>
     <link href="https://kerita.github.io/2017/04/01/2017-plan/"/>
     <id>https://kerita.github.io/2017/04/01/2017-plan/</id>
-    <published>2017-03-31T16:41:17.111Z</published>
-    <updated>2017-04-01T03:02:47.259Z</updated>
+    <published>2017-03-31T16:00:00.000Z</published>
+    <updated>2017-06-12T12:26:30.976Z</updated>
     
     <content type="html"><![CDATA[<p>2017年1月1日晚上写完年度总结后，一个错觉一直萦绕在我的脑海——我已经写2017年度计划了。其实并没有，我只是在2016年度的总结里面提及在2017年至少要阅读12本专业书籍，12本非专业书籍，其余的并没有计划。当今天我正式想把计划放到博客上的时候，才发现印象笔记里面空空如也、一无所有。</p>
 <a id="more"></a>
@@ -71,6 +117,8 @@
     
     </summary>
     
+      <category term="年度计划" scheme="https://kerita.github.io/categories/%E5%B9%B4%E5%BA%A6%E8%AE%A1%E5%88%92/"/>
+    
     
   </entry>
   
@@ -78,8 +126,8 @@
     <title>Hello World</title>
     <link href="https://kerita.github.io/2017/01/22/hello-world/"/>
     <id>https://kerita.github.io/2017/01/22/hello-world/</id>
-    <published>2017-01-22T06:33:34.276Z</published>
-    <updated>2017-01-21T02:11:16.974Z</updated>
+    <published>2017-01-21T16:00:00.000Z</published>
+    <updated>2017-06-12T12:26:30.977Z</updated>
     
     <content type="html"><![CDATA[<p>Welcome to <a href="https://hexo.io/" target="_blank" rel="external">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="external">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="external">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="external">GitHub</a>.</p>
 <a id="more"></a>
@@ -95,7 +143,7 @@
     
     <summary type="html">
     
-      &lt;p&gt;Welcome to &lt;a href=&quot;https://hexo.io/&quot;&gt;Hexo&lt;/a&gt;! This is your very first post. Check &lt;a href=&quot;https://hexo.io/docs/&quot;&gt;documentation&lt;/a&gt; for more info. If you get any problems when using Hexo, you can find the answer in &lt;a href=&quot;https://hexo.io/docs/troubleshooting.html&quot;&gt;troubleshooting&lt;/a&gt; or you can ask me on &lt;a href=&quot;https://github.com/hexojs/hexo/issues&quot;&gt;GitHub&lt;/a&gt;.&lt;/p&gt;
+      &lt;p&gt;Welcome to &lt;a href=&quot;https://hexo.io/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Hexo&lt;/a&gt;! This is your very first post. Check &lt;a href=&quot;https://hexo.io/docs/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;documentation&lt;/a&gt; for more info. If you get any problems when using Hexo, you can find the answer in &lt;a href=&quot;https://hexo.io/docs/troubleshooting.html&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;troubleshooting&lt;/a&gt; or you can ask me on &lt;a href=&quot;https://github.com/hexojs/hexo/issues&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;GitHub&lt;/a&gt;.&lt;/p&gt;
     
     </summary>
     
