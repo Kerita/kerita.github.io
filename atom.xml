@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://kerita.github.io/"/>
-  <updated>2017-06-12T12:26:30.976Z</updated>
+  <updated>2017-07-04T16:21:04.299Z</updated>
   <id>https://kerita.github.io/</id>
   
   <author>
@@ -14,6 +14,54 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>word-wrap&amp;word-break</title>
+    <link href="https://kerita.github.io/2017/07/04/word-wrap&amp;word-break/"/>
+    <id>https://kerita.github.io/2017/07/04/word-wrap&amp;word-break/</id>
+    <published>2017-07-03T16:00:00.000Z</published>
+    <updated>2017-07-04T16:21:04.299Z</updated>
+    
+    <summary type="html">
+    
+    </summary>
+    
+      <category term="CSS" scheme="https://kerita.github.io/categories/CSS/"/>
+    
+    
+      <category term="CSS,CSS3" scheme="https://kerita.github.io/tags/CSS-CSS3/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>记一次感冒</title>
+    <link href="https://kerita.github.io/2017/06/25/a-cold-in-2017/"/>
+    <id>https://kerita.github.io/2017/06/25/a-cold-in-2017/</id>
+    <published>2017-06-24T16:00:00.000Z</published>
+    <updated>2017-07-07T18:10:26.264Z</updated>
+    
+    <content type="html"><![CDATA[<h3 id="着凉了"><a href="#着凉了" class="headerlink" title="着凉了"></a>着凉了</h3><p>最近身体状态真是极差，今年（2017年）大概5月的时候就有一次喉咙痛接近感冒，6月23号晚身体开始出现疲惫状态，然后是全身酸痛，即使下床喝了一包999感冒冲剂也无济于事。还有晚上的空调吹的我瑟瑟发抖，脚一直发冷，第二天早上中午症状更加严重。</p>
+<a id="more"></a>
+<p>身体酸痛发软疲劳，甚至连午饭都吃不下去，扒了几口之后就回床上睡觉了，睡觉下午四点多的时候状态恢复一点立马跑去校医室。</p>
+<h3 id="治疗和恢复"><a href="#治疗和恢复" class="headerlink" title="治疗和恢复"></a>治疗和恢复</h3><p>到校医室之后是挂号，花十分钟量体温，医生居然让我去走廊的那里量体温，这我就不明白了，在里面不能量？那个时候也没有其他病人啊。然后是问询、开药，羞涩地被护士姐姐打了一针，因为低烧了。</p>
+<p>晚上回来吃药睡觉，第二三天早上醒来感觉好很多了，但是低烧症状彻底消失还要到晚上。</p>
+<p>现在身体还在恢复之中，并没有完全好，喉咙还有问题，受凉会打喷嚏。</p>
+<h3 id="咳嗽消失"><a href="#咳嗽消失" class="headerlink" title="咳嗽消失"></a>咳嗽消失</h3><p>7月8号凌晨过来更新。</p>
+<p>上一周还是有痰咳嗽的状态，这一周好像就消失，消失得好像我都忘记有过感冒这回事了。</p>
+<p>之所以写下这篇文章，并不只是想记录下这次感冒的过程，而是为了提醒自己该运动了。无论搬家了与否，都应该运动。没搬家照旧在天健，搬家了在新家附近，并且还有Keep可以做呢。</p>
+<p>谨记谨记。</p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;h3 id=&quot;着凉了&quot;&gt;&lt;a href=&quot;#着凉了&quot; class=&quot;headerlink&quot; title=&quot;着凉了&quot;&gt;&lt;/a&gt;着凉了&lt;/h3&gt;&lt;p&gt;最近身体状态真是极差，今年（2017年）大概5月的时候就有一次喉咙痛接近感冒，6月23号晚身体开始出现疲惫状态，然后是全身酸痛，即使下床喝了一包999感冒冲剂也无济于事。还有晚上的空调吹的我瑟瑟发抖，脚一直发冷，第二天早上中午症状更加严重。&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="总结" scheme="https://kerita.github.io/categories/%E6%80%BB%E7%BB%93/"/>
+    
+    
+  </entry>
   
   <entry>
     <title>前端模块化与模块加载器</title>
@@ -66,7 +114,7 @@
     <link href="https://kerita.github.io/2017/04/01/2017-plan/"/>
     <id>https://kerita.github.io/2017/04/01/2017-plan/</id>
     <published>2017-03-31T16:00:00.000Z</published>
-    <updated>2017-06-12T12:26:30.976Z</updated>
+    <updated>2017-06-14T13:21:29.398Z</updated>
     
     <content type="html"><![CDATA[<p>2017年1月1日晚上写完年度总结后，一个错觉一直萦绕在我的脑海——我已经写2017年度计划了。其实并没有，我只是在2016年度的总结里面提及在2017年至少要阅读12本专业书籍，12本非专业书籍，其余的并没有计划。当今天我正式想把计划放到博客上的时候，才发现印象笔记里面空空如也、一无所有。</p>
 <a id="more"></a>
@@ -80,7 +128,7 @@
 <h3 id="专业书籍列表"><a href="#专业书籍列表" class="headerlink" title="专业书籍列表"></a>专业书籍列表</h3><ul>
 <li>《JavaScript语言精粹》</li>
 <li>《JavaScript面向对象编程指南》</li>
-<li>《精通CSS》</li>
+<li>《精通CSS》<em>**</em></li>
 <li>《CSS实用指南》</li>
 <li>《图解CSS3》</li>
 <li>《锋利的jquery》</li>
