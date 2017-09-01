@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://kerita.github.io/"/>
-  <updated>2017-08-21T16:49:31.410Z</updated>
+  <updated>2017-09-01T17:39:05.282Z</updated>
   <id>https://kerita.github.io/</id>
   
   <author>
@@ -16,15 +16,25 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
-    <title>ES6变量解构引发的关于面试题的猜想</title>
-    <link href="https://kerita.github.io/2017/08/21/2017/about-destructuring/"/>
-    <id>https://kerita.github.io/2017/08/21/2017/about-destructuring/</id>
-    <published>2017-08-20T16:00:00.000Z</published>
-    <updated>2017-08-21T16:49:31.410Z</updated>
+    <title>ES6变量解构引发的面试题的猜想</title>
+    <link href="https://kerita.github.io/2017/08/31/2017/about-destructuring/"/>
+    <id>https://kerita.github.io/2017/08/31/2017/about-destructuring/</id>
+    <published>2017-08-30T16:00:00.000Z</published>
+    <updated>2017-09-01T17:39:05.282Z</updated>
     
     <content type="html"><![CDATA[<p>ES6 允许按照一定模式，从数组和对象中提取值，对变量进行赋值，这被称为解构（Destructuring）。（来自阮一峰ES6教程）</p>
 <a id="more"></a>
-<p>同时阮一峰还说了用变量解构进行很简单的进行变量解构</p>
+<h3 id="交换变量值"><a href="#交换变量值" class="headerlink" title="交换变量值"></a>交换变量值</h3><p>同时阮一峰还说了用变量解构可以对很轻松的实现对两个值进行交换，他给出了例子，关于面试题的猜想就是由这个例子引发的。</p>
+<h3 id="面试题"><a href="#面试题" class="headerlink" title="面试题"></a>面试题</h3><figure class="highlight gauss"><table><tr><td class="code"><pre><div class="line"><span class="keyword">let</span> x = <span class="number">1</span></div><div class="line"><span class="keyword">let</span> y = <span class="number">2</span></div><div class="line">[x,y] = [y,x]</div><div class="line"></div><div class="line">console.<span class="built_in">log</span>(x)</div><div class="line">console.<span class="built_in">log</span>(y)</div></pre></td></tr></table></figure>
+<p>请问上面的代码将输出什么？<br>A. 2 1<br>B. Uncaught ReferenceError: y is not defined</p>
+<p>按照前面的说法，选A。但之所以能成为面试题，是因为有坑。</p>
+<h3 id="考点"><a href="#考点" class="headerlink" title="考点"></a>考点</h3><ul>
+<li>变量解构。 利用变量解构可以进行赋值。</li>
+<li>JS什么时候必须加分号。第一个字符是’[‘，’(‘,’+’,’-‘, ‘/‘,此时上一行不加分号，就不会将上下两行代码分开。</li>
+</ul>
+<p>所以不加分号时，上面的代码变成这样。因为let声明变量暂时性死区的特性，此时的2[x,y]中的y还是未定义，所以是ReferenceError。</p>
+<figure class="highlight nix"><table><tr><td class="code"><pre><div class="line"><span class="keyword">let</span> <span class="attr">x=1</span></div><div class="line"><span class="keyword">let</span> <span class="attr">y</span> = <span class="number">2</span>[x,y] = [y,x]</div></pre></td></tr></table></figure>
+<h3 id="参考链接"><a href="#参考链接" class="headerlink" title="参考链接"></a>参考链接</h3><p><a href="http://es6.ruanyifeng.com/" target="_blank" rel="external">ECMAScript 6 入门</a><br><a href="https://www.zhihu.com/question/20298345" target="_blank" rel="external">JavaScript 语句后应该加分号么？</a></p>
 ]]></content>
     
     <summary type="html">
