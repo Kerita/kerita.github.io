@@ -511,67 +511,6 @@
   </entry>
   
   <entry>
-    <title>2017年度计划</title>
-    <link href="https://kerita.github.io/2017/04/01/2017/2017-plan/"/>
-    <id>https://kerita.github.io/2017/04/01/2017/2017-plan/</id>
-    <published>2017-03-31T16:00:00.000Z</published>
-    <updated>2017-06-14T13:21:29.398Z</updated>
-    
-    <content type="html"><![CDATA[<p>2017年1月1日晚上写完年度总结后，一个错觉一直萦绕在我的脑海——我已经写2017年度计划了。其实并没有，我只是在2016年度的总结里面提及在2017年至少要阅读12本专业书籍，12本非专业书籍，其余的并没有计划。当今天我正式想把计划放到博客上的时候，才发现印象笔记里面空空如也、一无所有。</p>
-<a id="more"></a>
-<h2 id="阅读"><a href="#阅读" class="headerlink" title="阅读"></a>阅读</h2><p>几个月的实习经历，发现自己技术方面有且不仅有以下不足：</p>
-<ul>
-<li>CSS理解不够深刻，实际使用也少，且无法灵活运用</li>
-<li>没有比较良好的编程习惯，体现在JS编程上</li>
-<li>对Vue.js、Node.js了解不够深入</li>
-<li>对React、angular没有了解</li>
-</ul>
-<h3 id="专业书籍列表"><a href="#专业书籍列表" class="headerlink" title="专业书籍列表"></a>专业书籍列表</h3><ul>
-<li>《JavaScript语言精粹》</li>
-<li>《JavaScript面向对象编程指南》</li>
-<li>《精通CSS》<em>**</em></li>
-<li>《CSS实用指南》</li>
-<li>《图解CSS3》</li>
-<li>《锋利的jquery》</li>
-<li>《jQuery cookbook》</li>
-<li>《JavaScript高级程序设计》</li>
-<li>《ECMAScript6入门》</li>
-<li>《深入浅出Node.js》</li>
-</ul>
-<h3 id="非专业书籍"><a href="#非专业书籍" class="headerlink" title="非专业书籍"></a>非专业书籍</h3><ul>
-<li>《软技能——代码之外的生存之道》</li>
-<li>《少有人走的路》</li>
-<li>《极简欧洲史》</li>
-<li>《穷爸爸富爸爸》</li>
-</ul>
-<h2 id="健身"><a href="#健身" class="headerlink" title="健身"></a>健身</h2><ul>
-<li>一周至少五天做Keep</li>
-<li>一周至少打一次羽毛球</li>
-<li>是否办健身卡，正式入职后决定</li>
-</ul>
-<h2 id="电影（包括美剧、动漫等方面）"><a href="#电影（包括美剧、动漫等方面）" class="headerlink" title="电影（包括美剧、动漫等方面）"></a>电影（包括美剧、动漫等方面）</h2><p>减少花在电影、美剧、动漫、赛事直播的时间，在非规定时间如果有观看这些视频的想法了，拿起kindle阅读或者编程。</p>
-<ul>
-<li>一周最多只能看一部电影</li>
-<li>美剧现在只追TBBT一部</li>
-<li>《秦时明月》可以弃坑</li>
-</ul>
-<h2 id="英语"><a href="#英语" class="headerlink" title="英语"></a>英语</h2><ul>
-<li>对于英语学习现在没有很好的规划，但至少要每天扇贝打50个单词</li>
-</ul>
-]]></content>
-    
-    <summary type="html">
-    
-      &lt;p&gt;2017年1月1日晚上写完年度总结后，一个错觉一直萦绕在我的脑海——我已经写2017年度计划了。其实并没有，我只是在2016年度的总结里面提及在2017年至少要阅读12本专业书籍，12本非专业书籍，其余的并没有计划。当今天我正式想把计划放到博客上的时候，才发现印象笔记里面空空如也、一无所有。&lt;/p&gt;
-    
-    </summary>
-    
-      <category term="年度计划" scheme="https://kerita.github.io/categories/%E5%B9%B4%E5%BA%A6%E8%AE%A1%E5%88%92/"/>
-    
-    
-  </entry>
-  
-  <entry>
     <title>Hello World</title>
     <link href="https://kerita.github.io/2017/01/22/2017/hello-world/"/>
     <id>https://kerita.github.io/2017/01/22/2017/hello-world/</id>
