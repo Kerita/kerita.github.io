@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://kerita.github.io/"/>
-  <updated>2017-09-26T15:20:04.760Z</updated>
+  <updated>2017-10-26T16:42:34.468Z</updated>
   <id>https://kerita.github.io/</id>
   
   <author>
@@ -16,11 +16,112 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>用 VPS 自己搭个梯子</title>
+    <link href="https://kerita.github.io/2017/10/26/2017/vps/"/>
+    <id>https://kerita.github.io/2017/10/26/2017/vps/</id>
+    <published>2017-10-25T16:00:00.000Z</published>
+    <updated>2017-10-26T16:42:34.468Z</updated>
+    
+    <content type="html"><![CDATA[<p>在某个很平凡的夜晚，因为无法打开某个链接，开始知道墙（GFW——the Great Firewall），也开始寻找翻墙的工具，一定要到墙外去看看。</p>
+<a id="more"></a>
+<p>墙外的世界有多精彩吗？我又有多迷恋吗？不见得。翻墙主要目的是为了用谷歌搜索，还有就是为了更流畅的访问如  <a href="https://github.com/" target="_blank" rel="external">GitHub</a>、<a href="https://stackoverflow.com" target="_blank" rel="external">Stack Overflow</a> 之类有关编程的网站。但无法翻墙损失的不只是这些网站带来的良好体验和知识，还有自由，一种我想看什么就看什么的自由。现在每每看到社交网络有人在发“看到祖国这么流氓，我就放心了”、“这盛世如你所愿”，总会有一种怪怪的感觉。</p>
+<p>这里顺便把百度批判一番。作为有着上亿用户的体量的公司，百度以及百度高层衣食无忧的管理人员为了赚钱加各种广告、安装百度全家桶、劫持浏览器首页、甚至劫持bing搜索，不羞愧吗？就降低中国互联网的体验而言，百度敢说，“我不是针对谁，我是说在做的各位都是垃圾”。百度应该好好学学网易，做良心产品，发良心财。</p>
+<p>言归正传，在使用过Lantern、自由门、天行者VPN、GreenVPN等各种翻墙工具，经历它们下架或无法使用之后，决定自己用 VPS 搭个 Shadowsocks 服务器翻墙。</p>
+<p>VPS是啥呢？就是虚拟专用服务器（Virtual private server），可以说就是一台电脑。翻墙的原理就是，在这台电脑上跑一个 Shadowsocks 服务，自己电脑用Shadowsocks连接远程 Shadowsocks 服务，请求就可以加密传输到远程服务器，利用远程服务器访问在返回本地电脑。</p>
+<p>所以要自己搭梯子，首先要买一个 VPS，一个不被墙的VPS。在对比了各个 VPS 并尝试了 linode、Vultr、搬瓦工 三个之后，我选择了搬瓦工。linode 需要用信用卡，暂时没办信用卡所以不行。Vultr 和搬瓦工都支持支付宝，但是 Vultr 的服务器被墙了（2017年10月25日），所以我退款选择了搬瓦工，速度还不错。</p>
+<p>原本想推荐我买的年付 29.99刀的套餐，没想到只隔了一天就售罄了。<a href="https://bandwagonhost.com/aff.php?aff=21686&amp;pid=56" target="_blank" rel="external">搬瓦工套餐选择</a> 参考<a href="http://blog.csdn.net/nanalinlinlin/article/details/54667735" target="_blank" rel="external">购买搬瓦工 VPS</a>购买,买完进入服务器控制面板，可以直接用搬瓦工的提供的服务安装 Shadowsocks 服务。喜欢折腾的人，可以参考这篇文章安装<a href="http://blog.csdn.net/darkmanno5/article/details/78233237" target="_blank" rel="external">命令行安装SS</a></p>
+<p>之后在本地电脑装 Shadowsocks，然后连接服务器，就可以翻墙上网了。</p>
+<p>如上所说，我翻墙的主要是为了上谷歌搜索和编程类网站，并不做什么坏事，我还是<strong>爱国</strong>的，介绍翻墙则是为了让大家好好学习，网警叔叔别请我喝茶。</p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;在某个很平凡的夜晚，因为无法打开某个链接，开始知道墙（GFW——the Great Firewall），也开始寻找翻墙的工具，一定要到墙外去看看。&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="小技巧" scheme="https://kerita.github.io/categories/%E5%B0%8F%E6%8A%80%E5%B7%A7/"/>
+    
+    
+      <category term="VPS" scheme="https://kerita.github.io/tags/VPS/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>青峰</title>
+    <link href="https://kerita.github.io/2017/10/03/2017/qingfeng/"/>
+    <id>https://kerita.github.io/2017/10/03/2017/qingfeng/</id>
+    <published>2017-10-02T16:00:00.000Z</published>
+    <updated>2017-10-26T13:54:43.809Z</updated>
+    
+    <content type="html"><![CDATA[<p>在很长一段时间，我都是将对明星作品的喜欢与对明星的喜欢分开，即喜欢他的作品不一定喜欢这个人，当然也不讨厌。无论是五月天、周杰伦、陈奕迅，还是赵雷、许巍、逃跑计划，虽然他们的歌在某一瞬间或者某一段时间，让我产生共鸣，但对于他们的喜欢都只停留在歌曲上。而青峰，苏打绿的主唱，唱《小情歌》的那个人，成为了打破这个规则第一人。</p>
+<a id="more"></a>
+<iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width="330" height="86" src="//music.163.com/outchain/player?type=2&id=32019043&auto=1&height=66"></iframe>
+
+
+<p>我也在想为什么会因为喜欢他唱的歌喜欢这个人？一个无论是动作和嗓音都有点“女性化特质”的男歌手。大概是因为他的创作、他的歌声如他自己的所说的“像棉一样带给人温暖舒服的感觉”，在触碰听者心底最柔软地方的同时，又不失勇敢和坚毅。而其他优秀的歌手离心底，都还有一些距离。</p>
+<p>这里推荐一些个人觉得比较有代表性的歌曲：《无与伦比的美丽》、《相信》、《只有可以》、《带我走》，也期待你分享动听的歌与让人喜欢的歌手。</p>
+<p>当然说到青峰，不能不说张悬，有兴趣的话去了解他们的故事，并听听她的《宝贝》。</p>
+<p>最后说一句，他们2016年开始休团三年，不发专辑不开演唱会。一起等待他们复出的那一天吧。</p>
+<div style="text-align:center"><br><img src="/2017/10/03/2017/qingfeng/beauty.png" alt="无与伦比的美丽" title="无与伦比的美丽"><br></div>]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;在很长一段时间，我都是将对明星作品的喜欢与对明星的喜欢分开，即喜欢他的作品不一定喜欢这个人，当然也不讨厌。无论是五月天、周杰伦、陈奕迅，还是赵雷、许巍、逃跑计划，虽然他们的歌在某一瞬间或者某一段时间，让我产生共鸣，但对于他们的喜欢都只停留在歌曲上。而青峰，苏打绿的主唱，唱《小情歌》的那个人，成为了打破这个规则第一人。&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="名人" scheme="https://kerita.github.io/categories/%E5%90%8D%E4%BA%BA/"/>
+    
+    
+      <category term="苏打绿" scheme="https://kerita.github.io/tags/%E8%8B%8F%E6%89%93%E7%BB%BF/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>谈微信的那些缺点</title>
+    <link href="https://kerita.github.io/2017/10/03/2017/about-wechat/"/>
+    <id>https://kerita.github.io/2017/10/03/2017/about-wechat/</id>
+    <published>2017-10-02T16:00:00.000Z</published>
+    <updated>2017-10-26T13:42:01.218Z</updated>
+    
+    <content type="html"><![CDATA[<p>今天想聊一聊日常使用频率最高的 APP ——微信，使用过程一些让人不爽的地方。虽然从用户角度来说是缺点，但从腾讯角度来说当然就未必了。</p>
+<a id="more"></a>
+<h2 id="好友"><a href="#好友" class="headerlink" title="好友"></a>好友</h2><h3 id="无法彻底删除好友"><a href="#无法彻底删除好友" class="headerlink" title="无法彻底删除好友"></a>无法彻底删除好友</h3><p>用户删除好友时，并不会从对方好友列表删掉自己，并且动态依然会保留对方的点赞。</p>
+<h3 id="没有离线聊天记录"><a href="#没有离线聊天记录" class="headerlink" title="没有离线聊天记录"></a>没有离线聊天记录</h3><p>无法是微信还是QQ，离线聊天记录都做得很差，最完美的离线聊天记录是提供所有聊天记录，并且可以按时间检索。</p>
+<h2 id="群聊"><a href="#群聊" class="headerlink" title="群聊"></a>群聊</h2><h3 id="直接被拉入群"><a href="#直接被拉入群" class="headerlink" title="直接被拉入群"></a>直接被拉入群</h3><p>有些时候会很方便，但大部分时候是“打扰用户的”。</p>
+<h3 id="无法彻底屏蔽群消息"><a href="#无法彻底屏蔽群消息" class="headerlink" title="无法彻底屏蔽群消息"></a>无法彻底屏蔽群消息</h3><p>对于那些不想看又不好意思退出的群，无法彻底屏蔽，即使关闭消息提醒，新的群消息依然会跑到时间线的顶端，</p>
+<h2 id="朋友圈"><a href="#朋友圈" class="headerlink" title="朋友圈"></a>朋友圈</h2><h3 id="朋友圈烦人的提醒"><a href="#朋友圈烦人的提醒" class="headerlink" title="朋友圈烦人的提醒"></a>朋友圈烦人的提醒</h3><p>在一条朋友圈点赞或者评论，之后好友的评论点赞都会有烦人的提醒，微信也意识到这个问题，前几个月（现在为2017年10月）在提醒的地方可以设置这条动态不再提醒，然而是在被打扰之后才能手动设置，而且是每条都需要独立设置。</p>
+<h3 id="私密朋友圈自己都不能评论"><a href="#私密朋友圈自己都不能评论" class="headerlink" title="私密朋友圈自己都不能评论"></a>私密朋友圈自己都不能评论</h3><p>只对自己开放的动态居然不能评论，用户自己留着看的就不能点评吗？</p>
+<h3 id="没有关键词屏蔽"><a href="#没有关键词屏蔽" class="headerlink" title="没有关键词屏蔽"></a>没有关键词屏蔽</h3><p>关键词屏蔽，一方面可以筛选掉朋友的广告，一方面可以屏蔽重复刷屏的动态，例如“罗尔事件”中的文章。</p>
+<h2 id="公众号"><a href="#公众号" class="headerlink" title="公众号"></a>公众号</h2><h3 id="原创功能只能由系统判定给予，无法申请"><a href="#原创功能只能由系统判定给予，无法申请" class="headerlink" title="原创功能只能由系统判定给予，无法申请"></a>原创功能只能由系统判定给予，无法申请</h3><p>原创功能可以开通评论和打赏，然而只能由系统判定并授予（而且我猜系统算法只是判断文字），申请的接口都不给。有个朋友在公众号画了快一年的画，有不错的阅读量和点赞量，但直到最近在画后插入一些文字才获得原创资格。</p>
+<h3 id="封闭的公众号"><a href="#封闭的公众号" class="headerlink" title="封闭的公众号"></a>封闭的公众号</h3><p>公众号最大的缺点是封闭，无法被搜索引擎爬取和收录，信息包括知识无法被自由的传播，与互联网的自由开放的精神背道而驰。</p>
+<h2 id="其他"><a href="#其他" class="headerlink" title="其他"></a>其他</h2><h3 id="游戏无法隐藏"><a href="#游戏无法隐藏" class="headerlink" title="游戏无法隐藏"></a>游戏无法隐藏</h3><p>底部tab的“发现（Discover）”中的游戏无法关闭，即使你一点也不想玩游戏。</p>
+<h3 id="手机号码为中心的账号体系"><a href="#手机号码为中心的账号体系" class="headerlink" title="手机号码为中心的账号体系"></a>手机号码为中心的账号体系</h3><p>微信开创了手机号码为中心的账号体系，一定程度避免了恶意注册，但并不是杜绝，而且牺牲那些换手机号码用户的体验。</p>
+<p>更完美的还是以邮箱为中心。</p>
+<h3 id="PC端登录麻烦"><a href="#PC端登录麻烦" class="headerlink" title="PC端登录麻烦"></a>PC端登录麻烦</h3><p>每次登陆PC端需要用微信扫一扫，为啥不能学习苹果——第一次时在手机询问是否同意将PC作为信任设备，同意以后都可直接登录。</p>
+<h2 id="小结"><a href="#小结" class="headerlink" title="小结"></a>小结</h2><p>最后总结一下，微信在用户体验上还是秒杀绝大部分软件的，无论是流畅度、UI还是功能，但如果能够彻底抛开KPI，可能会更加令人尊重。</p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;今天想聊一聊日常使用频率最高的 APP ——微信，使用过程一些让人不爽的地方。虽然从用户角度来说是缺点，但从腾讯角度来说当然就未必了。&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="产品" scheme="https://kerita.github.io/categories/%E4%BA%A7%E5%93%81/"/>
+    
+    
+      <category term="微信" scheme="https://kerita.github.io/tags/%E5%BE%AE%E4%BF%A1/"/>
+    
+  </entry>
+  
+  <entry>
     <title>Awards 项目总结</title>
     <link href="https://kerita.github.io/2017/09/24/2017/awards-project/"/>
     <id>https://kerita.github.io/2017/09/24/2017/awards-project/</id>
     <published>2017-09-23T16:00:00.000Z</published>
-    <updated>2017-09-26T15:20:04.760Z</updated>
+    <updated>2017-10-12T11:23:17.560Z</updated>
     
     <content type="html"><![CDATA[<p>本周二（19号）彻底完成公司 Awards 项目的需求和需求修改并上线，趁热打铁写下完成项目过程的一些思考。</p>
 <a id="more"></a>
@@ -75,7 +176,7 @@
 <ol>
 <li><p>组件化程度不够高<br>一开始觉得这个项目数据流动不多，所以没有抽出很多小组件，导致组件化程度不够高，有些组件代码比较多，对应的 CSS 代码也多。所以即使数据不多的情况下，抽组件依然有好处</p>
 </li>
-<li><p>代码质量<br>无论是 JSX、 json、 还是 CSS，都尽可能写得好看漂亮，不仅有利于之后维护，写的时候也清晰。</p>
+<li><p>代码质量<br>无论是 JSX、 json、 还是 CSS，都尽可能写得好看漂亮，不仅有利于之后维护，写的时候也清晰。 </p>
 </li>
 </ol>
 ]]></content>
