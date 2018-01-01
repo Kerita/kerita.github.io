@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://kerita.github.io/"/>
-  <updated>2017-10-26T16:42:34.468Z</updated>
+  <updated>2018-01-01T16:38:47.870Z</updated>
   <id>https://kerita.github.io/</id>
   
   <author>
@@ -16,11 +16,89 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>2018年计划</title>
+    <link href="https://kerita.github.io/2018/01/01/2018/2018-plan/"/>
+    <id>https://kerita.github.io/2018/01/01/2018/2018-plan/</id>
+    <published>2017-12-31T16:00:00.000Z</published>
+    <updated>2018-01-01T16:38:47.870Z</updated>
+    
+    <content type="html"><![CDATA[<p>这个元旦假期没有出去玩，而是花时间看了稻盛和夫的《活法》，并做了一些摘抄，之所以这样是2017年7月本科毕业工作之后，陷入了迷茫，不知道接下来该干什么？想在这本书里找到一些回答。</p>
+<a id="more"></a>
+<p>通过这几天的阅读和思考，有点小想法，也趁热写下2018年的计划，尝试把从书中得到的东西进行实践，毕竟“知行合一”。</p>
+<h2 id="技术与工作"><a href="#技术与工作" class="headerlink" title="技术与工作"></a>技术与工作</h2><ul>
+<li>1月阅读《图解CSS3》和 w3cplus 上的 CSS3 教程<br>前两周每天完成《图解CSS3》的一章，后两周每天阅读 w3cplus 上的两篇 CSS3 文章</li>
+<li>2月学习 Node.js ，以用 Node.js 搭建一个博客系统为目标</li>
+<li>3月深入学习 react</li>
+<li>4月深入学习 webpack </li>
+<li>5月及之后看前面的学习效果待确定</li>
+<li>每天一道 leetcode 题目</li>
+<li>认真对待工作的每一个需求，尽量不写 bug,争取升职加薪</li>
+</ul>
+<h2 id="生活"><a href="#生活" class="headerlink" title="生活"></a>生活</h2><ul>
+<li>不刷知乎、豆瓣，而是把它们当做工具</li>
+<li>上厕所不刷手机，因为影响如厕质量</li>
+<li>跑步累计 300 公里（2017年是 150 公里左右）</li>
+<li>每天晚上躺下的时候回顾这一天的生活，自省</li>
+</ul>
+<h2 id="博客"><a href="#博客" class="headerlink" title="博客"></a>博客</h2><p>每周都能写一篇博文，同时，12月个人博客的 UV 大概是200个，希望2018年博客每月 UV 能够达到 1000 以上。</p>
+<p>之所以对博客投入这么多精力和有这么大的期待，是因为就算有一天我死了，只要互联网不死，我写的技术文章、感悟、教程能够对其他人有帮助，那我灵魂就依然活着，这让我的生命有意义。</p>
+<h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><p>上面写了那么多，总结起来就是：充实地度过2018年的每一天每一个小时，而不是碌碌无为，到年末时只能说一句，“我本可以``````”。</p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;这个元旦假期没有出去玩，而是花时间看了稻盛和夫的《活法》，并做了一些摘抄，之所以这样是2017年7月本科毕业工作之后，陷入了迷茫，不知道接下来该干什么？想在这本书里找到一些回答。&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="计划" scheme="https://kerita.github.io/categories/%E8%AE%A1%E5%88%92/"/>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>iOS11 光标不跟随焦点</title>
+    <link href="https://kerita.github.io/2017/12/03/2017/ios11-cursor-not-follow-focus/"/>
+    <id>https://kerita.github.io/2017/12/03/2017/ios11-cursor-not-follow-focus/</id>
+    <published>2017-12-02T16:00:00.000Z</published>
+    <updated>2017-12-03T17:37:56.379Z</updated>
+    
+    <content type="html"><![CDATA[<p>最近遇到一个新鲜的 bug —— iOS11 Safari 中 modal 上的 input 光标不跟随焦点，即当 input 获得焦点准备输入时，光标并不在 input 元素中。</p>
+<a id="more"></a>
+<p>之所以会有这个 bug 的原因是因为，当输入框获取焦点弹出输入法时，，Safari 向下移动页面，导致光标不跟随焦点。</p>
+<p>谷歌搜索看到<a href="https://hackernoon.com/how-to-fix-the-ios-11-input-element-in-fixed-modals-bug-aaf66c7ba3f8" target="_blank" rel="external">这篇文章（需翻墙）</a>,了解到三种解决办法。</p>
+<ul>
+<li><p>不要讲 input 放在 modal，这种方法简单粗暴，但是可行性却很低。</p>
+</li>
+<li><p>将 modal 中 mask 的兄弟元素且为 input 祖先元素的元素 position 设置为 absolute。可能会导致一些意外问题，具体看 modal 的写法。 <a href="#position-absolute">代码</a></p>
+</li>
+<li><p>将 body 高度设置为 100vh, overflow 设置为 hidden，当然这种方法在 modal 消失需要重设这两个属性为原来的值。但如果 modal 高度gaoyu 100vh时，这种方法就无效了。<a href="#height-100vh">代码</a></p>
+</li>
+</ul>
+<h3 id="参考链接"><a href="#参考链接" class="headerlink" title="参考链接"></a>参考链接</h3><p><a href="https://hackernoon.com/how-to-fix-the-ios-11-input-element-in-fixed-modals-bug-aaf66c7ba3f8" target="_blank" rel="external">How to fix the iOS 11 input element in fixed modals bug</a></p>
+<p><a id="position-absolute"></a><br><figure class="highlight xml"><table><tr><td class="code"><pre><div class="line"><span class="meta">&lt;!DOCTYPE html&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">html</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">head</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">title</span>&gt;</span>iOS11 cursor<span class="tag">&lt;/<span class="name">title</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">meta</span> <span class="attr">name</span>=<span class="string">"viewport"</span> <span class="attr">content</span>=<span class="string">"width=device-width"</span>&gt;</span></div><div class="line">  <span class="tag">&lt;/<span class="name">head</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">style</span>&gt;</span><span class="css"></span></div><div class="line"></div><div class="line">    <span class="selector-class">.ios11</span> <span class="selector-class">.modal-ct</span>&#123;</div><div class="line">      <span class="attribute">position</span>: absolute;</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    </div><div class="line">    <span class="selector-tag">body</span> &#123;</div><div class="line">      <span class="attribute">height</span>: <span class="number">200vh</span>;</div><div class="line">    &#125;</div><div class="line">    <span class="selector-class">.modal</span> &#123;</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    <span class="selector-class">.mask</span> &#123;</div><div class="line">      <span class="attribute">background</span>: black;</div><div class="line">      <span class="attribute">opacity</span>: <span class="number">0.3</span>;</div><div class="line">      <span class="attribute">position</span>: fixed;</div><div class="line">      <span class="attribute">left</span>: <span class="number">0</span>;</div><div class="line">      <span class="attribute">top</span>: <span class="number">0</span>;</div><div class="line">      <span class="attribute">right</span>: <span class="number">0</span>;</div><div class="line">      <span class="attribute">bottom</span>: <span class="number">0</span>;</div><div class="line">    &#125;</div><div class="line">    <span class="selector-class">.modal-ct</span> &#123;</div><div class="line">      <span class="attribute">position</span>: fixed;</div><div class="line">      <span class="attribute">left</span>: <span class="number">0</span>;</div><div class="line">      <span class="attribute">top</span>: <span class="number">0</span>;</div><div class="line">      <span class="attribute">right</span>: <span class="number">0</span>;</div><div class="line">      <span class="attribute">bottom</span>: <span class="number">0</span>;</div><div class="line">    &#125;</div><div class="line">    <span class="selector-tag">input</span> &#123;</div><div class="line">      <span class="attribute">font-size</span>: <span class="number">16px</span>;</div><div class="line">    &#125;</div><div class="line">  <span class="tag">&lt;/<span class="name">style</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">body</span>&gt;</span></div><div class="line">    </div><div class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"modal"</span>&gt;</span></div><div class="line">      <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"mask"</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></div><div class="line">        <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"modal-ct"</span>&gt;</span></div><div class="line">            <span class="tag">&lt;<span class="name">input</span> /&gt;</span></div><div class="line">            <span class="tag">&lt;<span class="name">p</span>&gt;</span>lorem<span class="tag">&lt;/<span class="name">p</span>&gt;</span></div><div class="line">            <span class="tag">&lt;<span class="name">p</span>&gt;</span>lorem<span class="tag">&lt;/<span class="name">p</span>&gt;</span></div><div class="line">            <span class="tag">&lt;<span class="name">p</span>&gt;</span>lorem<span class="tag">&lt;/<span class="name">p</span>&gt;</span></div><div class="line">            <span class="tag">&lt;<span class="name">p</span>&gt;</span>lorem<span class="tag">&lt;/<span class="name">p</span>&gt;</span></div><div class="line">            <span class="tag">&lt;<span class="name">p</span>&gt;</span>lorem<span class="tag">&lt;/<span class="name">p</span>&gt;</span></div><div class="line">            <span class="tag">&lt;<span class="name">p</span>&gt;</span>lorem<span class="tag">&lt;/<span class="name">p</span>&gt;</span></div><div class="line">            <span class="tag">&lt;<span class="name">p</span>&gt;</span>lorem<span class="tag">&lt;/<span class="name">p</span>&gt;</span></div><div class="line">            <span class="tag">&lt;<span class="name">p</span>&gt;</span>lorem<span class="tag">&lt;/<span class="name">p</span>&gt;</span></div><div class="line">            <span class="tag">&lt;<span class="name">p</span>&gt;</span>lorem<span class="tag">&lt;/<span class="name">p</span>&gt;</span></div><div class="line">            <span class="tag">&lt;<span class="name">p</span>&gt;</span>lorem<span class="tag">&lt;/<span class="name">p</span>&gt;</span></div><div class="line">            <span class="tag">&lt;<span class="name">p</span>&gt;</span>lorem<span class="tag">&lt;/<span class="name">p</span>&gt;</span></div><div class="line">            <span class="tag">&lt;<span class="name">p</span>&gt;</span>lorem<span class="tag">&lt;/<span class="name">p</span>&gt;</span></div><div class="line">            <span class="tag">&lt;<span class="name">p</span>&gt;</span>lorem<span class="tag">&lt;/<span class="name">p</span>&gt;</span></div><div class="line">            <span class="tag">&lt;<span class="name">p</span>&gt;</span>lorem<span class="tag">&lt;/<span class="name">p</span>&gt;</span></div><div class="line">            <span class="tag">&lt;<span class="name">p</span>&gt;</span>lorem<span class="tag">&lt;/<span class="name">p</span>&gt;</span></div><div class="line">            <span class="tag">&lt;<span class="name">p</span>&gt;</span>lorem<span class="tag">&lt;/<span class="name">p</span>&gt;</span></div><div class="line">            <span class="tag">&lt;<span class="name">p</span>&gt;</span>lorem<span class="tag">&lt;/<span class="name">p</span>&gt;</span></div><div class="line">            <span class="tag">&lt;<span class="name">p</span>&gt;</span>lorem<span class="tag">&lt;/<span class="name">p</span>&gt;</span></div><div class="line">            <span class="tag">&lt;<span class="name">p</span>&gt;</span>lorem<span class="tag">&lt;/<span class="name">p</span>&gt;</span></div><div class="line">            <span class="tag">&lt;<span class="name">p</span>&gt;</span>lorem<span class="tag">&lt;/<span class="name">p</span>&gt;</span></div><div class="line">            <span class="tag">&lt;<span class="name">p</span>&gt;</span>lorem<span class="tag">&lt;/<span class="name">p</span>&gt;</span></div><div class="line">            <span class="tag">&lt;<span class="name">p</span>&gt;</span>lorem<span class="tag">&lt;/<span class="name">p</span>&gt;</span></div><div class="line">            <span class="tag">&lt;<span class="name">p</span>&gt;</span>lorem<span class="tag">&lt;/<span class="name">p</span>&gt;</span></div><div class="line">            <span class="tag">&lt;<span class="name">p</span>&gt;</span>lorem<span class="tag">&lt;/<span class="name">p</span>&gt;</span></div><div class="line">            <span class="tag">&lt;<span class="name">p</span>&gt;</span>lorem<span class="tag">&lt;/<span class="name">p</span>&gt;</span></div><div class="line">            <span class="tag">&lt;<span class="name">p</span>&gt;</span>lorem<span class="tag">&lt;/<span class="name">p</span>&gt;</span></div><div class="line">            <span class="tag">&lt;<span class="name">p</span>&gt;</span>lorem<span class="tag">&lt;/<span class="name">p</span>&gt;</span></div><div class="line">            <span class="tag">&lt;<span class="name">p</span>&gt;</span>lorem<span class="tag">&lt;/<span class="name">p</span>&gt;</span></div><div class="line">            <span class="tag">&lt;<span class="name">p</span>&gt;</span>lorem<span class="tag">&lt;/<span class="name">p</span>&gt;</span></div><div class="line">            <span class="tag">&lt;<span class="name">p</span>&gt;</span>lorem<span class="tag">&lt;/<span class="name">p</span>&gt;</span></div><div class="line">            <span class="tag">&lt;<span class="name">p</span>&gt;</span>lorem<span class="tag">&lt;/<span class="name">p</span>&gt;</span></div><div class="line">            <span class="tag">&lt;<span class="name">p</span>&gt;</span>lorem<span class="tag">&lt;/<span class="name">p</span>&gt;</span></div><div class="line">            <span class="tag">&lt;<span class="name">p</span>&gt;</span>lorem<span class="tag">&lt;/<span class="name">p</span>&gt;</span></div><div class="line">            <span class="tag">&lt;<span class="name">p</span>&gt;</span>lorem<span class="tag">&lt;/<span class="name">p</span>&gt;</span></div><div class="line">            <span class="tag">&lt;<span class="name">p</span>&gt;</span>lorem<span class="tag">&lt;/<span class="name">p</span>&gt;</span></div><div class="line">        <span class="tag">&lt;/<span class="name">div</span>&gt;</span></div><div class="line">    <span class="tag">&lt;/<span class="name">div</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">"other"</span>&gt;</span></div><div class="line">        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Atque dolorem nam, in optio magni expedita corporis, labore veritatis delectus eaque ipsum aperiam ratione incidunt mollitia? Numquam, quos fugiat! Odit, nobis?</div><div class="line">        </div><div class="line">            Lorem ipsum dolor sit, amet consectetur adipisicing elit. Assumenda, vel adipisci libero quae sint iusto dignissimos quam quibusdam molestiae sunt dolore soluta nihil cumque sit? Quidem accusamus est ad iure.</div><div class="line">        </div><div class="line">            <span class="tag">&lt;<span class="name">p</span>&gt;</span><span class="tag">&lt;/<span class="name">p</span>&gt;</span></div><div class="line">            <span class="tag">&lt;<span class="name">p</span>&gt;</span><span class="tag">&lt;/<span class="name">p</span>&gt;</span></div><div class="line">            <span class="tag">&lt;<span class="name">p</span>&gt;</span><span class="tag">&lt;/<span class="name">p</span>&gt;</span></div><div class="line">            <span class="tag">&lt;<span class="name">p</span>&gt;</span><span class="tag">&lt;/<span class="name">p</span>&gt;</span></div><div class="line">            <span class="tag">&lt;<span class="name">p</span>&gt;</span><span class="tag">&lt;/<span class="name">p</span>&gt;</span></div><div class="line">            <span class="tag">&lt;<span class="name">p</span>&gt;</span><span class="tag">&lt;/<span class="name">p</span>&gt;</span></div><div class="line">            <span class="tag">&lt;<span class="name">p</span>&gt;</span><span class="tag">&lt;/<span class="name">p</span>&gt;</span></div><div class="line">            <span class="tag">&lt;<span class="name">p</span>&gt;</span><span class="tag">&lt;/<span class="name">p</span>&gt;</span></div><div class="line">            <span class="tag">&lt;<span class="name">p</span>&gt;</span><span class="tag">&lt;/<span class="name">p</span>&gt;</span></div><div class="line">            <span class="tag">&lt;<span class="name">p</span>&gt;</span><span class="tag">&lt;/<span class="name">p</span>&gt;</span></div><div class="line">            <span class="tag">&lt;<span class="name">p</span>&gt;</span><span class="tag">&lt;/<span class="name">p</span>&gt;</span></div><div class="line">            <span class="tag">&lt;<span class="name">p</span>&gt;</span><span class="tag">&lt;/<span class="name">p</span>&gt;</span></div><div class="line">            <span class="tag">&lt;<span class="name">p</span>&gt;</span><span class="tag">&lt;/<span class="name">p</span>&gt;</span></div><div class="line">            <span class="tag">&lt;<span class="name">p</span>&gt;</span><span class="tag">&lt;/<span class="name">p</span>&gt;</span></div><div class="line">            <span class="tag">&lt;<span class="name">p</span>&gt;</span><span class="tag">&lt;/<span class="name">p</span>&gt;</span></div><div class="line">            <span class="tag">&lt;<span class="name">p</span>&gt;</span><span class="tag">&lt;/<span class="name">p</span>&gt;</span></div><div class="line">            <span class="tag">&lt;<span class="name">p</span>&gt;</span><span class="tag">&lt;/<span class="name">p</span>&gt;</span></div><div class="line">            <span class="tag">&lt;<span class="name">p</span>&gt;</span><span class="tag">&lt;/<span class="name">p</span>&gt;</span></div><div class="line">            <span class="tag">&lt;<span class="name">p</span>&gt;</span><span class="tag">&lt;/<span class="name">p</span>&gt;</span></div><div class="line">            <span class="tag">&lt;<span class="name">p</span>&gt;</span><span class="tag">&lt;/<span class="name">p</span>&gt;</span></div><div class="line">            <span class="tag">&lt;<span class="name">p</span>&gt;</span><span class="tag">&lt;/<span class="name">p</span>&gt;</span></div><div class="line">            <span class="tag">&lt;<span class="name">p</span>&gt;</span><span class="tag">&lt;/<span class="name">p</span>&gt;</span></div><div class="line">            <span class="tag">&lt;<span class="name">p</span>&gt;</span><span class="tag">&lt;/<span class="name">p</span>&gt;</span></div><div class="line">            <span class="tag">&lt;<span class="name">p</span>&gt;</span><span class="tag">&lt;/<span class="name">p</span>&gt;</span></div><div class="line">            <span class="tag">&lt;<span class="name">p</span>&gt;</span><span class="tag">&lt;/<span class="name">p</span>&gt;</span></div><div class="line">            <span class="tag">&lt;<span class="name">p</span>&gt;</span><span class="tag">&lt;/<span class="name">p</span>&gt;</span></div><div class="line">            <span class="tag">&lt;<span class="name">p</span>&gt;</span><span class="tag">&lt;/<span class="name">p</span>&gt;</span></div><div class="line">    <span class="tag">&lt;/<span class="name">div</span>&gt;</span></div><div class="line"></div><div class="line">    <span class="tag">&lt;<span class="name">script</span>&gt;</span><span class="javascript"></span></div><div class="line">      (<span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</div><div class="line">        <span class="keyword">var</span> ua = navigator.userAgent,</div><div class="line">        iOS = <span class="regexp">/iPad|iPhone|iPod/</span>.test(ua),</div><div class="line">        iOS11 = <span class="regexp">/OS 11_0_1|OS 11_0_2|OS 11_0_3|OS 11_1/</span>.test(ua);</div><div class="line">        <span class="comment">// ios 11 bug caret position</span></div><div class="line">        <span class="keyword">if</span> (iOS &amp;&amp; iOS11) &#123;</div><div class="line">          <span class="built_in">document</span>.body.setAttribute(<span class="string">'class'</span>, <span class="string">'ios11'</span>)</div><div class="line">        &#125;</div><div class="line">      &#125;)()</div><div class="line">    <span class="tag">&lt;/<span class="name">script</span>&gt;</span></div><div class="line">  <span class="tag">&lt;/<span class="name">body</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></div></pre></td></tr></table></figure></p>
+<p><a id="height-100vh"></a><br><figure class="highlight xml"><table><tr><td class="code"><pre><div class="line"><span class="meta">&lt;!DOCTYPE html&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">html</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">head</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">title</span>&gt;</span>iOS11 cursor<span class="tag">&lt;/<span class="name">title</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">meta</span> <span class="attr">name</span>=<span class="string">"viewport"</span> <span class="attr">content</span>=<span class="string">"width=device-width"</span>&gt;</span></div><div class="line">  <span class="tag">&lt;/<span class="name">head</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">style</span>&gt;</span><span class="css"></span></div><div class="line">    </div><div class="line">    <span class="selector-tag">body</span> &#123;</div><div class="line">      <span class="attribute">height</span>: <span class="number">200vh</span>;</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    <span class="selector-class">.ios11</span> &#123;</div><div class="line">      <span class="attribute">height</span>: <span class="number">100%</span>;</div><div class="line">      <span class="attribute">overflow</span>: hidden;</div><div class="line">    &#125;</div><div class="line">    <span class="selector-class">.modal</span> &#123;</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    <span class="selector-class">.mask</span> &#123;</div><div class="line">      <span class="attribute">background</span>: black;</div><div class="line">      <span class="attribute">opacity</span>: <span class="number">0.3</span>;</div><div class="line">      <span class="attribute">position</span>: fixed;</div><div class="line">      <span class="attribute">left</span>: <span class="number">0</span>;</div><div class="line">      <span class="attribute">top</span>: <span class="number">0</span>;</div><div class="line">      <span class="attribute">right</span>: <span class="number">0</span>;</div><div class="line">      <span class="attribute">bottom</span>: <span class="number">0</span>;</div><div class="line">    &#125;</div><div class="line">    <span class="selector-class">.modal-ct</span> &#123;</div><div class="line">      <span class="attribute">position</span>: fixed;</div><div class="line">      <span class="attribute">left</span>: <span class="number">0</span>;</div><div class="line">      <span class="attribute">top</span>: <span class="number">0</span>;</div><div class="line">      <span class="attribute">right</span>: <span class="number">0</span>;</div><div class="line">      <span class="attribute">bottom</span>: <span class="number">0</span>;</div><div class="line">      <span class="attribute">padding-top</span>: <span class="number">100px</span>;</div><div class="line">    &#125;</div><div class="line">    <span class="selector-tag">input</span> &#123;</div><div class="line">      <span class="attribute">font-size</span>: <span class="number">16px</span>;</div><div class="line">    &#125;</div><div class="line">    <span class="selector-id">#other</span> &#123;</div><div class="line">      <span class="attribute">display</span>: none;</div><div class="line">    &#125;</div><div class="line">  <span class="tag">&lt;/<span class="name">style</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">body</span>&gt;</span></div><div class="line"></div><div class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"modal"</span>&gt;</span></div><div class="line">      <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"mask"</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></div><div class="line">        <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"modal-ct"</span>&gt;</span></div><div class="line">            <span class="tag">&lt;<span class="name">input</span> /&gt;</span></div><div class="line">            <span class="tag">&lt;<span class="name">p</span>&gt;</span>lorem<span class="tag">&lt;/<span class="name">p</span>&gt;</span></div><div class="line">            <span class="tag">&lt;<span class="name">p</span>&gt;</span>lorem<span class="tag">&lt;/<span class="name">p</span>&gt;</span></div><div class="line">            <span class="tag">&lt;<span class="name">p</span>&gt;</span>lorem<span class="tag">&lt;/<span class="name">p</span>&gt;</span></div><div class="line">            <span class="tag">&lt;<span class="name">p</span>&gt;</span>lorem<span class="tag">&lt;/<span class="name">p</span>&gt;</span></div><div class="line">            <span class="tag">&lt;<span class="name">p</span>&gt;</span>lorem<span class="tag">&lt;/<span class="name">p</span>&gt;</span></div><div class="line">            <span class="tag">&lt;<span class="name">p</span>&gt;</span>lorem<span class="tag">&lt;/<span class="name">p</span>&gt;</span></div><div class="line">            <span class="tag">&lt;<span class="name">p</span>&gt;</span>lorem<span class="tag">&lt;/<span class="name">p</span>&gt;</span></div><div class="line">            <span class="tag">&lt;<span class="name">p</span>&gt;</span>lorem<span class="tag">&lt;/<span class="name">p</span>&gt;</span></div><div class="line">            <span class="tag">&lt;<span class="name">p</span>&gt;</span>lorem<span class="tag">&lt;/<span class="name">p</span>&gt;</span></div><div class="line">            <span class="tag">&lt;<span class="name">p</span>&gt;</span>lorem<span class="tag">&lt;/<span class="name">p</span>&gt;</span></div><div class="line">            <span class="tag">&lt;<span class="name">p</span>&gt;</span>lorem<span class="tag">&lt;/<span class="name">p</span>&gt;</span></div><div class="line">            <span class="tag">&lt;<span class="name">p</span>&gt;</span>lorem<span class="tag">&lt;/<span class="name">p</span>&gt;</span></div><div class="line">            <span class="tag">&lt;<span class="name">p</span>&gt;</span>lorem<span class="tag">&lt;/<span class="name">p</span>&gt;</span></div><div class="line">            <span class="tag">&lt;<span class="name">p</span>&gt;</span>lorem<span class="tag">&lt;/<span class="name">p</span>&gt;</span></div><div class="line">            <span class="tag">&lt;<span class="name">p</span>&gt;</span>lorem<span class="tag">&lt;/<span class="name">p</span>&gt;</span></div><div class="line">            <span class="tag">&lt;<span class="name">p</span>&gt;</span>lorem<span class="tag">&lt;/<span class="name">p</span>&gt;</span></div><div class="line">            <span class="tag">&lt;<span class="name">p</span>&gt;</span>lorem<span class="tag">&lt;/<span class="name">p</span>&gt;</span></div><div class="line">            <span class="tag">&lt;<span class="name">p</span>&gt;</span>lorem<span class="tag">&lt;/<span class="name">p</span>&gt;</span></div><div class="line">            <span class="tag">&lt;<span class="name">p</span>&gt;</span>lorem<span class="tag">&lt;/<span class="name">p</span>&gt;</span></div><div class="line">            <span class="tag">&lt;<span class="name">p</span>&gt;</span>lorem<span class="tag">&lt;/<span class="name">p</span>&gt;</span></div><div class="line">            <span class="tag">&lt;<span class="name">p</span>&gt;</span>lorem<span class="tag">&lt;/<span class="name">p</span>&gt;</span></div><div class="line">            <span class="tag">&lt;<span class="name">p</span>&gt;</span>lorem<span class="tag">&lt;/<span class="name">p</span>&gt;</span></div><div class="line">            <span class="tag">&lt;<span class="name">p</span>&gt;</span>lorem<span class="tag">&lt;/<span class="name">p</span>&gt;</span></div><div class="line">            <span class="tag">&lt;<span class="name">p</span>&gt;</span>lorem<span class="tag">&lt;/<span class="name">p</span>&gt;</span></div><div class="line">            <span class="tag">&lt;<span class="name">p</span>&gt;</span>lorem<span class="tag">&lt;/<span class="name">p</span>&gt;</span></div><div class="line">            <span class="tag">&lt;<span class="name">p</span>&gt;</span>lorem<span class="tag">&lt;/<span class="name">p</span>&gt;</span></div><div class="line">            <span class="tag">&lt;<span class="name">p</span>&gt;</span>lorem<span class="tag">&lt;/<span class="name">p</span>&gt;</span></div><div class="line">            <span class="tag">&lt;<span class="name">p</span>&gt;</span>lorem<span class="tag">&lt;/<span class="name">p</span>&gt;</span></div><div class="line">            <span class="tag">&lt;<span class="name">p</span>&gt;</span>lorem<span class="tag">&lt;/<span class="name">p</span>&gt;</span></div><div class="line">            <span class="tag">&lt;<span class="name">p</span>&gt;</span>lorem<span class="tag">&lt;/<span class="name">p</span>&gt;</span></div><div class="line">            <span class="tag">&lt;<span class="name">p</span>&gt;</span>lorem<span class="tag">&lt;/<span class="name">p</span>&gt;</span></div><div class="line">            <span class="tag">&lt;<span class="name">p</span>&gt;</span>lorem<span class="tag">&lt;/<span class="name">p</span>&gt;</span></div><div class="line">            <span class="tag">&lt;<span class="name">p</span>&gt;</span>lorem<span class="tag">&lt;/<span class="name">p</span>&gt;</span></div><div class="line">            <span class="tag">&lt;<span class="name">p</span>&gt;</span>lorem<span class="tag">&lt;/<span class="name">p</span>&gt;</span></div><div class="line">            <span class="tag">&lt;<span class="name">p</span>&gt;</span>lorem<span class="tag">&lt;/<span class="name">p</span>&gt;</span></div><div class="line">        <span class="tag">&lt;/<span class="name">div</span>&gt;</span></div><div class="line">    <span class="tag">&lt;/<span class="name">div</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">"other"</span>&gt;</span></div><div class="line">        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Atque dolorem nam, in optio magni expedita corporis, labore veritatis delectus eaque ipsum aperiam ratione incidunt mollitia? Numquam, quos fugiat! Odit, nobis?</div><div class="line">        </div><div class="line">            Lorem ipsum dolor sit, amet consectetur adipisicing elit. Assumenda, vel adipisci libero quae sint iusto dignissimos quam quibusdam molestiae sunt dolore soluta nihil cumque sit? Quidem accusamus est ad iure.</div><div class="line">        </div><div class="line">            <span class="tag">&lt;<span class="name">p</span>&gt;</span><span class="tag">&lt;/<span class="name">p</span>&gt;</span></div><div class="line">            <span class="tag">&lt;<span class="name">p</span>&gt;</span><span class="tag">&lt;/<span class="name">p</span>&gt;</span></div><div class="line">            <span class="tag">&lt;<span class="name">p</span>&gt;</span><span class="tag">&lt;/<span class="name">p</span>&gt;</span></div><div class="line">            <span class="tag">&lt;<span class="name">p</span>&gt;</span><span class="tag">&lt;/<span class="name">p</span>&gt;</span></div><div class="line">            <span class="tag">&lt;<span class="name">p</span>&gt;</span><span class="tag">&lt;/<span class="name">p</span>&gt;</span></div><div class="line">            <span class="tag">&lt;<span class="name">p</span>&gt;</span><span class="tag">&lt;/<span class="name">p</span>&gt;</span></div><div class="line">            <span class="tag">&lt;<span class="name">p</span>&gt;</span><span class="tag">&lt;/<span class="name">p</span>&gt;</span></div><div class="line">            <span class="tag">&lt;<span class="name">p</span>&gt;</span><span class="tag">&lt;/<span class="name">p</span>&gt;</span></div><div class="line">            <span class="tag">&lt;<span class="name">p</span>&gt;</span><span class="tag">&lt;/<span class="name">p</span>&gt;</span></div><div class="line">            <span class="tag">&lt;<span class="name">p</span>&gt;</span><span class="tag">&lt;/<span class="name">p</span>&gt;</span></div><div class="line">            <span class="tag">&lt;<span class="name">p</span>&gt;</span><span class="tag">&lt;/<span class="name">p</span>&gt;</span></div><div class="line">            <span class="tag">&lt;<span class="name">p</span>&gt;</span><span class="tag">&lt;/<span class="name">p</span>&gt;</span></div><div class="line">            <span class="tag">&lt;<span class="name">p</span>&gt;</span><span class="tag">&lt;/<span class="name">p</span>&gt;</span></div><div class="line">            <span class="tag">&lt;<span class="name">p</span>&gt;</span><span class="tag">&lt;/<span class="name">p</span>&gt;</span></div><div class="line">            <span class="tag">&lt;<span class="name">p</span>&gt;</span><span class="tag">&lt;/<span class="name">p</span>&gt;</span></div><div class="line">            <span class="tag">&lt;<span class="name">p</span>&gt;</span><span class="tag">&lt;/<span class="name">p</span>&gt;</span></div><div class="line">            <span class="tag">&lt;<span class="name">p</span>&gt;</span><span class="tag">&lt;/<span class="name">p</span>&gt;</span></div><div class="line">            <span class="tag">&lt;<span class="name">p</span>&gt;</span><span class="tag">&lt;/<span class="name">p</span>&gt;</span></div><div class="line">            <span class="tag">&lt;<span class="name">p</span>&gt;</span><span class="tag">&lt;/<span class="name">p</span>&gt;</span></div><div class="line">            <span class="tag">&lt;<span class="name">p</span>&gt;</span><span class="tag">&lt;/<span class="name">p</span>&gt;</span></div><div class="line">            <span class="tag">&lt;<span class="name">p</span>&gt;</span><span class="tag">&lt;/<span class="name">p</span>&gt;</span></div><div class="line">            <span class="tag">&lt;<span class="name">p</span>&gt;</span><span class="tag">&lt;/<span class="name">p</span>&gt;</span></div><div class="line">            <span class="tag">&lt;<span class="name">p</span>&gt;</span><span class="tag">&lt;/<span class="name">p</span>&gt;</span></div><div class="line">            <span class="tag">&lt;<span class="name">p</span>&gt;</span><span class="tag">&lt;/<span class="name">p</span>&gt;</span></div><div class="line">            <span class="tag">&lt;<span class="name">p</span>&gt;</span><span class="tag">&lt;/<span class="name">p</span>&gt;</span></div><div class="line">            <span class="tag">&lt;<span class="name">p</span>&gt;</span><span class="tag">&lt;/<span class="name">p</span>&gt;</span></div><div class="line">            <span class="tag">&lt;<span class="name">p</span>&gt;</span><span class="tag">&lt;/<span class="name">p</span>&gt;</span></div><div class="line">    <span class="tag">&lt;/<span class="name">div</span>&gt;</span></div><div class="line"></div><div class="line">    <span class="tag">&lt;<span class="name">script</span>&gt;</span><span class="javascript"></span></div><div class="line">      (<span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</div><div class="line">        <span class="keyword">var</span> ua = navigator.userAgent,</div><div class="line">        iOS = <span class="regexp">/iPad|iPhone|iPod/</span>.test(ua),</div><div class="line">        iOS11 = <span class="regexp">/OS 11_0_1|OS 11_0_2|OS 11_0_3|OS 11_1/</span>.test(ua);</div><div class="line">        <span class="comment">// ios 11 bug caret position</span></div><div class="line">        <span class="keyword">if</span> (iOS &amp;&amp; iOS11) &#123;</div><div class="line">          <span class="built_in">document</span>.body.setAttribute(<span class="string">'class'</span>, <span class="string">'ios11'</span>)</div><div class="line">        &#125;</div><div class="line">      &#125;)()</div><div class="line">    <span class="tag">&lt;/<span class="name">script</span>&gt;</span></div><div class="line">  <span class="tag">&lt;/<span class="name">body</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></div></pre></td></tr></table></figure></p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;最近遇到一个新鲜的 bug —— iOS11 Safari 中 modal 上的 input 光标不跟随焦点，即当 input 获得焦点准备输入时，光标并不在 input 元素中。&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="前端" scheme="https://kerita.github.io/categories/%E5%89%8D%E7%AB%AF/"/>
+    
+    
+      <category term="iOS" scheme="https://kerita.github.io/tags/iOS/"/>
+    
+  </entry>
+  
+  <entry>
     <title>用 VPS 自己搭个梯子</title>
     <link href="https://kerita.github.io/2017/10/26/2017/vps/"/>
     <id>https://kerita.github.io/2017/10/26/2017/vps/</id>
     <published>2017-10-25T16:00:00.000Z</published>
-    <updated>2017-10-26T16:42:34.468Z</updated>
+    <updated>2017-12-03T16:13:45.962Z</updated>
     
     <content type="html"><![CDATA[<p>在某个很平凡的夜晚，因为无法打开某个链接，开始知道墙（GFW——the Great Firewall），也开始寻找翻墙的工具，一定要到墙外去看看。</p>
 <a id="more"></a>
@@ -44,37 +122,6 @@
     
     
       <category term="VPS" scheme="https://kerita.github.io/tags/VPS/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>青峰</title>
-    <link href="https://kerita.github.io/2017/10/03/2017/qingfeng/"/>
-    <id>https://kerita.github.io/2017/10/03/2017/qingfeng/</id>
-    <published>2017-10-02T16:00:00.000Z</published>
-    <updated>2017-10-26T13:54:43.809Z</updated>
-    
-    <content type="html"><![CDATA[<p>在很长一段时间，我都是将对明星作品的喜欢与对明星的喜欢分开，即喜欢他的作品不一定喜欢这个人，当然也不讨厌。无论是五月天、周杰伦、陈奕迅，还是赵雷、许巍、逃跑计划，虽然他们的歌在某一瞬间或者某一段时间，让我产生共鸣，但对于他们的喜欢都只停留在歌曲上。而青峰，苏打绿的主唱，唱《小情歌》的那个人，成为了打破这个规则第一人。</p>
-<a id="more"></a>
-<iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width="330" height="86" src="//music.163.com/outchain/player?type=2&id=32019043&auto=1&height=66"></iframe>
-
-
-<p>我也在想为什么会因为喜欢他唱的歌喜欢这个人？一个无论是动作和嗓音都有点“女性化特质”的男歌手。大概是因为他的创作、他的歌声如他自己的所说的“像棉一样带给人温暖舒服的感觉”，在触碰听者心底最柔软地方的同时，又不失勇敢和坚毅。而其他优秀的歌手离心底，都还有一些距离。</p>
-<p>这里推荐一些个人觉得比较有代表性的歌曲：《无与伦比的美丽》、《相信》、《只有可以》、《带我走》，也期待你分享动听的歌与让人喜欢的歌手。</p>
-<p>当然说到青峰，不能不说张悬，有兴趣的话去了解他们的故事，并听听她的《宝贝》。</p>
-<p>最后说一句，他们2016年开始休团三年，不发专辑不开演唱会。一起等待他们复出的那一天吧。</p>
-<div style="text-align:center"><br><img src="/2017/10/03/2017/qingfeng/beauty.png" alt="无与伦比的美丽" title="无与伦比的美丽"><br></div>]]></content>
-    
-    <summary type="html">
-    
-      &lt;p&gt;在很长一段时间，我都是将对明星作品的喜欢与对明星的喜欢分开，即喜欢他的作品不一定喜欢这个人，当然也不讨厌。无论是五月天、周杰伦、陈奕迅，还是赵雷、许巍、逃跑计划，虽然他们的歌在某一瞬间或者某一段时间，让我产生共鸣，但对于他们的喜欢都只停留在歌曲上。而青峰，苏打绿的主唱，唱《小情歌》的那个人，成为了打破这个规则第一人。&lt;/p&gt;
-    
-    </summary>
-    
-      <category term="名人" scheme="https://kerita.github.io/categories/%E5%90%8D%E4%BA%BA/"/>
-    
-    
-      <category term="苏打绿" scheme="https://kerita.github.io/tags/%E8%8B%8F%E6%89%93%E7%BB%BF/"/>
     
   </entry>
   
@@ -117,11 +164,42 @@
   </entry>
   
   <entry>
+    <title>青峰</title>
+    <link href="https://kerita.github.io/2017/10/03/2017/qingfeng/"/>
+    <id>https://kerita.github.io/2017/10/03/2017/qingfeng/</id>
+    <published>2017-10-02T16:00:00.000Z</published>
+    <updated>2017-10-26T13:54:43.809Z</updated>
+    
+    <content type="html"><![CDATA[<p>在很长一段时间，我都是将对明星作品的喜欢与对明星的喜欢分开，即喜欢他的作品不一定喜欢这个人，当然也不讨厌。无论是五月天、周杰伦、陈奕迅，还是赵雷、许巍、逃跑计划，虽然他们的歌在某一瞬间或者某一段时间，让我产生共鸣，但对于他们的喜欢都只停留在歌曲上。而青峰，苏打绿的主唱，唱《小情歌》的那个人，成为了打破这个规则第一人。</p>
+<a id="more"></a>
+<iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width="330" height="86" src="//music.163.com/outchain/player?type=2&id=32019043&auto=1&height=66"></iframe>
+
+
+<p>我也在想为什么会因为喜欢他唱的歌喜欢这个人？一个无论是动作和嗓音都有点“女性化特质”的男歌手。大概是因为他的创作、他的歌声如他自己的所说的“像棉一样带给人温暖舒服的感觉”，在触碰听者心底最柔软地方的同时，又不失勇敢和坚毅。而其他优秀的歌手离心底，都还有一些距离。</p>
+<p>这里推荐一些个人觉得比较有代表性的歌曲：《无与伦比的美丽》、《相信》、《只有可以》、《带我走》，也期待你分享动听的歌与让人喜欢的歌手。</p>
+<p>当然说到青峰，不能不说张悬，有兴趣的话去了解他们的故事，并听听她的《宝贝》。</p>
+<p>最后说一句，他们2016年开始休团三年，不发专辑不开演唱会。一起等待他们复出的那一天吧。</p>
+<div style="text-align:center"><br><img src="/2017/10/03/2017/qingfeng/beauty.png" alt="无与伦比的美丽" title="无与伦比的美丽"><br></div>]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;在很长一段时间，我都是将对明星作品的喜欢与对明星的喜欢分开，即喜欢他的作品不一定喜欢这个人，当然也不讨厌。无论是五月天、周杰伦、陈奕迅，还是赵雷、许巍、逃跑计划，虽然他们的歌在某一瞬间或者某一段时间，让我产生共鸣，但对于他们的喜欢都只停留在歌曲上。而青峰，苏打绿的主唱，唱《小情歌》的那个人，成为了打破这个规则第一人。&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="名人" scheme="https://kerita.github.io/categories/%E5%90%8D%E4%BA%BA/"/>
+    
+    
+      <category term="苏打绿" scheme="https://kerita.github.io/tags/%E8%8B%8F%E6%89%93%E7%BB%BF/"/>
+    
+  </entry>
+  
+  <entry>
     <title>Awards 项目总结</title>
     <link href="https://kerita.github.io/2017/09/24/2017/awards-project/"/>
     <id>https://kerita.github.io/2017/09/24/2017/awards-project/</id>
     <published>2017-09-23T16:00:00.000Z</published>
-    <updated>2017-10-12T11:23:17.560Z</updated>
+    <updated>2017-10-12T11:23:17.561Z</updated>
     
     <content type="html"><![CDATA[<p>本周二（19号）彻底完成公司 Awards 项目的需求和需求修改并上线，趁热打铁写下完成项目过程的一些思考。</p>
 <a id="more"></a>
@@ -199,7 +277,7 @@
     <link href="https://kerita.github.io/2017/09/20/2017/take-me-to-your-heart/"/>
     <id>https://kerita.github.io/2017/09/20/2017/take-me-to-your-heart/</id>
     <published>2017-09-19T16:00:00.000Z</published>
-    <updated>2017-09-20T15:44:47.844Z</updated>
+    <updated>2017-09-20T15:44:47.845Z</updated>
     
     <content type="html"><![CDATA[<p>《带我走》- 苏打绿<br><a id="more"></a></p>
 <iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width="330" height="86" src="//music.163.com/outchain/player?type=2&id=27946612&auto=1&height=66"></iframe>
@@ -289,7 +367,7 @@
     <link href="https://kerita.github.io/2017/08/21/2017/audio-cannot-autoplay-in-iOS/"/>
     <id>https://kerita.github.io/2017/08/21/2017/audio-cannot-autoplay-in-iOS/</id>
     <published>2017-08-20T16:00:00.000Z</published>
-    <updated>2017-08-21T16:43:35.667Z</updated>
+    <updated>2017-08-21T16:43:35.668Z</updated>
     
     <content type="html"><![CDATA[<p>Bieber走后，开始接手公司的全景分享系统，主要是利用这个系统做一些活动页面。有个需求需要在 h5 中加背景音乐，打开链接后立即播放。原本想不就是 audio 标签加 autoplay 属性值吗？简单。但如果这么简单就不会有这篇文章了。</p>
 <a id="more"></a>
@@ -404,7 +482,7 @@
     <link href="https://kerita.github.io/2017/07/10/2017/markdown-skills/"/>
     <id>https://kerita.github.io/2017/07/10/2017/markdown-skills/</id>
     <published>2017-07-09T16:00:00.000Z</published>
-    <updated>2017-07-10T12:00:44.928Z</updated>
+    <updated>2017-07-10T12:00:44.929Z</updated>
     
     <content type="html"><![CDATA[<p>最近经常用markdown写作，特别是将线上笔记本切换到为知笔记之后。使用频率增加就想提高效率，参考网上的文章，整理了这篇Markdown的小技巧。</p>
 <a id="more"></a>
@@ -464,7 +542,7 @@
     <link href="https://kerita.github.io/2017/07/09/2017/find-house/"/>
     <id>https://kerita.github.io/2017/07/09/2017/find-house/</id>
     <published>2017-07-08T16:00:00.000Z</published>
-    <updated>2017-08-18T14:43:44.406Z</updated>
+    <updated>2017-08-18T14:43:44.407Z</updated>
     
     <content type="html"><![CDATA[<p>七月毕业，离开学校回到深圳才开始找房，其实这个时候找房子有点晚了，蛮多毕业生六月份就提前找好房子了。</p>
 <a id="more"></a>
@@ -591,7 +669,7 @@
     <link href="https://kerita.github.io/2017/06/25/2017/a-cold-in-2017/"/>
     <id>https://kerita.github.io/2017/06/25/2017/a-cold-in-2017/</id>
     <published>2017-06-24T16:00:00.000Z</published>
-    <updated>2017-08-03T15:43:10.692Z</updated>
+    <updated>2017-08-03T15:43:10.693Z</updated>
     
     <content type="html"><![CDATA[<p>之所以写下这篇文章，不只是想记录下这次感冒的过程，而是为了提醒自己该运动了。无论搬家了与否，都应该运动。没搬家照旧在天健，搬家了在新家附近，并且还有Keep可以做呢。谨记谨记。<br><a id="more"></a></p>
 <h3 id="开始感冒"><a href="#开始感冒" class="headerlink" title="开始感冒"></a>开始感冒</h3><p>最近身体状态真是极差，今年（2017年）大概5月的时候就有一次喉咙痛接近感冒，6月23号晚身体开始出现疲惫状态，然后是全身酸痛，即使下床喝了一包999感冒冲剂也无济于事。还有晚上的空调吹得我瑟瑟发抖，脚一直发冷，迷迷糊糊中选择了不作为，第二天早上中午症状更加严重。<br><!--more--><br>身体酸痛发软疲劳，甚至连午饭都吃不下去，扒了几口之后就回床上睡觉了，睡到下午四点多的时候状态恢复一点立马跑去校医室。</p>
@@ -648,7 +726,7 @@
     <link href="https://kerita.github.io/2017/06/12/2017/about-module/"/>
     <id>https://kerita.github.io/2017/06/12/2017/about-module/</id>
     <published>2017-06-11T16:00:00.000Z</published>
-    <updated>2017-08-18T14:42:45.742Z</updated>
+    <updated>2017-08-18T14:42:45.743Z</updated>
     
     <content type="html"><![CDATA[<p>前端模块化这个概念自从去年开始一直出现在视野里，在某次面试的时候还被问傻眼了，但都整理这方面的知识，这一次决定彻底清楚。跑题了，回到正题。模块化是啥？简单来说，前端JS文件越来越多，而且相互之间还存在着依赖关系，利用模块化可以更好地管理和加载这些JS文件。<br><a id="more"></a></p>
 <p>本文主要是对前端模块化common.js,AMD,CMD和模块加载器require.js,sea.js和webpack进行梳理。</p>
@@ -694,7 +772,7 @@
     <link href="https://kerita.github.io/2017/01/22/2017/hello-world/"/>
     <id>https://kerita.github.io/2017/01/22/2017/hello-world/</id>
     <published>2017-01-21T16:00:00.000Z</published>
-    <updated>2017-06-12T12:26:30.977Z</updated>
+    <updated>2017-06-12T12:26:30.978Z</updated>
     
     <content type="html"><![CDATA[<p>Welcome to <a href="https://hexo.io/" target="_blank" rel="external">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="external">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="external">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="external">GitHub</a>.</p>
 <a id="more"></a>
