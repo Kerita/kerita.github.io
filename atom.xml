@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://kerita.github.io/"/>
-  <updated>2018-02-12T11:39:57.355Z</updated>
+  <updated>2018-02-13T18:08:37.690Z</updated>
   <id>https://kerita.github.io/</id>
   
   <author>
@@ -16,18 +16,73 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>动手写一个微博机器人</title>
+    <link href="https://kerita.github.io/2018/02/13/2018/weibo-robot/"/>
+    <id>https://kerita.github.io/2018/02/13/2018/weibo-robot/</id>
+    <published>2018-02-12T16:00:00.000Z</published>
+    <updated>2018-02-13T18:08:37.690Z</updated>
+    
+    <content type="html"><![CDATA[<p>在 <a href="https://weibo.com/1400854834/FE4pC8Rwh?type=comment#_rnd1518538999890" target="_blank" rel="external">@ruanyf</a> 老师的微博上看到“有人用推特定时发推告诉你今年的进度”，想着可以写一个微博机器人每天自动发微博倒数，一番折腾之后已经上线了，请戳 <a href="https://weibo.com/kerita" target="_blank" rel="external">@  201X进度条</a>。</p>
+<a id="more"></a>
+<p>具体实现过程如下（使用的语言是 Node.js）：</p>
+<h2 id="申请微博网页应用"><a href="#申请微博网页应用" class="headerlink" title="申请微博网页应用"></a>申请微博网页应用</h2><p>在 <a href="http://open.weibo.com/connect" target="_blank" rel="external">微博开放平台</a> 申请一个网页应用<br> <div style="text-align:center"><br> <img src="/2018/02/13/2018/weibo-robot/test-web-app.png" alt="申请应用" title="申请应用"><br> </div></p>
+<h2 id="获取应用-token"><a href="#获取应用-token" class="headerlink" title="获取应用 token"></a>获取应用 token</h2><p>在 <a href="http://open.weibo.com/tools/console" target="_blank" rel="external">API测试工具</a> 获取应用 token，取得接入权限<br> <div style="text-align:center"><br> <img src="/2018/02/13/2018/weibo-robot/get-token.png" alt="获取 token" title="获取 token"><br> </div></p>
+<h2 id="修改-nodewibo-包"><a href="#修改-nodewibo-包" class="headerlink" title="修改 nodewibo 包"></a>修改 nodewibo 包</h2><p>项目是利用 nodeweibo 包来发送微博，因为新浪微博接口的权限调整，所以需要自己修改 nodewibo 包。在 nodeweibo 包 lib/config/config.json 文件增加如下代码（其实是增加 share 接口）。<br><figure class="highlight json"><table><tr><td class="code"><pre><div class="line">&#123;</div><div class="line">	<span class="attr">"func"</span>:<span class="string">"share"</span>,</div><div class="line">	<span class="attr">"host"</span>:<span class="string">"https://api.weibo.com"</span>,</div><div class="line">	<span class="attr">"path"</span>:<span class="string">"/2/statuses/share.json"</span>,</div><div class="line">	<span class="attr">"rmethod"</span>:[<span class="string">"POST"</span>]</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<h2 id="利用-node-schedule-包定时发送微博"><a href="#利用-node-schedule-包定时发送微博" class="headerlink" title="利用 node-schedule 包定时发送微博"></a>利用 node-schedule 包定时发送微博</h2><p>利用 node-schedule 设置定时服务， 利用上面新增的 nodeweibo share 接口，手动将 token 作为参数，发送微博。<br> <div style="text-align:center"><br> <img src="/2018/02/13/2018/weibo-robot/weibo.png" alt="发送微博" title="发送微博"><br> </div></p>
+<h2 id="未审核应用"><a href="#未审核应用" class="headerlink" title="未审核应用"></a>未审核应用</h2><p>上面看到应用名称为未审核，只要补全资料，提交申请，就能显示真正的应用名称，审核还是很容易通过的。</p>
+<h2 id="其他功能"><a href="#其他功能" class="headerlink" title="其他功能"></a>其他功能</h2><p>nodeweibo 包接口丰富，除了发微博，还可以定时发表评论、获取时间线微博、定时读取某个用户微博等,可以继续拓展。</p>
+<h2 id="上线"><a href="#上线" class="headerlink" title="上线"></a>上线</h2><p>代码放到阿里云服务器，利用 pm2 运行并守护进程。</p>
+<h2 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h2><p>完整代码将稍后整理好，补上</p>
+<h2 id="参考资料"><a href="#参考资料" class="headerlink" title="参考资料"></a>参考资料</h2><p><a href="http://blog.haipo.me/?p=1168" target="_blank" rel="external">微博比特币价格机器人</a></p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;在 &lt;a href=&quot;https://weibo.com/1400854834/FE4pC8Rwh?type=comment#_rnd1518538999890&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;@ruanyf&lt;/a&gt; 老师的微博上看到“有人用推特定时发推告诉你今年的进度”，想着可以写一个微博机器人每天自动发微博倒数，一番折腾之后已经上线了，请戳 &lt;a href=&quot;https://weibo.com/kerita&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;@  201X进度条&lt;/a&gt;。&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="node" scheme="https://kerita.github.io/categories/node/"/>
+    
+    
+      <category term="应用" scheme="https://kerita.github.io/tags/%E5%BA%94%E7%94%A8/"/>
+    
+  </entry>
+  
+  <entry>
     <title>人生的意义</title>
     <link href="https://kerita.github.io/2018/02/12/2018/the%20meaning%20of%20life/"/>
     <id>https://kerita.github.io/2018/02/12/2018/the meaning of life/</id>
     <published>2018-02-11T16:00:00.000Z</published>
-    <updated>2018-02-12T11:39:57.355Z</updated>
+    <updated>2018-02-13T16:16:57.183Z</updated>
+    
+    <content type="html"><![CDATA[<p>“你们活着是为了什么？为啥我经常会觉得一切都没啥意义呢……”。在朋友圈看到这段话，是让我写下这篇文章的最重要原因。</p>
+<a id="more"></a>
+<p>毕业几个月后，一天天重复码代码生活，在情绪低落的时候，也会问自己，“人生的意义是什么？”</p>
+<p>在朋友圈看到上面那段话，发现不是只有我一个人有这种疑问，所以我应该把自己答案，希望给其他人一些启迪。</p>
+<p>稻盛和夫在《活法》中如是说，“所谓今生，是一个为了提高身心修养而得到的期限，是为了修炼灵魂而得到的场所。我认为可以这样说：人生活着的意义和人生的价值就是提高身心修养，修炼灵魂”。虽然“提高身心修养，修炼灵魂”听起来太过于缥缈，但是那一刻，我仿佛看到一点人生的意义——写博客。</p>
+<p>我会在博客中记录下编程遇到的坑、分享学习笔记以及一些个人的思考，期待这些能给其他人带来帮助。就算有一天我死了，只要互联网还存在，我就依然活着，这就是我想写博客的原因。</p>
+<p>今年的目标是，通过多更博和优化搜索，2019年1月的 UV 能达到 1000，上个月（2018年1月）大概是 100。</p>
+<ul>
+<li><p>春节十天，每天一更（主题已经有预备很多了）</p>
+</li>
+<li><p>3月起每月至少一更</p>
+</li>
+<li><p>优化谷歌搜索和百度搜索</p>
+</li>
+</ul>
+]]></content>
     
     <summary type="html">
+    
+      &lt;p&gt;“你们活着是为了什么？为啥我经常会觉得一切都没啥意义呢……”。在朋友圈看到这段话，是让我写下这篇文章的最重要原因。&lt;/p&gt;
     
     </summary>
     
       <category term="总结" scheme="https://kerita.github.io/categories/%E6%80%BB%E7%BB%93/"/>
     
+    
+      <category term="人生" scheme="https://kerita.github.io/tags/%E4%BA%BA%E7%94%9F/"/>
     
   </entry>
   
@@ -673,7 +728,7 @@
     <link href="https://kerita.github.io/2017/06/13/2017/test-image/"/>
     <id>https://kerita.github.io/2017/06/13/2017/test-image/</id>
     <published>2017-06-13T02:57:14.000Z</published>
-    <updated>2017-07-10T11:49:58.156Z</updated>
+    <updated>2018-02-13T17:27:18.958Z</updated>
     
     <content type="html"><![CDATA[<p><strong> 如何在Markdown中插入图片，使得编译之后，在hexo首页和文章页都能看到呢？ </strong></p>
 <a id="more"></a>
