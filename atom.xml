@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://kerita.github.io/"/>
-  <updated>2018-02-13T18:08:37.690Z</updated>
+  <updated>2018-02-18T16:08:01.548Z</updated>
   <id>https://kerita.github.io/</id>
   
   <author>
@@ -14,6 +14,260 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>z-index 不起作用</title>
+    <link href="https://kerita.github.io/2018/02/18/2018/z-index-not-work/"/>
+    <id>https://kerita.github.io/2018/02/18/2018/z-index-not-work/</id>
+    <published>2018-02-17T16:00:00.000Z</published>
+    <updated>2018-02-18T16:08:01.548Z</updated>
+    
+    <content type="html"><![CDATA[<p>z-index 只在 position 非 static 的元素生效,而一个元素的 position 默认为 static，static 元素想让  z-index 生效，可以设置元素 position 为 relative。</p>
+<a id="more"></a>]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;z-index 只在 position 非 static 的元素生效,而一个元素的 position 默认为 static，static 元素想让  z-index 生效，可以设置元素 position 为 relative。&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="前端" scheme="https://kerita.github.io/categories/%E5%89%8D%E7%AB%AF/"/>
+    
+    
+      <category term="CSS" scheme="https://kerita.github.io/tags/CSS/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>JSX 中自定义属性</title>
+    <link href="https://kerita.github.io/2018/02/17/2018/jsx-custom-attr/"/>
+    <id>https://kerita.github.io/2018/02/17/2018/jsx-custom-attr/</id>
+    <published>2018-02-16T16:00:00.000Z</published>
+    <updated>2018-02-18T16:04:13.898Z</updated>
+    
+    <content type="html"><![CDATA[<p>JSX 用来定义 React 组件的 DOM 结构，其规则跟 HTML 基本相同，但还是有一些差异。例如 HTML 建议自定义属性以 data-* 命名，JSX 则是强制，因为如果不以这种方式命名，就不生效。</p>
+<a id="more"></a>
+<p>商城在对接某第三方支付公司信用卡接口的时候，他们的自定义属性不以 data-* 命名，导致数据一直获取不到。</p>
+<p>后来发现利用 JS setAttribute() 手动设置非标准的自定义属性可以生效，直接写在 JSX 不行。</p>
+<p>可以在 componentDidMount 函数中进行设置。</p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;JSX 用来定义 React 组件的 DOM 结构，其规则跟 HTML 基本相同，但还是有一些差异。例如 HTML 建议自定义属性以 data-* 命名，JSX 则是强制，因为如果不以这种方式命名，就不生效。&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="前端" scheme="https://kerita.github.io/categories/%E5%89%8D%E7%AB%AF/"/>
+    
+    
+      <category term="React" scheme="https://kerita.github.io/tags/React/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>rg.exe 占用 100% CPU</title>
+    <link href="https://kerita.github.io/2018/02/16/2018/vscode-rg/"/>
+    <id>https://kerita.github.io/2018/02/16/2018/vscode-rg/</id>
+    <published>2018-02-15T16:00:00.000Z</published>
+    <updated>2018-02-18T15:55:06.200Z</updated>
+    
+    <content type="html"><![CDATA[<p>Windows 上使用 VSCode 遇到一个问题，打开项目时，整个电脑基本卡死，Ctrl+Shift+Esc 发现 rg.exe 占用 100% 的 CPU。<br><a id="more"></a><br>在 github 看到，是因为是 cnpm 的原因，解决方法如下：</p>
+<h2 id="下载-vscode1-18以上版本"><a href="#下载-vscode1-18以上版本" class="headerlink" title="下载 vscode1.18以上版本"></a>下载 vscode1.18以上版本</h2><h2 id="增加配置"><a href="#增加配置" class="headerlink" title="增加配置"></a>增加配置</h2><p>安装完成后 文件&gt;首选项&gt;设置<br><figure class="highlight actionscript"><table><tr><td class="code"><pre><div class="line"><span class="string">"search.followSymlinks"</span>: <span class="literal">false</span></div></pre></td></tr></table></figure></p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;Windows 上使用 VSCode 遇到一个问题，打开项目时，整个电脑基本卡死，Ctrl+Shift+Esc 发现 rg.exe 占用 100% 的 CPU。&lt;br&gt;
+    
+    </summary>
+    
+      <category term="小技巧" scheme="https://kerita.github.io/categories/%E5%B0%8F%E6%8A%80%E5%B7%A7/"/>
+    
+    
+      <category term="vscode" scheme="https://kerita.github.io/tags/vscode/"/>
+    
+      <category term="编辑器" scheme="https://kerita.github.io/tags/%E7%BC%96%E8%BE%91%E5%99%A8/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>React 组件清除定时器</title>
+    <link href="https://kerita.github.io/2018/02/16/2018/clear-interval/"/>
+    <id>https://kerita.github.io/2018/02/16/2018/clear-interval/</id>
+    <published>2018-02-15T16:00:00.000Z</published>
+    <updated>2018-02-18T15:47:17.464Z</updated>
+    
+    <content type="html"><![CDATA[<p>在 React 组件定义一个计时器，在组件卸载的时候就应该清除掉。</p>
+<a id="more"></a>
+<figure class="highlight kotlin"><table><tr><td class="code"><pre><div class="line">componentWillUnmount () &#123;</div><div class="line">    <span class="keyword">this</span>.loadInterval &amp;&amp; clearInterval(<span class="keyword">this</span>.loadInterval)</div><div class="line">    <span class="keyword">this</span>.loadInterval = <span class="literal">false</span></div><div class="line">&#125;</div></pre></td></tr></table></figure>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;在 React 组件定义一个计时器，在组件卸载的时候就应该清除掉。&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="前端" scheme="https://kerita.github.io/categories/%E5%89%8D%E7%AB%AF/"/>
+    
+    
+      <category term="React" scheme="https://kerita.github.io/tags/React/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>React 小技巧</title>
+    <link href="https://kerita.github.io/2018/02/15/2018/react-tip/"/>
+    <id>https://kerita.github.io/2018/02/15/2018/react-tip/</id>
+    <published>2018-02-14T16:00:00.000Z</published>
+    <updated>2018-02-18T15:44:12.903Z</updated>
+    
+    <content type="html"><![CDATA[<p>使用 React.js 一段时间了，把使用过程遇到的小坑和小技巧记录下来，希望能够帮助到其他人。</p>
+<a id="more"></a>
+<h2 id="显示-html"><a href="#显示-html" class="headerlink" title="显示 html"></a>显示 html</h2><figure class="highlight stylus"><table><tr><td class="code"><pre><div class="line">&lt;<span class="selector-tag">div</span> dangerouslySetInnerHTML=&#123;&#123; __html: LANG<span class="selector-class">.auth_register_tips1</span> &#125;&#125;/&gt;</div></pre></td></tr></table></figure>
+<h2 id="传数组给子组件"><a href="#传数组给子组件" class="headerlink" title="传数组给子组件"></a>传数组给子组件</h2><ol>
+<li>PureRender —— 当 porps与state 传入时，通过浅比较决定是否要重新渲染</li>
+<li>shouldComponentUpdate() 钩子默认返回 true，可以重新</li>
+</ol>
+<h2 id="组件间通信"><a href="#组件间通信" class="headerlink" title="组件间通信"></a>组件间通信</h2><ol>
+<li><p>flux 架构</p>
+</li>
+<li><p>父组件向子组件 —— props</p>
+</li>
+<li><p>子组件向父组件 —— props.funciton 接收参数</p>
+</li>
+<li><p>利用事件机制</p>
+</li>
+</ol>
+<h2 id="高阶组件（HOC）"><a href="#高阶组件（HOC）" class="headerlink" title="高阶组件（HOC）"></a>高阶组件（HOC）</h2><p>高阶函数，可以传入函数作为参数的函数，如 map,sort,reduce。高阶组件包装了另一个组件的组件。</p>
+<ol>
+<li>属性代理 （Props Proxy）</li>
+<li>反向继承 （Inheritance Inversion）</li>
+</ol>
+<h2 id="Immutable-js"><a href="#Immutable-js" class="headerlink" title="Immutable.js"></a>Immutable.js</h2><p>因为数据是不可变的，可以避免引用传值的问题，但也麻烦</p>
+<h2 id="无状态组件"><a href="#无状态组件" class="headerlink" title="无状态组件"></a>无状态组件</h2><p>使用无状态组件，只从父组件接收 props，可以提高组件的渲染性能<br><figure class="highlight dust"><table><tr><td class="code"><pre><div class="line"><span class="xml">const HelloWorld = (props) =&gt; <span class="tag">&lt;<span class="name">div</span>&gt;</span></span><span class="template-variable">&#123;props.name&#125;</span><span class="xml"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span></div><div class="line">ReactDOM.render(<span class="tag">&lt;<span class="name">HelloWorld</span> <span class="attr">name</span>=<span class="string">"HelloWorld"</span> /&gt;</span>,App)</div></pre></td></tr></table></figure></p>
+<h2 id="componentWillReceiveProps-中取-props-的值"><a href="#componentWillReceiveProps-中取-props-的值" class="headerlink" title="componentWillReceiveProps 中取 props 的值"></a>componentWillReceiveProps 中取 props 的值</h2><p>注意应该取 nextProps,而不是 this.props</p>
+<h2 id="bind-绑定函数"><a href="#bind-绑定函数" class="headerlink" title="bind 绑定函数"></a>bind 绑定函数</h2><p>利用 bind 绑定函数，是默认有 event 这个参数的，只是这个参数在给定参数之后<br><figure class="highlight stylus"><table><tr><td class="code"><pre><div class="line"> handleClockClick (id, e) &#123;</div><div class="line">   console.log(id,e)</div><div class="line"> &#125;</div><div class="line"></div><div class="line">&lt;<span class="selector-tag">button</span> onClick=&#123;this<span class="selector-class">.handleClockClick</span><span class="selector-class">.bind</span>(this, <span class="number">2</span>)&#125;&gt;Clock&lt;/button&gt;</div></pre></td></tr></table></figure></p>
+<h2 id="列表的-key"><a href="#列表的-key" class="headerlink" title="列表的 key"></a>列表的 key</h2><ul>
+<li>key 不会传给组件，如果需要使用 key 的值，另外命名为其他属性传进去</li>
+<li>当一个列表顺序会重排时，不适合使用数组的索引作为 key</li>
+</ul>
+<h2 id="受控组件"><a href="#受控组件" class="headerlink" title="受控组件"></a>受控组件</h2><p>可变的状态保存在组件的 state 中</p>
+<h2 id="ES6-计算属性名"><a href="#ES6-计算属性名" class="headerlink" title="ES6 计算属性名"></a>ES6 计算属性名</h2><p>对象的属性也可以计算，使用 [] 包围</p>
+<h2 id="constructor-与-getInitialState、getDefaultProps-的区别"><a href="#constructor-与-getInitialState、getDefaultProps-的区别" class="headerlink" title="constructor 与 getInitialState、getDefaultProps 的区别"></a>constructor 与 getInitialState、getDefaultProps 的区别</h2><ul>
+<li>getInitialState 与 getDefaultProps 在 React.createClass 时使用,此时是使用 ES5 语法</li>
+<li>constructor 在 ES6 类语法中使用,如果此时要设置默认 props 与 设置 state，可以如下操作<figure class="highlight delphi"><table><tr><td class="code"><pre><div class="line"><span class="function"><span class="keyword">constructor</span> <span class="params">(props)</span> <span class="comment">&#123;</span></span></div><div class="line">    super(props)</div><div class="line">    this.state = &#123;</div><div class="line">    &#125;</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="title">static</span> <span class="title">get</span>  <span class="title">defaultProps</span> <span class="params">()</span> <span class="comment">&#123;</span></div><div class="line">    return &#123;</div><div class="line">        time: time</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+</li>
+</ul>
+<h2 id="ES6-类中，函数-this-不默认指向-对象"><a href="#ES6-类中，函数-this-不默认指向-对象" class="headerlink" title="ES6 类中，函数 this 不默认指向 对象"></a>ES6 类中，函数 this 不默认指向 对象</h2><h2 id="获取元素"><a href="#获取元素" class="headerlink" title="获取元素"></a>获取元素</h2><ul>
+<li>this.getDomNode 已经在低版本被移除了，现在设置 ref=xxx，然后使用 this.refs.xxx 访问 DOM 元素</li>
+<li>ref 可以赋值两种类型，一种是字符串，一种是函数, 字符串只能用在类组件，DOM 元素使用函数，纯函数组件不能使用 ref。旧版本 DOM 元素虽然可以使用 ref，但是 React 已不推荐。<figure class="highlight cs"><table><tr><td class="code"><pre><div class="line"><span class="keyword">ref</span>=<span class="string">"test"</span> <span class="comment">// this.refs.test 访问</span></div><div class="line"></div><div class="line"><span class="keyword">ref</span>=&#123;test =&gt; <span class="keyword">this</span>.test = test&#125; <span class="comment">// this.test 访问</span></div></pre></td></tr></table></figure>
+</li>
+</ul>
+<h2 id="组合-VS-继承"><a href="#组合-VS-继承" class="headerlink" title="组合 VS 继承"></a>组合 VS 继承</h2><p>React 推荐使用组合，而不是继承，组合在 UI 来的更加直观，代码看起来也比较容易，更符合我们的认知，也符合 React component-base 的特性。</p>
+<h2 id="当只写属性名时，默认值为-true"><a href="#当只写属性名时，默认值为-true" class="headerlink" title="当只写属性名时，默认值为 true"></a>当只写属性名时，默认值为 true</h2><figure class="highlight dts"><table><tr><td class="code"><pre><div class="line"><span class="params">&lt;MyComponent isStock/&gt;</span></div><div class="line"><span class="comment">// isStock 默认为 true</span></div></pre></td></tr></table></figure>
+<h2 id="true-false-null-undefined-与-0"><a href="#true-false-null-undefined-与-0" class="headerlink" title="true,false,null,undefined 与 0"></a>true,false,null,undefined 与 0</h2><ul>
+<li>true,false,null,undefined 不会被 React 渲染，但同为 falsy 值的 0 会</li>
+<li>用法,控制输出<figure class="highlight dust"><table><tr><td class="code"><pre><div class="line"><span class="xml"><span class="tag">&lt;<span class="name">div</span>&gt;</span></span></div><div class="line"><span class="template-variable">&#123; arr.length &gt; 0 &amp;&amp; 'has'&#125;</span><span class="xml"></span></div><div class="line"><span class="tag">&lt;<span class="name">div</span>&gt;</span></div><div class="line"></div><div class="line"><span class="tag">&lt;<span class="name">div</span>&gt;</span></div><div class="line"><span class="template-variable">&#123; isVisible &amp;&amp; &lt;Test /&gt;&#125;</span><span class="xml"></span></div><div class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></div></pre></td></tr></table></figure>
+</li>
+</ul>
+<h2 id="PropTypes-类型检查"><a href="#PropTypes-类型检查" class="headerlink" title="PropTypes 类型检查"></a>PropTypes 类型检查</h2><p>React.PropTypes 已在 React v15.5<br><figure class="highlight clean"><table><tr><td class="code"><pre><div class="line"><span class="keyword">import</span> PropTypes <span class="keyword">from</span> <span class="string">'prop-types'</span></div></pre></td></tr></table></figure></p>
+<h2 id="Fragment"><a href="#Fragment" class="headerlink" title="Fragment"></a>Fragment</h2><p>聚合子元素列表，而不必添加额外的元素 – 16.2.0 开始支持<br><figure class="highlight xml"><table><tr><td class="code"><pre><div class="line"><span class="tag">&lt;&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">button</span>&gt;</span> 1 <span class="tag">&lt;/<span class="name">button</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">button</span>&gt;</span> 2 <span class="tag">&lt;/<span class="name">button</span>&gt;</span></div><div class="line"><span class="tag">&lt;/&gt;</span></div></pre></td></tr></table></figure></p>
+<h2 id="createPortal"><a href="#createPortal" class="headerlink" title="createPortal"></a>createPortal</h2><ul>
+<li>将子节点挂载到父组件以外组件的方法，在 render 方法中使用，不能挂载到父组件，因为此时父组件都没有渲染好，无法获取到 DOM</li>
+<li>行为上跟其他子节点没有区别，因为 React DOM 树上依然在这个组件上，包括事件冒泡等东西</li>
+</ul>
+<figure class="highlight coffeescript"><table><tr><td class="code"><pre><div class="line"><span class="keyword">import</span> &#123; createPortal &#125; <span class="keyword">from</span> <span class="string">'react-dom'</span></div><div class="line">createPortal(<span class="keyword">this</span>.props.children, <span class="built_in">document</span>.getElementById(<span class="string">'portal-root'</span>))</div></pre></td></tr></table></figure>
+<h2 id="错误边界"><a href="#错误边界" class="headerlink" title="错误边界"></a>错误边界</h2><p>componentDidCatch 错误边界，为组件定义一个父组件，父组件捕获错误，并提供回退的 UI</p>
+<ul>
+<li><p>用法</p>
+<figure class="highlight applescript"><table><tr><td class="code"><pre><div class="line">componentDidCatch(<span class="keyword">error</span>, info) &#123;</div><div class="line">  this.setState(&#123; hasError: <span class="literal">true</span> &#125;);</div><div class="line">  console.<span class="built_in">log</span>(<span class="keyword">error</span>, info)</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+</li>
+<li><p>无法捕获的错误<br>事件处理<br>异步代码 （例如 setTimeout 或 requestAnimationFrame 回调函数）<br>服务端渲染<br>错误边界自身抛出来的错误 （而不是其子组件）</p>
+</li>
+</ul>
+<h2 id="高级组件就是函数"><a href="#高级组件就是函数" class="headerlink" title="高级组件就是函数"></a>高级组件就是函数</h2><ul>
+<li>不应该在高阶组件修改原组件的属性</li>
+<li>利用函数包裹组件，返回一个新的组件</li>
+<li>为组件切换不同的数据源</li>
+</ul>
+<ol>
+<li>Showcase 组件，利用 getData (Showcase, data)函数包裹，获取不同数据</li>
+</ol>
+<ul>
+<li>不要在 render 中使用高阶组件<br>因为每一次挂载组件，都会重新获取一个高阶组件的实例</li>
+<li>hoistNonReactStatic<br>将原始组件的静态方法拷贝到包裹组件中</li>
+</ul>
+<h2 id="容器组件"><a href="#容器组件" class="headerlink" title="容器组件"></a>容器组件</h2><ul>
+<li>处理数据订阅和状态管理</li>
+<li>高阶组件是参数化的容器组件 </li>
+</ul>
+<h2 id="rander-prop"><a href="#rander-prop" class="headerlink" title="rander prop"></a>rander prop</h2><p>标题相同，利用高阶组件把标题渲染到不同的组件</p>
+<h2 id="React-中使用-Web-component"><a href="#React-中使用-Web-component" class="headerlink" title="React 中使用 Web component"></a>React 中使用 Web component</h2><p>这个时候有一点要注意的是，对于 Web component 应该使用 class,而不是 className</p>
+<h2 id="lable-的-for"><a href="#lable-的-for" class="headerlink" title="lable 的 for"></a>lable 的 for</h2><p>for 是 JS 的保留字，所以使用 htmlFor 替代 for</p>
+<h2 id="style属性"><a href="#style属性" class="headerlink" title="style属性"></a>style属性</h2><p>浏览器后缀除了ms以外，都应该以大写字母开头。这就是为什么WebkitTransition有一个大写字母W。<br><figure class="highlight actionscript"><table><tr><td class="code"><pre><div class="line"><span class="keyword">const</span> divStyle = &#123;</div><div class="line">  WebkitTransition: <span class="string">'all'</span>, <span class="comment">// note the capital 'W' here</span></div><div class="line">  msTransition: <span class="string">'all'</span> <span class="comment">// 'ms' is the only lowercase vendor prefix</span></div><div class="line">&#125;;</div></pre></td></tr></table></figure></p>
+<h2 id="在-IE11-以下使用-React16"><a href="#在-IE11-以下使用-React16" class="headerlink" title="在 IE11 以下使用 React16"></a>在 IE11 以下使用 React16</h2><p>React16 依赖集合类型 Map 和 Set，在未提供原生支持的浏览器，需要使用一个 polyfill,例如 core-js 和 babel-polyfill<br>使用 core-js 支持</p>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><div class="line"><span class="keyword">import</span> <span class="string">'core-js/es6/map'</span>;</div><div class="line"><span class="keyword">import</span> <span class="string">'core-js/es6/set'</span>;</div><div class="line"></div><div class="line"><span class="keyword">import</span> React <span class="keyword">from</span> <span class="string">'react'</span>;</div><div class="line"><span class="keyword">import</span> ReactDOM <span class="keyword">from</span> <span class="string">'react-dom'</span>;</div><div class="line"></div><div class="line">ReactDOM.render(</div><div class="line">  <span class="xml"><span class="tag">&lt;<span class="name">h1</span>&gt;</span>Hello, world!<span class="tag">&lt;/<span class="name">h1</span>&gt;</span></span>,</div><div class="line">  <span class="built_in">document</span>.getElementById(<span class="string">'root'</span>)</div><div class="line">);</div></pre></td></tr></table></figure>
+<h2 id="componentDidMount-请求服务器数据"><a href="#componentDidMount-请求服务器数据" class="headerlink" title="componentDidMount 请求服务器数据"></a>componentDidMount 请求服务器数据</h2><p>在 componentDidMount 请求服务器数据并利用 setState 时应注意，在组件卸载 componentWillUnmount 应该把去求去掉</p>
+<h2 id="参考资料"><a href="#参考资料" class="headerlink" title="参考资料"></a>参考资料</h2><p><a href="https://segmentfault.com/a/1190000008356407" target="_blank" rel="external">react 进阶漫谈</a><br><a href="https://doc.react-china.org/" target="_blank" rel="external">React 中文文档</a></p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;使用 React.js 一段时间了，把使用过程遇到的小坑和小技巧记录下来，希望能够帮助到其他人。&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="前端" scheme="https://kerita.github.io/categories/%E5%89%8D%E7%AB%AF/"/>
+    
+    
+      <category term="React" scheme="https://kerita.github.io/tags/React/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>商城性能优化想法</title>
+    <link href="https://kerita.github.io/2018/02/14/2018/store-performance/"/>
+    <id>https://kerita.github.io/2018/02/14/2018/store-performance/</id>
+    <published>2018-02-13T16:00:00.000Z</published>
+    <updated>2018-02-18T15:31:55.271Z</updated>
+    
+    <content type="html"><![CDATA[<p>一些关于商城性能优化的想法。</p>
+<a id="more"></a>
+<h2 id="压缩图片资源"><a href="#压缩图片资源" class="headerlink" title="压缩图片资源"></a>压缩图片资源</h2><p>保证图片质量情况下，尽量争取PC端每张图片不超过 200kb，移动端每张图片不超过 100kb,采用智图对图片进行压缩。</p>
+<p>1.急需压缩清单</p>
+<ul>
+<li>产品页缩略图</li>
+<li>产品页展示图</li>
+<li>产品简介和包装清单图片</li>
+</ul>
+<p>2.待压缩清单</p>
+<ul>
+<li>banner 图</li>
+<li>首页产品图片</li>
+<li>首页头部图片</li>
+</ul>
+<h2 id="图片使用规范"><a href="#图片使用规范" class="headerlink" title="图片使用规范"></a>图片使用规范</h2><p>尽量使用压缩率更高的 jpg 图片，而不是 png 图片，争取使用 webp 图片</p>
+<p>1.尽量采用 jpg 格式<br>png 是无损压缩，jpg 是有损压缩，不需要透明度的情况下，使用 jpg 格式</p>
+<p>2.使用 webp 格式图片（待定）<br>允许的情况下，在PC端 chrome，移动端 chrome 和 原生 android  浏览器，以及 Opera 浏览器可以使用 webp 格式<br>2015年第三季度，京东在强制双核浏览器使用 chrome 内核进行渲染之后，统计数据显示使用 chrome 的比例高达 60%<br>    2017年11月25日，caniuse 上支持 webp 的浏览器份额<br>China<br>72.89%    +    0.62%    =    73.51%<br>Global<br>72.41%    +    0.23%    =    72.64%</p>
+<h2 id="产品简介图区分桌面端和移动端"><a href="#产品简介图区分桌面端和移动端" class="headerlink" title="产品简介图区分桌面端和移动端"></a>产品简介图区分桌面端和移动端</h2><p>产品简介图同时加载了移动端资源和桌面端资源，亟待优化</p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;一些关于商城性能优化的想法。&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="前端" scheme="https://kerita.github.io/categories/%E5%89%8D%E7%AB%AF/"/>
+    
+    
+      <category term="性能" scheme="https://kerita.github.io/tags/%E6%80%A7%E8%83%BD/"/>
+    
+      <category term="优化" scheme="https://kerita.github.io/tags/%E4%BC%98%E5%8C%96/"/>
+    
+  </entry>
   
   <entry>
     <title>动手写一个微博机器人</title>
@@ -54,7 +308,7 @@
     <link href="https://kerita.github.io/2018/02/12/2018/the%20meaning%20of%20life/"/>
     <id>https://kerita.github.io/2018/02/12/2018/the meaning of life/</id>
     <published>2018-02-11T16:00:00.000Z</published>
-    <updated>2018-02-13T16:16:57.183Z</updated>
+    <updated>2018-02-18T15:23:11.842Z</updated>
     
     <content type="html"><![CDATA[<p>“你们活着是为了什么？为啥我经常会觉得一切都没啥意义呢……”。在朋友圈看到这段话，是让我写下这篇文章的最重要原因。</p>
 <a id="more"></a>
@@ -156,6 +410,37 @@
   </entry>
   
   <entry>
+    <title>青峰</title>
+    <link href="https://kerita.github.io/2017/10/03/2017/qingfeng/"/>
+    <id>https://kerita.github.io/2017/10/03/2017/qingfeng/</id>
+    <published>2017-10-02T16:00:00.000Z</published>
+    <updated>2017-10-26T13:54:43.809Z</updated>
+    
+    <content type="html"><![CDATA[<p>在很长一段时间，我都是将对明星作品的喜欢与对明星的喜欢分开，即喜欢他的作品不一定喜欢这个人，当然也不讨厌。无论是五月天、周杰伦、陈奕迅，还是赵雷、许巍、逃跑计划，虽然他们的歌在某一瞬间或者某一段时间，让我产生共鸣，但对于他们的喜欢都只停留在歌曲上。而青峰，苏打绿的主唱，唱《小情歌》的那个人，成为了打破这个规则第一人。</p>
+<a id="more"></a>
+<iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width="330" height="86" src="//music.163.com/outchain/player?type=2&id=32019043&auto=1&height=66"></iframe>
+
+
+<p>我也在想为什么会因为喜欢他唱的歌喜欢这个人？一个无论是动作和嗓音都有点“女性化特质”的男歌手。大概是因为他的创作、他的歌声如他自己的所说的“像棉一样带给人温暖舒服的感觉”，在触碰听者心底最柔软地方的同时，又不失勇敢和坚毅。而其他优秀的歌手离心底，都还有一些距离。</p>
+<p>这里推荐一些个人觉得比较有代表性的歌曲：《无与伦比的美丽》、《相信》、《只有可以》、《带我走》，也期待你分享动听的歌与让人喜欢的歌手。</p>
+<p>当然说到青峰，不能不说张悬，有兴趣的话去了解他们的故事，并听听她的《宝贝》。</p>
+<p>最后说一句，他们2016年开始休团三年，不发专辑不开演唱会。一起等待他们复出的那一天吧。</p>
+<div style="text-align:center"><br><img src="/2017/10/03/2017/qingfeng/beauty.png" alt="无与伦比的美丽" title="无与伦比的美丽"><br></div>]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;在很长一段时间，我都是将对明星作品的喜欢与对明星的喜欢分开，即喜欢他的作品不一定喜欢这个人，当然也不讨厌。无论是五月天、周杰伦、陈奕迅，还是赵雷、许巍、逃跑计划，虽然他们的歌在某一瞬间或者某一段时间，让我产生共鸣，但对于他们的喜欢都只停留在歌曲上。而青峰，苏打绿的主唱，唱《小情歌》的那个人，成为了打破这个规则第一人。&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="名人" scheme="https://kerita.github.io/categories/%E5%90%8D%E4%BA%BA/"/>
+    
+    
+      <category term="苏打绿" scheme="https://kerita.github.io/tags/%E8%8B%8F%E6%89%93%E7%BB%BF/"/>
+    
+  </entry>
+  
+  <entry>
     <title>谈微信的那些缺点</title>
     <link href="https://kerita.github.io/2017/10/03/2017/about-wechat/"/>
     <id>https://kerita.github.io/2017/10/03/2017/about-wechat/</id>
@@ -190,37 +475,6 @@
     
     
       <category term="微信" scheme="https://kerita.github.io/tags/%E5%BE%AE%E4%BF%A1/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>青峰</title>
-    <link href="https://kerita.github.io/2017/10/03/2017/qingfeng/"/>
-    <id>https://kerita.github.io/2017/10/03/2017/qingfeng/</id>
-    <published>2017-10-02T16:00:00.000Z</published>
-    <updated>2017-10-26T13:54:43.809Z</updated>
-    
-    <content type="html"><![CDATA[<p>在很长一段时间，我都是将对明星作品的喜欢与对明星的喜欢分开，即喜欢他的作品不一定喜欢这个人，当然也不讨厌。无论是五月天、周杰伦、陈奕迅，还是赵雷、许巍、逃跑计划，虽然他们的歌在某一瞬间或者某一段时间，让我产生共鸣，但对于他们的喜欢都只停留在歌曲上。而青峰，苏打绿的主唱，唱《小情歌》的那个人，成为了打破这个规则第一人。</p>
-<a id="more"></a>
-<iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width="330" height="86" src="//music.163.com/outchain/player?type=2&id=32019043&auto=1&height=66"></iframe>
-
-
-<p>我也在想为什么会因为喜欢他唱的歌喜欢这个人？一个无论是动作和嗓音都有点“女性化特质”的男歌手。大概是因为他的创作、他的歌声如他自己的所说的“像棉一样带给人温暖舒服的感觉”，在触碰听者心底最柔软地方的同时，又不失勇敢和坚毅。而其他优秀的歌手离心底，都还有一些距离。</p>
-<p>这里推荐一些个人觉得比较有代表性的歌曲：《无与伦比的美丽》、《相信》、《只有可以》、《带我走》，也期待你分享动听的歌与让人喜欢的歌手。</p>
-<p>当然说到青峰，不能不说张悬，有兴趣的话去了解他们的故事，并听听她的《宝贝》。</p>
-<p>最后说一句，他们2016年开始休团三年，不发专辑不开演唱会。一起等待他们复出的那一天吧。</p>
-<div style="text-align:center"><br><img src="/2017/10/03/2017/qingfeng/beauty.png" alt="无与伦比的美丽" title="无与伦比的美丽"><br></div>]]></content>
-    
-    <summary type="html">
-    
-      &lt;p&gt;在很长一段时间，我都是将对明星作品的喜欢与对明星的喜欢分开，即喜欢他的作品不一定喜欢这个人，当然也不讨厌。无论是五月天、周杰伦、陈奕迅，还是赵雷、许巍、逃跑计划，虽然他们的歌在某一瞬间或者某一段时间，让我产生共鸣，但对于他们的喜欢都只停留在歌曲上。而青峰，苏打绿的主唱，唱《小情歌》的那个人，成为了打破这个规则第一人。&lt;/p&gt;
-    
-    </summary>
-    
-      <category term="名人" scheme="https://kerita.github.io/categories/%E5%90%8D%E4%BA%BA/"/>
-    
-    
-      <category term="苏打绿" scheme="https://kerita.github.io/tags/%E8%8B%8F%E6%89%93%E7%BB%BF/"/>
     
   </entry>
   
@@ -420,9 +674,9 @@
       <category term="前端" scheme="https://kerita.github.io/categories/%E5%89%8D%E7%AB%AF/"/>
     
     
-      <category term="iOS" scheme="https://kerita.github.io/tags/iOS/"/>
-    
       <category term="移动端" scheme="https://kerita.github.io/tags/%E7%A7%BB%E5%8A%A8%E7%AB%AF/"/>
+    
+      <category term="iOS" scheme="https://kerita.github.io/tags/iOS/"/>
     
       <category term="audio" scheme="https://kerita.github.io/tags/audio/"/>
     
@@ -564,264 +818,6 @@
     
     
       <category term="Markdown" scheme="https://kerita.github.io/tags/Markdown/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>毕业找房记</title>
-    <link href="https://kerita.github.io/2017/07/09/2017/find-house/"/>
-    <id>https://kerita.github.io/2017/07/09/2017/find-house/</id>
-    <published>2017-07-08T16:00:00.000Z</published>
-    <updated>2017-08-18T14:43:44.406Z</updated>
-    
-    <content type="html"><![CDATA[<p>七月毕业，离开学校回到深圳才开始找房，其实这个时候找房子有点晚了，蛮多毕业生六月份就提前找好房子了。</p>
-<a id="more"></a>
-<p>（201700806更新）</p>
-<h3 id="豆瓣找房1-0"><a href="#豆瓣找房1-0" class="headerlink" title="豆瓣找房1.0"></a>豆瓣找房1.0</h3><p>一开始找房子，在豆瓣租房小组看到离公司旁边U小区的房源就豆油联系了一下，加了微信后才知道原来是链家的中介A（以下简称A）。第二天带我看房又说U小区没房了，所以带我去看了V小区和w小区的房。V小区是1460，w小区月租2000，V小区就在公司对面所以个人对V小区是比较满意的，决定租那间。决定签约前一天，又自己在自如app上联系宝安中心的管家B（以下简称B）带我去看了一次房，同时A也把B的微信给我，因为他要去军训没办法带我办理交接，让B带我办理。</p>
-<p>不幸的是，天健那房子没抢到，A此时已经去军训了，无法带我看房，而B知道我没抢到天健的房子挺热心的，所以我开始联系B带我去看自如的房子。</p>
-<p>B带我看了几间房，小区X一间1700+的还挺满意的，此时A发现居然是B带我看房就找我反复撕逼，而且不仅找我撕逼，还找到自如的区域经理，说自如的人抢他客户。心累啊，我挺感谢A第一次带我看房，我才知道自如房，但是你没时间带我看房，还不让别人带我看房？最后跟他说，谁带我看的房，我就跟谁签。会这么说，也是因为V小区那房被其他人抢到后迟迟没有确认，还可能抢到。</p>
-<h3 id="豆瓣找房2-0与自如"><a href="#豆瓣找房2-0与自如" class="headerlink" title="豆瓣找房2.0与自如"></a>豆瓣找房2.0与自如</h3><p>继续观望V小区房子时，也在豆瓣上继续看房，做了许多笔记，但真正去看的只有离翻身地铁站50米的一个专门用来单间房公寓楼，窗户面向过道的单间1600，面向外面的1800，而且没有洗衣机，环境也恶劣的很，不值得租。</p>
-<p>同时跟着B看了自如的一些房子，跟着B去洪浪北看了一间1460的房，也还不错，为了避免出现X小区房又被抢的状况，就先付押金预订了，作为最后的选择。</p>
-<p>而后继续在公司附近找房，最后在确定V小区租不到后，第二天早上就去看Z小区一间合适的房，考虑我中午不睡、下午奔溃的状态，还有综合离地铁口近的房子的房租，决定租这间。而洪浪北的房子因为自如没有按时交房，也刚好退了。</p>
-<h3 id="签约与搬家"><a href="#签约与搬家" class="headerlink" title="签约与搬家"></a>签约与搬家</h3><p>找到Z小区的房子就立马签约交房，东洪之前跟我说搬家可以找他帮忙就找了。幸亏有他帮忙，东西太多了，一辆滴滴塞满，只能坐下我，他骑车过来。幸亏从公司宿舍到Z小区也不是很远。顺利完成搬家。</p>
-<h3 id="结语"><a href="#结语" class="headerlink" title="结语"></a>结语</h3><ul>
-<li><p>毕业生找房，6月就可以找，不要因为多花一个月钱就不找。</p>
-</li>
-<li><p>找房首选离公司近的，近得可以步行回去睡午觉的完美，像我这样骑车回去睡午觉的也还行。</p>
-</li>
-<li><p>自如房还行，最完美当然是三四个同事一起租在公司附近（步行可轻松到达范围）。</p>
-</li>
-<li><p>情侣一起租个单间而不是合租也不错吧，哈哈哈，只是我还没体验过。</p>
-</li>
-</ul>
-]]></content>
-    
-    <summary type="html">
-    
-      &lt;p&gt;七月毕业，离开学校回到深圳才开始找房，其实这个时候找房子有点晚了，蛮多毕业生六月份就提前找好房子了。&lt;/p&gt;
-    
-    </summary>
-    
-      <category term="总结" scheme="https://kerita.github.io/categories/%E6%80%BB%E7%BB%93/"/>
-    
-    
-      <category term="house" scheme="https://kerita.github.io/tags/house/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>word-wrap&amp;word-break</title>
-    <link href="https://kerita.github.io/2017/07/04/2017/word-wrap&amp;word-break/"/>
-    <id>https://kerita.github.io/2017/07/04/2017/word-wrap&amp;word-break/</id>
-    <published>2017-07-03T16:00:00.000Z</published>
-    <updated>2017-08-18T14:42:50.078Z</updated>
-    
-    <content type="html"><![CDATA[<p>在开发Insta360官网英文版的时候，曾遇到单词太长如何换行的问题。谷歌一下，搞定需求，但是对这两个CSS3属性还是一知半解，借着阅读《CSS3实用指南》的契机，把他们理清。</p>
-<a id="more"></a>
-<h3 id="不指定word-wrap与work-break值"><a href="#不指定word-wrap与work-break值" class="headerlink" title="不指定word-wrap与work-break值"></a>不指定word-wrap与work-break值</h3><p>在不显式指定word-wrap和word-break属性值，并忽略从祖先元素继承值（这两个属性都可以继承），即这两个CSS属性的值都为normal时，讨论浏览器对长单词如何渲染。</p>
-<ol>
-<li><p>以汉字为代表的CJK类文字<br>CJK类(Chinese, Japanese, Korean and Vietnamese)文字中，每个文字都被当做一个单词，正常情况下，不存在长单词溢出或者换行问题，浏览器可以比较好的渲染</p>
-<figure class="highlight dts"><table><tr><td class="code"><pre><div class="line"></div><div class="line"><span class="class">div </span>&#123;</div><div class="line"><span class="symbol">    width:</span> <span class="number">100</span>px;</div><div class="line"><span class="symbol">    border:</span> <span class="number">1</span>px solid <span class="meta">#ccc;</span></div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="params">&lt;div&gt;</span>谷歌一下，搞定需求，但是对对这两个CSS3属性还是一知半解，借着阅读《CSS3实用指南》的契机，把他们理清。<span class="params">&lt;/div&gt;</span></div></pre></td></tr></table></figure>
-<div style="text-align:center"><img src="http://7xpofw.com1.z0.glb.clouddn.com/not-use-cjk.png" width="300px" height="150px" alt="not-use-cjk.png"></div>
-</li>
-<li><p>以英文为代表的latin文字</p>
-</li>
-</ol>
-<ul>
-<li><p>当出现此类文字的长单词在当前行无法放下时，浏览器在父容器范围内寻找单词中可换行点进行换行，包括‘？’或者‘-’等。</p>
-<figure class="highlight stylus"><table><tr><td class="code"><pre><div class="line"><span class="selector-tag">div</span> &#123;</div><div class="line">    <span class="attribute">width</span>: <span class="number">500px</span>;</div><div class="line">    <span class="attribute">border</span>: <span class="number">1px</span> solid <span class="number">#ccc</span>;</div><div class="line">&#125;</div><div class="line"></div><div class="line"></div><div class="line">&lt;div&gt; <span class="selector-tag">a</span> long word   <span class="selector-tag">a</span> long word  https:<span class="comment">//www.google.com.hk/search?q=CJKV&amp;oq=CJKV&amp;aqs=chrome..6-9i57j0l5.1919j0j1&amp;sourceid=chrome&amp;ie=UTF-8&lt;/div&gt;</span></div></pre></td></tr></table></figure>
-<div style="text-align:center"><img src="http://7xpofw.com1.z0.glb.clouddn.com/not-use-url.png" width="535px" height="120px" alt="not-use-url.png"></div>
-</li>
-<li><p>当可换行点在父容器外时，在父容器外换行；当没有可换行点时，独立一行显示；如果独立一行仍放不下，溢出显示。</p>
-</li>
-</ul>
-<figure class="highlight stylus"><table><tr><td class="code"><pre><div class="line"><span class="selector-tag">div</span> &#123;</div><div class="line">    <span class="attribute">width</span>: <span class="number">100px</span>;</div><div class="line">    <span class="attribute">border</span>: <span class="number">1px</span> solid <span class="number">#ccc</span>;</div><div class="line">&#125;</div><div class="line">&lt;div&gt; <span class="selector-tag">a</span> long word   <span class="selector-tag">a</span> long word  dddddddddddddddddddddddddd&lt;/div&gt;</div></pre></td></tr></table></figure>
- <div style="text-align:center"><img src="http://7xpofw.com1.z0.glb.clouddn.com/not-use-latin.png" width="475px" height="110px" alt="not-use-latin.png"></div>
-
-
-<h3 id="使用word-wrap"><a href="#使用word-wrap" class="headerlink" title="使用word-wrap"></a>使用word-wrap</h3><p>word-wrap在新的标准命名为overflow-wrap，word-wrap作为一个别名，仍可使用，并且主流浏览器都支持。</p>
-<p>word-wrap关心两个值：normal和break-word。而normal作为默认值，渲染结果可在上面知道。break-word呢，当前行且在父容器内有可换行点时换行；当前行没有可换行点时，独立一行显示；独立一行仍放不下的，在将溢出处自动换行。</p>
-<ul>
-<li><p>当前行有可换行点</p>
-<figure class="highlight dts"><table><tr><td class="code"><pre><div class="line"><span class="class">div </span>&#123;</div><div class="line"><span class="symbol">        width:</span> <span class="number">200</span>px;</div><div class="line"><span class="symbol">        border:</span> <span class="number">1</span>px solid <span class="meta">#ccc;</span></div><div class="line">        word-wrap: break-word;</div><div class="line">    &#125;</div><div class="line"></div><div class="line"> <span class="params">&lt;div&gt;</span> a long word  search?q=CJKV<span class="variable">&amp;oq</span>=CJKV<span class="variable">&amp;aqs</span>=chrome.<span class="number">.69</span>i57j0l5<span class="number">.1919</span>j0j1<span class="variable">&amp;sourceid</span>=chrome<span class="variable">&amp;ie</span>=UTF<span class="number">-8</span><span class="params">&lt;/div&gt;</span></div></pre></td></tr></table></figure>
-<div style="text-align:center"><img src="http://7xpofw.com1.z0.glb.clouddn.com/word-wrap-url.png" width="575px" height="160px" alt="word-wrap-url.png"></div></li>
-<li>当前行无可换行点</li>
-</ul>
-<figure class="highlight stylus"><table><tr><td class="code"><pre><div class="line"><span class="selector-tag">div</span> &#123;</div><div class="line">        <span class="attribute">width</span>: <span class="number">200px</span>;</div><div class="line">        <span class="attribute">border</span>: <span class="number">1px</span> solid <span class="number">#ccc</span>;</div><div class="line">        <span class="attribute">word-wrap</span>: break-word;</div><div class="line">    &#125;</div><div class="line"></div><div class="line">&lt;div&gt; <span class="selector-tag">a</span> long word  https:<span class="comment">//www.google.com.hk/search?q=CJKV&amp;oq=CJKV&amp;aqs=chrome..69i57j0l5.1919j0j1&amp;sourceid=chrome&amp;ie=UTF-8&lt;/div&gt;</span></div></pre></td></tr></table></figure>
- <div style="text-align:center"><img src="http://7xpofw.com1.z0.glb.clouddn.com/word-wrap-longword.png" width="505px" height="200px" alt="word-wrap-longword"></div>
-
-
-<h3 id="使用word-break"><a href="#使用word-break" class="headerlink" title="使用word-break"></a>使用word-break</h3><p>work-break关心三个值：normal,break-all,keep-all。normal的效果上面可见。</p>
-<ul>
-<li><p>break-all<br>看到一个好的例子来解释这个属性就是：资本家总是极尽可能的压榨工人，break-all就是极尽可能的利用所有空间，不另起一行，且在每一行行在将溢出处换行。</p>
-<figure class="highlight stylus"><table><tr><td class="code"><pre><div class="line"><span class="selector-tag">div</span> &#123;</div><div class="line">       <span class="attribute">width</span>: <span class="number">200px</span>;</div><div class="line">       <span class="attribute">border</span>: <span class="number">1px</span> solid <span class="number">#ccc</span>;</div><div class="line">       <span class="attribute">word-break</span>: break-all;</div><div class="line">   &#125;</div><div class="line">&lt;div&gt; <span class="selector-tag">a</span> long word  https:<span class="comment">//www.google.com.hk/search?q=CJKV&amp;oq=CJKV&amp;aqs=chrome..69i57j0l5.1919j0j1&amp;sourceid=chrome&amp;ie=UTF-8&lt;/div&gt;</span></div></pre></td></tr></table></figure>
-<div style="text-align:center"><img src="http://7xpofw.com1.z0.glb.clouddn.com/keep-all.png" width="590px" height="165px" alt="break-all"></div>
-</li>
-<li><p>keep-all<br>keep-all就是在normal的基础上，让CJK文字也按溢出显示。同时也会让一些中文标点符号是做可换行点，且一些符号如《》还必须同行显示。</p>
-<figure class="highlight dts"><table><tr><td class="code"><pre><div class="line"><span class="class">div </span>&#123;</div><div class="line"><span class="symbol">    width:</span> <span class="number">200</span>px;</div><div class="line"><span class="symbol">    border:</span> <span class="number">1</span>px solid <span class="meta">#ccc;</span></div><div class="line">    word-break: keep-all;</div><div class="line">&#125;</div><div class="line"><span class="params">&lt;div&gt;</span>谷歌一下，搞定需求，但是对对这两个CSS3属性还是一知半解，借着阅读啦啦啦啦《CSS3实用指南》的契机，把他们理清。<span class="params">&lt;/div&gt;</span></div></pre></td></tr></table></figure>
-<div style="text-align:center"><img src="http://7xpofw.com1.z0.glb.clouddn.com/keep-all.png" width="535px" height="175px" alt="keep-all"></div>
-
-<h3 id="同时使用"><a href="#同时使用" class="headerlink" title="同时使用"></a>同时使用</h3><ul>
-<li><p>word-wrap:break-word;与word-break:break-all;<br>这个时候就是不溢出，不另起一行，随处换行。</p>
-</li>
-<li><p>word-wrap:break-word;与word-break:break-all;<br>不溢出，另起一行，中文标点符号成为成为可换行符。</p>
-</li>
-</ul>
-</li>
-</ul>
-<h3 id="参考链接"><a href="#参考链接" class="headerlink" title="参考链接"></a>参考链接</h3><ul>
-<li><p><a href="http://www.cnblogs.com/2050/archive/2012/08/10/2632256.html" target="_blank" rel="external">你真的了解word-wrap和word-break的区别吗？</a></p>
-</li>
-<li><p><a href="https://developer.mozilla.org/de/docs/Web/CSS/word-wrap" target="_blank" rel="external">word-wrap——MDN</a></p>
-</li>
-<li><p><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/word-break" target="_blank" rel="external">word-break——MDN</a></p>
-</li>
-<li><p><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/overflow-wrap" target="_blank" rel="external">overflow-wrap——MDN</a></p>
-</li>
-</ul>
-]]></content>
-    
-    <summary type="html">
-    
-      &lt;p&gt;在开发Insta360官网英文版的时候，曾遇到单词太长如何换行的问题。谷歌一下，搞定需求，但是对这两个CSS3属性还是一知半解，借着阅读《CSS3实用指南》的契机，把他们理清。&lt;/p&gt;
-    
-    </summary>
-    
-      <category term="前端" scheme="https://kerita.github.io/categories/%E5%89%8D%E7%AB%AF/"/>
-    
-    
-      <category term="CSS3" scheme="https://kerita.github.io/tags/CSS3/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>记一次感冒</title>
-    <link href="https://kerita.github.io/2017/06/25/2017/a-cold-in-2017/"/>
-    <id>https://kerita.github.io/2017/06/25/2017/a-cold-in-2017/</id>
-    <published>2017-06-24T16:00:00.000Z</published>
-    <updated>2017-08-03T15:43:10.692Z</updated>
-    
-    <content type="html"><![CDATA[<p>之所以写下这篇文章，不只是想记录下这次感冒的过程，而是为了提醒自己该运动了。无论搬家了与否，都应该运动。没搬家照旧在天健，搬家了在新家附近，并且还有Keep可以做呢。谨记谨记。<br><a id="more"></a></p>
-<h3 id="开始感冒"><a href="#开始感冒" class="headerlink" title="开始感冒"></a>开始感冒</h3><p>最近身体状态真是极差，今年（2017年）大概5月的时候就有一次喉咙痛接近感冒，6月23号晚身体开始出现疲惫状态，然后是全身酸痛，即使下床喝了一包999感冒冲剂也无济于事。还有晚上的空调吹得我瑟瑟发抖，脚一直发冷，迷迷糊糊中选择了不作为，第二天早上中午症状更加严重。<br><!--more--><br>身体酸痛发软疲劳，甚至连午饭都吃不下去，扒了几口之后就回床上睡觉了，睡到下午四点多的时候状态恢复一点立马跑去校医室。</p>
-<h3 id="治疗和恢复"><a href="#治疗和恢复" class="headerlink" title="治疗和恢复"></a>治疗和恢复</h3><p>到校医室之后是挂号，花十分钟量体温，医生居然让我去走廊的那里量体温，这我就不明白了，在里面不能量？那个时候也没有其他病人啊。然后是问询、开药，羞涩地被护士姐姐打了一针，因为低烧了。</p>
-<p>晚上回来吃药睡觉，第二三天早上醒来感觉好很多了，但是低烧症状彻底消失还要到晚上。</p>
-<p>现在身体还在恢复之中，并没有完全好，喉咙还有问题，受凉会打喷嚏。</p>
-<h3 id="咳嗽消失"><a href="#咳嗽消失" class="headerlink" title="咳嗽消失"></a>咳嗽消失</h3><p>7月8号凌晨过来更新。</p>
-<p>上一周还是有痰咳嗽的状态，这一周好像就消失，消失得好像我都忘记有过感冒这回事了。</p>
-]]></content>
-    
-    <summary type="html">
-    
-      &lt;p&gt;之所以写下这篇文章，不只是想记录下这次感冒的过程，而是为了提醒自己该运动了。无论搬家了与否，都应该运动。没搬家照旧在天健，搬家了在新家附近，并且还有Keep可以做呢。谨记谨记。&lt;br&gt;
-    
-    </summary>
-    
-      <category term="总结" scheme="https://kerita.github.io/categories/%E6%80%BB%E7%BB%93/"/>
-    
-    
-      <category term="健康" scheme="https://kerita.github.io/tags/%E5%81%A5%E5%BA%B7/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>test-image</title>
-    <link href="https://kerita.github.io/2017/06/13/2017/test-image/"/>
-    <id>https://kerita.github.io/2017/06/13/2017/test-image/</id>
-    <published>2017-06-13T02:57:14.000Z</published>
-    <updated>2018-02-13T17:27:18.958Z</updated>
-    
-    <content type="html"><![CDATA[<p><strong> 如何在Markdown中插入图片，使得编译之后，在hexo首页和文章页都能看到呢？ </strong></p>
-<a id="more"></a>
-<h3 id="设置-post-asset-folder"><a href="#设置-post-asset-folder" class="headerlink" title="设置 post_asset_folder"></a>设置 post_asset_folder</h3><p>在根目录下的_config.yml设置post_asset_folder:true</p>
-<h3 id="posts目录下创建文章同名目录"><a href="#posts目录下创建文章同名目录" class="headerlink" title="_posts目录下创建文章同名目录"></a>_posts目录下创建文章同名目录</h3><h3 id="引入图片"><a href="#引入图片" class="headerlink" title="引入图片"></a>引入图片</h3><figure class="highlight django"><table><tr><td class="code"><pre><div class="line"><span class="xml"></span><span class="template-tag">&#123;% <span class="name">asset_img</span> example.png text %&#125;</span><span class="xml"></span></div></pre></td></tr></table></figure>
-<img src="/2017/06/13/2017/test-image/example.png" alt="This is a image" title="This is a image">
-<h3 id="参考链接"><a href="#参考链接" class="headerlink" title="参考链接"></a>参考链接</h3><p><a href="https://yanyinhong.github.io/2017/05/02/How-to-insert-image-in-hexo-post/" target="_blank" rel="external">Hexo博客搭建之在文章中插入图片</a></p>
-]]></content>
-    
-    <summary type="html">
-    
-      &lt;p&gt;&lt;strong&gt; 如何在Markdown中插入图片，使得编译之后，在hexo首页和文章页都能看到呢？ &lt;/strong&gt;&lt;/p&gt;
-    
-    </summary>
-    
-      <category term="小技巧" scheme="https://kerita.github.io/categories/%E5%B0%8F%E6%8A%80%E5%B7%A7/"/>
-    
-    
-      <category term="hexo" scheme="https://kerita.github.io/tags/hexo/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>前端模块化与模块加载器</title>
-    <link href="https://kerita.github.io/2017/06/12/2017/about-module/"/>
-    <id>https://kerita.github.io/2017/06/12/2017/about-module/</id>
-    <published>2017-06-11T16:00:00.000Z</published>
-    <updated>2017-08-18T14:42:45.742Z</updated>
-    
-    <content type="html"><![CDATA[<p>前端模块化这个概念自从去年开始一直出现在视野里，在某次面试的时候还被问傻眼了，但都整理这方面的知识，这一次决定彻底清楚。跑题了，回到正题。模块化是啥？简单来说，前端JS文件越来越多，而且相互之间还存在着依赖关系，利用模块化可以更好地管理和加载这些JS文件。<br><a id="more"></a></p>
-<p>本文主要是对前端模块化common.js,AMD,CMD和模块加载器require.js,sea.js和webpack进行梳理。</p>
-<h2 id="common-js-AMD-CMD"><a href="#common-js-AMD-CMD" class="headerlink" title="common.js,AMD,CMD"></a>common.js,AMD,CMD</h2><p> 这三个东西都是模块化的规范，主要规定怎么组织模块和如何引入模块，区别如下：</p>
-<ul>
-<li><p>common.js:common.js通过require同步加载所有模块，通过exports或module.exports来导出需要暴露的接口，服务器端的Node.js遵循这种规范。</p>
-<figure class="highlight javascript"><table><tr><td class="code"><pre><div class="line"><span class="built_in">require</span>(<span class="string">"module"</span>);</div><div class="line"><span class="built_in">require</span>(<span class="string">"../file.js"</span>);</div><div class="line">exports.doStuff = <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;&#125;;</div><div class="line"><span class="built_in">module</span>.exports = someValue;</div></pre></td></tr></table></figure>
-</li>
-<li><p>AMD:服务器端的资源都是在本地磁盘，使用同步加载没有什么问题，但是浏览器不能这样，假如文件过大，会一直处于加载状态，浏览器进入“假死”状态。所以就出现了AMD这种适用于浏览器端的异步加载的模块化标准，require.js这个模块加载器就是这种规范的实现。</p>
-<figure class="highlight javascript"><table><tr><td class="code"><pre><div class="line">define(<span class="string">"module"</span>, [<span class="string">"dep1"</span>, <span class="string">"dep2"</span>], <span class="function"><span class="keyword">function</span>(<span class="params">d1, d2</span>) </span>&#123;</div><div class="line">  <span class="keyword">return</span> someExportedValue;</div><div class="line">&#125;);</div><div class="line"><span class="built_in">require</span>([<span class="string">"module"</span>, <span class="string">"../file"</span>], <span class="function"><span class="keyword">function</span>(<span class="params">module, file</span>) </span>&#123; <span class="comment">/* ... */</span> &#125;);</div></pre></td></tr></table></figure>
-</li>
-</ul>
-<ul>
-<li>CMD：与AMD一样，CMD也是一个用于浏览器的模块加载器，不同之处在于，AMD会一口气把需要的模块加载出来，而CMD则是用到时再加载。同时呢，CMD与common.js的规范保持很大的兼容，sea.js这种模块加载器就是这种规范的实现。<figure class="highlight lasso"><table><tr><td class="code"><pre><div class="line"><span class="class"><span class="keyword">define</span></span>(function(<span class="keyword">require</span>, exports, module) &#123;</div><div class="line">  <span class="built_in">var</span> $ = <span class="keyword">require</span>(<span class="string">'jquery'</span>);</div><div class="line">  <span class="built_in">var</span> Spinning = <span class="keyword">require</span>(<span class="string">'./spinning'</span>);</div><div class="line">  exports.doSomething = <span class="params">...</span></div><div class="line">  module.exports = <span class="params">...</span></div><div class="line">&#125;)</div></pre></td></tr></table></figure>
-</li>
-</ul>
-<h2 id="require-js，sea-js与webpack"><a href="#require-js，sea-js与webpack" class="headerlink" title="require.js，sea.js与webpack"></a>require.js，sea.js与webpack</h2><p>如上面所言，require.js与sea.js是模块加载器，webpack相比较下，更像是模块加载器+gulp/grunt，同时更具备多种优点，例如可以对图片、css进行打包、兼容AMD、CMD、common.js、ES6格式的模块，通过强大的插件系统更能实现各种强大的功能。</p>
-<p>webpacke重要的两个组成——loader和插件，loader更针对某一类型文件，插件更像是在整个打包过程起作用。详细学习webpack，可以看 <a href="https://github.com/Kerita/webpack-tutorial" target="_blank" rel="external">https://github.com/Kerita/webpack-tutorial</a></p>
-<ul>
-<li><p>loader: 用于加载各种文件——css,less,vue,jsx，图片等</p>
-</li>
-<li><p>插件：开启服务器、实现热加载等功能。</p>
-</li>
-</ul>
-<h2 id="小结"><a href="#小结" class="headerlink" title="小结"></a>小结</h2><p>common.js,AMD,CMD是模块化规范，require.js,sea.js,webpack模块加载器，现在比较流行是使用webpack构建项目，React和Vue.js官方脚手架都是采用这种方式。</p>
-]]></content>
-    
-    <summary type="html">
-    
-      &lt;p&gt;前端模块化这个概念自从去年开始一直出现在视野里，在某次面试的时候还被问傻眼了，但都整理这方面的知识，这一次决定彻底清楚。跑题了，回到正题。模块化是啥？简单来说，前端JS文件越来越多，而且相互之间还存在着依赖关系，利用模块化可以更好地管理和加载这些JS文件。&lt;br&gt;
-    
-    </summary>
-    
-      <category term="前端" scheme="https://kerita.github.io/categories/%E5%89%8D%E7%AB%AF/"/>
-    
-    
-      <category term="模块化" scheme="https://kerita.github.io/tags/%E6%A8%A1%E5%9D%97%E5%8C%96/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Hello World</title>
-    <link href="https://kerita.github.io/2017/01/22/2017/hello-world/"/>
-    <id>https://kerita.github.io/2017/01/22/2017/hello-world/</id>
-    <published>2017-01-21T16:00:00.000Z</published>
-    <updated>2017-06-12T12:26:30.977Z</updated>
-    
-    <content type="html"><![CDATA[<p>Welcome to <a href="https://hexo.io/" target="_blank" rel="external">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="external">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="external">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="external">GitHub</a>.</p>
-<a id="more"></a>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="code"><pre><div class="line">$ hexo new <span class="string">"My New Post"</span></div></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="external">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="code"><pre><div class="line">$ hexo server</div></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="external">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="code"><pre><div class="line">$ hexo generate</div></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="external">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="code"><pre><div class="line">$ hexo deploy</div></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/deployment.html" target="_blank" rel="external">Deployment</a></p>
-]]></content>
-    
-    <summary type="html">
-    
-      &lt;p&gt;Welcome to &lt;a href=&quot;https://hexo.io/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Hexo&lt;/a&gt;! This is your very first post. Check &lt;a href=&quot;https://hexo.io/docs/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;documentation&lt;/a&gt; for more info. If you get any problems when using Hexo, you can find the answer in &lt;a href=&quot;https://hexo.io/docs/troubleshooting.html&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;troubleshooting&lt;/a&gt; or you can ask me on &lt;a href=&quot;https://github.com/hexojs/hexo/issues&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;GitHub&lt;/a&gt;.&lt;/p&gt;
-    
-    </summary>
-    
     
   </entry>
   
