@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://kerita.github.io/"/>
-  <updated>2018-02-24T11:40:09.056Z</updated>
+  <updated>2018-02-27T16:48:59.904Z</updated>
   <id>https://kerita.github.io/</id>
   
   <author>
@@ -14,6 +14,33 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>less calc 不起作用</title>
+    <link href="https://kerita.github.io/2018/02/28/2018/less-calc/"/>
+    <id>https://kerita.github.io/2018/02/28/2018/less-calc/</id>
+    <published>2018-02-27T16:00:00.000Z</published>
+    <updated>2018-02-27T16:48:59.904Z</updated>
+    
+    <content type="html"><![CDATA[<p>在 less 中使用 CSS3 的 calc 语法时会自动计算，需要采用如下写法,注意减号左右都有空格。</p>
+<figure class="highlight scss"><table><tr><td class="code"><pre><div class="line"><span class="attribute">width</span>: calc(~<span class="string">"100% - 30px"</span>);</div></pre></td></tr></table></figure>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;在 less 中使用 CSS3 的 calc 语法时会自动计算，需要采用如下写法,注意减号左右都有空格。&lt;/p&gt;
+&lt;figure class=&quot;highlight scss&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line
+    
+    </summary>
+    
+      <category term="前端" scheme="https://kerita.github.io/categories/%E5%89%8D%E7%AB%AF/"/>
+    
+    
+      <category term="CSS3" scheme="https://kerita.github.io/tags/CSS3/"/>
+    
+      <category term="less" scheme="https://kerita.github.io/tags/less/"/>
+    
+  </entry>
   
   <entry>
     <title>羽球往事</title>
@@ -444,37 +471,6 @@
   </entry>
   
   <entry>
-    <title>青峰</title>
-    <link href="https://kerita.github.io/2017/10/03/2017/qingfeng/"/>
-    <id>https://kerita.github.io/2017/10/03/2017/qingfeng/</id>
-    <published>2017-10-02T16:00:00.000Z</published>
-    <updated>2017-10-26T13:54:43.809Z</updated>
-    
-    <content type="html"><![CDATA[<p>在很长一段时间，我都是将对明星作品的喜欢与对明星的喜欢分开，即喜欢他的作品不一定喜欢这个人，当然也不讨厌。无论是五月天、周杰伦、陈奕迅，还是赵雷、许巍、逃跑计划，虽然他们的歌在某一瞬间或者某一段时间，让我产生共鸣，但对于他们的喜欢都只停留在歌曲上。而青峰，苏打绿的主唱，唱《小情歌》的那个人，成为了打破这个规则第一人。</p>
-<a id="more"></a>
-<iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width="330" height="86" src="//music.163.com/outchain/player?type=2&id=32019043&auto=1&height=66"></iframe>
-
-
-<p>我也在想为什么会因为喜欢他唱的歌喜欢这个人？一个无论是动作和嗓音都有点“女性化特质”的男歌手。大概是因为他的创作、他的歌声如他自己的所说的“像棉一样带给人温暖舒服的感觉”，在触碰听者心底最柔软地方的同时，又不失勇敢和坚毅。而其他优秀的歌手离心底，都还有一些距离。</p>
-<p>这里推荐一些个人觉得比较有代表性的歌曲：《无与伦比的美丽》、《相信》、《只有可以》、《带我走》，也期待你分享动听的歌与让人喜欢的歌手。</p>
-<p>当然说到青峰，不能不说张悬，有兴趣的话去了解他们的故事，并听听她的《宝贝》。</p>
-<p>最后说一句，他们2016年开始休团三年，不发专辑不开演唱会。一起等待他们复出的那一天吧。</p>
-<div style="text-align:center"><br><img src="/2017/10/03/2017/qingfeng/beauty.png" alt="无与伦比的美丽" title="无与伦比的美丽"><br></div>]]></content>
-    
-    <summary type="html">
-    
-      &lt;p&gt;在很长一段时间，我都是将对明星作品的喜欢与对明星的喜欢分开，即喜欢他的作品不一定喜欢这个人，当然也不讨厌。无论是五月天、周杰伦、陈奕迅，还是赵雷、许巍、逃跑计划，虽然他们的歌在某一瞬间或者某一段时间，让我产生共鸣，但对于他们的喜欢都只停留在歌曲上。而青峰，苏打绿的主唱，唱《小情歌》的那个人，成为了打破这个规则第一人。&lt;/p&gt;
-    
-    </summary>
-    
-      <category term="名人" scheme="https://kerita.github.io/categories/%E5%90%8D%E4%BA%BA/"/>
-    
-    
-      <category term="苏打绿" scheme="https://kerita.github.io/tags/%E8%8B%8F%E6%89%93%E7%BB%BF/"/>
-    
-  </entry>
-  
-  <entry>
     <title>谈微信的那些缺点</title>
     <link href="https://kerita.github.io/2017/10/03/2017/about-wechat/"/>
     <id>https://kerita.github.io/2017/10/03/2017/about-wechat/</id>
@@ -509,6 +505,37 @@
     
     
       <category term="微信" scheme="https://kerita.github.io/tags/%E5%BE%AE%E4%BF%A1/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>青峰</title>
+    <link href="https://kerita.github.io/2017/10/03/2017/qingfeng/"/>
+    <id>https://kerita.github.io/2017/10/03/2017/qingfeng/</id>
+    <published>2017-10-02T16:00:00.000Z</published>
+    <updated>2017-10-26T13:54:43.809Z</updated>
+    
+    <content type="html"><![CDATA[<p>在很长一段时间，我都是将对明星作品的喜欢与对明星的喜欢分开，即喜欢他的作品不一定喜欢这个人，当然也不讨厌。无论是五月天、周杰伦、陈奕迅，还是赵雷、许巍、逃跑计划，虽然他们的歌在某一瞬间或者某一段时间，让我产生共鸣，但对于他们的喜欢都只停留在歌曲上。而青峰，苏打绿的主唱，唱《小情歌》的那个人，成为了打破这个规则第一人。</p>
+<a id="more"></a>
+<iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width="330" height="86" src="//music.163.com/outchain/player?type=2&id=32019043&auto=1&height=66"></iframe>
+
+
+<p>我也在想为什么会因为喜欢他唱的歌喜欢这个人？一个无论是动作和嗓音都有点“女性化特质”的男歌手。大概是因为他的创作、他的歌声如他自己的所说的“像棉一样带给人温暖舒服的感觉”，在触碰听者心底最柔软地方的同时，又不失勇敢和坚毅。而其他优秀的歌手离心底，都还有一些距离。</p>
+<p>这里推荐一些个人觉得比较有代表性的歌曲：《无与伦比的美丽》、《相信》、《只有可以》、《带我走》，也期待你分享动听的歌与让人喜欢的歌手。</p>
+<p>当然说到青峰，不能不说张悬，有兴趣的话去了解他们的故事，并听听她的《宝贝》。</p>
+<p>最后说一句，他们2016年开始休团三年，不发专辑不开演唱会。一起等待他们复出的那一天吧。</p>
+<div style="text-align:center"><br><img src="/2017/10/03/2017/qingfeng/beauty.png" alt="无与伦比的美丽" title="无与伦比的美丽"><br></div>]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;在很长一段时间，我都是将对明星作品的喜欢与对明星的喜欢分开，即喜欢他的作品不一定喜欢这个人，当然也不讨厌。无论是五月天、周杰伦、陈奕迅，还是赵雷、许巍、逃跑计划，虽然他们的歌在某一瞬间或者某一段时间，让我产生共鸣，但对于他们的喜欢都只停留在歌曲上。而青峰，苏打绿的主唱，唱《小情歌》的那个人，成为了打破这个规则第一人。&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="名人" scheme="https://kerita.github.io/categories/%E5%90%8D%E4%BA%BA/"/>
+    
+    
+      <category term="苏打绿" scheme="https://kerita.github.io/tags/%E8%8B%8F%E6%89%93%E7%BB%BF/"/>
     
   </entry>
   
@@ -755,43 +782,6 @@
     
       <category term="总结" scheme="https://kerita.github.io/categories/%E6%80%BB%E7%BB%93/"/>
     
-    
-  </entry>
-  
-  <entry>
-    <title>关于《吐槽大会》</title>
-    <link href="https://kerita.github.io/2017/08/03/2017/about-roast/"/>
-    <id>https://kerita.github.io/2017/08/03/2017/about-roast/</id>
-    <published>2017-08-02T16:00:00.000Z</published>
-    <updated>2017-09-13T16:17:08.434Z</updated>
-    
-    <content type="html"><![CDATA[<p>几天前在某个地方，或是知乎回答，或是公众号文章，看到关于《吐槽大会》的议论，觉得挺有意思，遂去搜一搜、看一看。</p>
-<a id="more"></a>
-<h3 id="保持好奇心"><a href="#保持好奇心" class="headerlink" title="保持好奇心"></a>保持好奇心</h3><p>这里顺便说另一个事情，作为一个年轻人，对于新生事物，应该保持好奇心；而不是看一眼，连思考都没有，就下结论。</p>
-<p>之前看到朋友圈有几个人对吴亦凡参与的《中国有嘻哈》评价颇高，第一眼看到吴亦凡，觉得质量不会很高，就没有去看。过了好几天，又在朋友圈看到关于《中国有嘻哈》的讨论，这才去看，质量果真不咋地。哈哈哈。当然，这不影响我以后对新生事物保持好奇心。</p>
-<h3 id="吴亦凡、鹿晗与黄子韬"><a href="#吴亦凡、鹿晗与黄子韬" class="headerlink" title="吴亦凡、鹿晗与黄子韬"></a>吴亦凡、鹿晗与黄子韬</h3><p>吴亦凡的黑点在于：一是没有与名气相匹配的作品；二是骗炮门；三是面相不善，不像一个善良的人。相对而言，鹿晗还是挺面善的，但也是没有与名气匹配的作品；黄子韬倒是有跟名气相匹配的表情包，但是也不面善。</p>
-<h3 id="吐槽大会介绍"><a href="#吐槽大会介绍" class="headerlink" title="吐槽大会介绍"></a>吐槽大会介绍</h3><p>扯远了，回到《吐槽大会》。《吐槽大会》第一季已经结束了，总共有十期，每期会有一个主咖，外加6个嘉宾（偶尔也有七个嘉宾），当然还有一个主持人。虽然十期挑着看还没看完，但是已经按耐不住想“吐槽”的心情了。（其实是十一期，第0期周杰场，内容因为太污刚播出就被禁了，节目组也进行了整改，腾讯视频也再没把这一期算进去。）</p>
-<h3 id="主持人"><a href="#主持人" class="headerlink" title="主持人"></a>主持人</h3><p>主持人最重要的就是把整个节目衔接流畅，其次是咬字要清楚；主持这个节目呢，当然还需要幽默，不仅要能拿主咖嘉宾开玩笑，更要能自嘲。</p>
-<p>《吐槽大会》的主持人一般都是张绍刚，偶尔也会是王自健。两个人相比，我更喜欢张绍刚。在串联节目、吐字方面、幽默和槽点，张绍刚都更胜一筹。偶尔换换王自健来主持也是不错的，不腻。</p>
-<h3 id="主咖"><a href="#主咖" class="headerlink" title="主咖"></a>主咖</h3><p>主咖也就是每期的主角，节目就是从主持人吐槽主咖开始，然后嘉宾一个接着一个上台继续吐槽，嘉宾间也会互相吐槽，最后主咖反击。这样一个需要接受七个人吐槽的主角：一是必然在普通观众中知名度高，如果找一个八线演员，观众看到本期主咖名字，就没有想看的欲望了；二是要有槽点可以吐，但是槽点一定是要能洗白的，吸毒或者台独之类的槽点就不适合了；三是要幽默，最后的反击越犀利越好。</p>
-<p>总共十一期节目，看了周杰、李湘、曹云金、大张伟、唐国强、蔡国庆、小沈阳、薛之谦和凤凰传奇这几期。比较好看的是曹云金、唐国强、和凤凰传奇三期，周杰场其实也还行，但因为是第0期，节目有些粗糙（排名分先后）。这几个主咖，至少都满足了上面的第一、二个条件，幽默程度也都还行，当然最6的还是说相声的曹云金了。</p>
-<p>至于其他几个人呢，李湘、薛之谦、蔡国庆、小沈阳的槽点都不是很值得吐，大张伟的槽点是多次歌曲抄袭，这个槽点不适合用来吐槽，洗不白。</p>
-<h3 id="嘉宾"><a href="#嘉宾" class="headerlink" title="嘉宾"></a>嘉宾</h3><p>合适的主咖很重要，会吐槽的嘉宾也很重要。如果有跟主咖关系密切而且又很会吐槽的嘉宾，节目就好看了，唐国强场的王刚就是这么一个嘉宾。吐槽时把握节奏太好了，不仅吐槽唐国强好笑，吐槽嘉宾史航的时候也很好笑，特别是结合史航身世“存在即合理”的哲学梗，。</p>
-<p>其他嘉宾除了李诞和池子这两个钉子户，其他嘉宾的吐槽并没有给我留下太深的印象。李诞和池子两个策划人每期都会上，针对嘉宾和主咖的吐槽都还蛮好笑的，池子比李诞幽默感更强，但论节奏感还是比不上老戏骨王刚。因为他们上了太多期，其他嘉宾针对他们的吐槽也变成老生常谈。</p>
-<h3 id="结语"><a href="#结语" class="headerlink" title="结语"></a>结语</h3><p>看完《吐槽大会》后，也有一种想写下一段吐槽自己的文字，但还没有想好如何写，之后补上。</p>
-<p>顺便说一句，国内这几年网络综艺节目发展得挺不错的，《快乐大本营》和《天天向上》收视率没那么高了吧。</p>
-]]></content>
-    
-    <summary type="html">
-    
-      &lt;p&gt;几天前在某个地方，或是知乎回答，或是公众号文章，看到关于《吐槽大会》的议论，觉得挺有意思，遂去搜一搜、看一看。&lt;/p&gt;
-    
-    </summary>
-    
-      <category term="总结" scheme="https://kerita.github.io/categories/%E6%80%BB%E7%BB%93/"/>
-    
-    
-      <category term="幽默" scheme="https://kerita.github.io/tags/%E5%B9%BD%E9%BB%98/"/>
     
   </entry>
   
