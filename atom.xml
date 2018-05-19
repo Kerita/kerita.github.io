@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://kerita.github.io/"/>
-  <updated>2018-02-27T16:48:59.904Z</updated>
+  <updated>2018-05-19T08:28:57.870Z</updated>
   <id>https://kerita.github.io/</id>
   
   <author>
@@ -14,6 +14,57 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>打扰一下的平凡之路</title>
+    <link href="https://kerita.github.io/2018/05/19/2018/pingfan/"/>
+    <id>https://kerita.github.io/2018/05/19/2018/pingfan/</id>
+    <published>2018-05-18T16:00:00.000Z</published>
+    <updated>2018-05-19T08:28:57.870Z</updated>
+    
+    <content type="html"><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><p>2018年3月21日，也就是大概两个月前就想分享打扰一下乐队在演唱会上翻唱的《平凡之路》，因为需要安装 hexo audio 插件，一直拖到今天。想看看能不能直接嵌入网易云的 iframe, 但网易云上依旧没有打扰一下的演唱会版本，所以嵌入腾讯视频 iframe</p>
+<a id="more"></a>
+<iframe frameborder="0" src="https://v.qq.com/iframe/player.html?vid=s0381c6dl5h&tiny=0&auto=0" allowfullscreen class="pingfan-iframe"></iframe>
+
+<style>
+
+.pingfan-iframe {
+  width: 100%;
+  height: 498px;
+}
+
+@media(max-width: 768px) {
+    .pingfan-iframe {
+      height: 200px;
+    }
+}
+
+</style>
+
+
+
+
+
+
+
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;2018年3月21日，也就是大概两个月前就想分享打扰一下乐队在演唱会上翻唱的《平凡之路》，因为需要安装 hexo audio 插件，一直拖到今天。想看看能不能直接嵌入网易云的 iframe, 但网易云上依旧没有打扰一下的演唱会版本，所以嵌入腾讯视频 iframe&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="歌" scheme="https://kerita.github.io/categories/%E6%AD%8C/"/>
+    
+    
+      <category term="朴树" scheme="https://kerita.github.io/tags/%E6%9C%B4%E6%A0%91/"/>
+    
+      <category term="打扰一下" scheme="https://kerita.github.io/tags/%E6%89%93%E6%89%B0%E4%B8%80%E4%B8%8B/"/>
+    
+      <category term="平凡之路" scheme="https://kerita.github.io/tags/%E5%B9%B3%E5%87%A1%E4%B9%8B%E8%B7%AF/"/>
+    
+  </entry>
   
   <entry>
     <title>less calc 不起作用</title>
@@ -742,46 +793,6 @@
       <category term="audio" scheme="https://kerita.github.io/tags/audio/"/>
     
       <category term="HTML" scheme="https://kerita.github.io/tags/HTML/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>毕业生入户深圳</title>
-    <link href="https://kerita.github.io/2017/08/18/2017/about-hukou/"/>
-    <id>https://kerita.github.io/2017/08/18/2017/about-hukou/</id>
-    <published>2017-08-17T16:00:00.000Z</published>
-    <updated>2017-08-20T15:03:46.701Z</updated>
-    
-    <content type="html"><![CDATA[<p>今年（2017年）本科毕业了，工作在深圳就把户口迁了过来，至于迁与不迁户口的优劣，各人有各人的看法，此处不表。本文目的是把个人办理户口迁移的过程记录下来（因单位没有接收权力），造福后来人。<br><a id="more"></a></p>
-<h3 id="代理机构办理《接收函》"><a href="#代理机构办理《接收函》" class="headerlink" title="代理机构办理《接收函》"></a>代理机构办理《接收函》</h3><p>应届本科毕业生入深户是通过人才引进政策，所以第一步需要到深圳市人力资源和社会保障局网站进行评审，评审通过后选择就近的代理机构办理接收函，当然代理机构还负责毕业后接收档案。办理时需要携带学校发的《毕业生就业推荐表》等资料，委托费用是200多块。<br>大概一周之后可以拿到一式两份《接收函》，一份拿到学校办理报到证，一份自个留着，之后会用到。同时，代理机构还会给一份代理协议和办理入户指南，这两个也需要留着。<br>建议想入深户的，五月份就可以办理接收函。</p>
-<p>需要的证件：<br><figure class="highlight asciidoc"><table><tr><td class="code"><pre><div class="line"><span class="bullet">- </span>《毕业生就业推荐表》</div></pre></td></tr></table></figure></p>
-<h3 id="学校领取《报到证》"><a href="#学校领取《报到证》" class="headerlink" title="学校领取《报到证》"></a>学校领取《报到证》</h3><p>将一份接收函交给学校的就业指导中心，并办理《报到证》，《报到证》要关注的点是报到的地方应为“深圳市人力资源和社会保障局”。<br>报到证大概要6月底、7月份初毕业时，学校才会发放。<br>拿到报到证、毕业证、学位证等证件就可以会老家办理《户口迁移证》了。</p>
-<p>需要的证件：<br><figure class="highlight asciidoc"><table><tr><td class="code"><pre><div class="line"><span class="bullet">- </span>《接收函》</div></pre></td></tr></table></figure></p>
-<h3 id="老家办理《户口迁移证》"><a href="#老家办理《户口迁移证》" class="headerlink" title="老家办理《户口迁移证》"></a>老家办理《户口迁移证》</h3><p>回老家办理《户口迁移证》是所有步骤中最坑爹的部分。深圳的政策是只要拿着《接收函》和《报到证》就可以回老家办理《户口迁移证》，但是，地方派出所并不认这个，所以导致每个派出所需要的证件种类都不同，甚至是同个县不同镇之间。需要哪些证件，大概取决于派出所办理人员的心情吧。<br>所以最好先打听清楚老家派出所需要哪些资料，然后再回家办理，这样不会走很多冤枉路。</p>
-<p>可能需要的证件（各个地方不同）：<br><figure class="highlight haml"><table><tr><td class="code"><pre><div class="line">-<span class="ruby"> 《毕业证》</span></div><div class="line">-<span class="ruby"> 《学位证》</span></div><div class="line">-<span class="ruby"> 《报到证》</span></div><div class="line">-<span class="ruby"> 《公司证明》</span></div><div class="line">-<span class="ruby"> 《劳动合同》</span></div></pre></td></tr></table></figure></p>
-<h3 id="福田行政服务大厅办理报到"><a href="#福田行政服务大厅办理报到" class="headerlink" title="福田行政服务大厅办理报到"></a>福田行政服务大厅办理报到</h3><p>拿到户口迁移证，按着代理机构给的入户指南上的说明准备各种证件，报到之后工作人员会给《入户信息卡》和《介绍信》去办理入户，如果在第一步选择在深圳“农转非”的，还有《农转非信息卡》。</p>
-<p>需要的证件：<br><figure class="highlight haml"><table><tr><td class="code"><pre><div class="line">-<span class="ruby"> 《接收函》</span></div><div class="line">-<span class="ruby"> 《学位证》</span></div><div class="line">-<span class="ruby"> 《毕业证》</span></div><div class="line">-<span class="ruby"> 《身份证》</span></div><div class="line">-<span class="ruby"> 《报到证》</span></div><div class="line">-<span class="ruby"> 《学信网两年以上学历验证证明》</span></div><div class="line">-<span class="ruby"> 《户口迁移证》</span></div></pre></td></tr></table></figure></p>
-<h3 id="深圳任一派出所办理入户"><a href="#深圳任一派出所办理入户" class="headerlink" title="深圳任一派出所办理入户"></a>深圳任一派出所办理入户</h3><p>《入户信息卡》有办理需要的各种资料，按照说明准备，因已上交所以也不太记得。</p>
-<p>需要的证件（包括但不限于）：<br><figure class="highlight haml"><table><tr><td class="code"><pre><div class="line">-<span class="ruby"> 《身份证》</span></div><div class="line">-<span class="ruby"> 《户口迁移证》</span></div><div class="line">-<span class="ruby"> 身份证照片和回执</span></div><div class="line">-<span class="ruby"> 《入户信息卡》</span></div><div class="line">-<span class="ruby"> 《农转非信息卡》（若为在深农转非）</span></div><div class="line">-<span class="ruby"> 《委托协议》</span></div></pre></td></tr></table></figure></p>
-<h3 id="申请租房补贴"><a href="#申请租房补贴" class="headerlink" title="申请租房补贴"></a>申请租房补贴</h3><p>在入户成功后，便可在深圳市人力资源和社会保障局官网申请租房补贴。</p>
-<p>需要的证件：<br><figure class="highlight asciidoc"><table><tr><td class="code"><pre><div class="line"><span class="bullet">- </span>无</div></pre></td></tr></table></figure></p>
-<h3 id="上交介绍信与报到证到代理机构"><a href="#上交介绍信与报到证到代理机构" class="headerlink" title="上交介绍信与报到证到代理机构"></a>上交介绍信与报到证到代理机构</h3><p>介绍信自己复印几份留着申请区级补贴用，把介绍信原件和报到证交到代理机构。</p>
-<p>需要的证件：<br><figure class="highlight haml"><table><tr><td class="code"><pre><div class="line">-<span class="ruby"> 介绍信</span></div><div class="line">-<span class="ruby"> 报到证</span></div></pre></td></tr></table></figure></p>
-<h3 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h3><ul>
-<li>办理手续的时候照着工作人员给的办事指南进行办理，每年可能有所不同，如有错误或不同，笔者概不负责，敬请谅解。</li>
-<li>证件如毕业证、学位证和身份证都是需要经常用到，可以一次性多复印几份，</li>
-<li>因为时间原因，可能有遗落或错误，欢迎指出，谢谢！</li>
-</ul>
-]]></content>
-    
-    <summary type="html">
-    
-      &lt;p&gt;今年（2017年）本科毕业了，工作在深圳就把户口迁了过来，至于迁与不迁户口的优劣，各人有各人的看法，此处不表。本文目的是把个人办理户口迁移的过程记录下来（因单位没有接收权力），造福后来人。&lt;br&gt;
-    
-    </summary>
-    
-      <category term="总结" scheme="https://kerita.github.io/categories/%E6%80%BB%E7%BB%93/"/>
-    
     
   </entry>
   
