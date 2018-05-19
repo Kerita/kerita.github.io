@@ -67,20 +67,74 @@
   </entry>
   
   <entry>
+    <title>修改 placeholder 样式</title>
+    <link href="https://kerita.github.io/2018/05/19/2018/placeholder/"/>
+    <id>https://kerita.github.io/2018/05/19/2018/placeholder/</id>
+    <published>2018-05-18T16:00:00.000Z</published>
+    <updated>2018-05-19T09:05:04.658Z</updated>
+    
+    <content type="html"><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><p>修改 HTML input 元素 placeholder 的样式</p>
+<a id="more"></a>
+<figure class="highlight css"><table><tr><td class="code"><pre><div class="line"><span class="selector-pseudo">::-moz-placeholder</span> &#123; </div><div class="line">  <span class="attribute">font-size</span>: <span class="number">14px</span>;</div><div class="line">  <span class="attribute">color</span>: <span class="number">#999999</span>; </div><div class="line">&#125;</div><div class="line"><span class="selector-pseudo">::-webkit-input-placeholder</span> &#123; </div><div class="line">  <span class="attribute">font-size</span>: <span class="number">14px</span>;</div><div class="line">  <span class="attribute">color</span>: <span class="number">#999999</span>; </div><div class="line">&#125;</div><div class="line"><span class="selector-pseudo">:-ms-input-placeholder</span> &#123; </div><div class="line">  <span class="attribute">font-size</span>: <span class="number">14px</span>;</div><div class="line">  <span class="attribute">color</span>: <span class="number">#999999</span>; </div><div class="line">&#125;</div></pre></td></tr></table></figure>]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;修改 HTML input 元素 placeholder 的样式&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="前端" scheme="https://kerita.github.io/categories/%E5%89%8D%E7%AB%AF/"/>
+    
+    
+      <category term="HTML" scheme="https://kerita.github.io/tags/HTML/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>noopener-noreferrer</title>
+    <link href="https://kerita.github.io/2018/05/19/2018/noopener-noreferrer/"/>
+    <id>https://kerita.github.io/2018/05/19/2018/noopener-noreferrer/</id>
+    <published>2018-05-18T16:00:00.000Z</published>
+    <updated>2018-05-19T08:56:46.697Z</updated>
+    
+    <content type="html"><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><p>当用 target=”_blank” a 标签打开超链接或者用 window.open 打开新窗口时，应该将 opener 设置为空，不然将暴露在非常简单的钓鱼攻击之下。</p>
+<h2 id="解决办法"><a href="#解决办法" class="headerlink" title="解决办法"></a>解决办法</h2><ul>
+<li><p>noopener/noreferrer<br>为 target=”_blank” 的锚点加上 rel=”noopener noreferrer”</p>
+</li>
+<li><p>window.open</p>
+<figure class="highlight haxe"><table><tr><td class="code"><pre><div class="line"><span class="keyword">var</span> <span class="keyword">new</span><span class="type">Wnd</span> = window.open();</div><div class="line"><span class="keyword">new</span><span class="type">Wnd</span>.opener = <span class="literal">null</span>;</div></pre></td></tr></table></figure>
+</li>
+</ul>
+<h2 id="如何攻击"><a href="#如何攻击" class="headerlink" title="如何攻击"></a>如何攻击</h2><figure class="highlight coffeescript"><table><tr><td class="code"><pre><div class="line"><span class="keyword">if</span> (<span class="built_in">window</span>.opener) &#123;</div><div class="line">  <span class="built_in">window</span>.opener.location = <span class="string">"https://dev.to/phishing?referrer="</span>+<span class="built_in">document</span>.referrer;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;link rel=&quot;stylesheet&quot; class=&quot;aplayer-secondary-style-marker&quot; href=&quot;\assets\css\APlayer.min.css&quot;&gt;&lt;script src=&quot;\assets\js\APlayer.min.js&quot; cla
+    
+    </summary>
+    
+      <category term="前端" scheme="https://kerita.github.io/categories/%E5%89%8D%E7%AB%AF/"/>
+    
+    
+      <category term="JS" scheme="https://kerita.github.io/tags/JS/"/>
+    
+  </entry>
+  
+  <entry>
     <title>less calc 不起作用</title>
     <link href="https://kerita.github.io/2018/02/28/2018/less-calc/"/>
     <id>https://kerita.github.io/2018/02/28/2018/less-calc/</id>
     <published>2018-02-27T16:00:00.000Z</published>
     <updated>2018-02-27T16:48:59.904Z</updated>
     
-    <content type="html"><![CDATA[<p>在 less 中使用 CSS3 的 calc 语法时会自动计算，需要采用如下写法,注意减号左右都有空格。</p>
+    <content type="html"><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><p>在 less 中使用 CSS3 的 calc 语法时会自动计算，需要采用如下写法,注意减号左右都有空格。</p>
 <figure class="highlight scss"><table><tr><td class="code"><pre><div class="line"><span class="attribute">width</span>: calc(~<span class="string">"100% - 30px"</span>);</div></pre></td></tr></table></figure>
 ]]></content>
     
     <summary type="html">
     
-      &lt;p&gt;在 less 中使用 CSS3 的 calc 语法时会自动计算，需要采用如下写法,注意减号左右都有空格。&lt;/p&gt;
-&lt;figure class=&quot;highlight scss&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line
+      &lt;link rel=&quot;stylesheet&quot; class=&quot;aplayer-secondary-style-marker&quot; href=&quot;\assets\css\APlayer.min.css&quot;&gt;&lt;script src=&quot;\assets\js\APlayer.min.js&quot; cla
     
     </summary>
     
@@ -100,7 +154,7 @@
     <published>2018-02-19T16:00:00.000Z</published>
     <updated>2018-02-24T11:40:09.056Z</updated>
     
-    <content type="html"><![CDATA[<p>（一篇 2015年的旧文。）</p>
+    <content type="html"><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><p>（一篇 2015年的旧文。）</p>
 <p>大约十年前，拍还是一副一副的买，球还是一个一个的买，而不像现在，拍一把一把的买，而球一桶一桶的买。也就是差不多那个时候，我拥有自己的第一副羽毛球拍，它打开了我通往羽毛球世界的大门。</p>
 <a id="more"></a>
 <p>从一开始的原地不动，看自己一个球能打多少次而不会掉到地上；到后来增加难度，一边走一边带球，从家门口走到家里，再从里面走出来，虽看似简单，但是不可控因素多了；再后来呢，开始对着墙打，墙是一个不知疲倦的对手，它永远能将你的球打回来，但并不是就拿它没有办法，如果你的球技足够高，球从墙弹回的速度和方向其实是在你的掌控之中的。这三种方法主要的练球感和反应力，循序而渐进，熟读而精思。</p>
@@ -134,7 +188,7 @@
     <published>2018-02-18T16:00:00.000Z</published>
     <updated>2018-02-21T09:24:34.149Z</updated>
     
-    <content type="html"><![CDATA[<p>Windows 上使用 VSCode 遇到一个问题，打开项目时，整个电脑基本卡死，Ctrl+Shift+Esc 发现 rg.exe 占用 100% 的 CPU。<br><a id="more"></a><br>在 github 看到，是因为是 cnpm 的原因，解决方法如下：</p>
+    <content type="html"><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><p>Windows 上使用 VSCode 遇到一个问题，打开项目时，整个电脑基本卡死，Ctrl+Shift+Esc 发现 rg.exe 占用 100% 的 CPU。<br><a id="more"></a><br>在 github 看到，是因为是 cnpm 的原因，解决方法如下：</p>
 <h2 id="下载-vscode1-18以上版本"><a href="#下载-vscode1-18以上版本" class="headerlink" title="下载 vscode1.18以上版本"></a>下载 vscode1.18以上版本</h2><h2 id="增加配置"><a href="#增加配置" class="headerlink" title="增加配置"></a>增加配置</h2><p>安装完成后 文件&gt;首选项&gt;设置<br><figure class="highlight actionscript"><table><tr><td class="code"><pre><div class="line"><span class="string">"search.followSymlinks"</span>: <span class="literal">false</span></div></pre></td></tr></table></figure></p>
 ]]></content>
     
@@ -160,7 +214,7 @@
     <published>2018-02-17T16:00:00.000Z</published>
     <updated>2018-02-18T16:08:01.548Z</updated>
     
-    <content type="html"><![CDATA[<p>z-index 只在 position 非 static 的元素生效,而一个元素的 position 默认为 static，static 元素想让  z-index 生效，可以设置元素 position 为 relative。</p>
+    <content type="html"><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><p>z-index 只在 position 非 static 的元素生效,而一个元素的 position 默认为 static，static 元素想让  z-index 生效，可以设置元素 position 为 relative。</p>
 <a id="more"></a>]]></content>
     
     <summary type="html">
@@ -183,7 +237,7 @@
     <published>2018-02-16T16:00:00.000Z</published>
     <updated>2018-02-18T16:04:13.898Z</updated>
     
-    <content type="html"><![CDATA[<p>JSX 用来定义 React 组件的 DOM 结构，其规则跟 HTML 基本相同，但还是有一些差异。例如 HTML 建议自定义属性以 data-* 命名，JSX 则是强制，因为如果不以这种方式命名，就不生效。</p>
+    <content type="html"><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><p>JSX 用来定义 React 组件的 DOM 结构，其规则跟 HTML 基本相同，但还是有一些差异。例如 HTML 建议自定义属性以 data-* 命名，JSX 则是强制，因为如果不以这种方式命名，就不生效。</p>
 <a id="more"></a>
 <p>商城在对接某第三方支付公司信用卡接口的时候，他们的自定义属性不以 data-* 命名，导致数据一直获取不到。</p>
 <p>后来发现利用 JS setAttribute() 手动设置非标准的自定义属性可以生效，直接写在 JSX 不行。</p>
@@ -210,7 +264,7 @@
     <published>2018-02-15T16:00:00.000Z</published>
     <updated>2018-02-18T15:47:17.464Z</updated>
     
-    <content type="html"><![CDATA[<p>在 React 组件定义一个计时器，在组件卸载的时候就应该清除掉。</p>
+    <content type="html"><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><p>在 React 组件定义一个计时器，在组件卸载的时候就应该清除掉。</p>
 <a id="more"></a>
 <figure class="highlight kotlin"><table><tr><td class="code"><pre><div class="line">componentWillUnmount () &#123;</div><div class="line">    <span class="keyword">this</span>.loadInterval &amp;&amp; clearInterval(<span class="keyword">this</span>.loadInterval)</div><div class="line">    <span class="keyword">this</span>.loadInterval = <span class="literal">false</span></div><div class="line">&#125;</div></pre></td></tr></table></figure>
 ]]></content>
@@ -235,7 +289,7 @@
     <published>2018-02-14T16:00:00.000Z</published>
     <updated>2018-02-18T15:44:12.903Z</updated>
     
-    <content type="html"><![CDATA[<p>使用 React.js 一段时间了，把使用过程遇到的小坑和小技巧记录下来，希望能够帮助到其他人。</p>
+    <content type="html"><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><p>使用 React.js 一段时间了，把使用过程遇到的小坑和小技巧记录下来，希望能够帮助到其他人。</p>
 <a id="more"></a>
 <h2 id="显示-html"><a href="#显示-html" class="headerlink" title="显示 html"></a>显示 html</h2><figure class="highlight stylus"><table><tr><td class="code"><pre><div class="line">&lt;<span class="selector-tag">div</span> dangerouslySetInnerHTML=&#123;&#123; __html: LANG<span class="selector-class">.auth_register_tips1</span> &#125;&#125;/&gt;</div></pre></td></tr></table></figure>
 <h2 id="传数组给子组件"><a href="#传数组给子组件" class="headerlink" title="传数组给子组件"></a>传数组给子组件</h2><ol>
@@ -345,7 +399,7 @@
     <published>2018-02-13T16:00:00.000Z</published>
     <updated>2018-02-18T15:31:55.271Z</updated>
     
-    <content type="html"><![CDATA[<p>一些关于商城性能优化的想法。</p>
+    <content type="html"><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><p>一些关于商城性能优化的想法。</p>
 <a id="more"></a>
 <h2 id="压缩图片资源"><a href="#压缩图片资源" class="headerlink" title="压缩图片资源"></a>压缩图片资源</h2><p>保证图片质量情况下，尽量争取PC端每张图片不超过 200kb，移动端每张图片不超过 100kb,采用智图对图片进行压缩。</p>
 <p>1.急需压缩清单</p>
@@ -388,7 +442,7 @@
     <published>2018-02-12T16:00:00.000Z</published>
     <updated>2018-02-13T18:08:37.690Z</updated>
     
-    <content type="html"><![CDATA[<p>在 <a href="https://weibo.com/1400854834/FE4pC8Rwh?type=comment#_rnd1518538999890" target="_blank" rel="external">@ruanyf</a> 老师的微博上看到“有人用推特定时发推告诉你今年的进度”，想着可以写一个微博机器人每天自动发微博倒数，一番折腾之后已经上线了，请戳 <a href="https://weibo.com/kerita" target="_blank" rel="external">@  201X进度条</a>。</p>
+    <content type="html"><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><p>在 <a href="https://weibo.com/1400854834/FE4pC8Rwh?type=comment#_rnd1518538999890" target="_blank" rel="external">@ruanyf</a> 老师的微博上看到“有人用推特定时发推告诉你今年的进度”，想着可以写一个微博机器人每天自动发微博倒数，一番折腾之后已经上线了，请戳 <a href="https://weibo.com/kerita" target="_blank" rel="external">@  201X进度条</a>。</p>
 <a id="more"></a>
 <p>具体实现过程如下（使用的语言是 Node.js）：</p>
 <h2 id="申请微博网页应用"><a href="#申请微博网页应用" class="headerlink" title="申请微博网页应用"></a>申请微博网页应用</h2><p>在 <a href="http://open.weibo.com/connect" target="_blank" rel="external">微博开放平台</a> 申请一个网页应用<br> <div style="text-align:center"><br> <img src="/2018/02/13/2018/weibo-robot/test-web-app.png" alt="申请应用" title="申请应用"><br> </div></p>
@@ -422,7 +476,7 @@
     <published>2018-02-11T16:00:00.000Z</published>
     <updated>2018-02-21T09:26:36.670Z</updated>
     
-    <content type="html"><![CDATA[<p>“你们活着是为了什么？为啥我经常会觉得一切都没啥意义呢……”。在朋友圈看到这段话，是让我写下这篇文章的最重要原因。</p>
+    <content type="html"><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><p>“你们活着是为了什么？为啥我经常会觉得一切都没啥意义呢……”。在朋友圈看到这段话，是让我写下这篇文章的最重要原因。</p>
 <a id="more"></a>
 <p>毕业几个月后，一天天重复码代码生活，在情绪低落的时候，也会问自己，“人生的意义是什么？”</p>
 <p>在朋友圈看到上面那段话，发现不是只有我一个人有这种疑问，所以我想把自己答案分享出来，希望给其他人一些启迪。</p>
@@ -459,7 +513,7 @@
     <published>2017-12-02T16:00:00.000Z</published>
     <updated>2017-12-03T17:37:56.379Z</updated>
     
-    <content type="html"><![CDATA[<p>最近遇到一个新鲜的 bug —— iOS11 Safari 中 modal 上的 input 光标不跟随焦点，即当 input 获得焦点准备输入时，光标并不在 input 元素中。</p>
+    <content type="html"><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><p>最近遇到一个新鲜的 bug —— iOS11 Safari 中 modal 上的 input 光标不跟随焦点，即当 input 获得焦点准备输入时，光标并不在 input 元素中。</p>
 <a id="more"></a>
 <p>之所以会有这个 bug 的原因是因为，当输入框获取焦点弹出输入法时，，Safari 向下移动页面，导致光标不跟随焦点。</p>
 <p>谷歌搜索看到<a href="https://hackernoon.com/how-to-fix-the-ios-11-input-element-in-fixed-modals-bug-aaf66c7ba3f8" target="_blank" rel="external">这篇文章（需翻墙）</a>,了解到三种解决办法。</p>
@@ -496,7 +550,7 @@
     <published>2017-10-25T16:00:00.000Z</published>
     <updated>2017-12-03T16:13:45.962Z</updated>
     
-    <content type="html"><![CDATA[<p>在某个很平凡的夜晚，因为无法打开某个链接，开始知道墙（GFW——the Great Firewall），也开始寻找翻墙的工具，一定要到墙外去看看。</p>
+    <content type="html"><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><p>在某个很平凡的夜晚，因为无法打开某个链接，开始知道墙（GFW——the Great Firewall），也开始寻找翻墙的工具，一定要到墙外去看看。</p>
 <a id="more"></a>
 <p>墙外的世界有多精彩吗？我又有多迷恋吗？不见得。翻墙主要目的是为了用谷歌搜索，还有就是为了更流畅的访问如  <a href="https://github.com/" target="_blank" rel="external">GitHub</a>、<a href="https://stackoverflow.com" target="_blank" rel="external">Stack Overflow</a> 之类有关编程的网站。但无法翻墙损失的不只是这些网站带来的良好体验和知识，还有自由，一种我想看什么就看什么的自由。现在每每看到社交网络有人在发“看到祖国这么流氓，我就放心了”、“这盛世如你所愿”，总会有一种怪怪的感觉。</p>
 <p>这里顺便把百度批判一番。作为有着上亿用户的体量的公司，百度以及百度高层衣食无忧的管理人员为了赚钱加各种广告、安装百度全家桶、劫持浏览器首页、甚至劫持bing搜索，不羞愧吗？就降低中国互联网的体验而言，百度敢说，“我不是针对谁，我是说在做的各位都是垃圾”。百度应该好好学学网易，做良心产品，发良心财。</p>
@@ -522,13 +576,44 @@
   </entry>
   
   <entry>
+    <title>青峰</title>
+    <link href="https://kerita.github.io/2017/10/03/2017/qingfeng/"/>
+    <id>https://kerita.github.io/2017/10/03/2017/qingfeng/</id>
+    <published>2017-10-02T16:00:00.000Z</published>
+    <updated>2017-10-26T13:54:43.809Z</updated>
+    
+    <content type="html"><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><p>在很长一段时间，我都是将对明星作品的喜欢与对明星的喜欢分开，即喜欢他的作品不一定喜欢这个人，当然也不讨厌。无论是五月天、周杰伦、陈奕迅，还是赵雷、许巍、逃跑计划，虽然他们的歌在某一瞬间或者某一段时间，让我产生共鸣，但对于他们的喜欢都只停留在歌曲上。而青峰，苏打绿的主唱，唱《小情歌》的那个人，成为了打破这个规则第一人。</p>
+<a id="more"></a>
+<iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width="330" height="86" src="//music.163.com/outchain/player?type=2&id=32019043&auto=1&height=66"></iframe>
+
+
+<p>我也在想为什么会因为喜欢他唱的歌喜欢这个人？一个无论是动作和嗓音都有点“女性化特质”的男歌手。大概是因为他的创作、他的歌声如他自己的所说的“像棉一样带给人温暖舒服的感觉”，在触碰听者心底最柔软地方的同时，又不失勇敢和坚毅。而其他优秀的歌手离心底，都还有一些距离。</p>
+<p>这里推荐一些个人觉得比较有代表性的歌曲：《无与伦比的美丽》、《相信》、《只有可以》、《带我走》，也期待你分享动听的歌与让人喜欢的歌手。</p>
+<p>当然说到青峰，不能不说张悬，有兴趣的话去了解他们的故事，并听听她的《宝贝》。</p>
+<p>最后说一句，他们2016年开始休团三年，不发专辑不开演唱会。一起等待他们复出的那一天吧。</p>
+<div style="text-align:center"><br><img src="/2017/10/03/2017/qingfeng/beauty.png" alt="无与伦比的美丽" title="无与伦比的美丽"><br></div>]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;在很长一段时间，我都是将对明星作品的喜欢与对明星的喜欢分开，即喜欢他的作品不一定喜欢这个人，当然也不讨厌。无论是五月天、周杰伦、陈奕迅，还是赵雷、许巍、逃跑计划，虽然他们的歌在某一瞬间或者某一段时间，让我产生共鸣，但对于他们的喜欢都只停留在歌曲上。而青峰，苏打绿的主唱，唱《小情歌》的那个人，成为了打破这个规则第一人。&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="名人" scheme="https://kerita.github.io/categories/%E5%90%8D%E4%BA%BA/"/>
+    
+    
+      <category term="苏打绿" scheme="https://kerita.github.io/tags/%E8%8B%8F%E6%89%93%E7%BB%BF/"/>
+    
+  </entry>
+  
+  <entry>
     <title>谈微信的那些缺点</title>
     <link href="https://kerita.github.io/2017/10/03/2017/about-wechat/"/>
     <id>https://kerita.github.io/2017/10/03/2017/about-wechat/</id>
     <published>2017-10-02T16:00:00.000Z</published>
     <updated>2017-10-26T13:42:01.218Z</updated>
     
-    <content type="html"><![CDATA[<p>今天想聊一聊日常使用频率最高的 APP ——微信，使用过程一些让人不爽的地方。虽然从用户角度来说是缺点，但从腾讯角度来说当然就未必了。</p>
+    <content type="html"><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><p>今天想聊一聊日常使用频率最高的 APP ——微信，使用过程一些让人不爽的地方。虽然从用户角度来说是缺点，但从腾讯角度来说当然就未必了。</p>
 <a id="more"></a>
 <h2 id="好友"><a href="#好友" class="headerlink" title="好友"></a>好友</h2><h3 id="无法彻底删除好友"><a href="#无法彻底删除好友" class="headerlink" title="无法彻底删除好友"></a>无法彻底删除好友</h3><p>用户删除好友时，并不会从对方好友列表删掉自己，并且动态依然会保留对方的点赞。</p>
 <h3 id="没有离线聊天记录"><a href="#没有离线聊天记录" class="headerlink" title="没有离线聊天记录"></a>没有离线聊天记录</h3><p>无法是微信还是QQ，离线聊天记录都做得很差，最完美的离线聊天记录是提供所有聊天记录，并且可以按时间检索。</p>
@@ -560,44 +645,13 @@
   </entry>
   
   <entry>
-    <title>青峰</title>
-    <link href="https://kerita.github.io/2017/10/03/2017/qingfeng/"/>
-    <id>https://kerita.github.io/2017/10/03/2017/qingfeng/</id>
-    <published>2017-10-02T16:00:00.000Z</published>
-    <updated>2017-10-26T13:54:43.809Z</updated>
-    
-    <content type="html"><![CDATA[<p>在很长一段时间，我都是将对明星作品的喜欢与对明星的喜欢分开，即喜欢他的作品不一定喜欢这个人，当然也不讨厌。无论是五月天、周杰伦、陈奕迅，还是赵雷、许巍、逃跑计划，虽然他们的歌在某一瞬间或者某一段时间，让我产生共鸣，但对于他们的喜欢都只停留在歌曲上。而青峰，苏打绿的主唱，唱《小情歌》的那个人，成为了打破这个规则第一人。</p>
-<a id="more"></a>
-<iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width="330" height="86" src="//music.163.com/outchain/player?type=2&id=32019043&auto=1&height=66"></iframe>
-
-
-<p>我也在想为什么会因为喜欢他唱的歌喜欢这个人？一个无论是动作和嗓音都有点“女性化特质”的男歌手。大概是因为他的创作、他的歌声如他自己的所说的“像棉一样带给人温暖舒服的感觉”，在触碰听者心底最柔软地方的同时，又不失勇敢和坚毅。而其他优秀的歌手离心底，都还有一些距离。</p>
-<p>这里推荐一些个人觉得比较有代表性的歌曲：《无与伦比的美丽》、《相信》、《只有可以》、《带我走》，也期待你分享动听的歌与让人喜欢的歌手。</p>
-<p>当然说到青峰，不能不说张悬，有兴趣的话去了解他们的故事，并听听她的《宝贝》。</p>
-<p>最后说一句，他们2016年开始休团三年，不发专辑不开演唱会。一起等待他们复出的那一天吧。</p>
-<div style="text-align:center"><br><img src="/2017/10/03/2017/qingfeng/beauty.png" alt="无与伦比的美丽" title="无与伦比的美丽"><br></div>]]></content>
-    
-    <summary type="html">
-    
-      &lt;p&gt;在很长一段时间，我都是将对明星作品的喜欢与对明星的喜欢分开，即喜欢他的作品不一定喜欢这个人，当然也不讨厌。无论是五月天、周杰伦、陈奕迅，还是赵雷、许巍、逃跑计划，虽然他们的歌在某一瞬间或者某一段时间，让我产生共鸣，但对于他们的喜欢都只停留在歌曲上。而青峰，苏打绿的主唱，唱《小情歌》的那个人，成为了打破这个规则第一人。&lt;/p&gt;
-    
-    </summary>
-    
-      <category term="名人" scheme="https://kerita.github.io/categories/%E5%90%8D%E4%BA%BA/"/>
-    
-    
-      <category term="苏打绿" scheme="https://kerita.github.io/tags/%E8%8B%8F%E6%89%93%E7%BB%BF/"/>
-    
-  </entry>
-  
-  <entry>
     <title>Awards 项目总结</title>
     <link href="https://kerita.github.io/2017/09/24/2017/awards-project/"/>
     <id>https://kerita.github.io/2017/09/24/2017/awards-project/</id>
     <published>2017-09-23T16:00:00.000Z</published>
     <updated>2017-10-12T11:23:17.560Z</updated>
     
-    <content type="html"><![CDATA[<p>本周二（19号）彻底完成公司 Awards 项目的需求和需求修改并上线，趁热打铁写下完成项目过程的一些思考。</p>
+    <content type="html"><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><p>本周二（19号）彻底完成公司 Awards 项目的需求和需求修改并上线，趁热打铁写下完成项目过程的一些思考。</p>
 <a id="more"></a>
 <h2 id="项目介绍"><a href="#项目介绍" class="headerlink" title="项目介绍"></a>项目介绍</h2><p><a href="https://awards.insta360.com/about?locale=zh" target="_blank" rel="external">Awards 项目</a> 是 Insta360 针对全景作品进行有奖征集一个项目，项目工作量主要在前端（故所说项目都指前端部分项目—— fe-awards），完成整个项目大概花了四天时间（指完成第一版需求的功能，不包括后来改需求时间）。</p>
 <h2 id="React-mobx-架构"><a href="#React-mobx-架构" class="headerlink" title="React+mobx 架构"></a>React+mobx 架构</h2><p>整个项目采用 React+mobx 的架构， React 完成项目 View 层面的呈现，mobx 负责一些项目数据的管理。</p>
@@ -675,7 +729,7 @@
     <published>2017-09-19T16:00:00.000Z</published>
     <updated>2017-09-20T15:44:47.844Z</updated>
     
-    <content type="html"><![CDATA[<p>《带我走》- 苏打绿<br><a id="more"></a></p>
+    <content type="html"><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><p>《带我走》- 苏打绿<br><a id="more"></a></p>
 <iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width="330" height="86" src="//music.163.com/outchain/player?type=2&id=27946612&auto=1&height=66"></iframe>
 
 <div style="text-align:center"><img src="http://7xpofw.com1.z0.glb.clouddn.com/%E5%BE%AE%E4%BF%A1%E5%9B%BE%E7%89%87_20170920234314.jpg" width="375" height="375" alt=""> </div>]]></content>
@@ -700,7 +754,7 @@
     <published>2017-09-13T16:00:00.000Z</published>
     <updated>2017-09-13T16:52:56.070Z</updated>
     
-    <content type="html"><![CDATA[<p>经历大概两年的矫正，终于拆掉了牙齿上的矫正器，并结束每月一次的调整。值此之际，简单写下一些感受和心得。</p>
+    <content type="html"><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><p>经历大概两年的矫正，终于拆掉了牙齿上的矫正器，并结束每月一次的调整。值此之际，简单写下一些感受和心得。</p>
 <a id="more"></a>
 <h2 id="箍牙要趁早"><a href="#箍牙要趁早" class="headerlink" title="箍牙要趁早"></a>箍牙要趁早</h2><p>化用张爱玲的“出名要趁早”来说箍牙这件事越早越好。在牙齿定型后如果出现不整齐，那就早点去箍牙吧。一是越早箍牙越早享受牙齿整齐的开心，也更容易整；二是箍牙费用一年比一年水涨船高。</p>
 <h2 id="箍牙历程"><a href="#箍牙历程" class="headerlink" title="箍牙历程"></a>箍牙历程</h2><p>箍牙过程最痛苦的是戴上牙套的前两周，牙齿软的根本无法吃一丢丢硬的东西，我是靠着喝粥、吃面、吃鱼度过那两周的，肚子饿得很快，多吃几餐就好了。</p>
@@ -720,79 +774,6 @@
     
     
       <category term="健康" scheme="https://kerita.github.io/tags/%E5%81%A5%E5%BA%B7/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>ES6变量解构引发的面试题的猜想</title>
-    <link href="https://kerita.github.io/2017/08/31/2017/about-destructuring/"/>
-    <id>https://kerita.github.io/2017/08/31/2017/about-destructuring/</id>
-    <published>2017-08-30T16:00:00.000Z</published>
-    <updated>2017-09-01T17:39:05.282Z</updated>
-    
-    <content type="html"><![CDATA[<p>ES6 允许按照一定模式，从数组和对象中提取值，对变量进行赋值，这被称为解构（Destructuring）。（来自阮一峰ES6教程）</p>
-<a id="more"></a>
-<h3 id="交换变量值"><a href="#交换变量值" class="headerlink" title="交换变量值"></a>交换变量值</h3><p>同时阮一峰还说了用变量解构可以对很轻松的实现对两个值进行交换，他给出了例子，关于面试题的猜想就是由这个例子引发的。</p>
-<h3 id="面试题"><a href="#面试题" class="headerlink" title="面试题"></a>面试题</h3><figure class="highlight gauss"><table><tr><td class="code"><pre><div class="line"><span class="keyword">let</span> x = <span class="number">1</span></div><div class="line"><span class="keyword">let</span> y = <span class="number">2</span></div><div class="line">[x,y] = [y,x]</div><div class="line"></div><div class="line">console.<span class="built_in">log</span>(x)</div><div class="line">console.<span class="built_in">log</span>(y)</div></pre></td></tr></table></figure>
-<p>请问上面的代码将输出什么？<br>A. 2 1<br>B. Uncaught ReferenceError: y is not defined</p>
-<p>按照前面的说法，选A。但之所以能成为面试题，是因为有坑。</p>
-<h3 id="考点"><a href="#考点" class="headerlink" title="考点"></a>考点</h3><ul>
-<li>变量解构。 利用变量解构可以进行赋值。</li>
-<li>JS什么时候必须加分号。第一个字符是’[‘，’(‘,’+’,’-‘, ‘/‘,此时上一行不加分号，就不会将上下两行代码分开。</li>
-</ul>
-<p>所以不加分号时，上面的代码变成这样。因为let声明变量暂时性死区的特性，此时的2[x,y]中的y还是未定义，所以是ReferenceError。</p>
-<figure class="highlight nix"><table><tr><td class="code"><pre><div class="line"><span class="keyword">let</span> <span class="attr">x=1</span></div><div class="line"><span class="keyword">let</span> <span class="attr">y</span> = <span class="number">2</span>[x,y] = [y,x]</div></pre></td></tr></table></figure>
-<h3 id="参考链接"><a href="#参考链接" class="headerlink" title="参考链接"></a>参考链接</h3><p><a href="http://es6.ruanyifeng.com/" target="_blank" rel="external">ECMAScript 6 入门</a><br><a href="https://www.zhihu.com/question/20298345" target="_blank" rel="external">JavaScript 语句后应该加分号么？</a></p>
-]]></content>
-    
-    <summary type="html">
-    
-      &lt;p&gt;ES6 允许按照一定模式，从数组和对象中提取值，对变量进行赋值，这被称为解构（Destructuring）。（来自阮一峰ES6教程）&lt;/p&gt;
-    
-    </summary>
-    
-      <category term="前端" scheme="https://kerita.github.io/categories/%E5%89%8D%E7%AB%AF/"/>
-    
-    
-      <category term="JS" scheme="https://kerita.github.io/tags/JS/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>解决iOS下音频无法自动播放</title>
-    <link href="https://kerita.github.io/2017/08/21/2017/audio-cannot-autoplay-in-iOS/"/>
-    <id>https://kerita.github.io/2017/08/21/2017/audio-cannot-autoplay-in-iOS/</id>
-    <published>2017-08-20T16:00:00.000Z</published>
-    <updated>2017-08-21T16:43:35.667Z</updated>
-    
-    <content type="html"><![CDATA[<p>Bieber走后，开始接手公司的全景分享系统，主要是利用这个系统做一些活动页面。有个需求需要在 h5 中加背景音乐，打开链接后立即播放。原本想不就是 audio 标签加 autoplay 属性值吗？简单。但如果这么简单就不会有这篇文章了。</p>
-<a id="more"></a>
-<h3 id="问题描述"><a href="#问题描述" class="headerlink" title="问题描述"></a>问题描述</h3><p>写完在Chrome的移动端模式下测试，链接打开背景音乐就自动播放，通过钉钉将局域网测试链接发给同事，也正常。但是到了h5的主战场微信就不行了，在Safari打开也是不行。</p>
-<p>查了资料是 iOS 内的 Safari 禁止音频自动播放，所以 Safari 下无法自动播放音频，采用 iOS 内 Safari 打开链接的微信也不行，而钉钉自己内置了浏览器，所以没问题。</p>
-<h3 id="bug原因"><a href="#bug原因" class="headerlink" title="bug原因"></a>bug原因</h3><p>接着找资料看能不能hack掉Safari这个糟糕的特性（官方文档是说怕音频自动播放消耗流量，但是图片也会啊，难道就禁止大图片了？），只找到 iOS4 的hack方法，在 iOS8 都失效，更不用说现在已经 iOS10 了。最后的解决办法是，在 document 绑定 touchstart/click 事件，用户触摸或者点击屏幕，音频就自动播放。</p>
-<p>但你可能会奇怪？ iOS 下朋友圈有些 h5 背景音乐不是自动播放吗？这是因为微信的 SDK 给出了解决办法。</p>
-<h3 id="解决代码"><a href="#解决代码" class="headerlink" title="解决代码"></a>解决代码</h3><p>下面给出完整的代码。</p>
-<figure class="highlight plain"><figcaption><span>bg-audio为audio标签id</span></figcaption><table><tr><td class="code"><pre><div class="line">// 解决iOS禁止自动播放音频</div><div class="line">// 微信自动播放音频</div><div class="line">let bgAudio = document.getElementById(&apos;bg-audio&apos;)</div><div class="line">bgAudio.play();</div><div class="line">document.addEventListener(&quot;WeixinJSBridgeReady&quot;,function () &#123;</div><div class="line">    bgAudio.play();</div><div class="line">&#125;, false);</div><div class="line">// 其他应用在click/touch时触发播放</div><div class="line">document.addEventListener(&apos;click&apos;, function () &#123;</div><div class="line">    bgAudio.play()</div><div class="line">&#125;)  </div><div class="line">document.addEventListener(&apos;touchstart&apos;, function () &#123;</div><div class="line">    bgAudio.play()</div><div class="line">&#125;)</div></pre></td></tr></table></figure>
-<h3 id="视频播放"><a href="#视频播放" class="headerlink" title="视频播放"></a>视频播放</h3><p>关于视频播放，可以看看这两篇博文<br><a href="http://leonshi.com/2015/09/06/mobile-video-play/" target="_blank" rel="external">移动端视频播放那些事儿</a><br><a href="https://imququ.com/post/new-video-policies-for-ios10.html" target="_blank" rel="external">iOS 10 Safari 视频播放新政策</a></p>
-<h3 id="活动页面"><a href="#活动页面" class="headerlink" title="活动页面"></a>活动页面</h3><p><a href="https://s.insta360.com/g/a2b1b5d7d9304b5d7da952d9d0afe39c?activity=npc&amp;noad=true&amp;from=singlemessage&amp;isappinstalled=0" target="_blank" rel="external">NPC 不破不立改造展</a><br><a href="https://s.insta360.com/g/7f8a2003b99c61939ff85ef4bd61a829?activity=crland&amp;noad=true&amp;from=groupmessage&amp;isappinstalled=0" target="_blank" rel="external">双城对话 圳京世界</a></p>
-]]></content>
-    
-    <summary type="html">
-    
-      &lt;p&gt;Bieber走后，开始接手公司的全景分享系统，主要是利用这个系统做一些活动页面。有个需求需要在 h5 中加背景音乐，打开链接后立即播放。原本想不就是 audio 标签加 autoplay 属性值吗？简单。但如果这么简单就不会有这篇文章了。&lt;/p&gt;
-    
-    </summary>
-    
-      <category term="前端" scheme="https://kerita.github.io/categories/%E5%89%8D%E7%AB%AF/"/>
-    
-    
-      <category term="移动端" scheme="https://kerita.github.io/tags/%E7%A7%BB%E5%8A%A8%E7%AB%AF/"/>
-    
-      <category term="iOS" scheme="https://kerita.github.io/tags/iOS/"/>
-    
-      <category term="audio" scheme="https://kerita.github.io/tags/audio/"/>
-    
-      <category term="HTML" scheme="https://kerita.github.io/tags/HTML/"/>
     
   </entry>
   
