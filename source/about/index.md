@@ -5,7 +5,7 @@ date: 2017/1/22
 
 <br/>
 
-<p><i class="fa fa-envelope"></i> Email: <a href="mailto:kerita@qq.com" target="_blank" rel="external">kerita@qq.com</a></p>
+<p><i class="fa fa-envelope"></i> Email: <a href="mailto:kerita@qq.com" target="_blank" rel="external">kerita#qq.com</a></p>
 
 <p><i class="fa fa-github"></i> Github: <a href="https://github.com/kerita" target="_blank" rel="external">Kerita</a></p>
 
