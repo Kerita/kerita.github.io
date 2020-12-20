@@ -21,7 +21,7 @@ before_script: ## 根据你所用的主题和自定义的不同，这里会有�
 script:
   - hexo generate # generate static files
 deploy: # 根据个人情况，这里会有所不同
-  provider: pages
+  provider: GITHUB PAGES
   skip_cleanup: true # 构建完成后不清除
   keep_history: true # 保存历史
   fqdn: kerita.me # 自定义域名，使用 username.github.io 可删除
