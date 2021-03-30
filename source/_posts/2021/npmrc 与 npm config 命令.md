@@ -28,7 +28,7 @@ registry=https://registry.npm.taobao.org/
 
 ## .npmrc 优先级
 
-> 项目 .npmrc 文件 > 用户级 .npmrc 文件> 全局级 .npmrc 文件 > npm 内置的 .npmrc 文件
+项目 .npmrc 文件 > 用户级 .npmrc 文件> 全局级 .npmrc 文件 > npm 内置的 .npmrc 文件
 
 ## .npmrc 文件格式
 
@@ -36,9 +36,9 @@ npmrc 文件是 `key = value` 格式，可以通过 `npm config` 命令进行配
 
 # npm config 命令
 
-> 我们可以通过 npm config 命令管理 npm 的配置，默认更改的是用户目录下的 .npmrc 文件。加上 -g/—global 参数，更改的则是全局目录下的 .npmrc 文件。n'p'm
+我们可以通过 npm config 命令管理 npm 的配置，默认更改的是用户目录下的 .npmrc 文件。加上 -g/—global 参数，更改的则是全局目录下的 .npmrc 文件。n'p'm
 
-```jsx
+```
 npm config set <key> <value> [-g|--global]
 npm config get <key>
 npm config delete <key>
