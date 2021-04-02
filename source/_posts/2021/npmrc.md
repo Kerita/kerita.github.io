@@ -1,6 +1,7 @@
 ---
 title: .npmrc 与 npm config 命令
 categories: 前端
+toc: true
 tags: npm
 date: 2021/3/29
 ---

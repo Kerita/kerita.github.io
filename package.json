@@ -3,7 +3,7 @@
   "version": "0.0.0",
   "private": true,
   "scripts": {
-    "start": "hexo server",
+    "start": "hexo server --draft --open #restart the server",
     "build": "hexo generate",
     "clean": "hexo clean",
     "deploy": "hexo deploy",
@@ -14,6 +14,7 @@
   },
   "dependencies": {
     "hexo": "^5.0.0",
+    "hexo-browsersync": "^0.3.0",
     "hexo-generator-archive": "^1.0.0",
     "hexo-generator-category": "^1.0.0",
     "hexo-generator-index": "^2.0.0",
