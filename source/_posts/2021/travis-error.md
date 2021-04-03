@@ -24,5 +24,5 @@ The command "eval yarn --frozen-lockfile " failed.
 
 ```
 install:
-  - npm
+  - yarn
 ```
