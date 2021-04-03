@@ -3,7 +3,7 @@ toc: true
 title: travis-ci 构建报错
 categories: 构建
 tags: travis-ci
-date: 2021/4/4
+date: 2021/4/2
 ---
 
 ## 起因

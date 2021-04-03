@@ -3,7 +3,7 @@ title: CommonJS 与 ES6 Module 的区别
 categories: 前端
 toc: true
 tags: 模块化
-date: 2021/4/5
+date: 2021/4/3
 ---
 
 JavaScript 起初只是用来做页面的的简单交互，随着 Web 应用的复杂性越来越高，维护成本越来越大，模块化标准也在 ES6 版本应运而生。当然，在 ES6 Module 出现之前，社区在使用 Node.js 的过程中，也形成了适合 Node.js 的 CommonJS 模块标准。

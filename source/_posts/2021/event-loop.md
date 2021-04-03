@@ -3,7 +3,7 @@ toc: true
 title: 什么是事件循环 (Event Loop)
 categories: 前端
 tags: JS
-date: 2021/4/3
+date: 2021/4/1
 ---
 
 # 事件循环
