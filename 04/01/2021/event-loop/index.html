@@ -4,20 +4,24 @@
   <meta charset="utf-8">
   
   
-  <title>travis-ci 构建报错 | Kerita</title>
+  <title>什么是事件循环 (Event Loop) | Kerita</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <meta name="description" content="起因之前博客配置了 travis-ci 的自动构建，昨晚写完 什么是事件循环 (Event Loop)，push 到 GitHub 就去睡觉了。早上起来看没有构建成功，报了以下错误： 1The command &quot;eval yarn --frozen-lockfile &quot; failed.">
+  <meta name="description" content="事件循环事件循环 (Event Loop) 是 JavaScript 运行的机制，事件循环负责执行代码、收集和处理事件以及执行队列中的子任务。浏览器与 Node.js 的事件循环存在差异。">
 <meta property="og:type" content="article">
-<meta property="og:title" content="travis-ci 构建报错">
-<meta property="og:url" content="https://kerita.me/04/04/2021/travis-error/index.html">
+<meta property="og:title" content="什么是事件循环 (Event Loop)">
+<meta property="og:url" content="https://kerita.me/04/01/2021/event-loop/index.html">
 <meta property="og:site_name" content="Kerita">
-<meta property="og:description" content="起因之前博客配置了 travis-ci 的自动构建，昨晚写完 什么是事件循环 (Event Loop)，push 到 GitHub 就去睡觉了。早上起来看没有构建成功，报了以下错误： 1The command &quot;eval yarn --frozen-lockfile &quot; failed.">
+<meta property="og:description" content="事件循环事件循环 (Event Loop) 是 JavaScript 运行的机制，事件循环负责执行代码、收集和处理事件以及执行队列中的子任务。浏览器与 Node.js 的事件循环存在差异。">
 <meta property="og:locale" content="zh_CN">
-<meta property="article:published_time" content="2021-04-04T00:00:00.000Z">
-<meta property="article:modified_time" content="2021-04-03T09:09:36.327Z">
+<meta property="og:image" content="https://kerita.me/04/01/2021/event-loop/browser-event-loop.png">
+<meta property="og:image" content="https://kerita.me/04/01/2021/event-loop/node-event-loop.png">
+<meta property="og:image" content="https://kerita.me/04/01/2021/event-loop/node-queue.png">
+<meta property="article:published_time" content="2021-04-01T00:00:00.000Z">
+<meta property="article:modified_time" content="2021-04-03T09:11:27.532Z">
 <meta property="article:author" content="Kerita">
-<meta property="article:tag" content="travis-ci">
+<meta property="article:tag" content="JS">
 <meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://kerita.me/04/01/2021/event-loop/browser-event-loop.png">
   
     <link rel="alternate" href="/atom.xml" title="Kerita" type="application/atom+xml">
   
@@ -78,14 +82,14 @@
 </header>
 
       <div class="outer">
-        <section id="main"><article id="post-2021/travis-error" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+        <section id="main"><article id="post-2021/event-loop" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
   <div class="article-meta">
-    <a href="/04/04/2021/travis-error/" class="article-date">
-  <time class="dt-published" datetime="2021-04-04T00:00:00.000Z" itemprop="datePublished">2021-04-04</time>
+    <a href="/04/01/2021/event-loop/" class="article-date">
+  <time class="dt-published" datetime="2021-04-01T00:00:00.000Z" itemprop="datePublished">2021-04-01</time>
 </a>
     
   <div class="article-category">
-    <a class="article-category-link" href="/categories/%E6%9E%84%E5%BB%BA/">构建</a>
+    <a class="article-category-link" href="/categories/%E5%89%8D%E7%AB%AF/">前端</a>
   </div>
 
   </div>
@@ -96,7 +100,7 @@
         
   
     <h1 class="p-name article-title" itemprop="headline name">
-      travis-ci 构建报错
+      什么是事件循环 (Event Loop)
     </h1>
   
 
@@ -104,21 +108,63 @@
     
     <div class="e-content article-entry" itemprop="articleBody">
       
-        <h2 id="起因"><a href="#起因" class="headerlink" title="起因"></a>起因</h2><p>之前博客配置了 <code>travis-ci</code> 的自动构建，昨晚写完 <a href="/04/03/2021/event-loop/" title="什么是事件循环 (Event Loop)">什么是事件循环 (Event Loop)</a>，push 到 <code>GitHub</code> 就去睡觉了。早上起来看没有构建成功，报了以下错误：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">The command &quot;eval yarn --frozen-lockfile &quot; failed.</span><br></pre></td></tr></table></figure>
+        <h1 id="事件循环"><a href="#事件循环" class="headerlink" title="事件循环"></a>事件循环</h1><p>事件循环 (Event Loop) 是 JavaScript 运行的机制，事件循环负责执行代码、收集和处理事件以及执行队列中的子任务。浏览器与 Node.js 的事件循环存在差异。</p>
 <a id="more"></a>
 
-<p>我的 <code>.travis.yml</code> 并没有配置使用 <code>yarn</code> 作为依赖管理工具，结合这个 <a target="_blank" rel="noopener" href="https://github.com/zoeyg/binance/issues/78#issuecomment-692523504">issue</a>，猜想是 travis 默认使用 <code>yarn</code> 作为依赖管理工具了，并且执行了 <code>yarn --frozen-lockfile</code>。</p>
-<h2 id="解决办法"><a href="#解决办法" class="headerlink" title="解决办法"></a>解决办法</h2><p>有了上面的猜想，我就决定在 <code>.travis.yml</code> 配置一下命令，并推到远程，构建成功。</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">install:</span><br><span class="line">  - yarn</span><br></pre></td></tr></table></figure>
+<h2 id="浏览器的事件循环"><a href="#浏览器的事件循环" class="headerlink" title="浏览器的事件循环"></a>浏览器的事件循环</h2><hr>
+<h3 id="浏览器的事件循环如下："><a href="#浏览器的事件循环如下：" class="headerlink" title="浏览器的事件循环如下："></a>浏览器的事件循环如下：</h3><ol>
+<li>从宏任务 (Macro Queue) 队列中取出一个任务放入执行栈，并执行</li>
+<li>从微任务 (Micro Queue) 队列按”先进先出“的原则取出任务，并逐一执行，此时产生的微任务放入队列中，等待取出执行</li>
+<li>所有的微任务执行完后，如果是渲染周期，则先执行 requesetAnimationFrame 队列中的所有任务，再进行渲染</li>
+<li>重复步骤 1</li>
+</ol>
+<p><img src="./browser-event-loop.png" alt="浏览器的事件循环"></p>
+<h3 id="宏任务与微任务有哪些"><a href="#宏任务与微任务有哪些" class="headerlink" title="宏任务与微任务有哪些"></a>宏任务与微任务有哪些</h3><ul>
+<li>微任务</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Promise.then 等</span><br></pre></td></tr></table></figure>
+<ul>
+<li>宏任务</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">setTimeout,setInterval,script 的代码, I&#x2F;O, UI 交互事件, postMessage等等，</span><br><span class="line">除了微任务的都是宏任务</span><br></pre></td></tr></table></figure>
+<h2 id="requestAnimationFrame-的回调函数"><a href="#requestAnimationFrame-的回调函数" class="headerlink" title="requestAnimationFrame 的回调函数"></a>requestAnimationFrame 的回调函数</h2><p>其中 requesetAnimationFrame 的回调函数并不是宏任务，也不是微任务。</p>
+<h3 id="代码验证"><a href="#代码验证" class="headerlink" title="代码验证"></a>代码验证</h3><p><strong>通过<a target="_blank" rel="noopener" href="https://codepen.io/Kerita/pen/yLgMdwe">代码示例</a>的控制台输出，可以验证我们以上的结论。</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">console.log(&quot;start&quot;);</span><br><span class="line"></span><br><span class="line">setTimeout(() &#x3D;&gt; &#123;</span><br><span class="line">  console.log(&quot;setTimeout&quot;);</span><br><span class="line">&#125;, 0);</span><br><span class="line"></span><br><span class="line">requestAnimationFrame(() &#x3D;&gt; &#123;</span><br><span class="line">  console.log(&quot;requestAnimationFrame&quot;);</span><br><span class="line">&#125;);</span><br><span class="line"></span><br><span class="line">new Promise((resolve) &#x3D;&gt; &#123;</span><br><span class="line">  console.log(&quot;Promise&quot;);</span><br><span class="line"></span><br><span class="line">  resolve();</span><br><span class="line">&#125;).then(() &#x3D;&gt; &#123;</span><br><span class="line">  console.log(&quot;Promise resolve&quot;);</span><br><span class="line">&#125;);</span><br><span class="line"></span><br><span class="line">console.log(&quot;end&quot;);</span><br></pre></td></tr></table></figure>
+<p>** 控制台输出 **</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">&quot;start&quot;;</span><br><span class="line">&quot;Promise&quot;;</span><br><span class="line">&quot;end&quot;;</span><br><span class="line">&quot;Promise resolve&quot;;</span><br><span class="line">&quot;requestAnimationFrame&quot;;</span><br><span class="line">&quot;setTimeout&quot;;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<p>代码的执行顺序如下：</p>
+<ol>
+<li>执行所有主流程语句，依次打印出”start”，”Promise”，”end”</li>
+<li>执行进入微任务队列的任务,打印出”Promise resolve”</li>
+<li>接着执行 requestAnimationFrame，打印出 “requestAnimationFrame”（验证了 requestAnimationFrame 即不是宏任务，也不是微任务）</li>
+<li>最后执行 setTimeout 的回调，打印出 “setTimeout”</li>
+</ol>
+<h3 id="影响"><a href="#影响" class="headerlink" title="影响"></a>影响</h3><p>通过了解事件循环，有助于了解浏览器内部的运行机制，更好的书写代码；运用宏任务和微任务的特点，写出性能更好的代码</p>
+<ul>
+<li>setTimeout/setInterval 作为宏任务计时是不准确，它们只能保证回调函数在指定时间进入等待队列，而不是立即执行</li>
+<li>对于耗时任务，我们可以通过 setTimeout 将其拆分为各种小任务</li>
+<li>避免 Promise.then 这样的微任务产生死循环</li>
+</ul>
+<h2 id="Node-js-的事件循环"><a href="#Node-js-的事件循环" class="headerlink" title="Node.js 的事件循环"></a>Node.js 的事件循环</h2><hr>
+<h3 id="Node-js-的事件循环如下："><a href="#Node-js-的事件循环如下：" class="headerlink" title="Node.js 的事件循环如下："></a>Node.js 的事件循环如下：</h3><ol>
+<li>在固定队列随机选择一个队列，从队列中取出第一个任务执行</li>
+<li>执行 nextTick 队列中的所有任务</li>
+<li>执行 promise 队列中的所有任务</li>
+<li>回到步骤 1</li>
+</ol>
+<p><img src="./node-event-loop.png" alt="Node的事件循环"></p>
+<h3 id="Node-js-的固定队列"><a href="#Node-js-的固定队列" class="headerlink" title="Node.js 的固定队列"></a>Node.js 的固定队列</h3><p><img src="./node-queue.png"></p>
+<h2 id="setImmediate-与-nextTick"><a href="#setImmediate-与-nextTick" class="headerlink" title="setImmediate 与 nextTick"></a>setImmediate 与 nextTick</h2><p>setImmediate 需要等到下个循环才能执行，nextTick 才是立马执行</p>
+<h2 id="推荐视频"><a href="#推荐视频" class="headerlink" title="推荐视频"></a>推荐视频</h2><p><a target="_blank" rel="noopener" href="https://www.youtube.com/watch?v=u1kqx6AenYw&t=853s&ab_channel=JSConf">https://www.youtube.com/watch?v=u1kqx6AenYw&amp;t=853s&amp;ab_channel=JSConf</a></p>
+
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://kerita.me/04/04/2021/travis-error/" data-id="ckn1imflt002pdcx3e99g70od" data-title="travis-ci 构建报错" class="article-share-link">分享</a>
+      <a data-url="https://kerita.me/04/01/2021/event-loop/" data-id="ckn1iotq8002fclmzbtlr34em" data-title="什么是事件循环 (Event Loop)" class="article-share-link">分享</a>
       
       
       
-  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/travis-ci/" rel="tag">travis-ci</a></li></ul>
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/JS/" rel="tag">JS</a></li></ul>
 
     </footer>
   </div>
@@ -126,19 +172,19 @@
     
 <nav id="article-nav">
   
-    <a href="/04/05/2021/module/" id="article-nav-newer" class="article-nav-link-wrap">
+    <a href="/04/02/2021/travis-error/" id="article-nav-newer" class="article-nav-link-wrap">
       <strong class="article-nav-caption">前一篇</strong>
       <div class="article-nav-title">
         
-          CommonJS 与 ES6 Module 的区别
+          travis-ci 构建报错
         
       </div>
     </a>
   
   
-    <a href="/04/03/2021/event-loop/" id="article-nav-older" class="article-nav-link-wrap">
+    <a href="/03/29/2021/npmrc/" id="article-nav-older" class="article-nav-link-wrap">
       <strong class="article-nav-caption">后一篇</strong>
-      <div class="article-nav-title">什么是事件循环 (Event Loop)</div>
+      <div class="article-nav-title">.npmrc 与 npm config 命令</div>
     </a>
   
 </nav>
@@ -197,15 +243,15 @@
       <ul>
         
           <li>
-            <a href="/04/05/2021/module/">CommonJS 与 ES6 Module 的区别</a>
+            <a href="/04/03/2021/module/">CommonJS 与 ES6 Module 的区别</a>
           </li>
         
           <li>
-            <a href="/04/04/2021/travis-error/">travis-ci 构建报错</a>
+            <a href="/04/02/2021/travis-error/">travis-ci 构建报错</a>
           </li>
         
           <li>
-            <a href="/04/03/2021/event-loop/">什么是事件循环 (Event Loop)</a>
+            <a href="/04/01/2021/event-loop/">什么是事件循环 (Event Loop)</a>
           </li>
         
           <li>
