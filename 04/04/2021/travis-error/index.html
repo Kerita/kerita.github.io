@@ -4,16 +4,19 @@
   <meta charset="utf-8">
   
   
-  <title>标签: CSS | Kerita</title>
+  <title>travis-ci 构建报错 | Kerita</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <meta name="description" content="Kerita，个人博客，前端开发，随笔，kerita blog，kerita 博客">
-<meta property="og:type" content="website">
-<meta property="og:title" content="Kerita">
-<meta property="og:url" content="https://kerita.me/tags/CSS/index.html">
+  <meta name="description" content="起因之前博客配置了 travis-ci 的自动构建，昨晚写完 什么是事件循环 (Event Loop)，push 到 GitHub 就去睡觉了。早上起来看没有构建成功，报了以下错误： 1The command &quot;eval yarn --frozen-lockfile &quot; failed.">
+<meta property="og:type" content="article">
+<meta property="og:title" content="travis-ci 构建报错">
+<meta property="og:url" content="https://kerita.me/04/04/2021/travis-error/index.html">
 <meta property="og:site_name" content="Kerita">
-<meta property="og:description" content="Kerita，个人博客，前端开发，随笔，kerita blog，kerita 博客">
+<meta property="og:description" content="起因之前博客配置了 travis-ci 的自动构建，昨晚写完 什么是事件循环 (Event Loop)，push 到 GitHub 就去睡觉了。早上起来看没有构建成功，报了以下错误： 1The command &quot;eval yarn --frozen-lockfile &quot; failed.">
 <meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2021-04-04T00:00:00.000Z">
+<meta property="article:modified_time" content="2021-04-03T02:21:20.992Z">
 <meta property="article:author" content="Kerita">
+<meta property="article:tag" content="travis-ci">
 <meta name="twitter:card" content="summary">
   
     <link rel="alternate" href="/atom.xml" title="Kerita" type="application/atom+xml">
@@ -75,39 +78,64 @@
 </header>
 
       <div class="outer">
-        <section id="main">
-  
-  
-    
-    
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2018" class="archive-year">2018</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      <a href="/02/18/2018/z-index-not-work/" class="archive-article-date">
-  <time class="dt-published" datetime="2018-02-18T00:00:00.000Z" itemprop="datePublished">2月 18</time>
+        <section id="main"><article id="post-2021/travis-error" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/04/04/2021/travis-error/" class="article-date">
+  <time class="dt-published" datetime="2021-04-04T00:00:00.000Z" itemprop="datePublished">2021-04-04</time>
 </a>
-      
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/%E6%9E%84%E5%BB%BA/">构建</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/02/18/2018/z-index-not-work/">z-index 不起作用</a>
+    <h1 class="p-name article-title" itemprop="headline name">
+      travis-ci 构建报错
     </h1>
   
 
-    </header>
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <h2 id="起因"><a href="#起因" class="headerlink" title="起因"></a>起因</h2><p>之前博客配置了 <code>travis-ci</code> 的自动构建，昨晚写完 <a href="/04/03/2021/event-loop/" title="什么是事件循环 (Event Loop)">什么是事件循环 (Event Loop)</a>，push 到 <code>GitHub</code> 就去睡觉了。早上起来看没有构建成功，报了以下错误：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">The command &quot;eval yarn --frozen-lockfile &quot; failed.</span><br></pre></td></tr></table></figure>
+<a id="more"></a>
+
+<p>我的 <code>.travis.yml</code> 并没有配置使用 <code>yarn</code> 作为依赖管理工具，结合这个 <a target="_blank" rel="noopener" href="https://github.com/zoeyg/binance/issues/78#issuecomment-692523504">issue</a>，猜想是 travis 默认使用 <code>yarn</code> 作为依赖管理工具了，并且执行了 <code>yarn --frozen-lockfile</code>。</p>
+<h2 id="解决办法"><a href="#解决办法" class="headerlink" title="解决办法"></a>解决办法</h2><p>有了上面的猜想，我就决定在 <code>.travis.yml</code> 配置一下命令，并推到远程，构建成功。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">install:</span><br><span class="line">  - yarn</span><br></pre></td></tr></table></figure>
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://kerita.me/04/04/2021/travis-error/" data-id="ckn1427m4002mbiqg6i62bg5t" data-title="travis-ci 构建报错" class="article-share-link">分享</a>
+      
+      
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/travis-ci/" rel="tag">travis-ci</a></li></ul>
+
+    </footer>
   </div>
+  
+    
+<nav id="article-nav">
+  
+  
+    <a href="/04/03/2021/event-loop/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">后一篇</strong>
+      <div class="article-nav-title">什么是事件循环 (Event Loop)</div>
+    </a>
+  
+</nav>
+
+  
 </article>
-  
-  
-    </div></section>
-  
 
 
 </section>
