@@ -3,7 +3,7 @@ title: this 指向
 categories: 前端
 toc: true
 tags: JS
-date: 2021/4/12
+date: 2021/4/11
 ---
 
 this 永远指向一个对象
