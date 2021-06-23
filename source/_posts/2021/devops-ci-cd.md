@@ -16,16 +16,16 @@ CI 和 CD 是 DevOps 的一部分。CI 是指持续集成 (Continuous Integratio
 
 ![DevOps](./devops.png)
 
-## CI(Continuous Integration)持续集成
+## CI 持续集成
 
 持续集成是指在开发过程中，开发人员会频繁提交代码，当这些代码通过自动化测试后，就自动合并到主分支。
 
-## CD(Continuous Deploy)持续部署
+## CD 持续部署
 
 持续部署是指在持续集成之后，一键点击就能完成代码发布的过程。
 
-## CD(Continuous Delivery)持续交付
+## CD 持续交付
 
 持续交付是指在持续集成之后，自动完成代码发布的过程。
 
-![CD](./cd.jpeg)
+![CD 的区别](./cd.jpeg)
