@@ -101,14 +101,16 @@ BFC 作用
   flex-grow： 1;
 	flex-shrink: 0;
 	flex-basic: 0px
-``
-
+```
 
 ## Grid 布局
+
 // TODO
 
 ## 垂直居中方式
+
 - flex 布局
+
 ```
 
 .parent {
@@ -120,6 +122,7 @@ align-items: center;
 ```
 
 - 子元素宽度高度不确定
+
 ```
 
 .parent {
@@ -134,8 +137,8 @@ transform: translate3D(-50%, -50%, 0);
 
 ```
 
-
 - 子元素宽度高度确定
+
 ```
 
 .parent {
@@ -153,10 +156,7 @@ margin-left: -50px;
 
 ```
 
-
-
 ## 参考资料
 
 [Mastering margin collapsing](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Box_Model/Mastering_margin_collapsing)
 [10 分钟理解 BFC 原理](https://zhuanlan.zhihu.com/p/25321647)
-```
