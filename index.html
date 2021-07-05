@@ -77,9 +77,67 @@
       <div class="outer">
         <section id="main">
   
-    <article id="post-attack/3-css" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+    <article id="post-fe-attack/4-js" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
   <div class="article-meta">
-    <a href="/06/28/attack/3-css/" class="article-date">
+    <a href="/06/30/fe-attack/4-js/" class="article-date">
+  <time class="dt-published" datetime="2021-06-30T00:00:00.000Z" itemprop="datePublished">2021-06-30</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/%E5%89%8D%E7%AB%AF%E8%BF%9B%E5%87%BB%E7%AC%94%E8%AE%B0/">前端进击笔记</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="p-name article-title" href="/06/30/fe-attack/4-js/">4-JS</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <h2 id="问题"><a href="#问题" class="headerlink" title="问题"></a>问题</h2><ul>
+<li><p>JavaScript 的函数怎么也是个对象？<br>1.JavaScript 中除了基本类型，其他都是对象，Symbol 也是基本数据类型。<br>2.函数是一种特殊的对象，它也拥有属性和值，有一个特别的属性 prototype，该属性就是函数的原型对象。<br>3.函数的原型对象(prototype) 都拥有 constructor 属性，该属性指向与之关联的构造函数。</p>
+</li>
+<li><p><code>__proto__</code> 和 prototype 到底是啥关系？<br>1.每个对象都有 <code>__proto__</code> 属性来标识自己所继承的原型对象，但只有函数才有 prototype 属性。<br>2.每个函数都有一个 prototype 属性，该属性为函数的原型对象。<br>3.通过将实例对象的 <code>__proto__</code> 属性赋值为其构造函数的原型对象 prototype，JavaScript 可以使用构造函数创建对象的方法，来实现继承。</p>
+</li>
+<li><p>JavaScript 中对象是怎么实现继承的？<br>通过原型链访问对象的方法和属性，找到返回对应的值，直到访问 <code>Object.prototype</code> 的原型对象 null 仍没找到的，返回 undefined。</p>
+</li>
+<li><p>JavaScript 是怎么访问对象的方法和属性的？</p>
+</li>
+</ul>
+        
+          <p class="article-more-link">
+            <a href="/06/30/fe-attack/4-js/#more">Read More</a>
+          </p>
+        
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://kerita.me/06/30/fe-attack/4-js/" data-id="ckqqbh5gy003lf8vogmm18ijg" data-title="4-JS" class="article-share-link">分享</a>
+      
+      
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/JS/" rel="tag">JS</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+
+  
+    <article id="post-fe-attack/3-css" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/06/28/fe-attack/3-css/" class="article-date">
   <time class="dt-published" datetime="2021-06-28T00:00:00.000Z" itemprop="datePublished">2021-06-28</time>
 </a>
     
@@ -95,7 +153,7 @@
         
   
     <h1 itemprop="name">
-      <a class="p-name article-title" href="/06/28/attack/3-css/">3-CSS</a>
+      <a class="p-name article-title" href="/06/28/fe-attack/3-css/">3-CSS</a>
     </h1>
   
 
@@ -106,13 +164,13 @@
         <p>记录 CSS 重要知识点。</p>
         
           <p class="article-more-link">
-            <a href="/06/28/attack/3-css/#more">Read More</a>
+            <a href="/06/28/fe-attack/3-css/#more">Read More</a>
           </p>
         
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://kerita.me/06/28/attack/3-css/" data-id="ckqfxg394004pbyowfov2dqvk" data-title="3-CSS" class="article-share-link">分享</a>
+      <a data-url="https://kerita.me/06/28/fe-attack/3-css/" data-id="ckqqbh5gv003hf8vo9jk80sc5" data-title="3-CSS" class="article-share-link">分享</a>
       
       
       
@@ -126,9 +184,9 @@
 
 
   
-    <article id="post-attack/2-html" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+    <article id="post-fe-attack/2-html" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
   <div class="article-meta">
-    <a href="/06/27/attack/2-html/" class="article-date">
+    <a href="/06/27/fe-attack/2-html/" class="article-date">
   <time class="dt-published" datetime="2021-06-27T00:00:00.000Z" itemprop="datePublished">2021-06-27</time>
 </a>
     
@@ -144,7 +202,7 @@
         
   
     <h1 itemprop="name">
-      <a class="p-name article-title" href="/06/27/attack/2-html/">2-HTML</a>
+      <a class="p-name article-title" href="/06/27/fe-attack/2-html/">2-HTML</a>
     </h1>
   
 
@@ -155,13 +213,13 @@
         <p>浏览器在加载页面的过程会用到 GUI 渲染线程和 JavaScript 引擎线程，其中 GUI 渲染线程负责 HTML，JavaScript 引擎线程负责执行 JavaScript 脚本。</p>
         
           <p class="article-more-link">
-            <a href="/06/27/attack/2-html/#more">Read More</a>
+            <a href="/06/27/fe-attack/2-html/#more">Read More</a>
           </p>
         
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://kerita.me/06/27/attack/2-html/" data-id="ckqfxg392004obyowhv276bdh" data-title="2-HTML" class="article-share-link">分享</a>
+      <a data-url="https://kerita.me/06/27/fe-attack/2-html/" data-id="ckqqbh5gs003df8voc3771wxk" data-title="2-HTML" class="article-share-link">分享</a>
       
       
       
@@ -212,7 +270,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://kerita.me/06/24/2021/babel/" data-id="ckqfxg38b002bbyow56y93unc" data-title="什么是 Babel？" class="article-share-link">分享</a>
+      <a data-url="https://kerita.me/06/24/2021/babel/" data-id="ckqqbh5ge002bf8voavwt5k3i" data-title="什么是 Babel？" class="article-share-link">分享</a>
       
       
       
@@ -226,9 +284,9 @@
 
 
   
-    <article id="post-attack/1-system" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+    <article id="post-fe-attack/1-system" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
   <div class="article-meta">
-    <a href="/06/24/attack/1-system/" class="article-date">
+    <a href="/06/24/fe-attack/1-system/" class="article-date">
   <time class="dt-published" datetime="2021-06-24T00:00:00.000Z" itemprop="datePublished">2021-06-24</time>
 </a>
     
@@ -244,7 +302,7 @@
         
   
     <h1 itemprop="name">
-      <a class="p-name article-title" href="/06/24/attack/1-system/">1-前端知识体系</a>
+      <a class="p-name article-title" href="/06/24/fe-attack/1-system/">1-前端知识体系</a>
     </h1>
   
 
@@ -255,13 +313,13 @@
         <p>2021 年前端基础知识体系，包括入门前端应该学习的专业知识与项目过需要的知识。</p>
         
           <p class="article-more-link">
-            <a href="/06/24/attack/1-system/#more">Read More</a>
+            <a href="/06/24/fe-attack/1-system/#more">Read More</a>
           </p>
         
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://kerita.me/06/24/attack/1-system/" data-id="ckqfxg392004lbyow58kp5h29" data-title="1-前端知识体系" class="article-share-link">分享</a>
+      <a data-url="https://kerita.me/06/24/fe-attack/1-system/" data-id="ckqqbh5gr003af8vo1b6v6i3u" data-title="1-前端知识体系" class="article-share-link">分享</a>
       
       
       
@@ -310,7 +368,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://kerita.me/06/23/2021/npx/" data-id="ckqfxg38y004cbyow5yfj7hhd" data-title="什么是 npx？" class="article-share-link">分享</a>
+      <a data-url="https://kerita.me/06/23/2021/npx/" data-id="ckqqbh5gn002vf8vo3odtcfv2" data-title="什么是 npx？" class="article-share-link">分享</a>
       
       
       
@@ -361,7 +419,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://kerita.me/06/21/2021/devops-ci-cd/" data-id="ckqfxg38d002fbyow9ti74ffp" data-title="什么是 DevOps、CI、CD？" class="article-share-link">分享</a>
+      <a data-url="https://kerita.me/06/21/2021/devops-ci-cd/" data-id="ckqqbh5gg002ff8vod87a9viv" data-title="什么是 DevOps、CI、CD？" class="article-share-link">分享</a>
       
       
       
@@ -417,7 +475,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://kerita.me/04/13/2021/new/" data-id="ckqfxg38h002obyowco9o2c4t" data-title="new 做了什么" class="article-share-link">分享</a>
+      <a data-url="https://kerita.me/04/13/2021/new/" data-id="ckqqbh5gl002of8vobcwkhmd9" data-title="new 做了什么" class="article-share-link">分享</a>
       
       
       
@@ -468,7 +526,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://kerita.me/04/12/2021/var-let-function/" data-id="ckqfxg390004hbyow1f101z5s" data-title="奇妙的 var,function,let" class="article-share-link">分享</a>
+      <a data-url="https://kerita.me/04/12/2021/var-let-function/" data-id="ckqqbh5gq0035f8vogmdrdd86" data-title="奇妙的 var,function,let" class="article-share-link">分享</a>
       
       
       
@@ -519,60 +577,11 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://kerita.me/04/11/2021/this/" data-id="ckqfxg38z004dbyow9lm5dkku" data-title="this 指向" class="article-share-link">分享</a>
+      <a data-url="https://kerita.me/04/11/2021/this/" data-id="ckqqbh5go002yf8vo8gla7gys" data-title="this 指向" class="article-share-link">分享</a>
       
       
       
   <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/JS/" rel="tag">JS</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-
-
-  
-    <article id="post-2021/module" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
-  <div class="article-meta">
-    <a href="/04/03/2021/module/" class="article-date">
-  <time class="dt-published" datetime="2021-04-03T00:00:00.000Z" itemprop="datePublished">2021-04-03</time>
-</a>
-    
-  <div class="article-category">
-    <a class="article-category-link" href="/categories/%E5%89%8D%E7%AB%AF/">前端</a>
-  </div>
-
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="p-name article-title" href="/04/03/2021/module/">CommonJS 与 ES6 Module 的区别</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="e-content article-entry" itemprop="articleBody">
-      
-        <p>JavaScript 起初只是用来做页面的的简单交互，随着 Web 应用的复杂性越来越高，维护成本越来越大，模块化标准也在 ES6 版本应运而生。当然，在 ES6 Module 出现之前，社区在使用 Node.js 的过程中，也形成了适合 Node.js 的 CommonJS 模块标准。</p>
-        
-          <p class="article-more-link">
-            <a href="/04/03/2021/module/#more">Read More</a>
-          </p>
-        
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="https://kerita.me/04/03/2021/module/" data-id="ckqfxg38g002lbyow5zfjbooy" data-title="CommonJS 与 ES6 Module 的区别" class="article-share-link">分享</a>
-      
-      
-      
-  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E6%A8%A1%E5%9D%97%E5%8C%96/" rel="tag">模块化</a></li></ul>
 
     </footer>
   </div>
@@ -639,11 +648,15 @@
       <ul>
         
           <li>
-            <a href="/06/28/attack/3-css/">3-CSS</a>
+            <a href="/06/30/fe-attack/4-js/">4-JS</a>
           </li>
         
           <li>
-            <a href="/06/27/attack/2-html/">2-HTML</a>
+            <a href="/06/28/fe-attack/3-css/">3-CSS</a>
+          </li>
+        
+          <li>
+            <a href="/06/27/fe-attack/2-html/">2-HTML</a>
           </li>
         
           <li>
@@ -651,11 +664,7 @@
           </li>
         
           <li>
-            <a href="/06/24/attack/1-system/">1-前端知识体系</a>
-          </li>
-        
-          <li>
-            <a href="/06/23/2021/npx/">什么是 npx？</a>
+            <a href="/06/24/fe-attack/1-system/">1-前端知识体系</a>
           </li>
         
       </ul>
