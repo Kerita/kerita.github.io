@@ -4,17 +4,22 @@
   <meta charset="utf-8">
   
   
-  <title>归档: 2021 | Kerita</title>
+  <title>5-JavaScript 的运行机制 | Kerita</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <meta name="description" content="Kerita，个人博客，前端开发，随笔，kerita blog，kerita 博客">
-<meta property="og:type" content="website">
-<meta property="og:title" content="Kerita">
-<meta property="og:url" content="https://kerita.me/archives/2021/index.html">
+  <meta name="description" content="JavaScript 作为是一门单线程语言，使用事件循环(Event Loop)机制，来执行代码和收集回调队列的子任务。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="5-JavaScript 的运行机制">
+<meta property="og:url" content="https://kerita.me/07/05/fe-attack/5-js-run/index.html">
 <meta property="og:site_name" content="Kerita">
-<meta property="og:description" content="Kerita，个人博客，前端开发，随笔，kerita blog，kerita 博客">
+<meta property="og:description" content="JavaScript 作为是一门单线程语言，使用事件循环(Event Loop)机制，来执行代码和收集回调队列的子任务。">
 <meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://kerita.me/07/05/fe-attack/5-js-run/event-loop.png">
+<meta property="article:published_time" content="2021-07-05T00:00:00.000Z">
+<meta property="article:modified_time" content="2021-07-06T13:34:31.428Z">
 <meta property="article:author" content="Kerita">
+<meta property="article:tag" content="JS">
 <meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://kerita.me/07/05/fe-attack/5-js-run/event-loop.png">
   
     <link rel="alternate" href="/atom.xml" title="Kerita" type="application/atom+xml">
   
@@ -75,216 +80,73 @@
 </header>
 
       <div class="outer">
-        <section id="main">
-  
-  
-    
-    
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2021" class="archive-year">2021</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      <a href="/07/05/fe-attack/5-js-run/" class="archive-article-date">
-  <time class="dt-published" datetime="2021-07-05T00:00:00.000Z" itemprop="datePublished">7月 5</time>
+        <section id="main"><article id="post-fe-attack/5-js-run" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/07/05/fe-attack/5-js-run/" class="article-date">
+  <time class="dt-published" datetime="2021-07-05T00:00:00.000Z" itemprop="datePublished">2021-07-05</time>
 </a>
-      
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/%E5%89%8D%E7%AB%AF%E8%BF%9B%E5%87%BB%E7%AC%94%E8%AE%B0/">前端进击笔记</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/07/05/fe-attack/5-js-run/">5-JavaScript 的运行机制</a>
+    <h1 class="p-name article-title" itemprop="headline name">
+      5-JavaScript 的运行机制
     </h1>
   
 
-    </header>
-  </div>
-</article>
-  
+      </header>
     
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      <a href="/06/30/fe-attack/4-js/" class="archive-article-date">
-  <time class="dt-published" datetime="2021-06-30T00:00:00.000Z" itemprop="datePublished">6月 30</time>
-</a>
+    <div class="e-content article-entry" itemprop="articleBody">
       
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/06/30/fe-attack/4-js/">4-JS</a>
-    </h1>
-  
+        <p>JavaScript 作为是一门单线程语言，使用事件循环(Event Loop)机制，来执行代码和收集回调队列的子任务。</p>
+<a id="more"></a>
 
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      <a href="/06/28/fe-attack/3-css/" class="archive-article-date">
-  <time class="dt-published" datetime="2021-06-28T00:00:00.000Z" itemprop="datePublished">6月 28</time>
-</a>
+<h2 id="Event-Loop-的运行机制"><a href="#Event-Loop-的运行机制" class="headerlink" title="Event Loop 的运行机制"></a>Event Loop 的运行机制</h2><p>1.JavaScript 运行时主线程有一个<code>调用栈</code><br>2.任务在<code>调用栈</code>中执行完毕出栈<br>3.任务执行过程可能产生异步任务，异步任务会在有结果时进入<code>回调队列</code>等待执行<br>4.栈为空时<code>回调队列</code>的任务入栈</p>
+<p><img src="./event-loop.png" alt="Event Loop 运行机制"></p>
+<h2 id="宏任务和微任务"><a href="#宏任务和微任务" class="headerlink" title="宏任务和微任务"></a>宏任务和微任务</h2><p>每次只会取出一个宏任务执行，但会一次性取出所有微任务执行。</p>
+<p>requestAnimationFrame 的回调即不是宏任务，也不是微任务，它在微任务执行完毕后执行。</p>
+<ul>
+<li><p>宏任务<br>script 代码、setTimeout、setInterval、Promise</p>
+</li>
+<li><p>微任务<br>Promise.then, Promise.catch</p>
+</li>
+</ul>
+<p>下面是经典宏任务与微任务经典面试题：<br>输出依次为：<br>“script start”, “script end”, “promise 1”, “error caught”, “errorFunc”, “promise 2”, “errorFunc then res”, “setTimeout”</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br></pre></td><td class="code"><pre><span class="line">console.log(&quot;script start&quot;);</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">setTimeout(() &#x3D;&gt; &#123;</span><br><span class="line"></span><br><span class="line">  console.log(&quot;setTimeout&quot;);</span><br><span class="line"></span><br><span class="line">&#125;, 1000);</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">Promise.resolve()</span><br><span class="line"></span><br><span class="line">  .then(function () &#123;</span><br><span class="line"></span><br><span class="line">    console.log(&quot;promise1&quot;);</span><br><span class="line"></span><br><span class="line">  &#125;)</span><br><span class="line"></span><br><span class="line">  .then(function () &#123;</span><br><span class="line"></span><br><span class="line">    console.log(&quot;promise2&quot;);</span><br><span class="line"></span><br><span class="line">  &#125;);</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">async function errorFunc() &#123;</span><br><span class="line"></span><br><span class="line">  try &#123;</span><br><span class="line"></span><br><span class="line">    await Promise.reject(&quot;error!!!&quot;);</span><br><span class="line"></span><br><span class="line">  &#125; catch (e) &#123;</span><br><span class="line"></span><br><span class="line">    console.log(&quot;error caught&quot;); &#x2F;&#x2F; 微1-3</span><br><span class="line"></span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  console.log(&quot;errorFunc&quot;);</span><br><span class="line"></span><br><span class="line">  return Promise.resolve(&quot;errorFunc success&quot;);</span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">errorFunc().then((res) &#x3D;&gt; console.log(&quot;errorFunc then res&quot;));</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">console.log(&quot;script end&quot;);</span><br><span class="line"></span><br></pre></td></tr></table></figure>
       
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/06/28/fe-attack/3-css/">3-CSS</a>
-    </h1>
-  
-
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      <a href="/06/27/fe-attack/2-html/" class="archive-article-date">
-  <time class="dt-published" datetime="2021-06-27T00:00:00.000Z" itemprop="datePublished">6月 27</time>
-</a>
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://kerita.me/07/05/fe-attack/5-js-run/" data-id="ckqs3hxy60056cooobpyy1zph" data-title="5-JavaScript 的运行机制" class="article-share-link">分享</a>
       
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/06/27/fe-attack/2-html/">2-HTML</a>
-    </h1>
-  
-
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      <a href="/06/24/2021/babel/" class="archive-article-date">
-  <time class="dt-published" datetime="2021-06-24T00:00:00.000Z" itemprop="datePublished">6月 24</time>
-</a>
       
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/06/24/2021/babel/">什么是 Babel？</a>
-    </h1>
-  
-
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      <a href="/06/24/fe-attack/1-system/" class="archive-article-date">
-  <time class="dt-published" datetime="2021-06-24T00:00:00.000Z" itemprop="datePublished">6月 24</time>
-</a>
       
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/06/24/fe-attack/1-system/">1-前端知识体系</a>
-    </h1>
-  
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/JS/" rel="tag">JS</a></li></ul>
 
-    </header>
+    </footer>
   </div>
+  
+    
+<nav id="article-nav">
+  
+  
+    <a href="/06/30/fe-attack/4-js/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">后一篇</strong>
+      <div class="article-nav-title">4-JS</div>
+    </a>
+  
+</nav>
+
+  
 </article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      <a href="/06/23/2021/npx/" class="archive-article-date">
-  <time class="dt-published" datetime="2021-06-23T00:00:00.000Z" itemprop="datePublished">6月 23</time>
-</a>
-      
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/06/23/2021/npx/">什么是 npx？</a>
-    </h1>
-  
 
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      <a href="/06/21/2021/devops-ci-cd/" class="archive-article-date">
-  <time class="dt-published" datetime="2021-06-21T00:00:00.000Z" itemprop="datePublished">6月 21</time>
-</a>
-      
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/06/21/2021/devops-ci-cd/">什么是 DevOps、CI、CD？</a>
-    </h1>
-  
-
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      <a href="/04/13/2021/new/" class="archive-article-date">
-  <time class="dt-published" datetime="2021-04-13T00:00:00.000Z" itemprop="datePublished">4月 13</time>
-</a>
-      
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/04/13/2021/new/">new 做了什么</a>
-    </h1>
-  
-
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      <a href="/04/12/2021/var-let-function/" class="archive-article-date">
-  <time class="dt-published" datetime="2021-04-12T00:00:00.000Z" itemprop="datePublished">4月 12</time>
-</a>
-      
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/04/12/2021/var-let-function/">奇妙的 var,function,let</a>
-    </h1>
-  
-
-    </header>
-  </div>
-</article>
-  
-  
-    </div></section>
-  
-
-
-  <nav id="page-nav">
-    
-    <span class="page-number current">1</span><a class="page-number" href="/archives/2021/page/2/">2</a><a class="extend next" rel="next" href="/archives/2021/page/2/">下一页 &raquo;</a>
-  </nav>
 
 </section>
         
