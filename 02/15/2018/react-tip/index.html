@@ -1,0 +1,382 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+    
+      <title>
+        
+          React 小技巧 | 
+              Kerita
+      </title>
+      <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+      <meta name="description" content="使用 React.js 一段时间了，把使用过程遇到的小坑和小技巧记录下来，希望能够帮助到其他人。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="React 小技巧">
+<meta property="og:url" content="https://kerita.me/02/15/2018/react-tip/index.html">
+<meta property="og:site_name" content="Kerita">
+<meta property="og:description" content="使用 React.js 一段时间了，把使用过程遇到的小坑和小技巧记录下来，希望能够帮助到其他人。">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2018-02-15T00:00:00.000Z">
+<meta property="article:modified_time" content="2021-07-07T08:36:57.849Z">
+<meta property="article:author" content="Kerita">
+<meta property="article:tag" content="React">
+<meta name="twitter:card" content="summary">
+        
+              <link rel="alternate" href="/atom.xml" title="Kerita" type="application/atom+xml">
+                
+                  
+                    <link rel="shortcut icon" href="/favicon.png">
+                      
+                        
+                          
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/typeface-source-code-pro@0.0.71/index.min.css">
+
+                            
+                              
+<link rel="stylesheet" href="/css/style.css">
+
+                                
+                                  
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.min.css">
+
+                                    
+
+                                      <link rel="stylesheet"
+                                        href="https://cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.css" />
+                                      <script src="https://cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.min.js"> </script>
+<meta name="generator" content="Hexo 5.3.0"></head>
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">Kerita</a>
+      </h1>
+      
+        <h2 id="subtitle-wrap">
+          <a href="/" id="subtitle">自律谦逊，承担责任，推迟满足感，你要热爱它</a>
+        </h2>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">首页</a>
+        
+          <a class="main-nav-link" href="/archives">归档</a>
+        
+          <a class="main-nav-link" href="/about">关于我</a>
+        
+          <a class="main-nav-link" href="/guestbook">留言板</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS 订阅"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="搜索"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="搜索"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="https://kerita.me"></form>
+      </div>
+    </div>
+  </div>
+</header>
+
+      <div class="outer">
+        <section id="main"><article id="post-2018/react-tip" class="h-entry article article-type-post"
+  itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/02/15/2018/react-tip/" class="article-date">
+  <time class="dt-published" datetime="2018-02-15T00:00:00.000Z" itemprop="datePublished">2018-02-15</time>
+</a>
+      
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/%E5%89%8D%E7%AB%AF/">前端</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+      
+        <header class="article-header">
+          
+  
+    <h1 class="p-name article-title" itemprop="headline name">
+      React 小技巧
+    </h1>
+  
+
+        </header>
+        
+          <div class="e-content article-entry" itemprop="articleBody">
+            
+                      <p>使用 React.js 一段时间了，把使用过程遇到的小坑和小技巧记录下来，希望能够帮助到其他人。</p>
+<a id="more"></a>
+
+<h2 id="显示-html"><a href="#显示-html" class="headerlink" title="显示 html"></a>显示 html</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;div dangerouslySetInnerHTML&#x3D;&#123;&#123; __html: LANG.auth_register_tips1 &#125;&#125;&#x2F;&gt;</span><br></pre></td></tr></table></figure>
+<h2 id="传数组给子组件"><a href="#传数组给子组件" class="headerlink" title="传数组给子组件"></a>传数组给子组件</h2><ol>
+<li>PureRender —— 当 porps与state 传入时，通过浅比较决定是否要重新渲染</li>
+<li>shouldComponentUpdate() 钩子默认返回 true，可以重新</li>
+</ol>
+<h2 id="组件间通信"><a href="#组件间通信" class="headerlink" title="组件间通信"></a>组件间通信</h2><ol>
+<li><p>flux 架构</p>
+</li>
+<li><p>父组件向子组件 —— props</p>
+</li>
+<li><p>子组件向父组件 —— props.funciton 接收参数</p>
+</li>
+<li><p>利用事件机制</p>
+</li>
+</ol>
+<h2 id="高阶组件（HOC）"><a href="#高阶组件（HOC）" class="headerlink" title="高阶组件（HOC）"></a>高阶组件（HOC）</h2><p>高阶函数，可以传入函数作为参数的函数，如 map,sort,reduce。高阶组件包装了另一个组件的组件。</p>
+<ol>
+<li>属性代理 （Props Proxy）</li>
+<li>反向继承 （Inheritance Inversion）</li>
+</ol>
+<h2 id="Immutable-js"><a href="#Immutable-js" class="headerlink" title="Immutable.js"></a>Immutable.js</h2><p>因为数据是不可变的，可以避免引用传值的问题，但也麻烦</p>
+<h2 id="无状态组件"><a href="#无状态组件" class="headerlink" title="无状态组件"></a>无状态组件</h2><p>使用无状态组件，只从父组件接收 props，可以提高组件的渲染性能</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">const HelloWorld &#x3D; (props) &#x3D;&gt; &lt;div&gt;&#123;props.name&#125;&lt;&#x2F;div&gt;</span><br><span class="line">ReactDOM.render(&lt;HelloWorld name&#x3D;&quot;HelloWorld&quot; &#x2F;&gt;,App)</span><br></pre></td></tr></table></figure>
+<h2 id="componentWillReceiveProps-中取-props-的值"><a href="#componentWillReceiveProps-中取-props-的值" class="headerlink" title="componentWillReceiveProps 中取 props 的值"></a>componentWillReceiveProps 中取 props 的值</h2><p>注意应该取 nextProps,而不是 this.props</p>
+<h2 id="bind-绑定函数"><a href="#bind-绑定函数" class="headerlink" title="bind 绑定函数"></a>bind 绑定函数</h2><p>利用 bind 绑定函数，是默认有 event 这个参数的，只是这个参数在给定参数之后</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"> handleClockClick (id, e) &#123;</span><br><span class="line">   console.log(id,e)</span><br><span class="line"> &#125;</span><br><span class="line"></span><br><span class="line">&lt;button onClick&#x3D;&#123;this.handleClockClick.bind(this, 2)&#125;&gt;Clock&lt;&#x2F;button&gt;</span><br></pre></td></tr></table></figure>
+<h2 id="列表的-key"><a href="#列表的-key" class="headerlink" title="列表的 key"></a>列表的 key</h2><ul>
+<li>key 不会传给组件，如果需要使用 key 的值，另外命名为其他属性传进去</li>
+<li>当一个列表顺序会重排时，不适合使用数组的索引作为 key</li>
+</ul>
+<h2 id="受控组件"><a href="#受控组件" class="headerlink" title="受控组件"></a>受控组件</h2><p>可变的状态保存在组件的 state 中</p>
+<h2 id="ES6-计算属性名"><a href="#ES6-计算属性名" class="headerlink" title="ES6 计算属性名"></a>ES6 计算属性名</h2><p>对象的属性也可以计算，使用 [] 包围</p>
+<h2 id="constructor-与-getInitialState、getDefaultProps-的区别"><a href="#constructor-与-getInitialState、getDefaultProps-的区别" class="headerlink" title="constructor 与 getInitialState、getDefaultProps 的区别"></a>constructor 与 getInitialState、getDefaultProps 的区别</h2><ul>
+<li>getInitialState 与 getDefaultProps 在 React.createClass 时使用,此时是使用 ES5 语法</li>
+<li>constructor 在 ES6 类语法中使用,如果此时要设置默认 props 与 设置 state，可以如下操作<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">constructor (props) &#123;</span><br><span class="line">    super(props)</span><br><span class="line">    this.state &#x3D; &#123;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">static get  defaultProps () &#123;</span><br><span class="line">    return &#123;</span><br><span class="line">        time: time</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="ES6-类中，函数-this-不默认指向-对象"><a href="#ES6-类中，函数-this-不默认指向-对象" class="headerlink" title="ES6 类中，函数 this 不默认指向 对象"></a>ES6 类中，函数 this 不默认指向 对象</h2></li>
+</ul>
+<h2 id="获取元素"><a href="#获取元素" class="headerlink" title="获取元素"></a>获取元素</h2><ul>
+<li>this.getDomNode 已经在低版本被移除了，现在设置 ref=xxx，然后使用 this.refs.xxx 访问 DOM 元素</li>
+<li>ref 可以赋值两种类型，一种是字符串，一种是函数, 字符串只能用在类组件，DOM 元素使用函数，纯函数组件不能使用 ref。旧版本 DOM 元素虽然可以使用 ref，但是 React 已不推荐。<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">ref&#x3D;&quot;test&quot; &#x2F;&#x2F; this.refs.test 访问</span><br><span class="line"></span><br><span class="line">ref&#x3D;&#123;test &#x3D;&gt; this.test &#x3D; test&#125; &#x2F;&#x2F; this.test 访问</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<h2 id="组合-VS-继承"><a href="#组合-VS-继承" class="headerlink" title="组合 VS 继承"></a>组合 VS 继承</h2>React 推荐使用组合，而不是继承，组合在 UI 来的更加直观，代码看起来也比较容易，更符合我们的认知，也符合 React component-base 的特性。</li>
+</ul>
+<h2 id="当只写属性名时，默认值为-true"><a href="#当只写属性名时，默认值为-true" class="headerlink" title="当只写属性名时，默认值为 true"></a>当只写属性名时，默认值为 true</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">&lt;MyComponent isStock&#x2F;&gt;</span><br><span class="line">&#x2F;&#x2F; isStock 默认为 true</span><br></pre></td></tr></table></figure>
+<h2 id="true-false-null-undefined-与-0"><a href="#true-false-null-undefined-与-0" class="headerlink" title="true,false,null,undefined 与 0"></a>true,false,null,undefined 与 0</h2><ul>
+<li>true,false,null,undefined 不会被 React 渲染，但同为 falsy 值的 0 会</li>
+<li>用法,控制输出<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">&lt;div&gt;</span><br><span class="line">&#123; arr.length &gt; 0 &amp;&amp; &#39;has&#39;&#125;</span><br><span class="line">&lt;div&gt;</span><br><span class="line"></span><br><span class="line">&lt;div&gt;</span><br><span class="line">&#123; isVisible &amp;&amp; &lt;Test &#x2F;&gt;&#125;</span><br><span class="line">&lt;&#x2F;div&gt;</span><br></pre></td></tr></table></figure>
+<h2 id="PropTypes-类型检查"><a href="#PropTypes-类型检查" class="headerlink" title="PropTypes 类型检查"></a>PropTypes 类型检查</h2>React.PropTypes 已在 React v15.5 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">import PropTypes from &#39;prop-types&#39;</span><br></pre></td></tr></table></figure>
+<h2 id="Fragment"><a href="#Fragment" class="headerlink" title="Fragment"></a>Fragment</h2>聚合子元素列表，而不必添加额外的元素 – 16.2.0 开始支持<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">&lt;&gt;</span><br><span class="line">    &lt;button&gt; 1 &lt;&#x2F;button&gt;</span><br><span class="line">    &lt;button&gt; 2 &lt;&#x2F;button&gt;</span><br><span class="line">&lt;&#x2F;&gt;</span><br></pre></td></tr></table></figure>
+<h2 id="createPortal"><a href="#createPortal" class="headerlink" title="createPortal"></a>createPortal</h2></li>
+<li>将子节点挂载到父组件以外组件的方法，在 render 方法中使用，不能挂载到父组件，因为此时父组件都没有渲染好，无法获取到 DOM</li>
+<li>行为上跟其他子节点没有区别，因为 React DOM 树上依然在这个组件上，包括事件冒泡等东西</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">import &#123; createPortal &#125; from &#39;react-dom&#39;</span><br><span class="line">createPortal(this.props.children, document.getElementById(&#39;portal-root&#39;))</span><br></pre></td></tr></table></figure>
+<h2 id="错误边界"><a href="#错误边界" class="headerlink" title="错误边界"></a>错误边界</h2><p>componentDidCatch 错误边界，为组件定义一个父组件，父组件捕获错误，并提供回退的 UI</p>
+<ul>
+<li>用法<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">componentDidCatch(error, info) &#123;</span><br><span class="line">  this.setState(&#123; hasError: true &#125;);</span><br><span class="line">  console.log(error, info)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></li>
+<li>无法捕获的错误<br>事件处理<br>异步代码 （例如 setTimeout 或 requestAnimationFrame 回调函数）<br>服务端渲染<br>错误边界自身抛出来的错误 （而不是其子组件）</li>
+</ul>
+<h2 id="高级组件就是函数"><a href="#高级组件就是函数" class="headerlink" title="高级组件就是函数"></a>高级组件就是函数</h2><ul>
+<li>不应该在高阶组件修改原组件的属性</li>
+<li>利用函数包裹组件，返回一个新的组件</li>
+<li>为组件切换不同的数据源</li>
+</ul>
+<ol>
+<li>Showcase 组件，利用 getData (Showcase, data)函数包裹，获取不同数据</li>
+</ol>
+<ul>
+<li>不要在 render 中使用高阶组件<br>因为每一次挂载组件，都会重新获取一个高阶组件的实例</li>
+<li>hoistNonReactStatic<br>将原始组件的静态方法拷贝到包裹组件中</li>
+</ul>
+<h2 id="容器组件"><a href="#容器组件" class="headerlink" title="容器组件"></a>容器组件</h2><ul>
+<li>处理数据订阅和状态管理</li>
+<li>高阶组件是参数化的容器组件 </li>
+</ul>
+<h2 id="rander-prop"><a href="#rander-prop" class="headerlink" title="rander prop"></a>rander prop</h2><p>标题相同，利用高阶组件把标题渲染到不同的组件</p>
+<h2 id="React-中使用-Web-component"><a href="#React-中使用-Web-component" class="headerlink" title="React 中使用 Web component"></a>React 中使用 Web component</h2><p>这个时候有一点要注意的是，对于 Web component 应该使用 class,而不是 className</p>
+<h2 id="lable-的-for"><a href="#lable-的-for" class="headerlink" title="lable 的 for"></a>lable 的 for</h2><p>for 是 JS 的保留字，所以使用 htmlFor 替代 for</p>
+<h2 id="style属性"><a href="#style属性" class="headerlink" title="style属性"></a>style属性</h2><p>浏览器后缀除了ms以外，都应该以大写字母开头。这就是为什么WebkitTransition有一个大写字母W。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">const divStyle &#x3D; &#123;</span><br><span class="line">  WebkitTransition: &#39;all&#39;, &#x2F;&#x2F; note the capital &#39;W&#39; here</span><br><span class="line">  msTransition: &#39;all&#39; &#x2F;&#x2F; &#39;ms&#39; is the only lowercase vendor prefix</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+<h2 id="在-IE11-以下使用-React16"><a href="#在-IE11-以下使用-React16" class="headerlink" title="在 IE11 以下使用 React16"></a>在 IE11 以下使用 React16</h2><p>React16 依赖集合类型 Map 和 Set，在未提供原生支持的浏览器，需要使用一个 polyfill,例如 core-js 和 babel-polyfill<br>使用 core-js 支持</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">import &#39;core-js&#x2F;es6&#x2F;map&#39;;</span><br><span class="line">import &#39;core-js&#x2F;es6&#x2F;set&#39;;</span><br><span class="line"></span><br><span class="line">import React from &#39;react&#39;;</span><br><span class="line">import ReactDOM from &#39;react-dom&#39;;</span><br><span class="line"></span><br><span class="line">ReactDOM.render(</span><br><span class="line">  &lt;h1&gt;Hello, world!&lt;&#x2F;h1&gt;,</span><br><span class="line">  document.getElementById(&#39;root&#39;)</span><br><span class="line">);</span><br></pre></td></tr></table></figure>
+<h2 id="componentDidMount-请求服务器数据"><a href="#componentDidMount-请求服务器数据" class="headerlink" title="componentDidMount 请求服务器数据"></a>componentDidMount 请求服务器数据</h2><p>在 componentDidMount 请求服务器数据并利用 setState 时应注意，在组件卸载 componentWillUnmount 应该把去求去掉</p>
+<h2 id="参考资料"><a href="#参考资料" class="headerlink" title="参考资料"></a>参考资料</h2><p><a target="_blank" rel="noopener" href="https://segmentfault.com/a/1190000008356407">react 进阶漫谈</a><br><a target="_blank" rel="noopener" href="https://doc.react-china.org/">React 中文文档</a></p>
+
+                        
+          </div>
+          <footer class="article-footer">
+            <a data-url="https://kerita.me/02/15/2018/react-tip/" data-id="ckqt8a8es001scksjc0j9bm4p" data-title="React 小技巧"
+              class="article-share-link">
+              分享
+            </a>
+            
+                
+                    
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/React/" rel="tag">React</a></li></ul>
+
+          </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/02/16/2018/clear-interval/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">前一篇</strong>
+      <div class="article-nav-title">
+        
+          React 组件清除定时器
+        
+      </div>
+    </a>
+  
+  
+    <a href="/02/14/2018/store-performance/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">后一篇</strong>
+      <div class="article-nav-title">商城性能优化想法</div>
+    </a>
+  
+</nav>
+
+      
+</article>
+
+
+    
+        <div id="gitalk-container"></div>
+        <script>
+          if (window.location.pathname !== '/') {
+            var gitalk = new Gitalk({
+              clientID: '572cf28212526e25eb20',
+              clientSecret: 'e3ebf600d6ed24da3f1b447ad85e9a26cced2e58',
+              repo: 'kerita.github.io',
+              owner: 'Kerita',
+              admin: ['Kerita'],
+              id: decodeURI(location.pathname),      // Ensure uniqueness and length less than 50
+              distractionFreeMode: false  // Facebook-like distraction free mode
+            })
+
+            gitalk.render('gitalk-container')
+          }
+        </script></section>
+        
+          <aside id="sidebar">
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">分类</h3>
+    <div class="widget">
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/node/">node</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E4%BA%A7%E5%93%81/">产品</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E5%81%A5%E5%BA%B7/">健康</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E5%89%8D%E7%AB%AF/">前端</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E5%89%8D%E7%AB%AF%E8%BF%9B%E5%87%BB%E7%AC%94%E8%AE%B0/">前端进击笔记</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E5%90%8D%E4%BA%BA/">名人</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E5%B0%8F%E6%8A%80%E5%B7%A7/">小技巧</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E6%80%BB%E7%BB%93/">总结</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E6%9E%84%E5%BB%BA/">构建</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E6%AD%8C/">歌</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">标签</h3>
+    <div class="widget">
+      <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/Ajax/" rel="tag">Ajax</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/CSS/" rel="tag">CSS</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/CSS3/" rel="tag">CSS3</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/HTML/" rel="tag">HTML</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/JS/" rel="tag">JS</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Markdown/" rel="tag">Markdown</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/React/" rel="tag">React</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/audio/" rel="tag">audio</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/hexo/" rel="tag">hexo</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/house/" rel="tag">house</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/iOS/" rel="tag">iOS</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/less/" rel="tag">less</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/npm/" rel="tag">npm</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/travis-ci/" rel="tag">travis-ci</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/vscode/" rel="tag">vscode</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E4%BA%BA%E7%94%9F/" rel="tag">人生</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E4%BC%98%E5%8C%96/" rel="tag">优化</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E4%BD%93%E7%B3%BB/" rel="tag">体系</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%81%A5%E5%BA%B7/" rel="tag">健康</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%B7%A5%E7%A8%8B%E5%8C%96/" rel="tag">工程化</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%B9%B3%E5%87%A1%E4%B9%8B%E8%B7%AF/" rel="tag">平凡之路</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%B9%BD%E9%BB%98/" rel="tag">幽默</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%BA%94%E7%94%A8/" rel="tag">应用</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%BE%AE%E4%BF%A1/" rel="tag">微信</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%80%A7%E8%83%BD/" rel="tag">性能</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%89%93%E6%89%B0%E4%B8%80%E4%B8%8B/" rel="tag">打扰一下</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%9C%B4%E6%A0%91/" rel="tag">朴树</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%A8%A1%E5%9D%97%E5%8C%96/" rel="tag">模块化</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E7%A7%BB%E5%8A%A8%E7%AB%AF/" rel="tag">移动端</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E7%BC%96%E8%BE%91%E5%99%A8/" rel="tag">编辑器</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E7%BE%BD%E6%AF%9B%E7%90%83/" rel="tag">羽毛球</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E8%8B%8F%E6%89%93%E7%BB%BF/" rel="tag">苏打绿</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E9%A1%B9%E7%9B%AE/" rel="tag">项目</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">标签云</h3>
+    <div class="widget tagcloud">
+      <a href="/tags/Ajax/" style="font-size: 10px;">Ajax</a> <a href="/tags/CSS/" style="font-size: 13.33px;">CSS</a> <a href="/tags/CSS3/" style="font-size: 13.33px;">CSS3</a> <a href="/tags/HTML/" style="font-size: 13.33px;">HTML</a> <a href="/tags/JS/" style="font-size: 20px;">JS</a> <a href="/tags/Markdown/" style="font-size: 10px;">Markdown</a> <a href="/tags/React/" style="font-size: 16.67px;">React</a> <a href="/tags/audio/" style="font-size: 10px;">audio</a> <a href="/tags/hexo/" style="font-size: 10px;">hexo</a> <a href="/tags/house/" style="font-size: 10px;">house</a> <a href="/tags/iOS/" style="font-size: 13.33px;">iOS</a> <a href="/tags/less/" style="font-size: 10px;">less</a> <a href="/tags/npm/" style="font-size: 10px;">npm</a> <a href="/tags/travis-ci/" style="font-size: 10px;">travis-ci</a> <a href="/tags/vscode/" style="font-size: 10px;">vscode</a> <a href="/tags/%E4%BA%BA%E7%94%9F/" style="font-size: 10px;">人生</a> <a href="/tags/%E4%BC%98%E5%8C%96/" style="font-size: 10px;">优化</a> <a href="/tags/%E4%BD%93%E7%B3%BB/" style="font-size: 10px;">体系</a> <a href="/tags/%E5%81%A5%E5%BA%B7/" style="font-size: 13.33px;">健康</a> <a href="/tags/%E5%B7%A5%E7%A8%8B%E5%8C%96/" style="font-size: 16.67px;">工程化</a> <a href="/tags/%E5%B9%B3%E5%87%A1%E4%B9%8B%E8%B7%AF/" style="font-size: 10px;">平凡之路</a> <a href="/tags/%E5%B9%BD%E9%BB%98/" style="font-size: 10px;">幽默</a> <a href="/tags/%E5%BA%94%E7%94%A8/" style="font-size: 10px;">应用</a> <a href="/tags/%E5%BE%AE%E4%BF%A1/" style="font-size: 10px;">微信</a> <a href="/tags/%E6%80%A7%E8%83%BD/" style="font-size: 10px;">性能</a> <a href="/tags/%E6%89%93%E6%89%B0%E4%B8%80%E4%B8%8B/" style="font-size: 10px;">打扰一下</a> <a href="/tags/%E6%9C%B4%E6%A0%91/" style="font-size: 10px;">朴树</a> <a href="/tags/%E6%A8%A1%E5%9D%97%E5%8C%96/" style="font-size: 13.33px;">模块化</a> <a href="/tags/%E7%A7%BB%E5%8A%A8%E7%AB%AF/" style="font-size: 10px;">移动端</a> <a href="/tags/%E7%BC%96%E8%BE%91%E5%99%A8/" style="font-size: 10px;">编辑器</a> <a href="/tags/%E7%BE%BD%E6%AF%9B%E7%90%83/" style="font-size: 10px;">羽毛球</a> <a href="/tags/%E8%8B%8F%E6%89%93%E7%BB%BF/" style="font-size: 13.33px;">苏打绿</a> <a href="/tags/%E9%A1%B9%E7%9B%AE/" style="font-size: 10px;">项目</a>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">归档</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/07/">七月 2021</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/06/">六月 2021</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/04/">四月 2021</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/03/">三月 2021</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/05/">五月 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/02/">二月 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/12/">十二月 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/10/">十月 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/09/">九月 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/08/">八月 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/07/">七月 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/06/">六月 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/01/">一月 2017</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">最新文章</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/07/06/fe-attack/6-request/">6-网络请求</a>
+          </li>
+        
+          <li>
+            <a href="/07/05/fe-attack/5-js-run/">5-JavaScript 的运行机制</a>
+          </li>
+        
+          <li>
+            <a href="/06/30/fe-attack/4-js/">4-JS</a>
+          </li>
+        
+          <li>
+            <a href="/06/28/fe-attack/3-css/">3-CSS</a>
+          </li>
+        
+          <li>
+            <a href="/06/27/fe-attack/2-html/">2-HTML</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+        <div class="outer">
+          <div id="footer-info" class="inner">
+            
+                  &copy; 2021
+                    Kerita<br>
+                      Powered by <a href="https://hexo.io/" target="_blank">Hexo</a>
+          </div>
+        </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">首页</a>
+  
+    <a href="/archives" class="mobile-nav-link">归档</a>
+  
+    <a href="/about" class="mobile-nav-link">关于我</a>
+  
+    <a href="/guestbook" class="mobile-nav-link">留言板</a>
+  
+</nav>
+    
+
+    
+<script src="/js/jquery-3.4.1.min.js"></script>
+
+
+      
+        
+<script src="/fancybox/jquery.fancybox.min.js"></script>
+
+          
+
+            
+<script src="/js/script.js"></script>
+
+              
+
+
+                
+  </div>
+</body>
+</html>
