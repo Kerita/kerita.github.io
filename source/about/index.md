@@ -9,7 +9,7 @@ date: 2017/1/22
 
 <p><i class="fa fa-github"></i> Github: <a href="https://github.com/kerita" target="_blank" rel="external">Kerita</a></p>
 
-<p><i class="fa fa-wechat"></i> 微信: <a href="http://7xpofw.com1.z0.glb.clouddn.com/wechat-qr-code%281%29.JPG" target="_blank" rel="external">1332924387</a></p>
+<p><i class="fa fa-wechat"></i> 微信: <a>Kerita7</a> (备注来自博客+理由)</p>
 
 <p><i class="fa fa-book"></i> 知乎: <a href="https://www.zhihu.com/people/kerita" target="_blank" rel="external">Kerita</a></p>
 
