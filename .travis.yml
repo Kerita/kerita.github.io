@@ -12,7 +12,6 @@ install:
   - yarn
 before_script: ## 根据你所用的主题和自定义的不同，这里会有所不同
   - npm install -g hexo-cli # 在 CI 环境内安装 Hexo
-  - cp _config.theme.yml themes/landscape/_config.yml # 将主题的配置文件放回原处
   - npm install # 在根目录安装站点需要的依赖
 script:
   - hexo generate # generate static files
