@@ -1,5 +1,5 @@
 ---
-title: 4-JS
+title: JavaScript 实现继承
 categories: 前端进击笔记
 toc: true
 tags: JS

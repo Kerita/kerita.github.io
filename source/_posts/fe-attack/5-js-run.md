@@ -1,5 +1,5 @@
 ---
-title: 5-JavaScript 的运行机制
+title: JavaScript 的运行机制
 categories: 前端进击笔记
 toc: true
 tags: JS

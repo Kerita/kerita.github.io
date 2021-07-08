@@ -1,5 +1,5 @@
 ---
-title: 6-网络请求
+title: 网络请求
 categories: 前端进击笔记
 toc: true
 tags: Ajax
@@ -32,3 +32,7 @@ date: 2021/7/6
 
 - jsonp
 - 跨域资源共享 CORS
+
+## 封装 XMLHttpRequest
+
+## 封装 fetch

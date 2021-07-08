@@ -1,5 +1,5 @@
 ---
-title: 1-前端知识体系
+title: 前端知识体系
 categories: 前端进击笔记
 toc: true
 tags: 体系
