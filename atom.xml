@@ -6,7 +6,7 @@
   <link href="https://kerita.me/atom.xml" rel="self"/>
   
   <link href="https://kerita.me/"/>
-  <updated>2021-07-08T07:23:38.556Z</updated>
+  <updated>2021-07-12T14:07:07.181Z</updated>
   <id>https://kerita.me/</id>
   
   <author>
@@ -21,7 +21,7 @@
     <link href="https://kerita.me/07/08/2021/api/"/>
     <id>https://kerita.me/07/08/2021/api/</id>
     <published>2021-07-08T00:00:00.000Z</published>
-    <updated>2021-07-08T07:23:38.556Z</updated>
+    <updated>2021-07-12T14:07:07.181Z</updated>
     
     
     <summary type="html">&lt;h2 id=&quot;接口对接过程遇到的问题&quot;&gt;&lt;a href=&quot;#接口对接过程遇到的问题&quot; class=&quot;headerlink&quot; title=&quot;接口对接过程遇到的问题&quot;&gt;&lt;/a&gt;接口对接过程遇到的问题&lt;/h2&gt;&lt;ul&gt;
@@ -46,7 +46,7 @@
     <link href="https://kerita.me/07/06/fe-attack/6-request/"/>
     <id>https://kerita.me/07/06/fe-attack/6-request/</id>
     <published>2021-07-06T00:00:00.000Z</published>
-    <updated>2021-07-08T07:23:38.588Z</updated>
+    <updated>2021-07-12T14:07:07.213Z</updated>
     
     
     <summary type="html">&lt;h2 id=&quot;输入一个-URL-敲下回车键发生了什么&quot;&gt;&lt;a href=&quot;#输入一个-URL-敲下回车键发生了什么&quot; class=&quot;headerlink&quot; title=&quot;输入一个 URL 敲下回车键发生了什么&quot;&gt;&lt;/a&gt;输入一个 URL 敲下回车键发生了什么&lt;/h2&gt;&lt;p&gt;1.DNS 域名解析（此处涉及 DNS 的寻址过程），找到网页的存放服务器；&lt;/p&gt;
@@ -70,7 +70,7 @@
     <link href="https://kerita.me/07/05/fe-attack/5-js-run/"/>
     <id>https://kerita.me/07/05/fe-attack/5-js-run/</id>
     <published>2021-07-05T00:00:00.000Z</published>
-    <updated>2021-07-08T07:23:38.588Z</updated>
+    <updated>2021-07-12T14:07:07.213Z</updated>
     
     
     <summary type="html">&lt;p&gt;JavaScript 作为是一门单线程语言，使用事件循环(Event Loop)机制，来执行代码和收集回调队列的子任务。&lt;/p&gt;</summary>
@@ -89,7 +89,7 @@
     <link href="https://kerita.me/06/30/fe-attack/4-js/"/>
     <id>https://kerita.me/06/30/fe-attack/4-js/</id>
     <published>2021-06-30T00:00:00.000Z</published>
-    <updated>2021-07-08T07:23:38.584Z</updated>
+    <updated>2021-07-12T14:07:07.209Z</updated>
     
     
     <summary type="html">&lt;h2 id=&quot;问题&quot;&gt;&lt;a href=&quot;#问题&quot; class=&quot;headerlink&quot; title=&quot;问题&quot;&gt;&lt;/a&gt;问题&lt;/h2&gt;&lt;ul&gt;
@@ -117,7 +117,7 @@
     <link href="https://kerita.me/06/28/fe-attack/3-css/"/>
     <id>https://kerita.me/06/28/fe-attack/3-css/</id>
     <published>2021-06-28T00:00:00.000Z</published>
-    <updated>2021-07-08T07:23:38.584Z</updated>
+    <updated>2021-07-12T14:07:07.209Z</updated>
     
     
     <summary type="html">&lt;p&gt;记录 CSS 重要知识点。&lt;/p&gt;</summary>
@@ -136,7 +136,7 @@
     <link href="https://kerita.me/06/27/fe-attack/2-html/"/>
     <id>https://kerita.me/06/27/fe-attack/2-html/</id>
     <published>2021-06-27T00:00:00.000Z</published>
-    <updated>2021-07-08T07:23:38.584Z</updated>
+    <updated>2021-07-12T14:07:07.209Z</updated>
     
     
     <summary type="html">&lt;p&gt;浏览器在加载页面的过程会用到 GUI 渲染线程和 JavaScript 引擎线程，其中 GUI 渲染线程负责 HTML，JavaScript 引擎线程负责执行 JavaScript 脚本。&lt;/p&gt;</summary>
@@ -155,7 +155,7 @@
     <link href="https://kerita.me/06/24/2021/babel/"/>
     <id>https://kerita.me/06/24/2021/babel/</id>
     <published>2021-06-24T00:00:00.000Z</published>
-    <updated>2021-07-08T07:23:38.556Z</updated>
+    <updated>2021-07-12T14:07:07.181Z</updated>
     
     
     <summary type="html">&lt;p&gt;Babel 对自己的定位：下一代 JavaScript 的编译器。它将新语法、新 API 编译成兼容代码，以便在老版本的浏览器也能使用。&lt;/p&gt;
@@ -176,7 +176,7 @@
     <link href="https://kerita.me/06/24/fe-attack/1-system/"/>
     <id>https://kerita.me/06/24/fe-attack/1-system/</id>
     <published>2021-06-24T00:00:00.000Z</published>
-    <updated>2021-07-08T07:23:38.568Z</updated>
+    <updated>2021-07-12T14:07:07.193Z</updated>
     
     
     <summary type="html">&lt;p&gt;2021 年前端基础知识体系，包括入门前端应该学习的专业知识与项目过需要的知识。&lt;/p&gt;</summary>
@@ -195,7 +195,7 @@
     <link href="https://kerita.me/06/23/2021/npx/"/>
     <id>https://kerita.me/06/23/2021/npx/</id>
     <published>2021-06-23T00:00:00.000Z</published>
-    <updated>2021-07-08T07:23:38.568Z</updated>
+    <updated>2021-07-12T14:07:07.193Z</updated>
     
     
     <summary type="html">&lt;h2 id=&quot;什么是-npx&quot;&gt;&lt;a href=&quot;#什么是-npx&quot; class=&quot;headerlink&quot; title=&quot;什么是 npx&quot;&gt;&lt;/a&gt;什么是 npx&lt;/h2&gt;&lt;p&gt;npx 是一个用来运行 npm 包的工具，而无需全局安装该 npm 包，它随着 npm 5.2 版本发布。&lt;/p&gt;</summary>
@@ -214,7 +214,7 @@
     <link href="https://kerita.me/06/21/2021/devops-ci-cd/"/>
     <id>https://kerita.me/06/21/2021/devops-ci-cd/</id>
     <published>2021-06-21T00:00:00.000Z</published>
-    <updated>2021-07-08T07:23:38.560Z</updated>
+    <updated>2021-07-12T14:07:07.181Z</updated>
     
     
     <summary type="html">&lt;p&gt;在了解前端工程化的时候，经常听到 DevOps、CI、CD，I 借这个机会搞清楚。&lt;/p&gt;
@@ -235,7 +235,7 @@
     <link href="https://kerita.me/05/27/2021/cold/"/>
     <id>https://kerita.me/05/27/2021/cold/</id>
     <published>2021-05-27T00:00:00.000Z</published>
-    <updated>2021-07-08T07:23:38.556Z</updated>
+    <updated>2021-07-12T14:07:07.181Z</updated>
     
     
     <summary type="html">&lt;p&gt;5 月 24 日-5 月 26 日去南昌出差，三天基本没有午睡，晚上又没有休息好，食物多是多油且极辣的，导致感冒了。26 日早上喉咙有点干渴，而后双臂开始发酸，没有重视，下午到晚上开始发冷、疲劳。&lt;/p&gt;
@@ -255,7 +255,7 @@
     <link href="https://kerita.me/04/13/2021/new/"/>
     <id>https://kerita.me/04/13/2021/new/</id>
     <published>2021-04-13T00:00:00.000Z</published>
-    <updated>2021-07-08T07:23:38.568Z</updated>
+    <updated>2021-07-12T14:07:07.193Z</updated>
     
     
     <summary type="html">&lt;h2 id=&quot;JavaScript-中-new-做了什么&quot;&gt;&lt;a href=&quot;#JavaScript-中-new-做了什么&quot; class=&quot;headerlink&quot; title=&quot;JavaScript 中 new 做了什么&quot;&gt;&lt;/a&gt;JavaScript 中 new 做了什么&lt;/h2&gt;&lt;p&gt;我们使用 new 和构造函数产生一个新的对象，那在这个过程 new 做了什么呢？&lt;/p&gt;
@@ -281,7 +281,7 @@
     <link href="https://kerita.me/04/12/2021/var-let-function/"/>
     <id>https://kerita.me/04/12/2021/var-let-function/</id>
     <published>2021-04-12T00:00:00.000Z</published>
-    <updated>2021-07-08T07:23:38.568Z</updated>
+    <updated>2021-07-12T14:07:07.193Z</updated>
     
     
     <summary type="html">&lt;h2 id=&quot;var-与-function&quot;&gt;&lt;a href=&quot;#var-与-function&quot; class=&quot;headerlink&quot; title=&quot;var 与 function&quot;&gt;&lt;/a&gt;var 与 function&lt;/h2&gt;&lt;ul&gt;
@@ -302,7 +302,7 @@
     <link href="https://kerita.me/04/11/2021/this/"/>
     <id>https://kerita.me/04/11/2021/this/</id>
     <published>2021-04-11T00:00:00.000Z</published>
-    <updated>2021-07-08T07:23:38.568Z</updated>
+    <updated>2021-07-12T14:07:07.193Z</updated>
     
     
       
@@ -327,7 +327,7 @@
     <link href="https://kerita.me/04/03/2021/module/"/>
     <id>https://kerita.me/04/03/2021/module/</id>
     <published>2021-04-03T00:00:00.000Z</published>
-    <updated>2021-07-08T07:23:38.568Z</updated>
+    <updated>2021-07-12T14:07:07.193Z</updated>
     
     
     <summary type="html">&lt;p&gt;JavaScript 起初只是用来做页面的的简单交互，随着 Web 应用的复杂性越来越高，维护成本越来越大，模块化标准也在 ES6 版本应运而生。当然，在 ES6 Module 出现之前，社区在使用 Node.js 的过程中，也形成了适合 Node.js 的 CommonJS 模块标准。&lt;/p&gt;</summary>
@@ -346,7 +346,7 @@
     <link href="https://kerita.me/04/02/2021/travis-error/"/>
     <id>https://kerita.me/04/02/2021/travis-error/</id>
     <published>2021-04-02T00:00:00.000Z</published>
-    <updated>2021-07-08T07:23:38.568Z</updated>
+    <updated>2021-07-12T14:07:07.193Z</updated>
     
     
     <summary type="html">&lt;h2 id=&quot;起因&quot;&gt;&lt;a href=&quot;#起因&quot; class=&quot;headerlink&quot; title=&quot;起因&quot;&gt;&lt;/a&gt;起因&lt;/h2&gt;&lt;p&gt;之前博客配置了 &lt;code&gt;travis-ci&lt;/code&gt; 的自动构建，昨晚写完 &lt;a href=&quot;/04/01/2021/event-loop/&quot; title=&quot;什么是事件循环 (Event Loop)&quot;&gt;什么是事件循环 (Event Loop)&lt;/a&gt;，push 到 &lt;code&gt;GitHub&lt;/code&gt; 就去睡觉了。早上起来看没有构建成功，报了以下错误：&lt;/p&gt;
@@ -366,7 +366,7 @@
     <link href="https://kerita.me/04/01/2021/event-loop/"/>
     <id>https://kerita.me/04/01/2021/event-loop/</id>
     <published>2021-04-01T00:00:00.000Z</published>
-    <updated>2021-07-08T07:23:38.560Z</updated>
+    <updated>2021-07-12T14:07:07.185Z</updated>
     
     
     <summary type="html">&lt;h1 id=&quot;事件循环&quot;&gt;&lt;a href=&quot;#事件循环&quot; class=&quot;headerlink&quot; title=&quot;事件循环&quot;&gt;&lt;/a&gt;事件循环&lt;/h1&gt;&lt;p&gt;事件循环 (Event Loop) 是 JavaScript 运行的机制，事件循环负责执行代码、收集和处理事件以及执行队列中的子任务。浏览器与 Node.js 的事件循环存在差异。&lt;/p&gt;</summary>
@@ -385,7 +385,7 @@
     <link href="https://kerita.me/03/29/2021/npmrc/"/>
     <id>https://kerita.me/03/29/2021/npmrc/</id>
     <published>2021-03-29T00:00:00.000Z</published>
-    <updated>2021-07-08T07:23:38.568Z</updated>
+    <updated>2021-07-12T14:07:07.193Z</updated>
     
     
     <summary type="html">&lt;h1 id=&quot;npmrc-是什么&quot;&gt;&lt;a href=&quot;#npmrc-是什么&quot; class=&quot;headerlink&quot; title=&quot;.npmrc 是什么&quot;&gt;&lt;/a&gt;.npmrc 是什么&lt;/h1&gt;&lt;p&gt;.npmrc 是 npm 的配置文件。当运行 npm 命令时，会从 .npmrc 文件读取相关配置。&lt;/p&gt;
@@ -406,7 +406,7 @@
     <link href="https://kerita.me/05/19/2018/pingfan/"/>
     <id>https://kerita.me/05/19/2018/pingfan/</id>
     <published>2018-05-19T00:00:00.000Z</published>
-    <updated>2021-07-08T07:23:38.556Z</updated>
+    <updated>2021-07-12T14:07:07.181Z</updated>
     
     
     <summary type="html">&lt;p&gt;2018年3月21日，也就是大概两个月前就想分享打扰一下乐队在演唱会上翻唱的《平凡之路》，因为需要安装 hexo audio 插件，一直拖到今天。想看看能不能直接嵌入网易云的 iframe, 但网易云上依旧没有打扰一下的演唱会版本，所以嵌入腾讯视频 iframe&lt;/p&gt;</summary>
@@ -429,7 +429,7 @@
     <link href="https://kerita.me/02/28/2018/less-calc/"/>
     <id>https://kerita.me/02/28/2018/less-calc/</id>
     <published>2018-02-28T00:00:00.000Z</published>
-    <updated>2021-07-08T07:23:38.556Z</updated>
+    <updated>2021-07-12T14:07:07.181Z</updated>
     
     
       
