@@ -1,5 +1,5 @@
 ---
-title: 网络请求
+title: 浏览器如何进行网络请求
 categories: 前端进击笔记
 toc: true
 tags: Ajax
