@@ -72,6 +72,8 @@ date: 2021/7/6
   }
   ```
 
+- window.postMessage
+
 ## 三次握手和四次挥手
 
 - 三次握手(three-way handshake)
