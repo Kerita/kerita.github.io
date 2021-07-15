@@ -6,7 +6,7 @@
   <link href="https://kerita.me/atom.xml" rel="self"/>
   
   <link href="https://kerita.me/"/>
-  <updated>2021-07-13T13:27:52.268Z</updated>
+  <updated>2021-07-15T12:31:55.705Z</updated>
   <id>https://kerita.me/</id>
   
   <author>
@@ -17,11 +17,11 @@
   <generator uri="https://hexo.io/">Hexo</generator>
   
   <entry>
-    <title>浏览器是如何渲染的</title>
-    <link href="https://kerita.me/07/13/fe-attack/8-render/"/>
-    <id>https://kerita.me/07/13/fe-attack/8-render/</id>
-    <published>2021-07-13T00:00:00.000Z</published>
-    <updated>2021-07-13T13:27:52.268Z</updated>
+    <title>前端框架模板引擎的实现原理</title>
+    <link href="https://kerita.me/07/15/fe-attack/10-framework/"/>
+    <id>https://kerita.me/07/15/fe-attack/10-framework/</id>
+    <published>2021-07-15T00:00:00.000Z</published>
+    <updated>2021-07-15T12:31:55.705Z</updated>
     
     
       
@@ -42,11 +42,32 @@
   </entry>
   
   <entry>
+    <title>浏览器是如何渲染的</title>
+    <link href="https://kerita.me/07/13/fe-attack/8-render/"/>
+    <id>https://kerita.me/07/13/fe-attack/8-render/</id>
+    <published>2021-07-13T00:00:00.000Z</published>
+    <updated>2021-07-15T12:31:55.721Z</updated>
+    
+    
+    <summary type="html">&lt;h2 id=&quot;渲染过程&quot;&gt;&lt;a href=&quot;#渲染过程&quot; class=&quot;headerlink&quot; title=&quot;渲染过程&quot;&gt;&lt;/a&gt;渲染过程&lt;/h2&gt;&lt;p&gt;1.解析 HTML 文件，创建 DOM 树&lt;br&gt;浏览器解析 html 源码，然后创建一个 DOM 树。并行请求 css/image/js 在 DOM 树中，每一个 HTML 标签都有一个对应的节点，并且每一个文本也都会有一个对应的文本节点。DOM 树的根节点就是 documentElement，对应的是 html 标签。&lt;/p&gt;
+&lt;p&gt;2.解析 CSS,形成 CSS 对象模型&lt;br&gt;浏览器解析 CSS 代码，计算出最终的样式数据。构建 CSSOM 树。对 CSS 代码中非法的语法它会直接忽略掉。解析 CSS 的时候会按照如下顺序来定义优先级：&lt;br&gt;浏览器默认设置 &amp;lt; 用户设置 &amp;lt; 外链样式 &amp;lt; 内联样式 &amp;lt; html 中的 style。&lt;/p&gt;
+&lt;p&gt;3.将 CSS 与 DOM 合并，构建渲染树（renderingtree）&lt;br&gt;DOM Tree + CSSOM –&amp;gt; 渲染树（rendering tree）。渲染树和 DOM 树有点像，但是是有区别的。DOM 树完全和 html 标签一一对应，但是渲染树会忽略掉不需要渲染的元素，比如 head、display:none 的元素等。而且一大段文本中的每一个行在渲染树中都是独立的一个节点。渲染树中的每一个节点都存储有对应的 css 属性。&lt;/p&gt;</summary>
+    
+    
+    
+    <category term="前端进击笔记" scheme="https://kerita.me/categories/%E5%89%8D%E7%AB%AF%E8%BF%9B%E5%87%BB%E7%AC%94%E8%AE%B0/"/>
+    
+    
+    <category term="浏览器" scheme="https://kerita.me/tags/%E6%B5%8F%E8%A7%88%E5%99%A8/"/>
+    
+  </entry>
+  
+  <entry>
     <title>什么是 HTTP 协议</title>
     <link href="https://kerita.me/07/12/fe-attack/7-http/"/>
     <id>https://kerita.me/07/12/fe-attack/7-http/</id>
     <published>2021-07-12T00:00:00.000Z</published>
-    <updated>2021-07-13T13:27:52.260Z</updated>
+    <updated>2021-07-15T12:31:55.713Z</updated>
     
     
     <summary type="html">&lt;h2 id=&quot;什么是-RESTful-接口&quot;&gt;&lt;a href=&quot;#什么是-RESTful-接口&quot; class=&quot;headerlink&quot; title=&quot;什么是 RESTful 接口&quot;&gt;&lt;/a&gt;什么是 RESTful 接口&lt;/h2&gt;&lt;p&gt;RESTful 不是一种协议，而是一种接口设计风格，其要点如下：&lt;/p&gt;
@@ -71,7 +92,7 @@
     <link href="https://kerita.me/07/08/2021/api/"/>
     <id>https://kerita.me/07/08/2021/api/</id>
     <published>2021-07-08T00:00:00.000Z</published>
-    <updated>2021-07-13T13:27:52.224Z</updated>
+    <updated>2021-07-15T12:31:55.677Z</updated>
     
     
     <summary type="html">&lt;h2 id=&quot;接口对接过程遇到的问题&quot;&gt;&lt;a href=&quot;#接口对接过程遇到的问题&quot; class=&quot;headerlink&quot; title=&quot;接口对接过程遇到的问题&quot;&gt;&lt;/a&gt;接口对接过程遇到的问题&lt;/h2&gt;&lt;ul&gt;
@@ -96,7 +117,7 @@
     <link href="https://kerita.me/07/06/fe-attack/6-request/"/>
     <id>https://kerita.me/07/06/fe-attack/6-request/</id>
     <published>2021-07-06T00:00:00.000Z</published>
-    <updated>2021-07-13T13:27:52.256Z</updated>
+    <updated>2021-07-15T12:31:55.709Z</updated>
     
     
     <summary type="html">&lt;h2 id=&quot;输入一个-URL-敲下回车键发生了什么&quot;&gt;&lt;a href=&quot;#输入一个-URL-敲下回车键发生了什么&quot; class=&quot;headerlink&quot; title=&quot;输入一个 URL 敲下回车键发生了什么&quot;&gt;&lt;/a&gt;输入一个 URL 敲下回车键发生了什么&lt;/h2&gt;&lt;p&gt;1.DNS 域名解析（此处涉及 DNS 的寻址过程），找到网页的存放服务器；&lt;/p&gt;
@@ -120,7 +141,7 @@
     <link href="https://kerita.me/07/05/fe-attack/5-js-run/"/>
     <id>https://kerita.me/07/05/fe-attack/5-js-run/</id>
     <published>2021-07-05T00:00:00.000Z</published>
-    <updated>2021-07-13T13:27:52.252Z</updated>
+    <updated>2021-07-15T12:31:55.705Z</updated>
     
     
     <summary type="html">&lt;p&gt;JavaScript 作为是一门单线程语言，使用事件循环(Event Loop)机制，来执行代码和收集回调队列的子任务。&lt;/p&gt;</summary>
@@ -139,7 +160,7 @@
     <link href="https://kerita.me/06/30/fe-attack/4-js/"/>
     <id>https://kerita.me/06/30/fe-attack/4-js/</id>
     <published>2021-06-30T00:00:00.000Z</published>
-    <updated>2021-07-13T13:27:52.252Z</updated>
+    <updated>2021-07-15T12:31:55.705Z</updated>
     
     
     <summary type="html">&lt;h2 id=&quot;问题&quot;&gt;&lt;a href=&quot;#问题&quot; class=&quot;headerlink&quot; title=&quot;问题&quot;&gt;&lt;/a&gt;问题&lt;/h2&gt;&lt;ul&gt;
@@ -167,7 +188,7 @@
     <link href="https://kerita.me/06/28/fe-attack/3-css/"/>
     <id>https://kerita.me/06/28/fe-attack/3-css/</id>
     <published>2021-06-28T00:00:00.000Z</published>
-    <updated>2021-07-13T13:27:52.248Z</updated>
+    <updated>2021-07-15T12:31:55.705Z</updated>
     
     
     <summary type="html">&lt;p&gt;记录 CSS 重要知识点。&lt;/p&gt;</summary>
@@ -186,7 +207,7 @@
     <link href="https://kerita.me/06/27/fe-attack/2-html/"/>
     <id>https://kerita.me/06/27/fe-attack/2-html/</id>
     <published>2021-06-27T00:00:00.000Z</published>
-    <updated>2021-07-13T13:27:52.248Z</updated>
+    <updated>2021-07-15T12:31:55.705Z</updated>
     
     
     <summary type="html">&lt;p&gt;浏览器在加载页面的过程会用到 GUI 渲染线程和 JavaScript 引擎线程，其中 GUI 渲染线程负责 HTML，JavaScript 引擎线程负责执行 JavaScript 脚本。&lt;/p&gt;</summary>
@@ -205,7 +226,7 @@
     <link href="https://kerita.me/06/24/2021/babel/"/>
     <id>https://kerita.me/06/24/2021/babel/</id>
     <published>2021-06-24T00:00:00.000Z</published>
-    <updated>2021-07-13T13:27:52.224Z</updated>
+    <updated>2021-07-15T12:31:55.677Z</updated>
     
     
     <summary type="html">&lt;p&gt;Babel 对自己的定位：下一代 JavaScript 的编译器。它将新语法、新 API 编译成兼容代码，以便在老版本的浏览器也能使用。&lt;/p&gt;
@@ -226,7 +247,7 @@
     <link href="https://kerita.me/06/24/fe-attack/1-system/"/>
     <id>https://kerita.me/06/24/fe-attack/1-system/</id>
     <published>2021-06-24T00:00:00.000Z</published>
-    <updated>2021-07-13T13:27:52.232Z</updated>
+    <updated>2021-07-15T12:31:55.689Z</updated>
     
     
     <summary type="html">&lt;p&gt;2021 年前端基础知识体系，包括入门前端应该学习的专业知识与项目过需要的知识。&lt;/p&gt;</summary>
@@ -245,7 +266,7 @@
     <link href="https://kerita.me/06/23/2021/npx/"/>
     <id>https://kerita.me/06/23/2021/npx/</id>
     <published>2021-06-23T00:00:00.000Z</published>
-    <updated>2021-07-13T13:27:52.232Z</updated>
+    <updated>2021-07-15T12:31:55.685Z</updated>
     
     
     <summary type="html">&lt;h2 id=&quot;什么是-npx&quot;&gt;&lt;a href=&quot;#什么是-npx&quot; class=&quot;headerlink&quot; title=&quot;什么是 npx&quot;&gt;&lt;/a&gt;什么是 npx&lt;/h2&gt;&lt;p&gt;npx 是一个用来运行 npm 包的工具，而无需全局安装该 npm 包，它随着 npm 5.2 版本发布。&lt;/p&gt;</summary>
@@ -264,7 +285,7 @@
     <link href="https://kerita.me/06/21/2021/devops-ci-cd/"/>
     <id>https://kerita.me/06/21/2021/devops-ci-cd/</id>
     <published>2021-06-21T00:00:00.000Z</published>
-    <updated>2021-07-13T13:27:52.224Z</updated>
+    <updated>2021-07-15T12:31:55.677Z</updated>
     
     
     <summary type="html">&lt;p&gt;在了解前端工程化的时候，经常听到 DevOps、CI、CD，I 借这个机会搞清楚。&lt;/p&gt;
@@ -285,7 +306,7 @@
     <link href="https://kerita.me/05/27/2021/cold/"/>
     <id>https://kerita.me/05/27/2021/cold/</id>
     <published>2021-05-27T00:00:00.000Z</published>
-    <updated>2021-07-13T13:27:52.224Z</updated>
+    <updated>2021-07-15T12:31:55.677Z</updated>
     
     
     <summary type="html">&lt;p&gt;5 月 24 日-5 月 26 日去南昌出差，三天基本没有午睡，晚上又没有休息好，食物多是多油且极辣的，导致感冒了。26 日早上喉咙有点干渴，而后双臂开始发酸，没有重视，下午到晚上开始发冷、疲劳。&lt;/p&gt;
@@ -305,7 +326,7 @@
     <link href="https://kerita.me/04/13/2021/new/"/>
     <id>https://kerita.me/04/13/2021/new/</id>
     <published>2021-04-13T00:00:00.000Z</published>
-    <updated>2021-07-13T13:27:52.232Z</updated>
+    <updated>2021-07-15T12:31:55.685Z</updated>
     
     
     <summary type="html">&lt;h2 id=&quot;JavaScript-中-new-做了什么&quot;&gt;&lt;a href=&quot;#JavaScript-中-new-做了什么&quot; class=&quot;headerlink&quot; title=&quot;JavaScript 中 new 做了什么&quot;&gt;&lt;/a&gt;JavaScript 中 new 做了什么&lt;/h2&gt;&lt;p&gt;我们使用 new 和构造函数产生一个新的对象，那在这个过程 new 做了什么呢？&lt;/p&gt;
@@ -331,7 +352,7 @@
     <link href="https://kerita.me/04/12/2021/var-let-function/"/>
     <id>https://kerita.me/04/12/2021/var-let-function/</id>
     <published>2021-04-12T00:00:00.000Z</published>
-    <updated>2021-07-13T13:27:52.232Z</updated>
+    <updated>2021-07-15T12:31:55.685Z</updated>
     
     
     <summary type="html">&lt;h2 id=&quot;var-与-function&quot;&gt;&lt;a href=&quot;#var-与-function&quot; class=&quot;headerlink&quot; title=&quot;var 与 function&quot;&gt;&lt;/a&gt;var 与 function&lt;/h2&gt;&lt;ul&gt;
@@ -352,7 +373,7 @@
     <link href="https://kerita.me/04/11/2021/this/"/>
     <id>https://kerita.me/04/11/2021/this/</id>
     <published>2021-04-11T00:00:00.000Z</published>
-    <updated>2021-07-13T13:27:52.232Z</updated>
+    <updated>2021-07-15T12:31:55.685Z</updated>
     
     
       
@@ -377,7 +398,7 @@
     <link href="https://kerita.me/04/03/2021/module/"/>
     <id>https://kerita.me/04/03/2021/module/</id>
     <published>2021-04-03T00:00:00.000Z</published>
-    <updated>2021-07-13T13:27:52.232Z</updated>
+    <updated>2021-07-15T12:31:55.685Z</updated>
     
     
     <summary type="html">&lt;p&gt;JavaScript 起初只是用来做页面的的简单交互，随着 Web 应用的复杂性越来越高，维护成本越来越大，模块化标准也在 ES6 版本应运而生。当然，在 ES6 Module 出现之前，社区在使用 Node.js 的过程中，也形成了适合 Node.js 的 CommonJS 模块标准。&lt;/p&gt;</summary>
@@ -396,7 +417,7 @@
     <link href="https://kerita.me/04/02/2021/travis-error/"/>
     <id>https://kerita.me/04/02/2021/travis-error/</id>
     <published>2021-04-02T00:00:00.000Z</published>
-    <updated>2021-07-13T13:27:52.232Z</updated>
+    <updated>2021-07-15T12:31:55.685Z</updated>
     
     
     <summary type="html">&lt;h2 id=&quot;起因&quot;&gt;&lt;a href=&quot;#起因&quot; class=&quot;headerlink&quot; title=&quot;起因&quot;&gt;&lt;/a&gt;起因&lt;/h2&gt;&lt;p&gt;之前博客配置了 &lt;code&gt;travis-ci&lt;/code&gt; 的自动构建，昨晚写完 &lt;a href=&quot;/04/01/2021/event-loop/&quot; title=&quot;什么是事件循环 (Event Loop)&quot;&gt;什么是事件循环 (Event Loop)&lt;/a&gt;，push 到 &lt;code&gt;GitHub&lt;/code&gt; 就去睡觉了。早上起来看没有构建成功，报了以下错误：&lt;/p&gt;
@@ -416,7 +437,7 @@
     <link href="https://kerita.me/04/01/2021/event-loop/"/>
     <id>https://kerita.me/04/01/2021/event-loop/</id>
     <published>2021-04-01T00:00:00.000Z</published>
-    <updated>2021-07-13T13:27:52.224Z</updated>
+    <updated>2021-07-15T12:31:55.681Z</updated>
     
     
     <summary type="html">&lt;h1 id=&quot;事件循环&quot;&gt;&lt;a href=&quot;#事件循环&quot; class=&quot;headerlink&quot; title=&quot;事件循环&quot;&gt;&lt;/a&gt;事件循环&lt;/h1&gt;&lt;p&gt;事件循环 (Event Loop) 是 JavaScript 运行的机制，事件循环负责执行代码、收集和处理事件以及执行队列中的子任务。浏览器与 Node.js 的事件循环存在差异。&lt;/p&gt;</summary>
@@ -427,27 +448,6 @@
     
     
     <category term="JS" scheme="https://kerita.me/tags/JS/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>.npmrc 与 npm config 命令</title>
-    <link href="https://kerita.me/03/29/2021/npmrc/"/>
-    <id>https://kerita.me/03/29/2021/npmrc/</id>
-    <published>2021-03-29T00:00:00.000Z</published>
-    <updated>2021-07-13T13:27:52.232Z</updated>
-    
-    
-    <summary type="html">&lt;h1 id=&quot;npmrc-是什么&quot;&gt;&lt;a href=&quot;#npmrc-是什么&quot; class=&quot;headerlink&quot; title=&quot;.npmrc 是什么&quot;&gt;&lt;/a&gt;.npmrc 是什么&lt;/h1&gt;&lt;p&gt;.npmrc 是 npm 的配置文件。当运行 npm 命令时，会从 .npmrc 文件读取相关配置。&lt;/p&gt;
-&lt;p&gt;对于中国开发者，最常见的 .npmrc 配置是设置淘宝源，加快 npm 包的下载速度。&lt;/p&gt;
-&lt;figure class=&quot;highlight jsx&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;registry=https:&lt;span class=&quot;comment&quot;&gt;//registry.npm.taobao.org/&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;</summary>
-    
-    
-    
-    <category term="前端" scheme="https://kerita.me/categories/%E5%89%8D%E7%AB%AF/"/>
-    
-    
-    <category term="npm" scheme="https://kerita.me/tags/npm/"/>
     
   </entry>
   
