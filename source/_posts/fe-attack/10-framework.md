@@ -18,6 +18,8 @@ date: 2021/7/15
 
 4.将虚拟 DOM 对象生成真正的 DOM 元素插入到页面中，此时页面会被渲染。
 
+<!-- more -->
+
 ## JSX 和模板引擎是什么关系
 
-JSX 是一种模板语法，@babel/plugin-transform-react-jsx 插件将 JSX 转换为 React.createElement 语法，React.createElement 生成虚拟 DOM——也就是 AST，再根据 AST 生成 HTML。因为 JSX 可以理解为模板语法，@babel/plugin-transform-react-jsx 插件 和 React.createElement 可以理解为模板引擎。
+JSX 是一种模板语法，@babel/plugin-transform-react-jsx 插件将 JSX 转换为 React.createElement 语法，React.createElement 生成虚拟 DOM——也就是 AST，再根据 AST 生成 HTML。因此， JSX 可以理解为模板语法，@babel/plugin-transform-react-jsx 插件 和 React.createElement 可以理解为模板引擎。
