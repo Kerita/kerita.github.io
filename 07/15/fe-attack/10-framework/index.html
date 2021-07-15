@@ -21,15 +21,15 @@
               Kerita
       </title>
       <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-      <meta name="description" content="Vue 模板引擎工作过程以 Vue 为例子，对于开发者编写的 Vue 代码，Vue 会将其进行以下处理从而渲染到页面中： 1.解析语法生成 AST 对象； 2.根据生成的 AST 对象，完成 data 数据初始化； 3.根据 AST 对象和 data 数据绑定情况，生成虚拟 DOM 对象； 4.将虚拟 DOM 对象生成真正的 DOM 元素插入到页面中，此时页面会被渲染。 JSX 和模板引擎是什么关">
+      <meta name="description" content="Vue 模板引擎工作过程以 Vue 为例子，对于开发者编写的 Vue 代码，Vue 会将其进行以下处理从而渲染到页面中： 1.解析语法生成 AST 对象； 2.根据生成的 AST 对象，完成 data 数据初始化； 3.根据 AST 对象和 data 数据绑定情况，生成虚拟 DOM 对象； 4.将虚拟 DOM 对象生成真正的 DOM 元素插入到页面中，此时页面会被渲染。">
 <meta property="og:type" content="article">
 <meta property="og:title" content="前端框架模板引擎的实现原理">
 <meta property="og:url" content="https://kerita.me/07/15/fe-attack/10-framework/index.html">
 <meta property="og:site_name" content="Kerita">
-<meta property="og:description" content="Vue 模板引擎工作过程以 Vue 为例子，对于开发者编写的 Vue 代码，Vue 会将其进行以下处理从而渲染到页面中： 1.解析语法生成 AST 对象； 2.根据生成的 AST 对象，完成 data 数据初始化； 3.根据 AST 对象和 data 数据绑定情况，生成虚拟 DOM 对象； 4.将虚拟 DOM 对象生成真正的 DOM 元素插入到页面中，此时页面会被渲染。 JSX 和模板引擎是什么关">
+<meta property="og:description" content="Vue 模板引擎工作过程以 Vue 为例子，对于开发者编写的 Vue 代码，Vue 会将其进行以下处理从而渲染到页面中： 1.解析语法生成 AST 对象； 2.根据生成的 AST 对象，完成 data 数据初始化； 3.根据 AST 对象和 data 数据绑定情况，生成虚拟 DOM 对象； 4.将虚拟 DOM 对象生成真正的 DOM 元素插入到页面中，此时页面会被渲染。">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2021-07-15T00:00:00.000Z">
-<meta property="article:modified_time" content="2021-07-15T12:31:55.705Z">
+<meta property="article:modified_time" content="2021-07-15T12:33:18.536Z">
 <meta property="article:author" content="Kerita">
 <meta property="article:tag" content="浏览器">
 <meta name="twitter:card" content="summary">
@@ -132,12 +132,14 @@
 <p>2.根据生成的 AST 对象，完成 data 数据初始化；</p>
 <p>3.根据 AST 对象和 data 数据绑定情况，生成虚拟 DOM 对象；</p>
 <p>4.将虚拟 DOM 对象生成真正的 DOM 元素插入到页面中，此时页面会被渲染。</p>
-<h2 id="JSX-和模板引擎是什么关系"><a href="#JSX-和模板引擎是什么关系" class="headerlink" title="JSX 和模板引擎是什么关系"></a>JSX 和模板引擎是什么关系</h2><p>JSX 是一种模板语法，@babel/plugin-transform-react-jsx 插件将 JSX 转换为 React.createElement 语法，React.createElement 生成虚拟 DOM——也就是 AST，再根据 AST 生成 HTML。因为 JSX 可以理解为模板语法，@babel/plugin-transform-react-jsx 插件 和 React.createElement 可以理解为模板引擎。</p>
+<a id="more"></a>
+
+<h2 id="JSX-和模板引擎是什么关系"><a href="#JSX-和模板引擎是什么关系" class="headerlink" title="JSX 和模板引擎是什么关系"></a>JSX 和模板引擎是什么关系</h2><p>JSX 是一种模板语法，@babel/plugin-transform-react-jsx 插件将 JSX 转换为 React.createElement 语法，React.createElement 生成虚拟 DOM——也就是 AST，再根据 AST 生成 HTML。因此， JSX 可以理解为模板语法，@babel/plugin-transform-react-jsx 插件 和 React.createElement 可以理解为模板引擎。</p>
 
                         
           </div>
           <footer class="article-footer">
-            <a data-url="https://kerita.me/07/15/fe-attack/10-framework/" data-id="ckr4w7joq003kdyqyc77n3b5a" data-title="前端框架模板引擎的实现原理"
+            <a data-url="https://kerita.me/07/15/fe-attack/10-framework/" data-id="ckr4w9gad003keoqj3yh36ax1" data-title="前端框架模板引擎的实现原理"
               class="article-share-link">
               分享
             </a>
