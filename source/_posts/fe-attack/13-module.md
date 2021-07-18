@@ -13,7 +13,9 @@ date: 2021/07/19
 
 ## Webpack 工作流程
 
-Webpack 的使用中有 4 个核心概念：入口（entry）、输出（output）、Loader、插件（plugins），其工作流程如下： 1.通过 entry 指定的入口开始，解析各个文件模块间的依赖。
+Webpack 的使用中有 4 个核心概念：入口（entry）、输出（output）、Loader、插件（plugins），其工作流程如下：
+
+1.通过 entry 指定的入口开始，解析各个文件模块间的依赖。
 
 2.根据模块间的依赖关系，开始对各个模块进行编译。
 
