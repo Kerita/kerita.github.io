@@ -2,7 +2,7 @@
 title: 前端模块标准和 Webpack 工作流程
 categories: 前端进击笔记
 toc: true
-date: 2021/07/19
+date: 2021/07/18
 ---
 
 ## CommonJS 与 ES6 Module 的区别
