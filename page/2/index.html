@@ -98,6 +98,86 @@
       <div class="outer">
         <section id="main">
   
+    <article id="post-fe-attack/4-js" class="h-entry article article-type-post"
+  itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/06/30/fe-attack/4-js/" class="article-date">
+  <time class="dt-published" datetime="2021-06-30T00:00:00.000Z" itemprop="datePublished">2021-06-30</time>
+</a>
+      
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/%E5%89%8D%E7%AB%AF%E8%BF%9B%E5%87%BB%E7%AC%94%E8%AE%B0/">前端进击笔记</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+      
+        <header class="article-header">
+          
+  
+    <h1 itemprop="name">
+      <a class="p-name article-title" href="/06/30/fe-attack/4-js/">JavaScript 实现继承</a>
+    </h1>
+  
+
+        </header>
+        
+          <div class="e-content article-entry" itemprop="articleBody">
+            
+              <h2 id="问题"><a href="#问题" class="headerlink" title="问题"></a>问题</h2><ul>
+<li><p>JavaScript 的函数怎么也是个对象？<br>1.JavaScript 中除了基本类型，其他都是对象，Symbol 也是基本数据类型。<br>2.函数是一种特殊的对象，它也拥有属性和值，有一个特别的属性 prototype，该属性就是函数的原型对象。<br>3.函数的原型对象(prototype) 都拥有 constructor 属性，该属性指向与之关联的构造函数。</p>
+</li>
+<li><p><code>__proto__</code> 和 prototype 到底是啥关系？<br>1.每个对象都有 <code>__proto__</code> 属性来标识自己所继承的原型对象，但只有函数才有 prototype 属性。<br>2.每个函数都有一个 prototype 属性，该属性为函数的原型对象。<br>3.通过将实例对象的 <code>__proto__</code> 属性赋值为其构造函数的原型对象 prototype，JavaScript 可以使用构造函数创建对象的方法，来实现继承。</p>
+</li>
+<li><p>JavaScript 中对象是怎么实现继承的？<br>通过原型链访问对象的方法和属性，找到返回对应的值，直到访问 <code>Object.prototype</code> 的原型对象 null 仍没找到的，返回 undefined。</p>
+</li>
+<li><p>JavaScript 是怎么访问对象的方法和属性的？</p>
+</li>
+</ul>
+                
+                  <p class="article-more-link">
+                    <a href="/06/30/fe-attack/4-js/#more">
+                      Read More
+                    </a>
+                  </p>
+                  
+                    
+          </div>
+          <footer class="article-footer">
+            <a data-url="https://kerita.me/06/30/fe-attack/4-js/" data-id="ckr9afqiu0049crpyabmrbc8q" data-title="JavaScript 实现继承"
+              class="article-share-link">
+              分享
+            </a>
+            
+                
+                    
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/JS/" rel="tag">JS</a></li></ul>
+
+          </footer>
+  </div>
+  
+</article>
+
+
+    
+        <div id="gitalk-container"></div>
+        <script>
+          if (window.location.pathname !== '/') {
+            var gitalk = new Gitalk({
+              clientID: '572cf28212526e25eb20',
+              clientSecret: 'e3ebf600d6ed24da3f1b447ad85e9a26cced2e58',
+              repo: 'kerita.github.io',
+              owner: 'Kerita',
+              admin: ['Kerita'],
+              id: decodeURI(location.pathname),      // Ensure uniqueness and length less than 50
+              distractionFreeMode: false  // Facebook-like distraction free mode
+            })
+
+            gitalk.render('gitalk-container')
+          }
+        </script>
+  
     <article id="post-fe-attack/3-css" class="h-entry article article-type-post"
   itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
   <div class="article-meta">
@@ -136,7 +216,7 @@
                     
           </div>
           <footer class="article-footer">
-            <a data-url="https://kerita.me/06/28/fe-attack/3-css/" data-id="ckr92luei0042d7v07ke34myu" data-title="CSS 知识点"
+            <a data-url="https://kerita.me/06/28/fe-attack/3-css/" data-id="ckr9afqit0046crpy7mbx74n8" data-title="CSS 知识点"
               class="article-share-link">
               分享
             </a>
@@ -207,7 +287,7 @@
                     
           </div>
           <footer class="article-footer">
-            <a data-url="https://kerita.me/06/27/fe-attack/2-html/" data-id="ckr92lueg003vd7v04zychgmd" data-title="HTML 加载过程"
+            <a data-url="https://kerita.me/06/27/fe-attack/2-html/" data-id="ckr9afqis0041crpydvnp6gfm" data-title="HTML 加载过程"
               class="article-share-link">
               分享
             </a>
@@ -280,7 +360,7 @@
                     
           </div>
           <footer class="article-footer">
-            <a data-url="https://kerita.me/06/24/2021/babel/" data-id="ckr92ludu002fd7v09akyb1ca" data-title="什么是 Babel？"
+            <a data-url="https://kerita.me/06/24/2021/babel/" data-id="ckr9afqi6002fcrpy7cxaeiq8" data-title="什么是 Babel？"
               class="article-share-link">
               分享
             </a>
@@ -351,7 +431,7 @@
                     
           </div>
           <footer class="article-footer">
-            <a data-url="https://kerita.me/06/24/fe-attack/1-system/" data-id="ckr92lueh003zd7v05ke3h43g" data-title="前端知识体系"
+            <a data-url="https://kerita.me/06/24/fe-attack/1-system/" data-id="ckr9afqik003hcrpy2bprc0p0" data-title="前端知识体系"
               class="article-share-link">
               分享
             </a>
@@ -422,7 +502,7 @@
                     
           </div>
           <footer class="article-footer">
-            <a data-url="https://kerita.me/06/23/2021/npx/" data-id="ckr92lue30032d7v0g7sag6ux" data-title="什么是 npx？"
+            <a data-url="https://kerita.me/06/23/2021/npx/" data-id="ckr9afqif0032crpye9kg6h36" data-title="什么是 npx？"
               class="article-share-link">
               分享
             </a>
@@ -495,7 +575,7 @@
                     
           </div>
           <footer class="article-footer">
-            <a data-url="https://kerita.me/06/21/2021/devops-ci-cd/" data-id="ckr92ludx002md7v08aqp9ec2" data-title="什么是 DevOps、CI、CD？"
+            <a data-url="https://kerita.me/06/21/2021/devops-ci-cd/" data-id="ckr9afqia002mcrpy6gy96ppx" data-title="什么是 DevOps、CI、CD？"
               class="article-share-link">
               分享
             </a>
@@ -567,7 +647,7 @@
                     
           </div>
           <footer class="article-footer">
-            <a data-url="https://kerita.me/05/27/2021/cold/" data-id="ckr92ludv002id7v0eoj8966r" data-title="记一次感冒"
+            <a data-url="https://kerita.me/05/27/2021/cold/" data-id="ckr9afqi8002icrpy8kk2atlh" data-title="记一次感冒"
               class="article-share-link">
               分享
             </a>
@@ -645,7 +725,7 @@
                     
           </div>
           <footer class="article-footer">
-            <a data-url="https://kerita.me/04/13/2021/new/" data-id="ckr92lue0002vd7v001u7c98e" data-title="new 做了什么"
+            <a data-url="https://kerita.me/04/13/2021/new/" data-id="ckr9afqid002vcrpy186z745a" data-title="new 做了什么"
               class="article-share-link">
               分享
             </a>
@@ -718,78 +798,7 @@
                     
           </div>
           <footer class="article-footer">
-            <a data-url="https://kerita.me/04/12/2021/var-let-function/" data-id="ckr92lue6003cd7v08pqqh9ok" data-title="奇妙的 var,function,let"
-              class="article-share-link">
-              分享
-            </a>
-            
-                
-                    
-  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/JS/" rel="tag">JS</a></li></ul>
-
-          </footer>
-  </div>
-  
-</article>
-
-
-    
-        <div id="gitalk-container"></div>
-        <script>
-          if (window.location.pathname !== '/') {
-            var gitalk = new Gitalk({
-              clientID: '572cf28212526e25eb20',
-              clientSecret: 'e3ebf600d6ed24da3f1b447ad85e9a26cced2e58',
-              repo: 'kerita.github.io',
-              owner: 'Kerita',
-              admin: ['Kerita'],
-              id: decodeURI(location.pathname),      // Ensure uniqueness and length less than 50
-              distractionFreeMode: false  // Facebook-like distraction free mode
-            })
-
-            gitalk.render('gitalk-container')
-          }
-        </script>
-  
-    <article id="post-2021/this" class="h-entry article article-type-post"
-  itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
-  <div class="article-meta">
-    <a href="/04/11/2021/this/" class="article-date">
-  <time class="dt-published" datetime="2021-04-11T00:00:00.000Z" itemprop="datePublished">2021-04-11</time>
-</a>
-      
-  <div class="article-category">
-    <a class="article-category-link" href="/categories/%E5%89%8D%E7%AB%AF/">前端</a>
-  </div>
-
-  </div>
-  <div class="article-inner">
-    
-      
-        <header class="article-header">
-          
-  
-    <h1 itemprop="name">
-      <a class="p-name article-title" href="/04/11/2021/this/">this 指向</a>
-    </h1>
-  
-
-        </header>
-        
-          <div class="e-content article-entry" itemprop="articleBody">
-            
-                      <p>this 永远指向一个对象</p>
-<h2 id="普通函数"><a href="#普通函数" class="headerlink" title="普通函数"></a>普通函数</h2><p>this 的指向完全取决于函数调用的位置</p>
-<h2 id="箭头函数"><a href="#箭头函数" class="headerlink" title="箭头函数"></a>箭头函数</h2><p>this 被设置为他被创建时的环境</p>
-<h2 id="call-apply-bind"><a href="#call-apply-bind" class="headerlink" title="call,apply,bind"></a>call,apply,bind</h2><ul>
-<li>call,apply 改变函数调用的 this 指向，立即执行，call 的参数逐个传递，apply 数组形式传递</li>
-<li>bind 返回一个函数，并改变它的 this 指向，而且只能改变一次，bind 的参数逐个传递</li>
-</ul>
-
-                        
-          </div>
-          <footer class="article-footer">
-            <a data-url="https://kerita.me/04/11/2021/this/" data-id="ckr92lue40035d7v0ccj62jwj" data-title="this 指向"
+            <a data-url="https://kerita.me/04/12/2021/var-let-function/" data-id="ckr9afqii003ccrpy0f5sezaw" data-title="奇妙的 var,function,let"
               class="article-share-link">
               分享
             </a>
@@ -849,11 +858,15 @@
       <ul>
         
           <li>
-            <a href="/07/19/fe-attack/13-module/">前端模块标准和 Webpack 工作流程</a>
+            <a href="/07/20/fe-attack/14-design/">前端组件化和模块化</a>
           </li>
         
           <li>
             <a href="/07/18/fe-attack/12-spa/">单页应用与前端路由库设计原理</a>
+          </li>
+        
+          <li>
+            <a href="/07/18/fe-attack/13-module/">前端模块标准和 Webpack 工作流程</a>
           </li>
         
           <li>
@@ -862,10 +875,6 @@
         
           <li>
             <a href="/07/15/fe-attack/10-framework/">前端框架模板引擎的实现原理</a>
-          </li>
-        
-          <li>
-            <a href="/07/13/fe-attack/8-render/">浏览器是如何渲染的</a>
           </li>
         
       </ul>

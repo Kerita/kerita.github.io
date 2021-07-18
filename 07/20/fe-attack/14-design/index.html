@@ -17,21 +17,24 @@
     
       <title>
         
-          前端模块标准和 Webpack 工作流程 | 
+          前端组件化和模块化 | 
               Kerita
       </title>
       <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-      <meta name="description" content="CommonJS 与 ES6 Module 的区别可以参考本博客之前的文章 CommonJS 与 ES6 Module 的区别">
+      <meta name="description" content="前端有两个大方向一定要掌握，一是组件化和模块化，二是工程化，今天我们来聊一聊组件化和模块化。组件化和模块化满足了软件工程低内聚、高耦合、代码模块化的原则，提高代码的可重用性和可复用性，是提高工作效率的重要法宝。">
 <meta property="og:type" content="article">
-<meta property="og:title" content="前端模块标准和 Webpack 工作流程">
-<meta property="og:url" content="https://kerita.me/07/19/fe-attack/13-module/index.html">
+<meta property="og:title" content="前端组件化和模块化">
+<meta property="og:url" content="https://kerita.me/07/20/fe-attack/14-design/index.html">
 <meta property="og:site_name" content="Kerita">
-<meta property="og:description" content="CommonJS 与 ES6 Module 的区别可以参考本博客之前的文章 CommonJS 与 ES6 Module 的区别">
+<meta property="og:description" content="前端有两个大方向一定要掌握，一是组件化和模块化，二是工程化，今天我们来聊一聊组件化和模块化。组件化和模块化满足了软件工程低内聚、高耦合、代码模块化的原则，提高代码的可重用性和可复用性，是提高工作效率的重要法宝。">
 <meta property="og:locale" content="zh_CN">
-<meta property="article:published_time" content="2021-07-19T00:00:00.000Z">
-<meta property="article:modified_time" content="2021-07-18T10:42:16.993Z">
+<meta property="og:image" content="https://kerita.me/07/20/fe-attack/14-design/domain-driven-module.png">
+<meta property="og:image" content="https://kerita.me/07/20/fe-attack/14-design/res-driven-module.png">
+<meta property="article:published_time" content="2021-07-20T00:00:00.000Z">
+<meta property="article:modified_time" content="2021-07-18T14:21:27.037Z">
 <meta property="article:author" content="Kerita">
 <meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://kerita.me/07/20/fe-attack/14-design/domain-driven-module.png">
         
           <link rel="alternate" href="/atom.xml" title="Kerita" type="application/atom+xml">
             
@@ -99,11 +102,11 @@
 </header>
 
       <div class="outer">
-        <section id="main"><article id="post-fe-attack/13-module" class="h-entry article article-type-post"
+        <section id="main"><article id="post-fe-attack/14-design" class="h-entry article article-type-post"
   itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
   <div class="article-meta">
-    <a href="/07/19/fe-attack/13-module/" class="article-date">
-  <time class="dt-published" datetime="2021-07-19T00:00:00.000Z" itemprop="datePublished">2021-07-19</time>
+    <a href="/07/20/fe-attack/14-design/" class="article-date">
+  <time class="dt-published" datetime="2021-07-20T00:00:00.000Z" itemprop="datePublished">2021-07-20</time>
 </a>
       
   <div class="article-category">
@@ -118,7 +121,7 @@
           
   
     <h1 class="p-name article-title" itemprop="headline name">
-      前端模块标准和 Webpack 工作流程
+      前端组件化和模块化
     </h1>
   
 
@@ -126,20 +129,29 @@
         
           <div class="e-content article-entry" itemprop="articleBody">
             
-                      <h2 id="CommonJS-与-ES6-Module-的区别"><a href="#CommonJS-与-ES6-Module-的区别" class="headerlink" title="CommonJS 与 ES6 Module 的区别"></a>CommonJS 与 ES6 Module 的区别</h2><p>可以参考本博客之前的文章 <a href="/04/03/2021/module/">CommonJS 与 ES6 Module 的区别</a></p>
+                      <p>前端有两个大方向一定要掌握，一是组件化和模块化，二是工程化，今天我们来聊一聊组件化和模块化。组件化和模块化满足了软件工程低内聚、高耦合、代码模块化的原则，提高代码的可重用性和可复用性，是提高工作效率的重要法宝。</p>
 <a id="more"></a>
 
-<h2 id="Webpack-工作流程"><a href="#Webpack-工作流程" class="headerlink" title="Webpack 工作流程"></a>Webpack 工作流程</h2><p>Webpack 的使用中有 4 个核心概念：入口（entry）、输出（output）、Loader、插件（plugins），其工作流程如下：</p>
-<p>1.通过 entry 指定的入口开始，解析各个文件模块间的依赖。</p>
-<p>2.根据模块间的依赖关系，开始对各个模块进行编译。</p>
-<p>3.编译过程中，根据配置的规则对一些模块使用 Loader 进行编译处理。</p>
-<p>4.根据插件的配置，对 Loader 编译后的代码进行封装、优化、分块、压缩等。</p>
-<p>5.最终 Webpack 整合各个模块，根据依赖关系将它们打包成最终的一个或者多个文件。</p>
+<h2 id="组件化"><a href="#组件化" class="headerlink" title="组件化"></a>组件化</h2><p>前端框架 Vue 和 React 都是组件化开发，基于页面视图的树形结构，我们便可以进行组件化。在进行组件化时，注意一下三个原则：</p>
+<ul>
+<li>单个组件代码不超过 200 行<br>超过 200 行的代码，阅读体验上不好，不利于之后自己和其他人维护。如果代码超过 200 行，说明需要拆分组件或者将逻辑拆分，在 React 中可以使用 Hooks 进行逻辑拆分。</li>
+<li>抽取公共组件<br>不要重复你自己。当需要复制和粘贴代码时，需要将组件进行组件化；组件化需要考虑该公共组件是需求公共组件、项目公共组件、还是团队公共组件，将不同程度的公共组件放置在适合他们的地方。</li>
+<li>建立和维护公共组件库<br>在有多个项目时，应考虑建立团队的公共组件库，并妥善维护；确保公共组件库能及时完成 bug 的修复，及时满足业务的需求。</li>
+</ul>
+<h2 id="模块化"><a href="#模块化" class="headerlink" title="模块化"></a>模块化</h2><p>模块化能让我们更清晰地组织代码，便于我们开发和维护。模块化工程可以遵循下面两个原则：</p>
+<ul>
+<li><p>领域驱动设计<br>我们可以按照业务领域对模块进行划分。例如在开发一个金融系统时，我们可以按照一级业务、二级业务、数据业务代码进行模块化，一级业务之下还可按照具体的业务进行划分，模块化架构如下。</p>
+<p><img src="./domain-driven-module.png" alt="领域驱动模块化"></p>
+</li>
+<li><p>职责驱动设计<br>我们可以按照职责不同，对模块进行划分。例如在某个新债模块中，按照职责对 config,utils, component 进行模块化划分。</p>
+<p><img src="./res-driven-module.png" alt="职责驱动模块化设计"></p>
+</li>
+</ul>
 
                         
           </div>
           <footer class="article-footer">
-            <a data-url="https://kerita.me/07/19/fe-attack/13-module/" data-id="ckr92luef003sd7v022b5egjy" data-title="前端模块标准和 Webpack 工作流程"
+            <a data-url="https://kerita.me/07/20/fe-attack/14-design/" data-id="ckr9afqir003zcrpy1067fxzv" data-title="前端组件化和模块化"
               class="article-share-link">
               分享
             </a>
@@ -200,11 +212,15 @@
       <ul>
         
           <li>
-            <a href="/07/19/fe-attack/13-module/">前端模块标准和 Webpack 工作流程</a>
+            <a href="/07/20/fe-attack/14-design/">前端组件化和模块化</a>
           </li>
         
           <li>
             <a href="/07/18/fe-attack/12-spa/">单页应用与前端路由库设计原理</a>
+          </li>
+        
+          <li>
+            <a href="/07/18/fe-attack/13-module/">前端模块标准和 Webpack 工作流程</a>
           </li>
         
           <li>
@@ -213,10 +229,6 @@
         
           <li>
             <a href="/07/15/fe-attack/10-framework/">前端框架模板引擎的实现原理</a>
-          </li>
-        
-          <li>
-            <a href="/07/13/fe-attack/8-render/">浏览器是如何渲染的</a>
           </li>
         
       </ul>
