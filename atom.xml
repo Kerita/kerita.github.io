@@ -6,7 +6,7 @@
   <link href="https://kerita.me/atom.xml" rel="self"/>
   
   <link href="https://kerita.me/"/>
-  <updated>2021-07-18T10:38:22.240Z</updated>
+  <updated>2021-07-18T10:42:16.993Z</updated>
   <id>https://kerita.me/</id>
   
   <author>
@@ -21,7 +21,7 @@
     <link href="https://kerita.me/07/19/fe-attack/13-module/"/>
     <id>https://kerita.me/07/19/fe-attack/13-module/</id>
     <published>2021-07-19T00:00:00.000Z</published>
-    <updated>2021-07-18T10:38:22.240Z</updated>
+    <updated>2021-07-18T10:42:16.993Z</updated>
     
     
     <summary type="html">&lt;h2 id=&quot;CommonJS-与-ES6-Module-的区别&quot;&gt;&lt;a href=&quot;#CommonJS-与-ES6-Module-的区别&quot; class=&quot;headerlink&quot; title=&quot;CommonJS 与 ES6 Module 的区别&quot;&gt;&lt;/a&gt;CommonJS 与 ES6 Module 的区别&lt;/h2&gt;&lt;p&gt;可以参考本博客之前的文章 &lt;a href=&quot;/04/03/2021/module/&quot;&gt;CommonJS 与 ES6 Module 的区别&lt;/a&gt;&lt;/p&gt;</summary>
@@ -38,7 +38,7 @@
     <link href="https://kerita.me/07/18/fe-attack/12-spa/"/>
     <id>https://kerita.me/07/18/fe-attack/12-spa/</id>
     <published>2021-07-18T00:00:00.000Z</published>
-    <updated>2021-07-18T10:38:22.240Z</updated>
+    <updated>2021-07-18T10:42:16.993Z</updated>
     
     
     <summary type="html">&lt;h2 id=&quot;什么是单页应用&quot;&gt;&lt;a href=&quot;#什么是单页应用&quot; class=&quot;headerlink&quot; title=&quot;什么是单页应用&quot;&gt;&lt;/a&gt;什么是单页应用&lt;/h2&gt;&lt;p&gt;单页应用就是只有一个 HTML 页面的应用，页面 URL 的变化只是通过浏览器 API 修改，浏览器不会向服务器请求新的 HTML 的，而是通过 JS 控制不同的 URL 渲染相应的内容。&lt;/p&gt;
@@ -56,7 +56,7 @@
     <link href="https://kerita.me/07/16/fe-attack/11-fe/"/>
     <id>https://kerita.me/07/16/fe-attack/11-fe/</id>
     <published>2021-07-16T00:00:00.000Z</published>
-    <updated>2021-07-18T10:38:22.240Z</updated>
+    <updated>2021-07-18T10:42:16.989Z</updated>
     
     
     <summary type="html">&lt;h2 id=&quot;什么是-Hybrid-App&quot;&gt;&lt;a href=&quot;#什么是-Hybrid-App&quot; class=&quot;headerlink&quot; title=&quot;什么是 Hybrid App&quot;&gt;&lt;/a&gt;什么是 Hybrid App&lt;/h2&gt;&lt;p&gt;Hybrid App 是融合了 Native App 和 Web App 的混合 App，Web App 运行在 Native App 提供的 WebView 中，Web App 通过中间的 bridge 调用 Native 的功能。传统的 Hybrid App 开发技术有 Cordova，Phone Gap 和 Ionic。&lt;/p&gt;</summary>
@@ -73,7 +73,7 @@
     <link href="https://kerita.me/07/15/fe-attack/10-framework/"/>
     <id>https://kerita.me/07/15/fe-attack/10-framework/</id>
     <published>2021-07-15T00:00:00.000Z</published>
-    <updated>2021-07-18T10:38:22.240Z</updated>
+    <updated>2021-07-18T10:42:16.989Z</updated>
     
     
     <summary type="html">&lt;h2 id=&quot;Vue-模板引擎工作过程&quot;&gt;&lt;a href=&quot;#Vue-模板引擎工作过程&quot; class=&quot;headerlink&quot; title=&quot;Vue 模板引擎工作过程&quot;&gt;&lt;/a&gt;Vue 模板引擎工作过程&lt;/h2&gt;&lt;p&gt;以 Vue 为例子，对于开发者编写的 Vue 代码，Vue 会将其进行以下处理从而渲染到页面中：&lt;/p&gt;
@@ -96,7 +96,7 @@
     <link href="https://kerita.me/07/13/fe-attack/8-render/"/>
     <id>https://kerita.me/07/13/fe-attack/8-render/</id>
     <published>2021-07-13T00:00:00.000Z</published>
-    <updated>2021-07-18T10:38:22.260Z</updated>
+    <updated>2021-07-18T10:42:17.009Z</updated>
     
     
     <summary type="html">&lt;h2 id=&quot;渲染过程&quot;&gt;&lt;a href=&quot;#渲染过程&quot; class=&quot;headerlink&quot; title=&quot;渲染过程&quot;&gt;&lt;/a&gt;渲染过程&lt;/h2&gt;&lt;p&gt;1.解析 HTML 文件，创建 DOM 树&lt;br&gt;浏览器解析 html 源码，然后创建一个 DOM 树。并行请求 css/image/js 在 DOM 树中，每一个 HTML 标签都有一个对应的节点，并且每一个文本也都会有一个对应的文本节点。DOM 树的根节点就是 documentElement，对应的是 html 标签。&lt;/p&gt;
@@ -117,7 +117,7 @@
     <link href="https://kerita.me/07/12/fe-attack/7-http/"/>
     <id>https://kerita.me/07/12/fe-attack/7-http/</id>
     <published>2021-07-12T00:00:00.000Z</published>
-    <updated>2021-07-18T10:38:22.252Z</updated>
+    <updated>2021-07-18T10:42:17.001Z</updated>
     
     
     <summary type="html">&lt;h2 id=&quot;什么是-RESTful-接口&quot;&gt;&lt;a href=&quot;#什么是-RESTful-接口&quot; class=&quot;headerlink&quot; title=&quot;什么是 RESTful 接口&quot;&gt;&lt;/a&gt;什么是 RESTful 接口&lt;/h2&gt;&lt;p&gt;RESTful 不是一种协议，而是一种接口设计风格，其要点如下：&lt;/p&gt;
@@ -142,7 +142,7 @@
     <link href="https://kerita.me/07/08/2021/api/"/>
     <id>https://kerita.me/07/08/2021/api/</id>
     <published>2021-07-08T00:00:00.000Z</published>
-    <updated>2021-07-18T10:38:22.212Z</updated>
+    <updated>2021-07-18T10:42:16.965Z</updated>
     
     
     <summary type="html">&lt;h2 id=&quot;接口对接过程遇到的问题&quot;&gt;&lt;a href=&quot;#接口对接过程遇到的问题&quot; class=&quot;headerlink&quot; title=&quot;接口对接过程遇到的问题&quot;&gt;&lt;/a&gt;接口对接过程遇到的问题&lt;/h2&gt;&lt;ul&gt;
@@ -167,7 +167,7 @@
     <link href="https://kerita.me/07/06/fe-attack/6-request/"/>
     <id>https://kerita.me/07/06/fe-attack/6-request/</id>
     <published>2021-07-06T00:00:00.000Z</published>
-    <updated>2021-07-18T10:38:22.248Z</updated>
+    <updated>2021-07-18T10:42:16.997Z</updated>
     
     
     <summary type="html">&lt;h2 id=&quot;输入一个-URL-敲下回车键发生了什么&quot;&gt;&lt;a href=&quot;#输入一个-URL-敲下回车键发生了什么&quot; class=&quot;headerlink&quot; title=&quot;输入一个 URL 敲下回车键发生了什么&quot;&gt;&lt;/a&gt;输入一个 URL 敲下回车键发生了什么&lt;/h2&gt;&lt;p&gt;1.DNS 域名解析（此处涉及 DNS 的寻址过程），找到网页的存放服务器；&lt;/p&gt;
@@ -191,7 +191,7 @@
     <link href="https://kerita.me/07/05/fe-attack/5-js-run/"/>
     <id>https://kerita.me/07/05/fe-attack/5-js-run/</id>
     <published>2021-07-05T00:00:00.000Z</published>
-    <updated>2021-07-18T10:38:22.244Z</updated>
+    <updated>2021-07-18T10:42:16.997Z</updated>
     
     
     <summary type="html">&lt;p&gt;JavaScript 作为是一门单线程语言，使用事件循环(Event Loop)机制，来执行代码和收集回调队列的子任务。&lt;/p&gt;</summary>
@@ -210,7 +210,7 @@
     <link href="https://kerita.me/06/30/fe-attack/4-js/"/>
     <id>https://kerita.me/06/30/fe-attack/4-js/</id>
     <published>2021-06-30T00:00:00.000Z</published>
-    <updated>2021-07-18T10:38:22.244Z</updated>
+    <updated>2021-07-18T10:42:16.993Z</updated>
     
     
     <summary type="html">&lt;h2 id=&quot;问题&quot;&gt;&lt;a href=&quot;#问题&quot; class=&quot;headerlink&quot; title=&quot;问题&quot;&gt;&lt;/a&gt;问题&lt;/h2&gt;&lt;ul&gt;
@@ -238,7 +238,7 @@
     <link href="https://kerita.me/06/28/fe-attack/3-css/"/>
     <id>https://kerita.me/06/28/fe-attack/3-css/</id>
     <published>2021-06-28T00:00:00.000Z</published>
-    <updated>2021-07-18T10:38:22.240Z</updated>
+    <updated>2021-07-18T10:42:16.993Z</updated>
     
     
     <summary type="html">&lt;p&gt;记录 CSS 重要知识点。&lt;/p&gt;</summary>
@@ -257,7 +257,7 @@
     <link href="https://kerita.me/06/27/fe-attack/2-html/"/>
     <id>https://kerita.me/06/27/fe-attack/2-html/</id>
     <published>2021-06-27T00:00:00.000Z</published>
-    <updated>2021-07-18T10:38:22.240Z</updated>
+    <updated>2021-07-18T10:42:16.993Z</updated>
     
     
     <summary type="html">&lt;p&gt;浏览器在加载页面的过程会用到 GUI 渲染线程和 JavaScript 引擎线程，其中 GUI 渲染线程负责 HTML，JavaScript 引擎线程负责执行 JavaScript 脚本。&lt;/p&gt;</summary>
@@ -276,7 +276,7 @@
     <link href="https://kerita.me/06/24/2021/babel/"/>
     <id>https://kerita.me/06/24/2021/babel/</id>
     <published>2021-06-24T00:00:00.000Z</published>
-    <updated>2021-07-18T10:38:22.212Z</updated>
+    <updated>2021-07-18T10:42:16.965Z</updated>
     
     
     <summary type="html">&lt;p&gt;Babel 对自己的定位：下一代 JavaScript 的编译器。它将新语法、新 API 编译成兼容代码，以便在老版本的浏览器也能使用。&lt;/p&gt;
@@ -297,7 +297,7 @@
     <link href="https://kerita.me/06/24/fe-attack/1-system/"/>
     <id>https://kerita.me/06/24/fe-attack/1-system/</id>
     <published>2021-06-24T00:00:00.000Z</published>
-    <updated>2021-07-18T10:38:22.224Z</updated>
+    <updated>2021-07-18T10:42:16.973Z</updated>
     
     
     <summary type="html">&lt;p&gt;2021 年前端基础知识体系，包括入门前端应该学习的专业知识与项目过需要的知识。&lt;/p&gt;</summary>
@@ -316,7 +316,7 @@
     <link href="https://kerita.me/06/23/2021/npx/"/>
     <id>https://kerita.me/06/23/2021/npx/</id>
     <published>2021-06-23T00:00:00.000Z</published>
-    <updated>2021-07-18T10:38:22.224Z</updated>
+    <updated>2021-07-18T10:42:16.973Z</updated>
     
     
     <summary type="html">&lt;h2 id=&quot;什么是-npx&quot;&gt;&lt;a href=&quot;#什么是-npx&quot; class=&quot;headerlink&quot; title=&quot;什么是 npx&quot;&gt;&lt;/a&gt;什么是 npx&lt;/h2&gt;&lt;p&gt;npx 是一个用来运行 npm 包的工具，而无需全局安装该 npm 包，它随着 npm 5.2 版本发布。&lt;/p&gt;</summary>
@@ -335,7 +335,7 @@
     <link href="https://kerita.me/06/21/2021/devops-ci-cd/"/>
     <id>https://kerita.me/06/21/2021/devops-ci-cd/</id>
     <published>2021-06-21T00:00:00.000Z</published>
-    <updated>2021-07-18T10:38:22.216Z</updated>
+    <updated>2021-07-18T10:42:16.965Z</updated>
     
     
     <summary type="html">&lt;p&gt;在了解前端工程化的时候，经常听到 DevOps、CI、CD，I 借这个机会搞清楚。&lt;/p&gt;
@@ -356,7 +356,7 @@
     <link href="https://kerita.me/05/27/2021/cold/"/>
     <id>https://kerita.me/05/27/2021/cold/</id>
     <published>2021-05-27T00:00:00.000Z</published>
-    <updated>2021-07-18T10:38:22.216Z</updated>
+    <updated>2021-07-18T10:42:16.965Z</updated>
     
     
     <summary type="html">&lt;p&gt;5 月 24 日-5 月 26 日去南昌出差，三天基本没有午睡，晚上又没有休息好，食物多是多油且极辣的，导致感冒了。26 日早上喉咙有点干渴，而后双臂开始发酸，没有重视，下午到晚上开始发冷、疲劳。&lt;/p&gt;
@@ -376,7 +376,7 @@
     <link href="https://kerita.me/04/13/2021/new/"/>
     <id>https://kerita.me/04/13/2021/new/</id>
     <published>2021-04-13T00:00:00.000Z</published>
-    <updated>2021-07-18T10:38:22.224Z</updated>
+    <updated>2021-07-18T10:42:16.973Z</updated>
     
     
     <summary type="html">&lt;h2 id=&quot;JavaScript-中-new-做了什么&quot;&gt;&lt;a href=&quot;#JavaScript-中-new-做了什么&quot; class=&quot;headerlink&quot; title=&quot;JavaScript 中 new 做了什么&quot;&gt;&lt;/a&gt;JavaScript 中 new 做了什么&lt;/h2&gt;&lt;p&gt;我们使用 new 和构造函数产生一个新的对象，那在这个过程 new 做了什么呢？&lt;/p&gt;
@@ -402,7 +402,7 @@
     <link href="https://kerita.me/04/12/2021/var-let-function/"/>
     <id>https://kerita.me/04/12/2021/var-let-function/</id>
     <published>2021-04-12T00:00:00.000Z</published>
-    <updated>2021-07-18T10:38:22.224Z</updated>
+    <updated>2021-07-18T10:42:16.973Z</updated>
     
     
     <summary type="html">&lt;h2 id=&quot;var-与-function&quot;&gt;&lt;a href=&quot;#var-与-function&quot; class=&quot;headerlink&quot; title=&quot;var 与 function&quot;&gt;&lt;/a&gt;var 与 function&lt;/h2&gt;&lt;ul&gt;
@@ -423,7 +423,7 @@
     <link href="https://kerita.me/04/11/2021/this/"/>
     <id>https://kerita.me/04/11/2021/this/</id>
     <published>2021-04-11T00:00:00.000Z</published>
-    <updated>2021-07-18T10:38:22.224Z</updated>
+    <updated>2021-07-18T10:42:16.973Z</updated>
     
     
       
