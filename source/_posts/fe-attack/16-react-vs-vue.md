@@ -1,7 +1,7 @@
 ---
 title: React 和 Vue 有什么异同
-categories:前端进击笔记
-date:2021-07-21
+categories: 前端进击笔记
+date: 2021-07-21
 ---
 
 React 和 Vue 是当下最流行的两大前端框架，今天我们来对比下他们有什么异同。
