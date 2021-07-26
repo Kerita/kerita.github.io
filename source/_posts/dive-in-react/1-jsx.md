@@ -1,7 +1,7 @@
 ---
 title: 什么是 JSX
 categories: 深入浅出 React
-date: 2021-07-22
+date: 2021-07-23
 ---
 
 在使用 React 开发项目的过程，我们都会使用 JSX 来描述 UI。今天我们就来聊聊什么是 JSX。
