@@ -4,8 +4,6 @@ categories: 深入浅出 React
 date: 2021-07-26
 ---
 
-<!-- more -->
-
 ## React 生命周期
 
 React 是一个构建用户界面的 JavaScript 库，其核心的 Virtual DOM 是由生命周期的 render 方法生成的。初始化时，render 方法生成 Virtual DOM 交给 ReactDOM.render 方法渲染成真实 DOM；更新时， render 方法生成的新 Virtual DOM 与旧 Virtual DOM 进行比较，针对差异部分 ReactDOM.render 对真实 DOM 进行修改。
