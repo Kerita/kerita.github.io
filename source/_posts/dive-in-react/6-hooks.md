@@ -17,7 +17,7 @@ Hooks 是 React 16.8 版本出现的特性，它是诸如 useState、useEffect �
 Hooks 组件在部分场景可完全替换 class 组件，提升开发体验，可以从下面四个方面进行理解。
 
 - 告别复杂的 class 组件
-  class 组件中的方法，需要使用 bind 或者箭头函数让 this 指向组件，才能实现对 this 的访问。函数组件就没有这个问题，天然没有 this。
+  class 组件中的方法，需要使用 bind 或者箭头函数让 this 指向组件，才能实现对 this 的访问。
 
 - 实现更好的逻辑拆分
   在 class 组件中，可能会把很多不相关的初始化逻辑都放在 componentDidMount，或者把相关的订阅和取消订阅逻辑分别散落在 componentDidMount 和 componentWillUnmount。
@@ -55,3 +55,12 @@ Hooks 组件在部分场景可完全替换 class 组件，提升开发体验，�
 
 - Hooks 还没有完全具有 class 组件的能力，getSnapshotBeforeUpdate、componentDidCatch 生命周期目前仍是缺失的
 - Hooks 的使用需要时刻注意依赖问题，务必使用 eslint-plugin-react-hooks 插件进行检验，否则很容易造成死循环。
+
+## Hooks 有两个使用原则：
+
+- 只在 React 函数中调用 Hook；
+- 不要在循环、条件或嵌套函数中调用 Hook。
+
+## Hooks 实现
+
+Hooks 是基于链表的结构实现，所以不要在循环、条件或嵌套函数中调用 Hook。
