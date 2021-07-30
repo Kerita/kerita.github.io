@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-114680595-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-114680595-1');
+</script>
+<!-- End Google Analytics -->
+
+    
+      <title>
+        
+          从 replaceAll is not a function 说起 | 
+              Kerita
+      </title>
+      <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+      <meta name="description" content="开发一个项目的时候，发现 @babel&#x2F;preset-env 的配置如下： 123456789[  &#39;@babel&#x2F;preset-env&#39;,  &amp;#123;    useBuiltIns: false,    targets: &amp;#123;      chrome: 43    &amp;#125;  &amp;#125;,], 使用这种配置，没有利用 @babel&#x2F;preset-env">
+<meta property="og:type" content="article">
+<meta property="og:title" content="从 replaceAll is not a function 说起">
+<meta property="og:url" content="https://kerita.me/07/30/2021/replaceAll-is-not-a-function/index.html">
+<meta property="og:site_name" content="Kerita">
+<meta property="og:description" content="开发一个项目的时候，发现 @babel&#x2F;preset-env 的配置如下： 123456789[  &#39;@babel&#x2F;preset-env&#39;,  &amp;#123;    useBuiltIns: false,    targets: &amp;#123;      chrome: 43    &amp;#125;  &amp;#125;,], 使用这种配置，没有利用 @babel&#x2F;preset-env">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://kerita.me/07/30/2021/replaceAll-is-not-a-function/replaceAll-polyfill.png">
+<meta property="og:image" content="https://kerita.me/07/30/2021/replaceAll-is-not-a-function/includes-polyfill.png">
+<meta property="og:image" content="https://kerita.me/07/30/2021/replaceAll-is-not-a-function/babel-proposal.png">
+<meta property="article:published_time" content="2021-07-30T00:00:00.000Z">
+<meta property="article:modified_time" content="2021-07-30T09:07:49.361Z">
+<meta property="article:author" content="Kerita">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://kerita.me/07/30/2021/replaceAll-is-not-a-function/replaceAll-polyfill.png">
+        
+          <link rel="alternate" href="/atom.xml" title="Kerita" type="application/atom+xml">
+            
+                  
+                    <link rel="shortcut icon" href="/favicon.png">
+                      
+                        
+                          
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/typeface-source-code-pro@0.0.71/index.min.css">
+
+                            
+                              
+<link rel="stylesheet" href="/css/style.css">
+
+                                
+                                  
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.min.css">
+
+                                    
+
+                                      <link rel="stylesheet"
+                                        href="https://cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.css" />
+                                      <script src="https://cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.min.js"> </script>
+<meta name="generator" content="Hexo 5.3.0"></head>
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">Kerita</a>
+      </h1>
+      
+        <h2 id="subtitle-wrap">
+          <a href="/" id="subtitle">自律谦逊，承担责任，推迟满足感，你要热爱它</a>
+        </h2>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">首页</a>
+        
+          <a class="main-nav-link" href="/archives">归档</a>
+        
+          <a class="main-nav-link" href="/about">关于我</a>
+        
+          <a class="main-nav-link" href="/guestbook">留言板</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS 订阅"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="搜索"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="搜索"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="https://kerita.me"></form>
+      </div>
+    </div>
+  </div>
+</header>
+
+      <div class="outer">
+        <section id="main"><article id="post-2021/replaceAll-is-not-a-function" class="h-entry article article-type-post"
+  itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/07/30/2021/replaceAll-is-not-a-function/" class="article-date">
+  <time class="dt-published" datetime="2021-07-30T00:00:00.000Z" itemprop="datePublished">2021-07-30</time>
+</a>
+      
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/Babel/">Babel</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+      
+        <header class="article-header">
+          
+  
+    <h1 class="p-name article-title" itemprop="headline name">
+      从 replaceAll is not a function 说起
+    </h1>
+  
+
+        </header>
+        
+          <div class="e-content article-entry" itemprop="articleBody">
+            
+                      <p>开发一个项目的时候，发现 @babel/preset-env 的配置如下：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">[</span><br><span class="line">  &#39;@babel&#x2F;preset-env&#39;,</span><br><span class="line">  &#123;</span><br><span class="line">    useBuiltIns: false,</span><br><span class="line">    targets: &#123;</span><br><span class="line">      chrome: 43</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;,</span><br><span class="line">],</span><br></pre></td></tr></table></figure>
+<p>使用这种配置，没有利用 <code>@babel/preset-env</code> 根据 <code>targets</code> 自动引入 polyfill 的能力，而是开发者手动引入。</p>
+<a id="more"></a>
+
+<p>开发者要么根据项目代码一个个引入需要的 polyfill，要么全量引入 core-js 提供的所有 polyfill。前者低效、开发体验不好，而且容易遗漏出错；后者全量引入 polyfill，引入了多余的 polyfill。</p>
+<p>useBuiltIns 还有 <code>entry</code> 和 <code>usage</code> 两个配置。<code>entry</code> 是根据 <code>targets</code> 引入浏览器需要的所有 polyfill，浏览器需要但代码不一定会用到。为了追求代码体积尽可能小，将 useBuiltIns 配置改为按需引入的 <code>usage</code>，只有代码里用到的才引入。（完美.jpg）</p>
+<h2 id="报错了-——-replaceAll-is-not-a-function"><a href="#报错了-——-replaceAll-is-not-a-function" class="headerlink" title="报错了 —— replaceAll is not a function"></a>报错了 —— replaceAll is not a function</h2><p><code>git push</code> 将代码部署到测试环境，左点点右点点没啥问题。查看打包后体积，core-js 的引入从 400kb 降低 200kb，一股拯救世界的自豪感油然而生。</p>
+<p>跑了一两天一直没啥问题，这可能是暴风雨前的平静吧，测试提个 bug 过来 —— 页面报错了，replaceAll is not a function。</p>
+<p>String.prototype.replaceAll 的确是一个新的 API，是处于 stage 4 的 proposal，即将被成为 ES2021 标准。Chrome 85 才开始支持 replaceAll，那么对于 <code>targets</code> 配置为 43 的 项目，需要引入 replaceAll 的 polyfill。</p>
+<p>但前面已经配置了 <code>useBuiltIns: &#39;usage&#39;</code> 按代码使用引入 polyfill 了，怎么没引入呢？replaceAll 有什么特别的吗？我跑去看 core-js 的 <a target="_blank" rel="noopener" href="https://github.com/zloirock/core-js/blob/master/packages/core-js/features/string/replace-all.js">replaceAll polyfill 代码</a>，<code>esnext</code> 引起了我的注意。对比下 <a target="_blank" rel="noopener" href="https://github.com/zloirock/core-js/blob/master/packages/core-js/features/string/includes.js">includes polyfill 代码</a>，使用的是 <code>es</code>。</p>
+<p><img src="./replaceAll-polyfill.png" alt="replaceAll polyfill 代码"><br><img src="./includes-polyfill.png" alt="includes polyfill 代码"></p>
+<h2 id="proposal-stage-分类"><a href="#proposal-stage-分类" class="headerlink" title="proposal stage 分类"></a>proposal stage 分类</h2><p><code>es</code> 和 <code>esnext</code> 有什么呢？前者表示已经成为 ECMAScript 标准，后者表示仍处于提案阶段，即 proposal stage。proposal stage 又分为四个阶段</p>
+<ul>
+<li>stage 0: 方案提出来了，将来有可能会成为规范</li>
+<li>stage 1: 有例子出来了</li>
+<li>stage 2: 用比较规范的语言描述方案的语法和语义</li>
+<li>stage 3: 有浏览器开始支持，可以从开发者收集反馈了</li>
+<li>stage 4: 下一个 ECMAScript 标准将纳入该方案</li>
+</ul>
+<h2 id="解决办法"><a href="#解决办法" class="headerlink" title="解决办法"></a>解决办法</h2><p>回到问题，@babel-preset-env 没有引入 replaceAll 是对处于 stage 4 的 proposal 有什么特殊处理吗？跑去看 <a target="_blank" rel="noopener" href="https://babeljs.io/docs/en/babel-preset-env">文档</a>。</p>
+<p>从头开始看冗长的文档，看了二十分钟依然没有什么发现，觉得这样来太慢，应该从目录入手定位到具体章节。扫了一眼，居然有个叫 <code>shippedProposals</code> 的参数。</p>
+<p><code>shippedProposals</code> 设置为 <code>true</code>,会引入浏览器已经支持的处于 proposal stage 的 API 的 polyfill。再品品这句话，也就是说 @babel-preset-env 默认不会对处于 proposal stage 的 API 的 polyfill，所以问题就在这里。</p>
+<p>将 <code>shippedProposals</code> 设置为 true，重新编译一下，居然还是报错 <code>replaceAll is not a function</code>。配置正确的前提下，那只能说明 Babel 依然认为 处于 stage 4 的 <code>replaceAll</code> 还没有浏览器支持。</p>
+<p><a target="_blank" rel="noopener" href="https://github.com/babel/babel/blob/2340b87094588dbc69e9c0d61c66637e03b7dc91/packages/babel-preset-env/src/index.ts#L72">找到 Babel 处理 <code>shippedProposals</code> 代码</a>，在这里 <a target="_blank" rel="noopener" href="https://github.com/babel/babel/blob/2340b87094/packages/babel-preset-env/src/available-plugins.ts">内置功能列表</a> 的确没有 <code>replaceAll</code>。</p>
+<p>到目前为止问题还没有解决，只能继续翻看 @babel-preset-env 的文档有什么解决办法，最糟糕的方法就是配置手动引入 replaceAll 的 polyfill。看啊看，终于在 core-js 配置看到以下的说明：<br><img src="./babel-proposal.png" alt="如何配置 Babel 引入 proposal stage api 的 polyfill"></p>
+<p>翻译过来就是：</p>
+<ul>
+<li>@babel-preset-env 默认是不会给 proposal 打补丁的<br>这个有点坑，文档说自己功能强大前面说开发者不用去管理 polyfill，后面留这么大的雷，不支持 polyfill proposals。至少应该在文档最前面说清楚。</li>
+<li>可以使用 <code>shippedProposals</code> 配置引入浏览器已经支持的 proposal<br>这也是坑，一旦 Babel 认为浏览器还不支持，就不会引入，配置也解决不了问题，例如 replaceAll。这个选项可以废弃啊，不然会给开发者一些误导。</li>
+<li>可以配置 <code>corejs</code> 选项的 <code>proposals</code> 为 true<br>只要当前 core-js 支持的 polyfill，就能引入。</li>
+</ul>
+<p>最后，本问题使用最后一个方案解决，配置如下。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">[</span><br><span class="line">  &#39;@babel&#x2F;preset-env&#39;,</span><br><span class="line">  &#123;</span><br><span class="line">    useBuiltIns: &#39;usage&#39;,</span><br><span class="line">    targets: &#123;</span><br><span class="line">      chrome: 43</span><br><span class="line">    &#125;,</span><br><span class="line">    corejs: &#123;</span><br><span class="line">      version: &#39;3.9&#39;,</span><br><span class="line">      proposals: true,</span><br><span class="line">    &#125;,</span><br><span class="line">  &#125;,</span><br><span class="line">]</span><br></pre></td></tr></table></figure>
+<h2 id="参考资料"><a href="#参考资料" class="headerlink" title="参考资料"></a>参考资料</h2><ul>
+<li><a target="_blank" rel="noopener" href="https://babeljs.io/docs/en/babel-preset-env">babel-preset-env 配置</a></li>
+</ul>
+
+                        
+          </div>
+          <footer class="article-footer">
+            <a data-url="https://kerita.me/07/30/2021/replaceAll-is-not-a-function/" data-id="ckrq4j9df003abnnafmhzhr8w" data-title="从 replaceAll is not a function 说起"
+              class="article-share-link">
+              分享
+            </a>
+            
+                
+                    
+          </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+  
+    <a href="/07/29/dive-in-react/11-setState/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">后一篇</strong>
+      <div class="article-nav-title">setState 是同步还是异步的</div>
+    </a>
+  
+</nav>
+
+      
+</article>
+
+
+    
+        <div id="gitalk-container"></div>
+        <script>
+          if (window.location.pathname !== '/') {
+            var gitalk = new Gitalk({
+              clientID: '572cf28212526e25eb20',
+              clientSecret: 'e3ebf600d6ed24da3f1b447ad85e9a26cced2e58',
+              repo: 'kerita.github.io',
+              owner: 'Kerita',
+              admin: ['Kerita'],
+              id: decodeURI(location.pathname),      // Ensure uniqueness and length less than 50
+              distractionFreeMode: false  // Facebook-like distraction free mode
+            })
+
+            gitalk.render('gitalk-container')
+          }
+        </script></section>
+        
+          <aside id="sidebar">
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">标签云</h3>
+    <div class="widget tagcloud">
+      <a href="/tags/Ajax/" style="font-size: 10px;">Ajax</a> <a href="/tags/CSS/" style="font-size: 13.33px;">CSS</a> <a href="/tags/CSS3/" style="font-size: 13.33px;">CSS3</a> <a href="/tags/HTML/" style="font-size: 13.33px;">HTML</a> <a href="/tags/HTTP/" style="font-size: 10px;">HTTP</a> <a href="/tags/JS/" style="font-size: 20px;">JS</a> <a href="/tags/Markdown/" style="font-size: 10px;">Markdown</a> <a href="/tags/React/" style="font-size: 16.67px;">React</a> <a href="/tags/audio/" style="font-size: 10px;">audio</a> <a href="/tags/hexo/" style="font-size: 10px;">hexo</a> <a href="/tags/house/" style="font-size: 10px;">house</a> <a href="/tags/iOS/" style="font-size: 13.33px;">iOS</a> <a href="/tags/less/" style="font-size: 10px;">less</a> <a href="/tags/npm/" style="font-size: 10px;">npm</a> <a href="/tags/travis-ci/" style="font-size: 10px;">travis-ci</a> <a href="/tags/vscode/" style="font-size: 10px;">vscode</a> <a href="/tags/%E4%BA%BA%E7%94%9F/" style="font-size: 10px;">人生</a> <a href="/tags/%E4%BC%98%E5%8C%96/" style="font-size: 10px;">优化</a> <a href="/tags/%E4%BD%93%E7%B3%BB/" style="font-size: 10px;">体系</a> <a href="/tags/%E5%81%A5%E5%BA%B7/" style="font-size: 13.33px;">健康</a> <a href="/tags/%E5%B7%A5%E7%A8%8B%E5%8C%96/" style="font-size: 16.67px;">工程化</a> <a href="/tags/%E5%B9%B3%E5%87%A1%E4%B9%8B%E8%B7%AF/" style="font-size: 10px;">平凡之路</a> <a href="/tags/%E5%B9%BD%E9%BB%98/" style="font-size: 10px;">幽默</a> <a href="/tags/%E5%BA%94%E7%94%A8/" style="font-size: 10px;">应用</a> <a href="/tags/%E5%BE%AE%E4%BF%A1/" style="font-size: 10px;">微信</a> <a href="/tags/%E6%80%A7%E8%83%BD/" style="font-size: 10px;">性能</a> <a href="/tags/%E6%84%9F%E5%86%92/" style="font-size: 10px;">感冒</a> <a href="/tags/%E6%89%93%E6%89%B0%E4%B8%80%E4%B8%8B/" style="font-size: 10px;">打扰一下</a> <a href="/tags/%E6%9C%B4%E6%A0%91/" style="font-size: 10px;">朴树</a> <a href="/tags/%E6%A8%A1%E5%9D%97%E5%8C%96/" style="font-size: 13.33px;">模块化</a> <a href="/tags/%E6%B5%8F%E8%A7%88%E5%99%A8/" style="font-size: 13.33px;">浏览器</a> <a href="/tags/%E7%A7%BB%E5%8A%A8%E7%AB%AF/" style="font-size: 10px;">移动端</a> <a href="/tags/%E7%BC%96%E8%BE%91%E5%99%A8/" style="font-size: 10px;">编辑器</a> <a href="/tags/%E7%BE%BD%E6%AF%9B%E7%90%83/" style="font-size: 10px;">羽毛球</a> <a href="/tags/%E8%8B%8F%E6%89%93%E7%BB%BF/" style="font-size: 13.33px;">苏打绿</a> <a href="/tags/%E9%A1%B9%E7%9B%AE/" style="font-size: 13.33px;">项目</a>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">最新文章</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/07/30/2021/replaceAll-is-not-a-function/">从 replaceAll is not a function 说起</a>
+          </li>
+        
+          <li>
+            <a href="/07/29/dive-in-react/11-setState/">setState 是同步还是异步的</a>
+          </li>
+        
+          <li>
+            <a href="/07/28/dive-in-react/10-reconciliation/">React 15 的调和</a>
+          </li>
+        
+          <li>
+            <a href="/07/28/dive-in-react/9-virtual-dom/">React 的虚拟 DOM</a>
+          </li>
+        
+          <li>
+            <a href="/07/27/dive-in-react/6-hooks/">React Hooks 设计思想</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">分类</h3>
+    <div class="widget">
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Babel/">Babel</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/React/">React</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/node/">node</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E4%BA%A7%E5%93%81/">产品</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E5%81%A5%E5%BA%B7/">健康</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E5%89%8D%E7%AB%AF/">前端</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E5%89%8D%E7%AB%AF%E8%BF%9B%E5%87%BB%E7%AC%94%E8%AE%B0/">前端进击笔记</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E5%90%8D%E4%BA%BA/">名人</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E5%B0%8F%E6%8A%80%E5%B7%A7/">小技巧</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E6%80%BB%E7%BB%93/">总结</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E6%9E%84%E5%BB%BA/">构建</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E6%AD%8C/">歌</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E6%B7%B1%E5%85%A5%E6%B5%85%E5%87%BA-React/">深入浅出 React</a></li></ul>
+    </div>
+  </div>
+
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+        <div class="outer">
+          <div id="footer-info" class="inner">
+            
+                  &copy; 2021
+                    Kerita<br>
+                      Powered by <a href="https://hexo.io/" target="_blank">Hexo</a>
+          </div>
+        </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">首页</a>
+  
+    <a href="/archives" class="mobile-nav-link">归档</a>
+  
+    <a href="/about" class="mobile-nav-link">关于我</a>
+  
+    <a href="/guestbook" class="mobile-nav-link">留言板</a>
+  
+</nav>
+    
+
+    
+<script src="/js/jquery-3.4.1.min.js"></script>
+
+
+      
+        
+<script src="/fancybox/jquery.fancybox.min.js"></script>
+
+          
+
+            
+<script src="/js/script.js"></script>
+
+              
+
+
+                
+  </div>
+</body>
+</html>

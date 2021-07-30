@@ -98,6 +98,157 @@
       <div class="outer">
         <section id="main">
   
+    <article id="post-fe-attack/4-js" class="h-entry article article-type-post"
+  itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/06/30/fe-attack/4-js/" class="article-date">
+  <time class="dt-published" datetime="2021-06-30T00:00:00.000Z" itemprop="datePublished">2021-06-30</time>
+</a>
+      
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/%E5%89%8D%E7%AB%AF%E8%BF%9B%E5%87%BB%E7%AC%94%E8%AE%B0/">前端进击笔记</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+      
+        <header class="article-header">
+          
+  
+    <h1 itemprop="name">
+      <a class="p-name article-title" href="/06/30/fe-attack/4-js/">JavaScript 实现继承</a>
+    </h1>
+  
+
+        </header>
+        
+          <div class="e-content article-entry" itemprop="articleBody">
+            
+              <h2 id="问题"><a href="#问题" class="headerlink" title="问题"></a>问题</h2><ul>
+<li><p>JavaScript 的函数怎么也是个对象？<br>1.JavaScript 中除了基本类型，其他都是对象，Symbol 也是基本数据类型。<br>2.函数是一种特殊的对象，它也拥有属性和值，有一个特别的属性 prototype，该属性就是函数的原型对象。<br>3.函数的原型对象(prototype) 都拥有 constructor 属性，该属性指向与之关联的构造函数。</p>
+</li>
+<li><p><code>__proto__</code> 和 prototype 到底是啥关系？<br>1.每个对象都有 <code>__proto__</code> 属性来标识自己所继承的原型对象，但只有函数才有 prototype 属性。<br>2.每个函数都有一个 prototype 属性，该属性为函数的原型对象。<br>3.通过将实例对象的 <code>__proto__</code> 属性赋值为其构造函数的原型对象 prototype，JavaScript 可以使用构造函数创建对象的方法，来实现继承。</p>
+</li>
+<li><p>JavaScript 中对象是怎么实现继承的？<br>通过原型链访问对象的方法和属性，找到返回对应的值，直到访问 <code>Object.prototype</code> 的原型对象 null 仍没找到的，返回 undefined。</p>
+</li>
+<li><p>JavaScript 是怎么访问对象的方法和属性的？</p>
+</li>
+</ul>
+                
+                  <p class="article-more-link">
+                    <a href="/06/30/fe-attack/4-js/#more">
+                      Read More
+                    </a>
+                  </p>
+                  
+                    
+          </div>
+          <footer class="article-footer">
+            <a data-url="https://kerita.me/06/30/fe-attack/4-js/" data-id="ckrq4j9e20052bnnaawwz1r66" data-title="JavaScript 实现继承"
+              class="article-share-link">
+              分享
+            </a>
+            
+                
+                    
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/JS/" rel="tag">JS</a></li></ul>
+
+          </footer>
+  </div>
+  
+</article>
+
+
+    
+        <div id="gitalk-container"></div>
+        <script>
+          if (window.location.pathname !== '/') {
+            var gitalk = new Gitalk({
+              clientID: '572cf28212526e25eb20',
+              clientSecret: 'e3ebf600d6ed24da3f1b447ad85e9a26cced2e58',
+              repo: 'kerita.github.io',
+              owner: 'Kerita',
+              admin: ['Kerita'],
+              id: decodeURI(location.pathname),      // Ensure uniqueness and length less than 50
+              distractionFreeMode: false  // Facebook-like distraction free mode
+            })
+
+            gitalk.render('gitalk-container')
+          }
+        </script>
+  
+    <article id="post-fe-attack/3-css" class="h-entry article article-type-post"
+  itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/06/28/fe-attack/3-css/" class="article-date">
+  <time class="dt-published" datetime="2021-06-28T00:00:00.000Z" itemprop="datePublished">2021-06-28</time>
+</a>
+      
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/%E5%89%8D%E7%AB%AF%E8%BF%9B%E5%87%BB%E7%AC%94%E8%AE%B0/">前端进击笔记</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+      
+        <header class="article-header">
+          
+  
+    <h1 itemprop="name">
+      <a class="p-name article-title" href="/06/28/fe-attack/3-css/">CSS 知识点</a>
+    </h1>
+  
+
+        </header>
+        
+          <div class="e-content article-entry" itemprop="articleBody">
+            
+              <p>记录 CSS 重要知识点。</p>
+                
+                  <p class="article-more-link">
+                    <a href="/06/28/fe-attack/3-css/#more">
+                      Read More
+                    </a>
+                  </p>
+                  
+                    
+          </div>
+          <footer class="article-footer">
+            <a data-url="https://kerita.me/06/28/fe-attack/3-css/" data-id="ckrq4j9e0004zbnna7945fhp0" data-title="CSS 知识点"
+              class="article-share-link">
+              分享
+            </a>
+            
+                
+                    
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/CSS/" rel="tag">CSS</a></li></ul>
+
+          </footer>
+  </div>
+  
+</article>
+
+
+    
+        <div id="gitalk-container"></div>
+        <script>
+          if (window.location.pathname !== '/') {
+            var gitalk = new Gitalk({
+              clientID: '572cf28212526e25eb20',
+              clientSecret: 'e3ebf600d6ed24da3f1b447ad85e9a26cced2e58',
+              repo: 'kerita.github.io',
+              owner: 'Kerita',
+              admin: ['Kerita'],
+              id: decodeURI(location.pathname),      // Ensure uniqueness and length less than 50
+              distractionFreeMode: false  // Facebook-like distraction free mode
+            })
+
+            gitalk.render('gitalk-container')
+          }
+        </script>
+  
     <article id="post-fe-attack/2-html" class="h-entry article article-type-post"
   itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
   <div class="article-meta">
@@ -136,7 +287,7 @@
                     
           </div>
           <footer class="article-footer">
-            <a data-url="https://kerita.me/06/27/fe-attack/2-html/" data-id="ckrn9bhgv004rb1tkb3ds4zko" data-title="HTML 加载过程"
+            <a data-url="https://kerita.me/06/27/fe-attack/2-html/" data-id="ckrq4j9dz004wbnna9qek1c1d" data-title="HTML 加载过程"
               class="article-share-link">
               分享
             </a>
@@ -209,7 +360,7 @@
                     
           </div>
           <footer class="article-footer">
-            <a data-url="https://kerita.me/06/24/2021/babel/" data-id="ckrn9bhg0002fb1tka2nxh7us" data-title="什么是 Babel？"
+            <a data-url="https://kerita.me/06/24/2021/babel/" data-id="ckrq4j9d4002fbnnafq5b5kbv" data-title="什么是 Babel？"
               class="article-share-link">
               分享
             </a>
@@ -280,7 +431,7 @@
                     
           </div>
           <footer class="article-footer">
-            <a data-url="https://kerita.me/06/24/fe-attack/1-system/" data-id="ckrn9bhgo0046b1tkgd0n28o8" data-title="前端知识体系"
+            <a data-url="https://kerita.me/06/24/fe-attack/1-system/" data-id="ckrq4j9ds004cbnna0rhf53es" data-title="前端知识体系"
               class="article-share-link">
               分享
             </a>
@@ -351,7 +502,7 @@
                     
           </div>
           <footer class="article-footer">
-            <a data-url="https://kerita.me/06/23/2021/npx/" data-id="ckrn9bhga0036b1tka49ga6pg" data-title="什么是 npx？"
+            <a data-url="https://kerita.me/06/23/2021/npx/" data-id="ckrq4j9de0036bnna7j265pi0" data-title="什么是 npx？"
               class="article-share-link">
               分享
             </a>
@@ -424,7 +575,7 @@
                     
           </div>
           <footer class="article-footer">
-            <a data-url="https://kerita.me/06/21/2021/devops-ci-cd/" data-id="ckrn9bhg3002mb1tkev1i85d0" data-title="什么是 DevOps、CI、CD？"
+            <a data-url="https://kerita.me/06/21/2021/devops-ci-cd/" data-id="ckrq4j9d8002mbnna4wemfbhb" data-title="什么是 DevOps、CI、CD？"
               class="article-share-link">
               分享
             </a>
@@ -496,7 +647,7 @@
                     
           </div>
           <footer class="article-footer">
-            <a data-url="https://kerita.me/05/27/2021/cold/" data-id="ckrn9bhg1002ib1tk8yyc2ptg" data-title="记一次感冒"
+            <a data-url="https://kerita.me/05/27/2021/cold/" data-id="ckrq4j9d6002ibnna9w3qb9z9" data-title="记一次感冒"
               class="article-share-link">
               分享
             </a>
@@ -574,7 +725,7 @@
                     
           </div>
           <footer class="article-footer">
-            <a data-url="https://kerita.me/04/13/2021/new/" data-id="ckrn9bhg7002zb1tk6zxqao5f" data-title="new 做了什么"
+            <a data-url="https://kerita.me/04/13/2021/new/" data-id="ckrq4j9dc002zbnna1gkgab97" data-title="new 做了什么"
               class="article-share-link">
               分享
             </a>
@@ -647,7 +798,7 @@
                     
           </div>
           <footer class="article-footer">
-            <a data-url="https://kerita.me/04/12/2021/var-let-function/" data-id="ckrn9bhgf003hb1tk6dg947g3" data-title="奇妙的 var,function,let"
+            <a data-url="https://kerita.me/04/12/2021/var-let-function/" data-id="ckrq4j9dj003kbnnae5z62krz" data-title="奇妙的 var,function,let"
               class="article-share-link">
               分享
             </a>
@@ -655,148 +806,6 @@
                 
                     
   <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/JS/" rel="tag">JS</a></li></ul>
-
-          </footer>
-  </div>
-  
-</article>
-
-
-    
-        <div id="gitalk-container"></div>
-        <script>
-          if (window.location.pathname !== '/') {
-            var gitalk = new Gitalk({
-              clientID: '572cf28212526e25eb20',
-              clientSecret: 'e3ebf600d6ed24da3f1b447ad85e9a26cced2e58',
-              repo: 'kerita.github.io',
-              owner: 'Kerita',
-              admin: ['Kerita'],
-              id: decodeURI(location.pathname),      // Ensure uniqueness and length less than 50
-              distractionFreeMode: false  // Facebook-like distraction free mode
-            })
-
-            gitalk.render('gitalk-container')
-          }
-        </script>
-  
-    <article id="post-2021/this" class="h-entry article article-type-post"
-  itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
-  <div class="article-meta">
-    <a href="/04/11/2021/this/" class="article-date">
-  <time class="dt-published" datetime="2021-04-11T00:00:00.000Z" itemprop="datePublished">2021-04-11</time>
-</a>
-      
-  <div class="article-category">
-    <a class="article-category-link" href="/categories/%E5%89%8D%E7%AB%AF/">前端</a>
-  </div>
-
-  </div>
-  <div class="article-inner">
-    
-      
-        <header class="article-header">
-          
-  
-    <h1 itemprop="name">
-      <a class="p-name article-title" href="/04/11/2021/this/">this 指向</a>
-    </h1>
-  
-
-        </header>
-        
-          <div class="e-content article-entry" itemprop="articleBody">
-            
-                      <p>this 永远指向一个对象</p>
-<h2 id="普通函数"><a href="#普通函数" class="headerlink" title="普通函数"></a>普通函数</h2><p>this 的指向完全取决于函数调用的位置</p>
-<h2 id="箭头函数"><a href="#箭头函数" class="headerlink" title="箭头函数"></a>箭头函数</h2><p>this 被设置为他被创建时的环境</p>
-<h2 id="call-apply-bind"><a href="#call-apply-bind" class="headerlink" title="call,apply,bind"></a>call,apply,bind</h2><ul>
-<li>call,apply 改变函数调用的 this 指向，立即执行，call 的参数逐个传递，apply 数组形式传递</li>
-<li>bind 返回一个函数，并改变它的 this 指向，而且只能改变一次，bind 的参数逐个传递</li>
-</ul>
-
-                        
-          </div>
-          <footer class="article-footer">
-            <a data-url="https://kerita.me/04/11/2021/this/" data-id="ckrn9bhgc003ab1tk46k21089" data-title="this 指向"
-              class="article-share-link">
-              分享
-            </a>
-            
-                
-                    
-  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/JS/" rel="tag">JS</a></li></ul>
-
-          </footer>
-  </div>
-  
-</article>
-
-
-    
-        <div id="gitalk-container"></div>
-        <script>
-          if (window.location.pathname !== '/') {
-            var gitalk = new Gitalk({
-              clientID: '572cf28212526e25eb20',
-              clientSecret: 'e3ebf600d6ed24da3f1b447ad85e9a26cced2e58',
-              repo: 'kerita.github.io',
-              owner: 'Kerita',
-              admin: ['Kerita'],
-              id: decodeURI(location.pathname),      // Ensure uniqueness and length less than 50
-              distractionFreeMode: false  // Facebook-like distraction free mode
-            })
-
-            gitalk.render('gitalk-container')
-          }
-        </script>
-  
-    <article id="post-2021/module" class="h-entry article article-type-post"
-  itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
-  <div class="article-meta">
-    <a href="/04/03/2021/module/" class="article-date">
-  <time class="dt-published" datetime="2021-04-03T00:00:00.000Z" itemprop="datePublished">2021-04-03</time>
-</a>
-      
-  <div class="article-category">
-    <a class="article-category-link" href="/categories/%E5%89%8D%E7%AB%AF/">前端</a>
-  </div>
-
-  </div>
-  <div class="article-inner">
-    
-      
-        <header class="article-header">
-          
-  
-    <h1 itemprop="name">
-      <a class="p-name article-title" href="/04/03/2021/module/">CommonJS 与 ES6 Module 的区别</a>
-    </h1>
-  
-
-        </header>
-        
-          <div class="e-content article-entry" itemprop="articleBody">
-            
-              <p>JavaScript 起初只是用来做页面的的简单交互，随着 Web 应用的复杂性越来越高，维护成本越来越大，模块化标准也在 ES6 版本应运而生。当然，在 ES6 Module 出现之前，社区在使用 Node.js 的过程中，也形成了适合 Node.js 的 CommonJS 模块标准。</p>
-                
-                  <p class="article-more-link">
-                    <a href="/04/03/2021/module/#more">
-                      Read More
-                    </a>
-                  </p>
-                  
-                    
-          </div>
-          <footer class="article-footer">
-            <a data-url="https://kerita.me/04/03/2021/module/" data-id="ckrn9bhg6002vb1tk80j6airn" data-title="CommonJS 与 ES6 Module 的区别"
-              class="article-share-link">
-              分享
-            </a>
-            
-                
-                    
-  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E6%A8%A1%E5%9D%97%E5%8C%96/" rel="tag">模块化</a></li></ul>
 
           </footer>
   </div>
@@ -849,6 +858,14 @@
       <ul>
         
           <li>
+            <a href="/07/30/2021/replaceAll-is-not-a-function/">从 replaceAll is not a function 说起</a>
+          </li>
+        
+          <li>
+            <a href="/07/29/dive-in-react/11-setState/">setState 是同步还是异步的</a>
+          </li>
+        
+          <li>
             <a href="/07/28/dive-in-react/10-reconciliation/">React 15 的调和</a>
           </li>
         
@@ -860,14 +877,6 @@
             <a href="/07/27/dive-in-react/6-hooks/">React Hooks 设计思想</a>
           </li>
         
-          <li>
-            <a href="/07/26/dive-in-react/2-lifecycle/">React 生命周期</a>
-          </li>
-        
-          <li>
-            <a href="/07/26/dive-in-react/4-data/">React 组件之间数据传递</a>
-          </li>
-        
       </ul>
     </div>
   </div>
@@ -877,7 +886,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">分类</h3>
     <div class="widget">
-      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/React/">React</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/node/">node</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E4%BA%A7%E5%93%81/">产品</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E5%81%A5%E5%BA%B7/">健康</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E5%89%8D%E7%AB%AF/">前端</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E5%89%8D%E7%AB%AF%E8%BF%9B%E5%87%BB%E7%AC%94%E8%AE%B0/">前端进击笔记</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E5%90%8D%E4%BA%BA/">名人</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E5%B0%8F%E6%8A%80%E5%B7%A7/">小技巧</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E6%80%BB%E7%BB%93/">总结</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E6%9E%84%E5%BB%BA/">构建</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E6%AD%8C/">歌</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E6%B7%B1%E5%85%A5%E6%B5%85%E5%87%BA-React/">深入浅出 React</a></li></ul>
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Babel/">Babel</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/React/">React</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/node/">node</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E4%BA%A7%E5%93%81/">产品</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E5%81%A5%E5%BA%B7/">健康</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E5%89%8D%E7%AB%AF/">前端</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E5%89%8D%E7%AB%AF%E8%BF%9B%E5%87%BB%E7%AC%94%E8%AE%B0/">前端进击笔记</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E5%90%8D%E4%BA%BA/">名人</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E5%B0%8F%E6%8A%80%E5%B7%A7/">小技巧</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E6%80%BB%E7%BB%93/">总结</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E6%9E%84%E5%BB%BA/">构建</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E6%AD%8C/">歌</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E6%B7%B1%E5%85%A5%E6%B5%85%E5%87%BA-React/">深入浅出 React</a></li></ul>
     </div>
   </div>
 
