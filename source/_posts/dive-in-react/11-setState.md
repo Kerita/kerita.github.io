@@ -57,4 +57,4 @@ setState 源码的更新过程如下：
 
 而在 setTimeout 和 setInterval 中，isBatchingUpdate 在合成事件处理函数处理之后已被设置为 false，所以表现为同步更新。
 
-为什么要在生命周期钩子函数和合成事件将 isBatchingUpdate 置为 false，仍需要研究。
+<!-- 为什么要在生命周期钩子函数和合成事件将 isBatchingUpdate 置为 false，仍需要研究。 -->
