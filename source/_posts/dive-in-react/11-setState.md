@@ -1,6 +1,6 @@
 ---
 title: setState 是同步还是异步的
-categories:
+categories: 深入浅出 React
 date: 2021-07-29
 ---
 
@@ -53,8 +53,11 @@ setState 源码的更新过程如下：
 
 ## 同步与异步原因
 
-因为生命周期钩子函数和合成事件，React 都会执行 batchUpdate，此时 isBatchingUpdate 被设为 true，因而进入批量的 dirtyComponents 中，等待更新。这就是为什么表现为异步的原因。
+因为生命周期钩子函数和合成事件执行之前，React 都会执行 batchUpdate，此时 isBatchingUpdate 被设为 true。执行 setState 操作的组件进入批量的 dirtyComponents 中等待更新，setState 在代码执行上是同步，但由于进入等待队列进行批量更新，表现为异步。
 
-而在 setTimeout 和 setInterval 中，isBatchingUpdate 在合成事件处理函数处理之后已被设置为 false，所以表现为同步更新。
+而在 setTimeout 和 setInterval 中，没有执行 batchUpdate，所以表现为同步更新。
 
-<!-- 为什么要在生命周期钩子函数和合成事件将 isBatchingUpdate 置为 false，仍需要研究。 -->
+## 参考资料
+
+- [深入 setState 机制](https://github.com/sisterAn/blog/issues/26)
+- [setState](https://github.com/QiQi57/react-setstate)
