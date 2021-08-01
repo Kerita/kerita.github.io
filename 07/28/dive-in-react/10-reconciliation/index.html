@@ -21,15 +21,15 @@
               Kerita
       </title>
       <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-      <meta name="description" content="什么是调和（Reconciliation）React 官方文档如是说：  Virtual DOM 是一种编程概念。在这个概念里，UI 以一种理想化的，或者说“虚拟的”表现形式被保存于内存中，并通过如 ReactDOM 等类库使之与“真实的” DOM 同步。这一过程叫作协调（调和）。  diff 则是调和过程最重要部分。">
+      <meta name="description" content="什么是调和（Reconciliation）React 官方文档如是说：  Virtual DOM 是一种编程概念。在这个概念里，UI 以一种理想化的，或者说“虚拟的”表现形式被保存于内存中，并通过如 ReactDOM 等类库使之与“真实的” DOM 同步。这一过程叫作协调（调和）。  Diff 则是调和过程最重要部分。">
 <meta property="og:type" content="article">
 <meta property="og:title" content="React 15 的调和">
 <meta property="og:url" content="https://kerita.me/07/28/dive-in-react/10-reconciliation/index.html">
 <meta property="og:site_name" content="Kerita">
-<meta property="og:description" content="什么是调和（Reconciliation）React 官方文档如是说：  Virtual DOM 是一种编程概念。在这个概念里，UI 以一种理想化的，或者说“虚拟的”表现形式被保存于内存中，并通过如 ReactDOM 等类库使之与“真实的” DOM 同步。这一过程叫作协调（调和）。  diff 则是调和过程最重要部分。">
+<meta property="og:description" content="什么是调和（Reconciliation）React 官方文档如是说：  Virtual DOM 是一种编程概念。在这个概念里，UI 以一种理想化的，或者说“虚拟的”表现形式被保存于内存中，并通过如 ReactDOM 等类库使之与“真实的” DOM 同步。这一过程叫作协调（调和）。  Diff 则是调和过程最重要部分。">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2021-07-28T00:00:00.000Z">
-<meta property="article:modified_time" content="2021-08-01T08:24:09.565Z">
+<meta property="article:modified_time" content="2021-08-01T08:49:46.560Z">
 <meta property="article:author" content="Kerita">
 <meta name="twitter:card" content="summary">
         
@@ -126,29 +126,31 @@
 <blockquote>
 <p>Virtual DOM 是一种编程概念。在这个概念里，UI 以一种理想化的，或者说“虚拟的”表现形式被保存于内存中，并通过如 ReactDOM 等类库使之与“真实的” DOM 同步。这一过程叫作协调（调和）。</p>
 </blockquote>
-<p>diff 则是调和过程最重要部分。</p>
+<p>Diff 则是调和过程最重要部分。</p>
 <a id="more"></a>
 
-<h2 id="diff-算法"><a href="#diff-算法" class="headerlink" title="diff 算法"></a>diff 算法</h2><p>生成将一棵树转换成另一棵树的最小操作次数的最优算法，复杂程度仍为 O(n3) ，其中 n 是树中元素的数量。</p>
+<h2 id="Diff-算法"><a href="#Diff-算法" class="headerlink" title="Diff 算法"></a>Diff 算法</h2><p>生成将一棵树转换成另一棵树的最小操作次数的最优算法，复杂程度仍为 O(n3) ，其中 n 是树中元素的数量。</p>
 <p>如果在 React 中使用该算法，那么展示 1000 个元素则需要 10 亿次的比较。这个开销实在是太过高昂。于是 React 在以下两个假设的基础之上提出了一套 O(n) 的启发式算法：</p>
 <ul>
 <li>两个不同类型的元素会产生出不同的树；</li>
 <li>开发者可以通过设置 key 属性，来告知渲染哪些子元素在不同的渲染下可以保存不变；</li>
 </ul>
-<h2 id="diff-算法的三个要点"><a href="#diff-算法的三个要点" class="headerlink" title="diff 算法的三个要点"></a>diff 算法的三个要点</h2><ul>
-<li><p>diff 算法性能突破的关键点在于“分层对比”<br>diff 算法只从跟元素开始对比同一层级的节点。如果节点 A 被移动到其他层，diff 算法会认为节点 A 已经不存在了；而在节点 A 的位置则会认为是新节点，重新创建。</p>
+<h2 id="React-Diff-算法的三个要点"><a href="#React-Diff-算法的三个要点" class="headerlink" title="React Diff 算法的三个要点"></a>React Diff 算法的三个要点</h2><ul>
+<li><p>Diff 算法性能突破的关键点在于“分层对比”<br>Diff 算法只从跟元素开始对比同一层级的节点。如果节点 A 被移动到其他层，diff 算法会认为节点 A 已经不存在了；而在节点 A 的位置则会认为是新节点，重新创建。</p>
 <p>虽然这个销毁和新建的过程耗费性能，但此种跨层次的移动毕竟比较少，为了降低算法复杂度，React 选择忽略。这也提醒我们，尽量保持 DOM 结构的稳定，最好不要跨层级移动 DOM。</p>
 </li>
-<li><p>类型一致的节点才有继续 diff 的必要性<br>对于类型不一致节点，diff 算法将认为他们是不同的节点，并且其子节点也将不再对比。</p>
+<li><p>类型一致的节点才有继续 Diff 的必要性<br>对于类型不一致节点，diff 算法将认为他们是不同的节点，并且其子节点也将不再对比。</p>
 </li>
 <li><p>key 属性的设置，可以帮我们尽可能重用同一层级内的节点<br>对于同一层级的节点，满足上面两个条件，只要 key 相同就认为是同一个节点，在比较的过程中，只要更新节点的属性即可，实现节点的复用。</p>
 </li>
 </ul>
+<h2 id="传统-Diff-算法为什么是-O-n3"><a href="#传统-Diff-算法为什么是-O-n3" class="headerlink" title="传统 Diff 算法为什么是 O(n3)"></a>传统 Diff 算法为什么是 O(n3)</h2><p>Diff 算法是找出 Tree Edit Distance，在 Tree Edit Distance 算法研究中，<a target="_blank" rel="noopener" href="https://grfia.dlsi.ua.es/ml/algorithms/references/editsurvey_bille.pdf">这篇论文</a> 是将其优化到 O(n3)。</p>
+<p>React Diff 算法并不是在传统 Diff 算法进行优化，而是针对 DOM 结构特别这个特殊场景，只进行“分层对比”，因为时间复杂度只为 O(n)。</p>
 
                         
           </div>
           <footer class="article-footer">
-            <a data-url="https://kerita.me/07/28/dive-in-react/10-reconciliation/" data-id="ckrsxu5ck003sd4w5800eftjx" data-title="React 15 的调和"
+            <a data-url="https://kerita.me/07/28/dive-in-react/10-reconciliation/" data-id="ckrsyr306003sboro27bah5lg" data-title="React 15 的调和"
               class="article-share-link">
               分享
             </a>
@@ -218,6 +220,10 @@
       <ul>
         
           <li>
+            <a href="/08/01/dive-in-react/12-fiber/">什么是 React Fiber 架构</a>
+          </li>
+        
+          <li>
             <a href="/07/30/2021/replaceAll-is-not-a-function/">从 replaceAll is not a function 说起</a>
           </li>
         
@@ -231,10 +237,6 @@
         
           <li>
             <a href="/07/28/dive-in-react/9-virtual-dom/">React 的虚拟 DOM</a>
-          </li>
-        
-          <li>
-            <a href="/07/27/dive-in-react/6-hooks/">React Hooks 设计思想</a>
           </li>
         
       </ul>
