@@ -1,5 +1,5 @@
 ---
-title: 虚拟 DOM 原理
+title: React Diff 算法实现
 categories:
 tags:
 date: 2021-07-23
