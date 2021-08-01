@@ -17,17 +17,19 @@
     
       <title>
         
-          什么是 React Fiber 架构 | 
+          什么是微前端 | 
               Kerita
       </title>
       <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-      <meta property="og:type" content="article">
-<meta property="og:title" content="什么是 React Fiber 架构">
-<meta property="og:url" content="https://kerita.me/08/01/dive-in-react/12-fiber/index.html">
+      <meta name="description" content="微前端的理念源自微服务，使用一个主应用作为主体框架和微应用加载器，根据不用的路由加载不同的微应用。微应用之间做到技术隔离，在展示上却是统一的。 微前端主要用来解决单体应用在相对长的时间跨度下，从一个普通应用变成一个巨石应用(Frontend Monolith)后，随着而来的应用不可维护问题。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="什么是微前端">
+<meta property="og:url" content="https://kerita.me/08/01/2021/micro-fe/index.html">
 <meta property="og:site_name" content="Kerita">
+<meta property="og:description" content="微前端的理念源自微服务，使用一个主应用作为主体框架和微应用加载器，根据不用的路由加载不同的微应用。微应用之间做到技术隔离，在展示上却是统一的。 微前端主要用来解决单体应用在相对长的时间跨度下，从一个普通应用变成一个巨石应用(Frontend Monolith)后，随着而来的应用不可维护问题。">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2021-08-01T00:00:00.000Z">
-<meta property="article:modified_time" content="2021-08-01T08:49:46.560Z">
+<meta property="article:modified_time" content="2021-08-01T13:18:48.593Z">
 <meta property="article:author" content="Kerita">
 <meta name="twitter:card" content="summary">
         
@@ -97,10 +99,10 @@
 </header>
 
       <div class="outer">
-        <section id="main"><article id="post-dive-in-react/12-fiber" class="h-entry article article-type-post"
+        <section id="main"><article id="post-2021/micro-fe" class="h-entry article article-type-post"
   itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
   <div class="article-meta">
-    <a href="/08/01/dive-in-react/12-fiber/" class="article-date">
+    <a href="/08/01/2021/micro-fe/" class="article-date">
   <time class="dt-published" datetime="2021-08-01T00:00:00.000Z" itemprop="datePublished">2021-08-01</time>
 </a>
       
@@ -112,7 +114,7 @@
           
   
     <h1 class="p-name article-title" itemprop="headline name">
-      什么是 React Fiber 架构
+      什么是微前端
     </h1>
   
 
@@ -120,12 +122,38 @@
         
           <div class="e-content article-entry" itemprop="articleBody">
             
-                      <a id="more"></a>
+                      <p>微前端的理念源自微服务，使用一个主应用作为主体框架和微应用加载器，根据不用的路由加载不同的微应用。微应用之间做到技术隔离，在展示上却是统一的。</p>
+<p>微前端主要用来解决单体应用在相对长的时间跨度下，从一个普通应用变成一个巨石应用(Frontend Monolith)后，随着而来的应用不可维护问题。</p>
+<a id="more"></a>
+
+<h2 id="微前端的优点"><a href="#微前端的优点" class="headerlink" title="微前端的优点"></a>微前端的优点</h2><ul>
+<li><p>技术栈无关<br>主框架不限制接入应用的技术栈，微应用具备完全自主权</p>
+</li>
+<li><p>独立开发、独立部署<br>微应用仓库独立，前后端可独立开发，部署完成后主框架自动完成同步更新</p>
+</li>
+<li><p>增量升级</p>
+</li>
+</ul>
+<p>在面对各种复杂场景时，我们通常很难对一个已经存在的系统做全量的技术栈升级或重构，而微前端是一种非常好的实施渐进式重构的手段和策略</p>
+<ul>
+<li>独立运行时<br>每个微应用之间状态隔离，运行时状态不共享</li>
+</ul>
+<h2 id="微前端框架"><a href="#微前端框架" class="headerlink" title="微前端框架"></a>微前端框架</h2><ul>
+<li><p><a target="_blank" rel="noopener" href="https://qiankun.umijs.org/zh/guide">qiankun</a><br>qiankun 是一个基于 single-spa 的微前端实现库，旨在帮助大家能更简单、无痛的构建一个生产可用微前端架构系统。</p>
+<p>qiankun 孵化自蚂蚁金融科技基于微前端架构的云产品统一接入平台，在经过一批线上应用的充分检验及打磨后，我们将其微前端内核抽取出来并开源，希望能同时帮助社区有类似需求的系统更方便的构建自己的微前端系统，同时也希望通过社区的帮助将 qiankun 打磨的更加成熟完善。</p>
+</li>
+<li><p><a target="_blank" rel="noopener" href="https://github.com/efoxTeam/emp/blob/main/README-zh_CN.md">EMP</a><br>EMP 是由欢聚时代基于 Webpack5 Module Federation 搭建的微前端解决方案。</p>
+</li>
+</ul>
+<h2 id="参考资料"><a href="#参考资料" class="headerlink" title="参考资料"></a>参考资料</h2><ul>
+<li><a target="_blank" rel="noopener" href="https://qiankun.umijs.org/zh">微前端框架 qiankun</a></li>
+<li><a target="_blank" rel="noopener" href="https://qiankun.umijs.org/zh/guide">什么是微前端</a></li>
+</ul>
 
                         
           </div>
           <footer class="article-footer">
-            <a data-url="https://kerita.me/08/01/dive-in-react/12-fiber/" data-id="ckrsyr3080040boro273w2pbe" data-title="什么是 React Fiber 架构"
+            <a data-url="https://kerita.me/08/01/2021/micro-fe/" data-id="ckrt8dmf9002vd4t18ll54hda" data-title="什么是微前端"
               class="article-share-link">
               分享
             </a>
@@ -186,7 +214,7 @@
       <ul>
         
           <li>
-            <a href="/08/01/dive-in-react/12-fiber/">什么是 React Fiber 架构</a>
+            <a href="/08/01/2021/micro-fe/">什么是微前端</a>
           </li>
         
           <li>
