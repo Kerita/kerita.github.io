@@ -1,0 +1,518 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-114680595-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-114680595-1');
+</script>
+<!-- End Google Analytics -->
+
+    
+      <title>
+        
+          babel/preset-env 文档 | 
+              Kerita
+      </title>
+      <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+      <meta name="description" content="@babel&#x2F;preset-env is a smart preset that allows you to use the latest JavaScript without needing to micromanage which syntax transforms (and optionally, browser polyfills) are needed by your target en">
+<meta property="og:type" content="article">
+<meta property="og:title" content="babel&#x2F;preset-env 文档">
+<meta property="og:url" content="https://kerita.me/08/02/2021/preset-env/index.html">
+<meta property="og:site_name" content="Kerita">
+<meta property="og:description" content="@babel&#x2F;preset-env is a smart preset that allows you to use the latest JavaScript without needing to micromanage which syntax transforms (and optionally, browser polyfills) are needed by your target en">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2021-08-02T00:00:00.000Z">
+<meta property="article:modified_time" content="2021-08-02T13:03:17.873Z">
+<meta property="article:author" content="Kerita">
+<meta name="twitter:card" content="summary">
+        
+          <link rel="alternate" href="/atom.xml" title="Kerita" type="application/atom+xml">
+            
+                  
+                    <link rel="shortcut icon" href="/favicon.png">
+                      
+                        
+                          
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/typeface-source-code-pro@0.0.71/index.min.css">
+
+                            
+                              
+<link rel="stylesheet" href="/css/style.css">
+
+                                
+                                  
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.min.css">
+
+                                    
+
+                                      <link rel="stylesheet"
+                                        href="https://cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.css" />
+                                      <script src="https://cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.min.js"> </script>
+<meta name="generator" content="Hexo 5.3.0"></head>
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">Kerita</a>
+      </h1>
+      
+        <h2 id="subtitle-wrap">
+          <a href="/" id="subtitle">自律谦逊，承担责任，推迟满足感，你要热爱它</a>
+        </h2>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">首页</a>
+        
+          <a class="main-nav-link" href="/archives">归档</a>
+        
+          <a class="main-nav-link" href="/about">关于我</a>
+        
+          <a class="main-nav-link" href="/guestbook">留言板</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS 订阅"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="搜索"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="搜索"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="https://kerita.me"></form>
+      </div>
+    </div>
+  </div>
+</header>
+
+      <div class="outer">
+        <section id="main"><article id="post-2021/preset-env" class="h-entry article article-type-post"
+  itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/08/02/2021/preset-env/" class="article-date">
+  <time class="dt-published" datetime="2021-08-02T00:00:00.000Z" itemprop="datePublished">2021-08-02</time>
+</a>
+      
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/Babel/">Babel</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+      
+        <header class="article-header">
+          
+  
+    <h1 class="p-name article-title" itemprop="headline name">
+      babel/preset-env 文档
+    </h1>
+  
+
+        </header>
+        
+          <div class="e-content article-entry" itemprop="articleBody">
+            
+                      <p><code>@babel/preset-env</code> is a smart preset that allows you to use the latest JavaScript without needing to micromanage which syntax transforms (and optionally, browser polyfills) are needed by your target environment(s). This both makes your life easier and JavaScript bundles smaller!</p>
+<p><code>@babel/preset-env</code> 是一个智能的预设，让你在使用最新的 JavaScript 的同时，无需关心那个语法转换或者浏览器 polyfill 是被目标浏览器所需要。这会让你的生活更美好，同时让 JavaScript bundles 更小。</p>
+<ul>
+<li><a href="#install">Install</a></li>
+<li><a href="#how-does-it-work">How Does it Work?</a></li>
+<li><a href="#browserslist-integration">Browserslist Integration</a></li>
+<li><a href="#options">Options</a></li>
+</ul>
+<a id="more"></a>
+
+<h2 id="Install"><a href="#Install" class="headerlink" title="Install"></a>Install</h2><p>With <a target="_blank" rel="noopener" href="https://www.npmjs.com/">npm</a>:</p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install --save-dev @babel/preset-env</span><br></pre></td></tr></table></figure>
+<p>Or <a target="_blank" rel="noopener" href="https://yarnpkg.com/">yarn</a>:</p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">yarn add @babel/preset-env --dev</span><br></pre></td></tr></table></figure>
+<h2 id="How-Does-it-Work"><a href="#How-Does-it-Work" class="headerlink" title="How Does it Work?"></a>How Does it Work?</h2><p><code>@babel/preset-env</code> would not be possible if not for a number of awesome open-source projects, like <a target="_blank" rel="noopener" href="https://github.com/browserslist/browserslist"><code>browserslist</code></a>, <a target="_blank" rel="noopener" href="https://github.com/kangax/compat-table"><code>compat-table</code></a>, and <a target="_blank" rel="noopener" href="https://github.com/Kilian/electron-to-chromium"><code>electron-to-chromium</code></a>.</p>
+<p>We leverage these data sources to maintain <a target="_blank" rel="noopener" href="https://github.com/babel/babel/blob/main/packages/babel-compat-data/data/plugins.json">mappings of which version</a> of our supported target environments gained support of a JavaScript syntax or browser feature, as well as a mapping of those syntaxes and features to Babel transform plugins and core-js polyfills.</p>
+<blockquote>
+<p>Note: <code>@babel/preset-env</code> won’t include any JavaScript syntax proposals less than Stage 3 because at that stage in the TC39 process, it wouldn’t be implemented by any browsers anyway. Those would need to be included manually. The <code>shippedProposals</code> option will include Stage 3 proposals that some browsers have already implemented.</p>
+</blockquote>
+<p><code>@babel/preset-env</code> takes any <a href="#targets">target environments you’ve specified</a> and checks them against its mappings to compile a list of plugins and passes it to Babel.</p>
+<h2 id="Browserslist-Integration"><a href="#Browserslist-Integration" class="headerlink" title="Browserslist Integration"></a>Browserslist Integration</h2><p>For browser- or Electron-based projects, we recommend using a <a target="_blank" rel="noopener" href="https://github.com/browserslist/browserslist"><code>.browserslistrc</code></a> file to specify targets. You may already have this configuration file as it is used by many tools in the ecosystem, like <a target="_blank" rel="noopener" href="https://github.com/postcss/autoprefixer">autoprefixer</a>, <a target="_blank" rel="noopener" href="https://stylelint.io/">stylelint</a>, <a target="_blank" rel="noopener" href="https://github.com/amilajack/eslint-plugin-compat">eslint-plugin-compat</a> and many others.</p>
+<p>By default <code>@babel/preset-env</code> will use <a target="_blank" rel="noopener" href="https://github.com/ai/browserslist#queries">browserslist config sources</a> <em>unless</em> either the <a href="#targets">targets</a> or <a href="#ignorebrowserslistconfig">ignoreBrowserslistConfig</a> options are set.</p>
+<blockquote>
+<p>Please note that if you are relying on browserslist’s defaults query (either explicitly or by having no browserslist config), you will want to check out the <a href="#no-targets">No targets</a> section for information on preset-env’s behavior.</p>
+</blockquote>
+<p>For example, to only include polyfills and code transforms needed for users whose browsers have &gt;0.25% market share (ignoring browsers without security updates like IE 10 and BlackBerry):</p>
+<figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">  <span class="attr">&quot;presets&quot;</span>: [</span><br><span class="line">    [</span><br><span class="line">      <span class="string">&quot;@babel/preset-env&quot;</span>,</span><br><span class="line">      &#123;</span><br><span class="line">        <span class="attr">&quot;useBuiltIns&quot;</span>: <span class="string">&quot;entry&quot;</span></span><br><span class="line">      &#125;</span><br><span class="line">    ]</span><br><span class="line">  ]</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p><strong>browserslist</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">&gt; 0.25%</span><br><span class="line">not dead</span><br></pre></td></tr></table></figure>
+<p>or</p>
+<p><strong>package.json</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&quot;browserslist&quot;: &quot;&gt; 0.25%, not dead&quot;</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>Please note that since <code>v7.4.5</code> the browserslist query is resolved with <a target="_blank" rel="noopener" href="https://github.com/browserslist/browserslist#js-api"><code>mobileToDesktop: true</code></a>.<br>For example, if you want to create a snapshot of a query run <code>npx browserslist --mobile-to-desktop &quot;&gt;0.25%, not dead&quot;</code>.</p>
+</blockquote>
+<h2 id="Options"><a href="#Options" class="headerlink" title="Options"></a>Options</h2><p>For more information on setting options for a preset, refer to the <a href="presets.md#preset-options">preset options</a> documentation.</p>
+<h3 id="targets"><a href="#targets" class="headerlink" title="targets"></a><code>targets</code></h3><p><code>string | Array&lt;string&gt; | &#123; [string]: string &#125;</code>, defaults to the top-level <code>targets</code> option if no browserslist-related option is specified in <code>@babel/preset-env</code>‘s docs, otherwise to <code>&#123;&#125;</code>.</p>
+<p>Describes the environments you support/target for your project.</p>
+<p>This can either be a <a target="_blank" rel="noopener" href="https://github.com/ai/browserslist">browserslist-compatible</a> query (with <a href="#ineffective-browserslist-queries">caveats</a>):</p>
+<figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">  <span class="attr">&quot;targets&quot;</span>: <span class="string">&quot;&gt; 0.25%, not dead&quot;</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>Or an object of minimum environment versions to support:</p>
+<figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">  <span class="attr">&quot;targets&quot;</span>: &#123;</span><br><span class="line">    <span class="attr">&quot;chrome&quot;</span>: <span class="string">&quot;58&quot;</span>,</span><br><span class="line">    <span class="attr">&quot;ie&quot;</span>: <span class="string">&quot;11&quot;</span></span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>Example environments: <code>chrome</code>, <code>opera</code>, <code>edge</code>, <code>firefox</code>, <code>safari</code>, <code>ie</code>, <code>ios</code>, <code>android</code>, <code>node</code>, <code>electron</code>.</p>
+<h4 id="No-targets"><a href="#No-targets" class="headerlink" title="No targets"></a>No targets</h4><p>Since one of the original goals of <code>preset-env</code> was to help users easily transition from using <code>preset-latest</code>, it behaves similarly when no targets are specified: <code>preset-env</code> will transform all ES2015-ES2020 code to be ES5 compatible.</p>
+<blockquote>
+<p>We don’t recommend using <code>preset-env</code> this way because it doesn’t take advantage of its ability to target specific environments/versions.</p>
+</blockquote>
+<figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">  <span class="attr">&quot;presets&quot;</span>: [<span class="string">&quot;@babel/preset-env&quot;</span>]</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>Because of this, <code>preset-env</code>‘s behavior is different than <a target="_blank" rel="noopener" href="https://github.com/browserslist/browserslist#queries">browserslist</a>: it does <em>not</em> use the <code>defaults</code> query when no targets are found in your Babel <em>or</em> browserslist config(s). If you want to use the <code>defaults</code> query, you will need to explicitly pass it as a target:</p>
+<figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">  <span class="attr">&quot;presets&quot;</span>: [[<span class="string">&quot;@babel/preset-env&quot;</span>, &#123; <span class="attr">&quot;targets&quot;</span>: <span class="string">&quot;defaults&quot;</span> &#125;]]</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>We recognize this isn’t ideal and will be revisiting this in Babel v8.</p>
+<h4 id="targets-esmodules"><a href="#targets-esmodules" class="headerlink" title="targets.esmodules"></a><code>targets.esmodules</code></h4><p><code>boolean</code>.</p>
+<p>You may also target browsers supporting ES Modules (<a target="_blank" rel="noopener" href="https://www.ecma-international.org/ecma-262/6.0/#sec-modules">https://www.ecma-international.org/ecma-262/6.0/#sec-modules</a>). When specifying this option, the browsers field will be ignored. You can use this approach in combination with <code>&lt;script type=&quot;module&quot;&gt;&lt;/script&gt;</code> to conditionally serve smaller scripts to users (<a target="_blank" rel="noopener" href="https://jakearchibald.com/2017/es-modules-in-browsers/#nomodule-for-backwards-compatibility">https://jakearchibald.com/2017/es-modules-in-browsers/#nomodule-for-backwards-compatibility</a>).</p>
+<blockquote>
+<p><em>Please note</em>: when specifying the esmodules target, browsers targets will be ignored.</p>
+</blockquote>
+<figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">  <span class="attr">&quot;presets&quot;</span>: [</span><br><span class="line">    [</span><br><span class="line">      <span class="string">&quot;@babel/preset-env&quot;</span>,</span><br><span class="line">      &#123;</span><br><span class="line">        <span class="attr">&quot;targets&quot;</span>: &#123;</span><br><span class="line">          <span class="attr">&quot;esmodules&quot;</span>: <span class="literal">true</span></span><br><span class="line">        &#125;</span><br><span class="line">      &#125;</span><br><span class="line">    ]</span><br><span class="line">  ]</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h4 id="targets-node"><a href="#targets-node" class="headerlink" title="targets.node"></a><code>targets.node</code></h4><p><code>string | &quot;current&quot;</code>.</p>
+<p>If you want to compile against the current node version, you can specify <code>&quot;node&quot;: &quot;current&quot;</code>, which would be the same as <code>&quot;node&quot;: process.versions.node</code>.</p>
+<h4 id="targets-safari"><a href="#targets-safari" class="headerlink" title="targets.safari"></a><code>targets.safari</code></h4><p><code>string | &quot;tp&quot;</code>.</p>
+<p>If you want to compile against the <a target="_blank" rel="noopener" href="https://developer.apple.com/safari/technology-preview/">technology preview</a> version of Safari, you can specify <code>&quot;safari&quot;: &quot;tp&quot;</code>.</p>
+<h4 id="targets-browsers"><a href="#targets-browsers" class="headerlink" title="targets.browsers"></a><code>targets.browsers</code></h4><p><code>string | Array&lt;string&gt;</code>.</p>
+<p>A query to select browsers (ex: last 2 versions, &gt; 5%, safari tp) using <a target="_blank" rel="noopener" href="https://github.com/ai/browserslist">browserslist</a>.</p>
+<p>Note, browsers’ results are overridden by explicit items from <code>targets</code>.</p>
+<blockquote>
+<p>Note: this will be removed in later version in favor of just setting “targets” to a query directly.</p>
+</blockquote>
+<h3 id="bugfixes"><a href="#bugfixes" class="headerlink" title="bugfixes"></a><code>bugfixes</code></h3><p><code>boolean</code>, defaults to <code>false</code>.</p>
+<p>Added in: <code>v7.9.0</code></p>
+<blockquote>
+<p>Note: These optimizations will be enabled by default in Babel 8</p>
+</blockquote>
+<p>By default, <code>@babel/preset-env</code> (and Babel plugins in general) grouped ECMAScript syntax features into collections of closely related smaller features. These groups can be large and include a lot of edge cases, for example “function arguments” includes destructured, default and rest parameters. From this grouping information, Babel enables or disables each group based on the browser support target you specify to <code>@babel/preset-env</code>’s <code>targets</code> option.</p>
+<p>When this option is enabled, <code>@babel/preset-env</code> tries to compile the broken syntax to the closest <em>non-broken modern syntax</em> supported by your target browsers. Depending on your <code>targets</code> and on how many modern syntax you are using, this can lead to a significant size reduction in the compiled app. This option merges the features of <a target="_blank" rel="noopener" href="https://github.com/babel/preset-modules"><code>@babel/preset-modules</code></a> without having to use another preset.</p>
+<h3 id="spec"><a href="#spec" class="headerlink" title="spec"></a><code>spec</code></h3><p><code>boolean</code>, defaults to <code>false</code>.</p>
+<p>Enable more spec compliant, but potentially slower, transformations for any plugins in this preset that support them.</p>
+<h3 id="loose"><a href="#loose" class="headerlink" title="loose"></a><code>loose</code></h3><p><code>boolean</code>, defaults to <code>false</code>.</p>
+<p>Enable <a target="_blank" rel="noopener" href="http://2ality.com/2015/12/babel6-loose-mode.html">“loose” transformations</a> for any plugins in this preset that allow them.</p>
+<blockquote>
+<p>⚠️ Consider migrating to the top level <a href="assumptions.md"><code>assumptions</code></a> available since Babel 7.13.</p>
+</blockquote>
+<h3 id="modules"><a href="#modules" class="headerlink" title="modules"></a><code>modules</code></h3><p><code>&quot;amd&quot; | &quot;umd&quot; | &quot;systemjs&quot; | &quot;commonjs&quot; | &quot;cjs&quot; | &quot;auto&quot; | false</code>, defaults to <code>&quot;auto&quot;</code>.</p>
+<p>Enable transformation of ES module syntax to another module type. Note that <code>cjs</code> is just an alias for <code>commonjs</code>.</p>
+<p>Setting this to <code>false</code> will preserve ES modules. Use this only if you intend to ship native ES Modules to browsers. If you are using a bundler with Babel, the default <code>modules: &quot;auto&quot;</code> is always preferred.</p>
+<h4 id="modules-quot-auto-quot"><a href="#modules-quot-auto-quot" class="headerlink" title="modules: &quot;auto&quot;"></a><code>modules: &quot;auto&quot;</code></h4><p>By default <code>@babel/preset-env</code> uses <a href="options.md#caller"><code>caller</code></a> data to determine whether ES modules and module features (e.g. <code>import()</code>) should be transformed. Generally <code>caller</code> data will be specified in the bundler plugins (e.g. <code>babel-loader</code>, <code>@rollup/plugin-babel</code>) and thus it is not recommended to pass <code>caller</code> data yourself – The passed <code>caller</code> may overwrite the one from bundler plugins and in the future you may get suboptimal results if bundlers supports new module features.</p>
+<h3 id="debug"><a href="#debug" class="headerlink" title="debug"></a><code>debug</code></h3><p><code>boolean</code>, defaults to <code>false</code>.</p>
+<p>Outputs to <code>console.log</code> the polyfills and transform plugins enabled by <code>preset-env</code> and, if applicable, which one of your targets that needed it.</p>
+<h3 id="include"><a href="#include" class="headerlink" title="include"></a><code>include</code></h3><p><code>Array&lt;string|RegExp&gt;</code>, defaults to <code>[]</code>.</p>
+<details>
+  <summary>History</summary>
+| Version | Changes |
+| --- | --- |
+| `v7.4.0` | Support injecting `core-js@3` polyfills |
+</details>
+
+<p>An array of plugins to always include.</p>
+<p>Valid options include any:</p>
+<ul>
+<li><p><a target="_blank" rel="noopener" href="https://github.com/babel/babel/blob/main/packages/babel-compat-data/scripts/data/plugin-features.js">Babel plugins</a> - both with (<code>@babel/plugin-transform-spread</code>) and without prefix (<code>plugin-transform-spread</code>) are supported.</p>
+</li>
+<li><p>Built-ins (both for <a target="_blank" rel="noopener" href="https://github.com/babel/babel/blob/master/packages/babel-preset-env/src/polyfills/corejs2/built-in-definitions.js">core-js@2</a> and <a target="_blank" rel="noopener" href="https://github.com/babel/babel/blob/master/packages/babel-preset-env/src/polyfills/corejs3/built-in-definitions.js">core-js@3</a>, such as <code>es.map</code>, <code>es.set</code>, or <code>es.object.assign</code>.</p>
+</li>
+</ul>
+<p>Plugin names can be fully or partially specified (or using <code>RegExp</code>).</p>
+<p>Acceptable inputs:</p>
+<ul>
+<li>Full name (<code>string</code>): <code>&quot;es.math.sign&quot;</code></li>
+<li>Partial name (<code>string</code>): <code>&quot;es.math.*&quot;</code> (resolves to all plugins with <code>es.math</code> prefix)</li>
+<li><code>RegExp</code> Object: <code>/^transform-.*$/</code> or <code>new RegExp(&quot;^transform-modules-.*&quot;)</code></li>
+</ul>
+<p>Note that the above <code>.</code> is the <code>RegExp</code> equivalent to match any character, and not the actual <code>&#39;.&#39;</code> character. Also note that to match any character <code>.*</code> is used in <code>RegExp</code> as opposed to <code>*</code> in <code>glob</code> format.</p>
+<p>This option is useful if there is a bug in a native implementation, or a combination of a non-supported feature + a supported one doesn’t work.</p>
+<p>For example, Node 4 supports native classes but not spread. If <code>super</code> is used with a spread argument, then the <code>@babel/plugin-transform-classes</code> transform needs to be <code>include</code>d, as it is not possible to transpile a spread with <code>super</code> otherwise.</p>
+<blockquote>
+<p>NOTE: The <code>include</code> and <code>exclude</code> options <em>only</em> work with the <a target="_blank" rel="noopener" href="https://github.com/babel/babel/blob/main/packages/babel-compat-data/scripts/data/plugin-features.js">plugins included with this preset</a>; so, for example, including <code>@babel/plugin-proposal-do-expressions</code> or excluding <code>@babel/plugin-proposal-function-bind</code> will throw errors. To use a plugin <em>not</em> included with this preset, add them to your <a href="options.md#plugins">“plugins”</a> directly.</p>
+</blockquote>
+<h3 id="exclude"><a href="#exclude" class="headerlink" title="exclude"></a><code>exclude</code></h3><p><code>Array&lt;string|RegExp&gt;</code>, defaults to <code>[]</code>.</p>
+<p>An array of plugins to always exclude/remove.</p>
+<p>The possible options are the same as the <code>include</code> option.</p>
+<p>This option is useful for “blacklisting” a transform like <code>@babel/plugin-transform-regenerator</code> if you don’t use generators and don’t want to include <code>regeneratorRuntime</code> (when using <code>useBuiltIns</code>) or for using another plugin like <a target="_blank" rel="noopener" href="https://github.com/MatAtBread/fast-async">fast-async</a> instead of <a href="plugin-proposal-async-generator-functions.md">Babel’s async-to-gen</a>.</p>
+<h3 id="useBuiltIns"><a href="#useBuiltIns" class="headerlink" title="useBuiltIns"></a><code>useBuiltIns</code></h3><p><code>&quot;usage&quot;</code> | <code>&quot;entry&quot;</code> | <code>false</code>, defaults to <code>false</code>.</p>
+<p>This option configures how <code>@babel/preset-env</code> handles polyfills.</p>
+<p>When either the <code>usage</code> or <code>entry</code> options are used, <code>@babel/preset-env</code> will add direct references to <code>core-js</code> modules as bare imports (or requires). This means <code>core-js</code> will be resolved relative to the file itself and needs to be accessible.</p>
+<p>Since <code>@babel/polyfill</code> was deprecated in 7.4.0, we recommend directly adding <code>core-js</code> and setting the version via the <a href="#corejs"><code>corejs</code></a> option.</p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">npm install core-js@3 --save</span><br><span class="line"></span><br><span class="line"><span class="comment"># or</span></span><br><span class="line"></span><br><span class="line">npm install core-js@2 --save</span><br></pre></td></tr></table></figure>
+<h4 id="useBuiltIns-39-entry-39"><a href="#useBuiltIns-39-entry-39" class="headerlink" title="useBuiltIns: &#39;entry&#39;"></a><code>useBuiltIns: &#39;entry&#39;</code></h4><details>
+  <summary>History</summary>
+| Version | Changes |
+| --- | --- |
+| `v7.4.0` | It replaces `"core-js/stable"` and `"regenerator-runtime/runtime"` entry imports |
+| `v7.0.0` | It replaces `"@babel/polyfill"` entry imports |
+</details>
+
+<blockquote>
+<p>NOTE: Only use <code>import &quot;core-js&quot;;</code> and <code>import &quot;regenerator-runtime/runtime&quot;;</code> once in your whole app.<br>If you are using <code>@babel/polyfill</code>, it already includes both <code>core-js</code> and <code>regenerator-runtime</code>: importing it twice will throw an error.<br>Multiple imports or requires of those packages might cause global collisions and other issues that are hard to trace.<br>We recommend creating a single entry file that only contains the <code>import</code> statements.</p>
+</blockquote>
+<p>This option enables a new plugin that replaces the <code>import &quot;core-js/stable&quot;;</code> and <code>import &quot;regenerator-runtime/runtime&quot;</code> statements (or <code>require(&quot;core-js&quot;)</code> and <code>require(&quot;regenerator-runtime/runtime&quot;)</code>) with individual requires to different <code>core-js</code> entry points based on environment.</p>
+<p><strong>In</strong></p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> <span class="string">&quot;core-js&quot;</span>;</span><br></pre></td></tr></table></figure>
+<p><strong>Out (different based on environment)</strong></p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> <span class="string">&quot;core-js/modules/es.string.pad-start&quot;</span>;</span><br><span class="line"><span class="keyword">import</span> <span class="string">&quot;core-js/modules/es.string.pad-end&quot;</span>;</span><br></pre></td></tr></table></figure>
+<p>Importing <code>&quot;core-js&quot;</code> loads polyfills for every possible ECMAScript feature: what if you know that you only need some of them? When using <code>core-js@3</code>, <code>@babel/preset-env</code> is able to optimize every single <code>core-js</code> entrypoint and their combinations. For example, you might want to only polyfill array methods and new <code>Math</code> proposals:</p>
+<p><strong>In</strong></p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> <span class="string">&quot;core-js/es/array&quot;</span>;</span><br><span class="line"><span class="keyword">import</span> <span class="string">&quot;core-js/proposals/math-extensions&quot;</span>;</span><br></pre></td></tr></table></figure>
+<p><strong>Out (different based on environment)</strong></p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> <span class="string">&quot;core-js/modules/es.array.unscopables.flat&quot;</span>;</span><br><span class="line"><span class="keyword">import</span> <span class="string">&quot;core-js/modules/es.array.unscopables.flat-map&quot;</span>;</span><br><span class="line"><span class="keyword">import</span> <span class="string">&quot;core-js/modules/esnext.math.clamp&quot;</span>;</span><br><span class="line"><span class="keyword">import</span> <span class="string">&quot;core-js/modules/esnext.math.deg-per-rad&quot;</span>;</span><br><span class="line"><span class="keyword">import</span> <span class="string">&quot;core-js/modules/esnext.math.degrees&quot;</span>;</span><br><span class="line"><span class="keyword">import</span> <span class="string">&quot;core-js/modules/esnext.math.fscale&quot;</span>;</span><br><span class="line"><span class="keyword">import</span> <span class="string">&quot;core-js/modules/esnext.math.rad-per-deg&quot;</span>;</span><br><span class="line"><span class="keyword">import</span> <span class="string">&quot;core-js/modules/esnext.math.radians&quot;</span>;</span><br><span class="line"><span class="keyword">import</span> <span class="string">&quot;core-js/modules/esnext.math.scale&quot;</span>;</span><br></pre></td></tr></table></figure>
+<p>You can read <a target="_blank" rel="noopener" href="https://github.com/zloirock/core-js">core-js</a>‘s documentation for more information about the different entry points.</p>
+<blockquote>
+<p>NOTE: When using <code>core-js@2</code> (either explicitly using the <a href="#corejs"><code>corejs: &quot;2&quot;</code></a> option or implicitly), <code>@babel/preset-env</code> will also transform imports and requires of <code>@babel/polyfill</code>.<br>This behavior is deprecated because it isn’t possible to use <code>@babel/polyfill</code> with different <code>core-js</code> versions.</p>
+</blockquote>
+<h4 id="useBuiltIns-39-usage-39"><a href="#useBuiltIns-39-usage-39" class="headerlink" title="useBuiltIns: &#39;usage&#39;"></a><code>useBuiltIns: &#39;usage&#39;</code></h4><p>Adds specific imports for polyfills when they are used in each file. We take advantage of the fact that a bundler will load the same polyfill only once.</p>
+<p><strong>In</strong></p>
+<p>a.js</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> a = <span class="keyword">new</span> <span class="built_in">Promise</span>();</span><br></pre></td></tr></table></figure>
+<p>b.js</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> b = <span class="keyword">new</span> <span class="built_in">Map</span>();</span><br></pre></td></tr></table></figure>
+<p><strong>Out (if environment doesn’t support it)</strong></p>
+<p>a.js</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> <span class="string">&quot;core-js/modules/es.promise&quot;</span>;</span><br><span class="line"><span class="keyword">var</span> a = <span class="keyword">new</span> <span class="built_in">Promise</span>();</span><br></pre></td></tr></table></figure>
+<p>b.js</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> <span class="string">&quot;core-js/modules/es.map&quot;</span>;</span><br><span class="line"><span class="keyword">var</span> b = <span class="keyword">new</span> <span class="built_in">Map</span>();</span><br></pre></td></tr></table></figure>
+<p><strong>Out (if environment supports it)</strong></p>
+<p>a.js</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> a = <span class="keyword">new</span> <span class="built_in">Promise</span>();</span><br></pre></td></tr></table></figure>
+<p>b.js</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> b = <span class="keyword">new</span> <span class="built_in">Map</span>();</span><br></pre></td></tr></table></figure>
+<h4 id="useBuiltIns-false"><a href="#useBuiltIns-false" class="headerlink" title="useBuiltIns: false"></a><code>useBuiltIns: false</code></h4><p>Don’t add polyfills automatically per file, and don’t transform <code>import &quot;core-js&quot;</code> or <code>import &quot;@babel/polyfill&quot;</code> to individual polyfills.</p>
+<h3 id="corejs"><a href="#corejs" class="headerlink" title="corejs"></a><code>corejs</code></h3><p>Added in: <code>v7.4.0</code></p>
+<p><code>string</code> or <code>&#123; version: string, proposals: boolean &#125;</code>, defaults to <code>&quot;2.0&quot;</code>. The <code>version</code> string can be any<br>supported <code>core-js</code> versions. For example, <code>&quot;3.8&quot;</code> or <code>&quot;2.0&quot;</code>.</p>
+<p>This option only has an effect when used alongside <code>useBuiltIns: usage</code> or <code>useBuiltIns: entry</code>, and ensures <code>@babel/preset-env</code> injects the polyfills supported by your <code>core-js</code> version. It is recommended to specify the minor<br>version otherwise <code>&quot;3&quot;</code> will be interpreted as <code>&quot;3.0&quot;</code> which may not include polyfills for the latest features.</p>
+<p>By default, only polyfills for stable ECMAScript features are injected: if you want to polyfill proposals, you have three different options:</p>
+<ul>
+<li>when using <code>useBuiltIns: &quot;entry&quot;</code>, you can directly import a <a target="_blank" rel="noopener" href="https://github.com/zloirock/core-js/tree/master/packages/core-js/proposals">proposal polyfill</a>: <code>import &quot;core-js/proposals/string-replace-all&quot;</code>.</li>
+<li>when using <code>useBuiltIns: &quot;usage&quot;</code> you have two different alternatives:<ul>
+<li>set the <a href="#shippedproposals"><code>shippedProposals</code></a> option to <code>true</code>. This will enable polyfills and transforms for proposal which have already been shipped in browsers for a while.</li>
+<li>use <code>corejs: &#123; version: &quot;3.8&quot;, proposals: true &#125;</code>. This will enable polyfilling of every proposal supported by <code>core-js@3.8</code>.</li>
+</ul>
+</li>
+</ul>
+<h3 id="forceAllTransforms"><a href="#forceAllTransforms" class="headerlink" title="forceAllTransforms"></a><code>forceAllTransforms</code></h3><p><code>boolean</code>, defaults to <code>false</code>.</p>
+<p><details>
+  <summary><b>Example</b></summary>
+
+<p>With Babel 7’s <a href="config-files#javascript">JavaScript config file</a> support, you can force all transforms to be run if env is set to <code>production</code>.</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">module</span>.exports = <span class="function"><span class="keyword">function</span> (<span class="params">api</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">return</span> &#123;</span><br><span class="line">    presets: [</span><br><span class="line">      [</span><br><span class="line">        <span class="string">&quot;@babel/preset-env&quot;</span>,</span><br><span class="line">        &#123;</span><br><span class="line">          targets: &#123;</span><br><span class="line">            chrome: <span class="number">59</span>,</span><br><span class="line">            edge: <span class="number">13</span>,</span><br><span class="line">            firefox: <span class="number">50</span>,</span><br><span class="line">          &#125;,</span><br><span class="line">          <span class="comment">// for uglifyjs...</span></span><br><span class="line">          forceAllTransforms: api.env(<span class="string">&quot;production&quot;</span>),</span><br><span class="line">        &#125;,</span><br><span class="line">      ],</span><br><span class="line">    ],</span><br><span class="line">  &#125;;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+</details></p>
+
+<blockquote>
+<p>NOTE: <code>targets.uglify</code> is deprecated and will be removed in the next major in<br>favor of this.</p>
+</blockquote>
+<p>By default, this preset will run all the transforms needed for the targeted<br>environment(s). Enable this option if you want to force running <em>all</em><br>transforms, which is useful if the output will be run through UglifyJS or an<br>environment that only supports ES5.</p>
+<blockquote>
+<p>NOTE: Uglify has a work-in-progress “Harmony” branch to address the lack of<br>ES6 support, but it is not yet stable. You can follow its progress in<br><a target="_blank" rel="noopener" href="https://github.com/mishoo/UglifyJS2/issues/448">UglifyJS2 issue #448</a>. If you<br>require an alternative minifier which <em>does</em> support ES6 syntax, we recommend<br>using <a href="preset-minify.md">babel-minify</a>.</p>
+</blockquote>
+<h3 id="configPath"><a href="#configPath" class="headerlink" title="configPath"></a><code>configPath</code></h3><p><code>string</code>, defaults to <code>process.cwd()</code></p>
+<p>The starting point where the config search for browserslist will start, and ascend to the system root until found.</p>
+<h3 id="ignoreBrowserslistConfig"><a href="#ignoreBrowserslistConfig" class="headerlink" title="ignoreBrowserslistConfig"></a><code>ignoreBrowserslistConfig</code></h3><p><code>boolean</code>, defaults to <code>false</code></p>
+<p>Toggles whether or not <a target="_blank" rel="noopener" href="https://github.com/ai/browserslist#queries">browserslist config sources</a> are used, which includes searching for any browserslist files or referencing the browserslist key inside package.json. This is useful for projects that use a browserslist config for files that won’t be compiled with Babel.</p>
+<h3 id="browserslistEnv"><a href="#browserslistEnv" class="headerlink" title="browserslistEnv"></a><code>browserslistEnv</code></h3><p>Added in: <code>v7.10.0</code><br><code>string</code>, defaults to <code>undefined</code></p>
+<p>The <a target="_blank" rel="noopener" href="https://github.com/browserslist/browserslist#configuring-for-different-environments">Browserslist environment</a> to use.</p>
+<h3 id="shippedProposals"><a href="#shippedProposals" class="headerlink" title="shippedProposals"></a><code>shippedProposals</code></h3><p><code>boolean</code>, defaults to <code>false</code></p>
+<details>
+  <summary>History</summary>
+| Version | Changes |
+| --- | --- |
+| `v7.14.0` | Include private field brand checks |
+| `v7.12.0` | Include class static block and import assertions |
+| `v7.10.0` | Include class properties and private methods |
+| `v7.9.0` | Include numeric separator |
+</details>
+
+<p>Toggles enabling support for builtin/feature proposals that have shipped in browsers. If your target environments have native support for a feature proposal, its matching parser syntax plugin is enabled instead of performing any transform. Note that this <em>does not</em> enable the same transformations as <a href="preset-stage-3.md"><code>@babel/preset-stage-3</code></a>, since proposals can continue to change before landing in browsers.</p>
+<p>The following are currently supported:</p>
+<p><strong>Builtins</strong> injected when using <code>useBuiltIns: &quot;usage&quot;</code></p>
+<ul>
+<li><a target="_blank" rel="noopener" href="https://github.com/tc39/proposal-global">esnext.global-this</a> (only supported by <code>core-js@3</code>)</li>
+<li><a target="_blank" rel="noopener" href="https://github.com/tc39/proposal-string-matchall">esnext.string.match-all</a> (only supported by <code>core-js@3</code>)</li>
+</ul>
+<p><strong>Features</strong></p>
+<ul>
+<li><a target="_blank" rel="noopener" href="https://github.com/tc39/proposal-class-static-block">Class static block</a></li>
+<li><a target="_blank" rel="noopener" href="https://github.com/tc39/proposal-import-assertions">Import assertions</a> (parsing only)</li>
+<li><a target="_blank" rel="noopener" href="https://github.com/tc39/proposal-private-fields-in-in">Private field brand checks</a></li>
+</ul>
+<p><strong>Materialized Features</strong><br>These features were behind <code>shippedProposals</code> flag in older Babel versions. They are now generally available.</p>
+<ul>
+<li><a target="_blank" rel="noopener" href="https://github.com/tc39/proposal-class-fields">class properties</a></li>
+<li><a target="_blank" rel="noopener" href="https://github.com/tc39/proposal-numeric-separator">numeric separator</a></li>
+<li><a target="_blank" rel="noopener" href="https://github.com/tc39/proposal-private-methods">private methods</a></li>
+</ul>
+<blockquote>
+<p>You can read more about configuring preset options <a target="_blank" rel="noopener" href="https://babeljs.io/docs/en/presets#preset-options">here</a></p>
+</blockquote>
+<h2 id="Caveats"><a href="#Caveats" class="headerlink" title="Caveats"></a>Caveats</h2><h3 id="Ineffective-browserslist-queries"><a href="#Ineffective-browserslist-queries" class="headerlink" title="Ineffective browserslist queries"></a>Ineffective browserslist queries</h3><p>While <code>op_mini all</code> is a valid browserslist query, preset-env currently ignores it due to <a target="_blank" rel="noopener" href="https://github.com/kangax/compat-table/issues/1057">lack of support data</a> for Opera Mini.</p>
+
+                        
+          </div>
+          <footer class="article-footer">
+            <a data-url="https://kerita.me/08/02/2021/preset-env/" data-id="ckrun9h3k006wc2kv0ws4hktc" data-title="babel/preset-env 文档"
+              class="article-share-link">
+              分享
+            </a>
+            
+                
+                    
+          </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/08/02/dive-in-react/17-event/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">前一篇</strong>
+      <div class="article-nav-title">
+        
+          React 合成事件机制
+        
+      </div>
+    </a>
+  
+  
+    <a href="/08/01/2021/micro-fe/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">后一篇</strong>
+      <div class="article-nav-title">什么是微前端</div>
+    </a>
+  
+</nav>
+
+      
+</article>
+
+
+    
+        <div id="gitalk-container"></div>
+        <script>
+          if (window.location.pathname !== '/') {
+            var gitalk = new Gitalk({
+              clientID: '572cf28212526e25eb20',
+              clientSecret: 'e3ebf600d6ed24da3f1b447ad85e9a26cced2e58',
+              repo: 'kerita.github.io',
+              owner: 'Kerita',
+              admin: ['Kerita'],
+              id: decodeURI(location.pathname),      // Ensure uniqueness and length less than 50
+              distractionFreeMode: false  // Facebook-like distraction free mode
+            })
+
+            gitalk.render('gitalk-container')
+          }
+        </script></section>
+        
+          <aside id="sidebar">
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">标签云</h3>
+    <div class="widget tagcloud">
+      <a href="/tags/Ajax/" style="font-size: 10px;">Ajax</a> <a href="/tags/CSS/" style="font-size: 13.33px;">CSS</a> <a href="/tags/CSS3/" style="font-size: 13.33px;">CSS3</a> <a href="/tags/HTML/" style="font-size: 13.33px;">HTML</a> <a href="/tags/HTTP/" style="font-size: 10px;">HTTP</a> <a href="/tags/JS/" style="font-size: 20px;">JS</a> <a href="/tags/Markdown/" style="font-size: 10px;">Markdown</a> <a href="/tags/React/" style="font-size: 16.67px;">React</a> <a href="/tags/audio/" style="font-size: 10px;">audio</a> <a href="/tags/hexo/" style="font-size: 10px;">hexo</a> <a href="/tags/house/" style="font-size: 10px;">house</a> <a href="/tags/iOS/" style="font-size: 13.33px;">iOS</a> <a href="/tags/less/" style="font-size: 10px;">less</a> <a href="/tags/npm/" style="font-size: 10px;">npm</a> <a href="/tags/travis-ci/" style="font-size: 10px;">travis-ci</a> <a href="/tags/vscode/" style="font-size: 10px;">vscode</a> <a href="/tags/%E4%BA%BA%E7%94%9F/" style="font-size: 10px;">人生</a> <a href="/tags/%E4%BC%98%E5%8C%96/" style="font-size: 10px;">优化</a> <a href="/tags/%E4%BD%93%E7%B3%BB/" style="font-size: 10px;">体系</a> <a href="/tags/%E5%81%A5%E5%BA%B7/" style="font-size: 13.33px;">健康</a> <a href="/tags/%E5%B7%A5%E7%A8%8B%E5%8C%96/" style="font-size: 16.67px;">工程化</a> <a href="/tags/%E5%B9%B3%E5%87%A1%E4%B9%8B%E8%B7%AF/" style="font-size: 10px;">平凡之路</a> <a href="/tags/%E5%B9%BD%E9%BB%98/" style="font-size: 10px;">幽默</a> <a href="/tags/%E5%BA%94%E7%94%A8/" style="font-size: 10px;">应用</a> <a href="/tags/%E5%BE%AE%E4%BF%A1/" style="font-size: 10px;">微信</a> <a href="/tags/%E6%80%A7%E8%83%BD/" style="font-size: 10px;">性能</a> <a href="/tags/%E6%84%9F%E5%86%92/" style="font-size: 10px;">感冒</a> <a href="/tags/%E6%89%93%E6%89%B0%E4%B8%80%E4%B8%8B/" style="font-size: 10px;">打扰一下</a> <a href="/tags/%E6%9C%B4%E6%A0%91/" style="font-size: 10px;">朴树</a> <a href="/tags/%E6%A8%A1%E5%9D%97%E5%8C%96/" style="font-size: 13.33px;">模块化</a> <a href="/tags/%E6%B5%8F%E8%A7%88%E5%99%A8/" style="font-size: 13.33px;">浏览器</a> <a href="/tags/%E7%A7%BB%E5%8A%A8%E7%AB%AF/" style="font-size: 10px;">移动端</a> <a href="/tags/%E7%BC%96%E8%BE%91%E5%99%A8/" style="font-size: 10px;">编辑器</a> <a href="/tags/%E7%BE%BD%E6%AF%9B%E7%90%83/" style="font-size: 10px;">羽毛球</a> <a href="/tags/%E8%8B%8F%E6%89%93%E7%BB%BF/" style="font-size: 13.33px;">苏打绿</a> <a href="/tags/%E9%A1%B9%E7%9B%AE/" style="font-size: 13.33px;">项目</a>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">最新文章</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/08/02/dive-in-react/17-event/">React 合成事件机制</a>
+          </li>
+        
+          <li>
+            <a href="/08/02/2021/preset-env/">babel/preset-env 文档</a>
+          </li>
+        
+          <li>
+            <a href="/08/01/2021/micro-fe/">什么是微前端</a>
+          </li>
+        
+          <li>
+            <a href="/07/30/2021/replaceAll-is-not-a-function/">从 replaceAll is not a function 说起</a>
+          </li>
+        
+          <li>
+            <a href="/07/29/dive-in-react/11-setState/">setState 是同步还是异步的</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">分类</h3>
+    <div class="widget">
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Babel/">Babel</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/React/">React</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/node/">node</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E4%BA%A7%E5%93%81/">产品</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E5%81%A5%E5%BA%B7/">健康</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E5%89%8D%E7%AB%AF/">前端</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E5%89%8D%E7%AB%AF%E8%BF%9B%E5%87%BB%E7%AC%94%E8%AE%B0/">前端进击笔记</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E5%90%8D%E4%BA%BA/">名人</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E5%B0%8F%E6%8A%80%E5%B7%A7/">小技巧</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E6%80%BB%E7%BB%93/">总结</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E6%9E%84%E5%BB%BA/">构建</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E6%AD%8C/">歌</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E6%B7%B1%E5%85%A5%E6%B5%85%E5%87%BA-React/">深入浅出 React</a></li></ul>
+    </div>
+  </div>
+
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+        <div class="outer">
+          <div id="footer-info" class="inner">
+            
+                  &copy; 2021
+                    Kerita<br>
+                      Powered by <a href="https://hexo.io/" target="_blank">Hexo</a>
+          </div>
+        </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">首页</a>
+  
+    <a href="/archives" class="mobile-nav-link">归档</a>
+  
+    <a href="/about" class="mobile-nav-link">关于我</a>
+  
+    <a href="/guestbook" class="mobile-nav-link">留言板</a>
+  
+</nav>
+    
+
+    
+<script src="/js/jquery-3.4.1.min.js"></script>
+
+
+      
+        
+<script src="/fancybox/jquery.fancybox.min.js"></script>
+
+          
+
+            
+<script src="/js/script.js"></script>
+
+              
+
+
+                
+  </div>
+</body>
+</html>
