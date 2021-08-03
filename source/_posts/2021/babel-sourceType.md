@@ -4,7 +4,7 @@ categories:
 date: 2021-08-03
 ---
 
-[升级 Babel 配置过程](./replaceAll-is-not-a-function) 除了遇到 `replaceAll-is-not-a-function` 问题，还遇到关于 Babel sourceType 配置的问题。
+升级 Babel 配置过程除了遇到 [`replaceAll-is-not-a-function`](/07/30/2021/replaceAll-is-not-a-function/#more) 问题，还遇到关于 Babel sourceType 配置的问题。
 
 <!-- more -->
 
