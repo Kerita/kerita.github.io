@@ -1,6 +1,7 @@
 ---
 title: React 合成事件机制
 categories: 深入浅出 React
+tags: React
 date: 2021-08-02
 ---
 

@@ -1,6 +1,7 @@
 ---
 title: React 15 的调和
-categories:
+categories: 深入浅出 React
+tags: React
 date: 2021-07-28
 ---
 
