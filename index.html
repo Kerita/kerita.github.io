@@ -121,7 +121,7 @@
         
           <div class="e-content article-entry" itemprop="articleBody">
             
-              <p><a href="./replaceAll-is-not-a-function">升级 Babel 配置过程</a> 除了遇到 <code>replaceAll-is-not-a-function</code> 问题，还遇到关于 Babel sourceType 配置的问题。</p>
+              <p>升级 Babel 配置过程除了遇到 <a href="/07/30/2021/replaceAll-is-not-a-function/#more"><code>replaceAll-is-not-a-function</code></a> 问题，还遇到关于 Babel sourceType 配置的问题。</p>
                 
                   <p class="article-more-link">
                     <a href="/08/03/2021/babel-sourceType/#more">
@@ -132,7 +132,146 @@
                     
           </div>
           <footer class="article-footer">
-            <a data-url="https://kerita.me/08/03/2021/babel-sourceType/" data-id="ckrvvurcc002fd2u16l5sdthe" data-title="sourceType 错误"
+            <a data-url="https://kerita.me/08/03/2021/babel-sourceType/" data-id="ckrw2wrh0002fahp93d050noa" data-title="sourceType 错误"
+              class="article-share-link">
+              分享
+            </a>
+            
+                
+                    
+          </footer>
+  </div>
+  
+</article>
+
+
+    
+        <div id="gitalk-container"></div>
+        <script>
+          if (window.location.pathname !== '/') {
+            var gitalk = new Gitalk({
+              clientID: '572cf28212526e25eb20',
+              clientSecret: 'e3ebf600d6ed24da3f1b447ad85e9a26cced2e58',
+              repo: 'kerita.github.io',
+              owner: 'Kerita',
+              admin: ['Kerita'],
+              id: decodeURI(location.pathname),      // Ensure uniqueness and length less than 50
+              distractionFreeMode: false  // Facebook-like distraction free mode
+            })
+
+            gitalk.render('gitalk-container')
+          }
+        </script>
+  
+    <article id="post-read-source-code/react-event" class="h-entry article article-type-post"
+  itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/08/03/read-source-code/react-event/" class="article-date">
+  <time class="dt-published" datetime="2021-08-03T00:00:00.000Z" itemprop="datePublished">2021-08-03</time>
+</a>
+      
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/%E6%BA%90%E7%A0%81%E9%98%85%E8%AF%BB/">源码阅读</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+      
+        <header class="article-header">
+          
+  
+    <h1 itemprop="name">
+      <a class="p-name article-title" href="/08/03/read-source-code/react-event/">React 合成事件源码阅读</a>
+    </h1>
+  
+
+        </header>
+        
+          <div class="e-content article-entry" itemprop="articleBody">
+            
+              <p>React 合成事件是基于事件委托机制，构建的自定义事件体系。将需要监听的事件类型都收集起来放在 document 元素上，待事件触发通过 <code>event.target</code> 将事件分发给相关元素。</p>
+<p>以下是分发时收集相关元素代码，包括两次遍历和获取父元素：</p>
+                
+                  <p class="article-more-link">
+                    <a href="/08/03/read-source-code/react-event/#more">
+                      Read More
+                    </a>
+                  </p>
+                  
+                    
+          </div>
+          <footer class="article-footer">
+            <a data-url="https://kerita.me/08/03/read-source-code/react-event/" data-id="ckrw2wrir0073ahp99uwa8fwt" data-title="React 合成事件源码阅读"
+              class="article-share-link">
+              分享
+            </a>
+            
+                
+                    
+          </footer>
+  </div>
+  
+</article>
+
+
+    
+        <div id="gitalk-container"></div>
+        <script>
+          if (window.location.pathname !== '/') {
+            var gitalk = new Gitalk({
+              clientID: '572cf28212526e25eb20',
+              clientSecret: 'e3ebf600d6ed24da3f1b447ad85e9a26cced2e58',
+              repo: 'kerita.github.io',
+              owner: 'Kerita',
+              admin: ['Kerita'],
+              id: decodeURI(location.pathname),      // Ensure uniqueness and length less than 50
+              distractionFreeMode: false  // Facebook-like distraction free mode
+            })
+
+            gitalk.render('gitalk-container')
+          }
+        </script>
+  
+    <article id="post-read-source-code/setState" class="h-entry article article-type-post"
+  itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/08/03/read-source-code/setState/" class="article-date">
+  <time class="dt-published" datetime="2021-08-03T00:00:00.000Z" itemprop="datePublished">2021-08-03</time>
+</a>
+      
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/%E6%BA%90%E7%A0%81%E9%98%85%E8%AF%BB/">源码阅读</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+      
+        <header class="article-header">
+          
+  
+    <h1 itemprop="name">
+      <a class="p-name article-title" href="/08/03/read-source-code/setState/">setState 源码阅读</a>
+    </h1>
+  
+
+        </header>
+        
+          <div class="e-content article-entry" itemprop="articleBody">
+            
+              <p>在理解<a href="/07/29/dive-in-react/11-setState/">setState 是同步还是异步的</a> 时，梳理下 setState 的源码逻辑，如下：</p>
+                
+                  <p class="article-more-link">
+                    <a href="/08/03/read-source-code/setState/#more">
+                      Read More
+                    </a>
+                  </p>
+                  
+                    
+          </div>
+          <footer class="article-footer">
+            <a data-url="https://kerita.me/08/03/read-source-code/setState/" data-id="ckrw2wris0075ahp9dcdrcgpp" data-title="setState 源码阅读"
               class="article-share-link">
               分享
             </a>
@@ -202,7 +341,7 @@
                     
           </div>
           <footer class="article-footer">
-            <a data-url="https://kerita.me/08/02/dive-in-react/17-event/" data-id="ckrvvurcy0045d2u1ahhh4gsl" data-title="React 合成事件机制"
+            <a data-url="https://kerita.me/08/02/dive-in-react/17-event/" data-id="ckrw2wrhq0045ahp9d6jzaoho" data-title="React 合成事件机制"
               class="article-share-link">
               分享
             </a>
@@ -280,7 +419,7 @@
                     
           </div>
           <footer class="article-footer">
-            <a data-url="https://kerita.me/08/02/2021/preset-env/" data-id="ckrvvure00078d2u1fqw47pgh" data-title="babel/preset-env 文档"
+            <a data-url="https://kerita.me/08/02/2021/preset-env/" data-id="ckrw2writ0078ahp9bsxf3sjl" data-title="babel/preset-env 文档"
               class="article-share-link">
               分享
             </a>
@@ -346,7 +485,7 @@
                     
           </div>
           <footer class="article-footer">
-            <a data-url="https://kerita.me/08/01/2021/micro-fe/" data-id="ckrvvurcj002yd2u10py40ifg" data-title="什么是微前端"
+            <a data-url="https://kerita.me/08/01/2021/micro-fe/" data-id="ckrw2wrh8002yahp98iobhaqd" data-title="什么是微前端"
               class="article-share-link">
               分享
             </a>
@@ -417,7 +556,7 @@
                     
           </div>
           <footer class="article-footer">
-            <a data-url="https://kerita.me/07/30/2021/replaceAll-is-not-a-function/" data-id="ckrvvurcp003gd2u1az7d2si7" data-title="从 replaceAll is not a function 说起"
+            <a data-url="https://kerita.me/07/30/2021/replaceAll-is-not-a-function/" data-id="ckrw2wrhd003gahp923m473ac" data-title="从 replaceAll is not a function 说起"
               class="article-share-link">
               分享
             </a>
@@ -486,7 +625,7 @@
                     
           </div>
           <footer class="article-footer">
-            <a data-url="https://kerita.me/07/29/dive-in-react/11-setState/" data-id="ckrvvurcw0040d2u12u8w8jdx" data-title="setState 是同步还是异步的"
+            <a data-url="https://kerita.me/07/29/dive-in-react/11-setState/" data-id="ckrw2wrho0040ahp9dszp06li" data-title="setState 是同步还是异步的"
               class="article-share-link">
               分享
             </a>
@@ -561,7 +700,7 @@
                     
           </div>
           <footer class="article-footer">
-            <a data-url="https://kerita.me/07/28/dive-in-react/10-reconciliation/" data-id="ckrvvurcv003yd2u17kdjcc89" data-title="React 15 的调和"
+            <a data-url="https://kerita.me/07/28/dive-in-react/10-reconciliation/" data-id="ckrw2wrhm003yahp96obmg3lj" data-title="React 15 的调和"
               class="article-share-link">
               分享
             </a>
@@ -632,150 +771,7 @@
                     
           </div>
           <footer class="article-footer">
-            <a data-url="https://kerita.me/07/28/dive-in-react/9-virtual-dom/" data-id="ckrvvurd4004kd2u19zlk515i" data-title="React 的虚拟 DOM"
-              class="article-share-link">
-              分享
-            </a>
-            
-                
-                    
-  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/React/" rel="tag">React</a></li></ul>
-
-          </footer>
-  </div>
-  
-</article>
-
-
-    
-        <div id="gitalk-container"></div>
-        <script>
-          if (window.location.pathname !== '/') {
-            var gitalk = new Gitalk({
-              clientID: '572cf28212526e25eb20',
-              clientSecret: 'e3ebf600d6ed24da3f1b447ad85e9a26cced2e58',
-              repo: 'kerita.github.io',
-              owner: 'Kerita',
-              admin: ['Kerita'],
-              id: decodeURI(location.pathname),      // Ensure uniqueness and length less than 50
-              distractionFreeMode: false  // Facebook-like distraction free mode
-            })
-
-            gitalk.render('gitalk-container')
-          }
-        </script>
-  
-    <article id="post-dive-in-react/6-hooks" class="h-entry article article-type-post"
-  itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
-  <div class="article-meta">
-    <a href="/07/27/dive-in-react/6-hooks/" class="article-date">
-  <time class="dt-published" datetime="2021-07-27T00:00:00.000Z" itemprop="datePublished">2021-07-27</time>
-</a>
-      
-  <div class="article-category">
-    <a class="article-category-link" href="/categories/%E6%B7%B1%E5%85%A5%E6%B5%85%E5%87%BA-React/">深入浅出 React</a>
-  </div>
-
-  </div>
-  <div class="article-inner">
-    
-      
-        <header class="article-header">
-          
-  
-    <h1 itemprop="name">
-      <a class="p-name article-title" href="/07/27/dive-in-react/6-hooks/">React Hooks 设计思想</a>
-    </h1>
-  
-
-        </header>
-        
-          <div class="e-content article-entry" itemprop="articleBody">
-            
-              <h2 id="什么是-Hooks"><a href="#什么是-Hooks" class="headerlink" title="什么是 Hooks"></a>什么是 Hooks</h2><p>Hooks 是 React 16.8 版本出现的特性，它是诸如 useState、useEffect 等一系列钩子函数。Hooks 的出现开发者在不需要写 class 组件时，也能具有 state 和其他 React 特性，函数组件从 stateless 变成 stateful。</p>
-                
-                  <p class="article-more-link">
-                    <a href="/07/27/dive-in-react/6-hooks/#more">
-                      Read More
-                    </a>
-                  </p>
-                  
-                    
-          </div>
-          <footer class="article-footer">
-            <a data-url="https://kerita.me/07/27/dive-in-react/6-hooks/" data-id="ckrvvurd3004fd2u12xpn3nh8" data-title="React Hooks 设计思想"
-              class="article-share-link">
-              分享
-            </a>
-            
-                
-                    
-  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/React/" rel="tag">React</a></li></ul>
-
-          </footer>
-  </div>
-  
-</article>
-
-
-    
-        <div id="gitalk-container"></div>
-        <script>
-          if (window.location.pathname !== '/') {
-            var gitalk = new Gitalk({
-              clientID: '572cf28212526e25eb20',
-              clientSecret: 'e3ebf600d6ed24da3f1b447ad85e9a26cced2e58',
-              repo: 'kerita.github.io',
-              owner: 'Kerita',
-              admin: ['Kerita'],
-              id: decodeURI(location.pathname),      // Ensure uniqueness and length less than 50
-              distractionFreeMode: false  // Facebook-like distraction free mode
-            })
-
-            gitalk.render('gitalk-container')
-          }
-        </script>
-  
-    <article id="post-dive-in-react/2-lifecycle" class="h-entry article article-type-post"
-  itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
-  <div class="article-meta">
-    <a href="/07/26/dive-in-react/2-lifecycle/" class="article-date">
-  <time class="dt-published" datetime="2021-07-26T00:00:00.000Z" itemprop="datePublished">2021-07-26</time>
-</a>
-      
-  <div class="article-category">
-    <a class="article-category-link" href="/categories/%E6%B7%B1%E5%85%A5%E6%B5%85%E5%87%BA-React/">深入浅出 React</a>
-  </div>
-
-  </div>
-  <div class="article-inner">
-    
-      
-        <header class="article-header">
-          
-  
-    <h1 itemprop="name">
-      <a class="p-name article-title" href="/07/26/dive-in-react/2-lifecycle/">React 生命周期</a>
-    </h1>
-  
-
-        </header>
-        
-          <div class="e-content article-entry" itemprop="articleBody">
-            
-              <h2 id="React-生命周期"><a href="#React-生命周期" class="headerlink" title="React 生命周期"></a>React 生命周期</h2><p>React 是一个构建用户界面的 JavaScript 库，其核心的 Virtual DOM 是由生命周期的 render 方法生成的。初始化时，render 方法生成 Virtual DOM 交给 ReactDOM.render 方法渲染成真实 DOM；更新时， render 方法生成的新 Virtual DOM 与旧 Virtual DOM 进行比较，针对差异部分 ReactDOM.render 对真实 DOM 进行修改。</p>
-<p>React 生命周期中的 render 在其中扮演着 Virtual DOM 生成的关键角色，其他生命周期则像是 render 方法的辅助，做数据的初始化或者修改，辅助 render 方法完成 Virtual DOM 的生成。</p>
-                
-                  <p class="article-more-link">
-                    <a href="/07/26/dive-in-react/2-lifecycle/#more">
-                      Read More
-                    </a>
-                  </p>
-                  
-                    
-          </div>
-          <footer class="article-footer">
-            <a data-url="https://kerita.me/07/26/dive-in-react/2-lifecycle/" data-id="ckrvvurd00048d2u10fc4d1z3" data-title="React 生命周期"
+            <a data-url="https://kerita.me/07/28/dive-in-react/9-virtual-dom/" data-id="ckrw2wrhv004kahp91ppo6k9s" data-title="React 的虚拟 DOM"
               class="article-share-link">
               分享
             </a>
@@ -839,19 +835,19 @@
           </li>
         
           <li>
+            <a href="/08/03/read-source-code/react-event/">React 合成事件源码阅读</a>
+          </li>
+        
+          <li>
+            <a href="/08/03/read-source-code/setState/">setState 源码阅读</a>
+          </li>
+        
+          <li>
             <a href="/08/02/dive-in-react/17-event/">React 合成事件机制</a>
           </li>
         
           <li>
             <a href="/08/02/2021/preset-env/">babel/preset-env 文档</a>
-          </li>
-        
-          <li>
-            <a href="/08/01/2021/micro-fe/">什么是微前端</a>
-          </li>
-        
-          <li>
-            <a href="/07/30/2021/replaceAll-is-not-a-function/">从 replaceAll is not a function 说起</a>
           </li>
         
       </ul>
@@ -863,7 +859,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">分类</h3>
     <div class="widget">
-      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Babel/">Babel</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/React/">React</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/node/">node</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E4%BA%A7%E5%93%81/">产品</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E5%81%A5%E5%BA%B7/">健康</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E5%89%8D%E7%AB%AF/">前端</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E5%89%8D%E7%AB%AF%E8%BF%9B%E5%87%BB%E7%AC%94%E8%AE%B0/">前端进击笔记</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E5%90%8D%E4%BA%BA/">名人</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E5%B0%8F%E6%8A%80%E5%B7%A7/">小技巧</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E6%80%BB%E7%BB%93/">总结</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E6%9E%84%E5%BB%BA/">构建</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E6%AD%8C/">歌</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E6%B7%B1%E5%85%A5%E6%B5%85%E5%87%BA-React/">深入浅出 React</a></li></ul>
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Babel/">Babel</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/React/">React</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/node/">node</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E4%BA%A7%E5%93%81/">产品</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E5%81%A5%E5%BA%B7/">健康</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E5%89%8D%E7%AB%AF/">前端</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E5%89%8D%E7%AB%AF%E8%BF%9B%E5%87%BB%E7%AC%94%E8%AE%B0/">前端进击笔记</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E5%90%8D%E4%BA%BA/">名人</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E5%B0%8F%E6%8A%80%E5%B7%A7/">小技巧</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E6%80%BB%E7%BB%93/">总结</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E6%9E%84%E5%BB%BA/">构建</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E6%AD%8C/">歌</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E6%B7%B1%E5%85%A5%E6%B5%85%E5%87%BA-React/">深入浅出 React</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E6%BA%90%E7%A0%81%E9%98%85%E8%AF%BB/">源码阅读</a></li></ul>
     </div>
   </div>
 
