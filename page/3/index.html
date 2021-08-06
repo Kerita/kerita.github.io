@@ -140,7 +140,7 @@
                     
           </div>
           <footer class="article-footer">
-            <a data-url="https://kerita.me/07/15/fe-attack/10-framework/" data-id="ckrw2wrhx004rahp96jmf53zb" data-title="前端框架模板引擎的实现原理"
+            <a data-url="https://kerita.me/07/15/fe-attack/10-framework/" data-id="cks0ge007005nf7uxb4qx1g9i" data-title="前端框架模板引擎的实现原理"
               class="article-share-link">
               分享
             </a>
@@ -213,7 +213,7 @@
                     
           </div>
           <footer class="article-footer">
-            <a data-url="https://kerita.me/07/13/fe-attack/8-render/" data-id="ckrw2wriq0071ahp90pai2rfn" data-title="浏览器是如何渲染的"
+            <a data-url="https://kerita.me/07/13/fe-attack/8-render/" data-id="cks0ge00p006sf7ux3sg09oeg" data-title="浏览器是如何渲染的"
               class="article-share-link">
               分享
             </a>
@@ -290,7 +290,7 @@
                     
           </div>
           <footer class="article-footer">
-            <a data-url="https://kerita.me/07/12/fe-attack/7-http/" data-id="ckrw2wrip0070ahp99z4r8sw6" data-title="什么是 HTTP 协议"
+            <a data-url="https://kerita.me/07/12/fe-attack/7-http/" data-id="cks0ge00o006pf7uxa5nhfns9" data-title="什么是 HTTP 协议"
               class="article-share-link">
               分享
             </a>
@@ -342,7 +342,7 @@
           
   
     <h1 itemprop="name">
-      <a class="p-name article-title" href="/07/08/2021/api/">接口对接 SOP —及时沟通与前置风险</a>
+      <a class="p-name article-title" href="/07/08/2021/api/">接口对接 SOP —及时沟通、前置风险并解决</a>
     </h1>
   
 
@@ -350,24 +350,47 @@
         
           <div class="e-content article-entry" itemprop="articleBody">
             
-              <h2 id="接口对接过程遇到的问题"><a href="#接口对接过程遇到的问题" class="headerlink" title="接口对接过程遇到的问题"></a>接口对接过程遇到的问题</h2><ul>
-<li>没有接口文档，接口口头或者企业微信简单确认（特别是只有一两个接口）</li>
+                      <h2 id="接口对接过程遇到的问题"><a href="#接口对接过程遇到的问题" class="headerlink" title="接口对接过程遇到的问题"></a>接口对接过程遇到的问题</h2><p>在开发一个项目的时候，接口对接是必不可少的。接口对接也不止发生在前端后端之间，也发生在后端与其他业务线、后端与外部系统，也就是说接口对接是频繁的，并且是重要的。</p>
+<p>然而，在对接过程中，往往我们会遇到以下问题：</p>
+<ul>
+<li>没有接口文档，接口口头或者企业微信简单确认（特别是只有一两个接口时）</li>
 <li>接口文档没有确定交付时间，或者到时间没有交付</li>
-<li>接口文档不全，部分接口缺失或者接口部分字段缺失</li>
-<li>后端修改接口没有通知前端，导致实际接口与接口文档不一致</li>
+<li>接口文档不全，接口缺失或者接口字段缺失</li>
+<li>接口变更，实际接口与接口文档不一致</li>
 <li>……</li>
 </ul>
-                
-                  <p class="article-more-link">
-                    <a href="/07/08/2021/api/#more">
-                      Read More
-                    </a>
-                  </p>
-                  
-                    
+<h2 id="SOP-的重要性"><a href="#SOP-的重要性" class="headerlink" title="SOP 的重要性"></a>SOP 的重要性</h2><p>接口对接是一个很小但是很重要的事情，接口对接不顺畅，可能会导致项目返工以及进度落后。在丰富的工程实践中，我总结了一套接口对接 SOP，针对接口对接过程中的种种问题，将接口对接变成一步步标准化的流程，减少遗漏和错误，提高接口对接过程中的工作效率。</p>
+<p>该 SOP 的策略是：通过主动沟通、及时沟通，保证接口不成为阻塞开发的障碍，及时将在对接过程中存在的风险暴露，将风险前置并且解决，达到对接流畅的目的。</p>
+<h2 id="我的接口对接-SOP"><a href="#我的接口对接-SOP" class="headerlink" title="我的接口对接 SOP"></a>我的接口对接 SOP</h2><h3 id="1-确定接口文档交付时间"><a href="#1-确定接口文档交付时间" class="headerlink" title="1.确定接口文档交付时间"></a>1.确定接口文档交付时间</h3><p>在项目评审阶段，确定好接口文档交付时间，有两个主要原因。</p>
+<p>接口交付时间会影响到接口对接下游的开发进度和排期<br>在企业微信消息或者项目进度表确定时间，尽量确保接口文档按时交付</p>
+<h3 id="2-主动索要接口"><a href="#2-主动索要接口" class="headerlink" title="2.主动索要接口"></a>2.主动索要接口</h3><p>临近交付时间了，可以主动索取接口文档，提高交付准时性。</p>
+<p>有时候虽然按时交付了，但是交付质量非常一般，如多个接口缺失、接口返回错误。所以，交付时对齐、评估并快照接口就显得非常重要。</p>
+<h3 id="3-交付时对齐、评估并快照接口"><a href="#3-交付时对齐、评估并快照接口" class="headerlink" title="3.交付时对齐、评估并快照接口"></a>3.交付时对齐、评估并快照接口</h3><p>接口文档交付时，作为下游，不是回一句 ”收到“ 就够了，而应该分三步走。</p>
+<ul>
+<li><p>对齐接口</p>
+<p>对齐本次有哪些接口<br>接口分别在哪些地方使用<br>就算只有一两个接口也应该落地到接口文档，方便自己还有后来人对接</p>
+</li>
+<li><p>评估接口</p>
+<p>评估接口的方法就是：一个个看接口返回，评估不通过的，及时沟通调整。<br>对于比较复杂的接口，交付前应该协商好接口方案，上下游共同将方案确定。</p>
+<ul>
+<li>确定接口字段，确定是否满足前端业务需求</li>
+<li>评估接口方案是否会影响性能</li>
+<li>确定有推送，以及推送的数据结构</li>
+<li>…..</li>
+</ul>
+</li>
+<li><p>快照接口</p>
+<p>快照接口是将接口文档通过截图、或者复制等方式快照，包括接口请求方法、content-type、以及返回。</p>
+<p>快照接口主要是防止开发过程接口变更，导致联调时接口与一开始约定不一致，最后浪费时间在最终的沟通上。当然，快照接口策略是比较麻烦的，对于一些复杂的接口或者一些特殊情况，我们才视情况使用。</p>
+</li>
+</ul>
+<h3 id="4-明白我们的最终目标"><a href="#4-明白我们的最终目标" class="headerlink" title="4.明白我们的最终目标"></a>4.明白我们的最终目标</h3><p>接口上下游最终目标是一致，都是把项目完成，把项目做好。可能接口对接过程中，会有出现这样那样问题，但我们都应该保持积极向上昂扬的态度，推动事情发展，保证最终目标的达成。永远相信美好的事情将会发生。</p>
+<p>以上。</p>
+
+                        
           </div>
           <footer class="article-footer">
-            <a data-url="https://kerita.me/07/08/2021/api/" data-id="ckrw2wrgy002bahp93jssb8he" data-title="接口对接 SOP —及时沟通与前置风险"
+            <a data-url="https://kerita.me/07/08/2021/api/" data-id="cks0gdzz0003bf7uxhjzscs00" data-title="接口对接 SOP —及时沟通、前置风险并解决"
               class="article-share-link">
               分享
             </a>
@@ -443,7 +466,7 @@
                     
           </div>
           <footer class="article-footer">
-            <a data-url="https://kerita.me/07/06/fe-attack/6-request/" data-id="ckrw2wrid005qahp9cdaigj65" data-title="浏览器如何进行网络请求"
+            <a data-url="https://kerita.me/07/06/fe-attack/6-request/" data-id="cks0ge00m006mf7uxcrup7lye" data-title="浏览器如何进行网络请求"
               class="article-share-link">
               分享
             </a>
@@ -514,7 +537,7 @@
                     
           </div>
           <footer class="article-footer">
-            <a data-url="https://kerita.me/07/05/fe-attack/5-js-run/" data-id="ckrw2wrib005nahp9752u3zcw" data-title="JavaScript 的运行机制"
+            <a data-url="https://kerita.me/07/05/fe-attack/5-js-run/" data-id="cks0ge00l006jf7ux3zjq47jy" data-title="JavaScript 的运行机制"
               class="article-share-link">
               分享
             </a>
@@ -594,7 +617,7 @@
                     
           </div>
           <footer class="article-footer">
-            <a data-url="https://kerita.me/06/30/fe-attack/4-js/" data-id="ckrw2wria005jahp977390czh" data-title="JavaScript 实现继承"
+            <a data-url="https://kerita.me/06/30/fe-attack/4-js/" data-id="cks0ge00k006gf7ux3oij9ipv" data-title="JavaScript 实现继承"
               class="article-share-link">
               分享
             </a>
@@ -665,7 +688,7 @@
                     
           </div>
           <footer class="article-footer">
-            <a data-url="https://kerita.me/06/28/fe-attack/3-css/" data-id="ckrw2wri9005gahp9fag80x10" data-title="CSS 知识点"
+            <a data-url="https://kerita.me/06/28/fe-attack/3-css/" data-id="cks0ge00i006df7uxglda2hiu" data-title="CSS 知识点"
               class="article-share-link">
               分享
             </a>
@@ -736,7 +759,7 @@
                     
           </div>
           <footer class="article-footer">
-            <a data-url="https://kerita.me/06/27/fe-attack/2-html/" data-id="ckrw2wri7005cahp9eoz99yje" data-title="HTML 加载过程"
+            <a data-url="https://kerita.me/06/27/fe-attack/2-html/" data-id="cks0ge00h006af7uxaxuj43uq" data-title="HTML 加载过程"
               class="article-share-link">
               分享
             </a>
@@ -809,7 +832,7 @@
                     
           </div>
           <footer class="article-footer">
-            <a data-url="https://kerita.me/06/24/2021/babel/" data-id="ckrw2wrh1002iahp9cu679l12" data-title="什么是 Babel？"
+            <a data-url="https://kerita.me/06/24/2021/babel/" data-id="cks0gdzz3003gf7ux1rah9uwz" data-title="什么是 Babel？"
               class="article-share-link">
               分享
             </a>
