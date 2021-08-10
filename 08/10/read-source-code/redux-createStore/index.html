@@ -17,17 +17,19 @@
     
       <title>
         
-          标签: 平凡之路 | 
+          Redux createStore 参数传递的精妙之处 | 
               Kerita
       </title>
       <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-      <meta name="description" content="Kerita，个人博客，前端开发，随笔，kerita blog，kerita 博客">
-<meta property="og:type" content="website">
-<meta property="og:title" content="Kerita">
-<meta property="og:url" content="https://kerita.me/tags/%E5%B9%B3%E5%87%A1%E4%B9%8B%E8%B7%AF/index.html">
+      <meta name="description" content="Redux createStore 是 Redux 初始化函数，在参数传递时有个有意思的实现。 判断 preloadState 是否为函数，如果为函数将其作为 enhancer 处理，并重新赋值 preloadState 为 undefined。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Redux createStore 参数传递的精妙之处">
+<meta property="og:url" content="https://kerita.me/08/10/read-source-code/redux-createStore/index.html">
 <meta property="og:site_name" content="Kerita">
-<meta property="og:description" content="Kerita，个人博客，前端开发，随笔，kerita blog，kerita 博客">
+<meta property="og:description" content="Redux createStore 是 Redux 初始化函数，在参数传递时有个有意思的实现。 判断 preloadState 是否为函数，如果为函数将其作为 enhancer 处理，并重新赋值 preloadState 为 undefined。">
 <meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2021-08-10T00:00:00.000Z">
+<meta property="article:modified_time" content="2021-08-10T01:58:55.929Z">
 <meta property="article:author" content="Kerita">
 <meta name="twitter:card" content="summary">
         
@@ -97,42 +99,85 @@
 </header>
 
       <div class="outer">
-        <section id="main">
-  
-  
-    
-    
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2018" class="archive-year">2018</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      <a href="/05/19/2018/pingfan/" class="archive-article-date">
-  <time class="dt-published" datetime="2018-05-19T00:00:00.000Z" itemprop="datePublished">5月 19</time>
+        <section id="main"><article id="post-read-source-code/redux-createStore" class="h-entry article article-type-post"
+  itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/08/10/read-source-code/redux-createStore/" class="article-date">
+  <time class="dt-published" datetime="2021-08-10T00:00:00.000Z" itemprop="datePublished">2021-08-10</time>
 </a>
       
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/%E6%BA%90%E7%A0%81%E9%98%85%E8%AF%BB/">源码阅读</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+      
+        <header class="article-header">
+          
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/05/19/2018/pingfan/">打扰一下的平凡之路</a>
+    <h1 class="p-name article-title" itemprop="headline name">
+      Redux createStore 参数传递的精妙之处
     </h1>
   
 
-    </header>
+        </header>
+        
+          <div class="e-content article-entry" itemprop="articleBody">
+            
+                      <p>Redux createStore 是 Redux 初始化函数，在参数传递时有个有意思的实现。</p>
+<p>判断 <code>preloadState</code> 是否为函数，如果为函数将其作为 <code>enhancer</code> 处理，并重新赋值 <code>preloadState</code> 为 <code>undefined</code>。</p>
+<a id="more"></a>
+
+<p>这样即可在不传入第二个 <code>preloadState</code> 的情况下，传入第三个参数 <code>enhancer</code>。</p>
+<p>其实现如下：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">function createStore(reducer,preloadedState, enhancer) &#123;</span><br><span class="line">    &#x2F;&#x2F; 这里处理的是没有设定初始状态的情况，也就是第一个参数和第二个参数都传 function 的情况</span><br><span class="line">    if (typeof preloadedState &#x3D;&#x3D;&#x3D; &#39;function&#39; &amp;&amp; typeof enhancer &#x3D;&#x3D;&#x3D; &#39;undefined&#39;) &#123;</span><br><span class="line">        &#x2F;&#x2F; 此时第二个参数会被认为是 enhancer（中间件）</span><br><span class="line">        enhancer &#x3D; preloadedState;</span><br><span class="line">        preloadedState &#x3D; undefined;</span><br><span class="line">    &#125;</span><br><span class="line">    &#x2F;&#x2F; 当 enhancer 不为空时，便会将原来的 createStore 作为参数传入到 enhancer 中</span><br><span class="line">    if (typeof enhancer !&#x3D;&#x3D; &#39;undefined&#39;) &#123;</span><br><span class="line">        return enhancer(createStore)(reducer, preloadedState);</span><br><span class="line">    &#125;</span><br><span class="line">		......</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+                        
+          </div>
+          <footer class="article-footer">
+            <a data-url="https://kerita.me/08/10/read-source-code/redux-createStore/" data-id="cks5f1gws0064c1oig46w0fua" data-title="Redux createStore 参数传递的精妙之处"
+              class="article-share-link">
+              分享
+            </a>
+            
+                
+                    
+          </footer>
   </div>
+  
+    
+<nav id="article-nav">
+  
+  
+    <a href="/08/03/2021/babel-sourceType/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">后一篇</strong>
+      <div class="article-nav-title">sourceType 错误</div>
+    </a>
+  
+</nav>
+
+      
 </article>
-  
-  
-    </div></section>
-  
 
 
-</section>
+    
+        <div id="gitalk-container"></div>
+        <script>
+          if (window.location.pathname !== '/') {
+            var gitalk = new Gitalk({
+              clientID: '572cf28212526e25eb20',
+              clientSecret: 'e3ebf600d6ed24da3f1b447ad85e9a26cced2e58',
+              repo: 'kerita.github.io',
+              owner: 'Kerita',
+              admin: ['Kerita'],
+              id: decodeURI(location.pathname),      // Ensure uniqueness and length less than 50
+              distractionFreeMode: false  // Facebook-like distraction free mode
+            })
+
+            gitalk.render('gitalk-container')
+          }
+        </script></section>
         
           <aside id="sidebar">
   

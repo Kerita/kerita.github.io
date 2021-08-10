@@ -98,6 +98,76 @@
       <div class="outer">
         <section id="main">
   
+    <article id="post-read-source-code/redux-createStore" class="h-entry article article-type-post"
+  itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/08/10/read-source-code/redux-createStore/" class="article-date">
+  <time class="dt-published" datetime="2021-08-10T00:00:00.000Z" itemprop="datePublished">2021-08-10</time>
+</a>
+      
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/%E6%BA%90%E7%A0%81%E9%98%85%E8%AF%BB/">源码阅读</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+      
+        <header class="article-header">
+          
+  
+    <h1 itemprop="name">
+      <a class="p-name article-title" href="/08/10/read-source-code/redux-createStore/">Redux createStore 参数传递的精妙之处</a>
+    </h1>
+  
+
+        </header>
+        
+          <div class="e-content article-entry" itemprop="articleBody">
+            
+              <p>Redux createStore 是 Redux 初始化函数，在参数传递时有个有意思的实现。</p>
+<p>判断 <code>preloadState</code> 是否为函数，如果为函数将其作为 <code>enhancer</code> 处理，并重新赋值 <code>preloadState</code> 为 <code>undefined</code>。</p>
+                
+                  <p class="article-more-link">
+                    <a href="/08/10/read-source-code/redux-createStore/#more">
+                      Read More
+                    </a>
+                  </p>
+                  
+                    
+          </div>
+          <footer class="article-footer">
+            <a data-url="https://kerita.me/08/10/read-source-code/redux-createStore/" data-id="cks5f1gws0064c1oig46w0fua" data-title="Redux createStore 参数传递的精妙之处"
+              class="article-share-link">
+              分享
+            </a>
+            
+                
+                    
+          </footer>
+  </div>
+  
+</article>
+
+
+    
+        <div id="gitalk-container"></div>
+        <script>
+          if (window.location.pathname !== '/') {
+            var gitalk = new Gitalk({
+              clientID: '572cf28212526e25eb20',
+              clientSecret: 'e3ebf600d6ed24da3f1b447ad85e9a26cced2e58',
+              repo: 'kerita.github.io',
+              owner: 'Kerita',
+              admin: ['Kerita'],
+              id: decodeURI(location.pathname),      // Ensure uniqueness and length less than 50
+              distractionFreeMode: false  // Facebook-like distraction free mode
+            })
+
+            gitalk.render('gitalk-container')
+          }
+        </script>
+  
     <article id="post-2021/babel-sourceType" class="h-entry article article-type-post"
   itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
   <div class="article-meta">
@@ -132,7 +202,7 @@
                     
           </div>
           <footer class="article-footer">
-            <a data-url="https://kerita.me/08/03/2021/babel-sourceType/" data-id="cks0gdzz1003df7uxah2e4znn" data-title="sourceType 错误"
+            <a data-url="https://kerita.me/08/03/2021/babel-sourceType/" data-id="cks5f1gv7002fc1oi6pbz9ew4" data-title="sourceType 错误"
               class="article-share-link">
               分享
             </a>
@@ -202,7 +272,7 @@
                     
           </div>
           <footer class="article-footer">
-            <a data-url="https://kerita.me/08/03/read-source-code/react-event/" data-id="cks0ge00r006uf7ux9yv284wo" data-title="React 合成事件源码阅读"
+            <a data-url="https://kerita.me/08/03/read-source-code/react-event/" data-id="cks5f1gwq0061c1oia0gkcobp" data-title="React 合成事件源码阅读"
               class="article-share-link">
               分享
             </a>
@@ -271,7 +341,7 @@
                     
           </div>
           <footer class="article-footer">
-            <a data-url="https://kerita.me/08/03/read-source-code/setState/" data-id="cks0ge00r006xf7uxgya35gns" data-title="setState 源码阅读"
+            <a data-url="https://kerita.me/08/03/read-source-code/setState/" data-id="cks5f1gwt0069c1oi5xaw9ep9" data-title="setState 源码阅读"
               class="article-share-link">
               分享
             </a>
@@ -341,7 +411,7 @@
                     
           </div>
           <footer class="article-footer">
-            <a data-url="https://kerita.me/08/02/dive-in-react/17-event/" data-id="cks0gdzzt0051f7uxekly7a2t" data-title="React 合成事件机制"
+            <a data-url="https://kerita.me/08/02/dive-in-react/17-event/" data-id="cks5f1gvu0045c1oi0fpz2th4" data-title="React 合成事件机制"
               class="article-share-link">
               分享
             </a>
@@ -419,7 +489,7 @@
                     
           </div>
           <footer class="article-footer">
-            <a data-url="https://kerita.me/08/02/2021/preset-env/" data-id="cks0ge00v007af7uxguseb9eg" data-title="babel/preset-env 文档"
+            <a data-url="https://kerita.me/08/02/2021/preset-env/" data-id="cks5f1gx7007hc1oiamj05ha9" data-title="babel/preset-env 文档"
               class="article-share-link">
               分享
             </a>
@@ -485,7 +555,7 @@
                     
           </div>
           <footer class="article-footer">
-            <a data-url="https://kerita.me/08/01/2021/micro-fe/" data-id="cks0gdzzb003wf7uxhedl99b8" data-title="什么是微前端"
+            <a data-url="https://kerita.me/08/01/2021/micro-fe/" data-id="cks5f1gve002yc1oi6in6czys" data-title="什么是微前端"
               class="article-share-link">
               分享
             </a>
@@ -556,7 +626,7 @@
                     
           </div>
           <footer class="article-footer">
-            <a data-url="https://kerita.me/07/30/2021/replaceAll-is-not-a-function/" data-id="cks0gdzzh004bf7ux8sd1530j" data-title="从 replaceAll is not a function 说起"
+            <a data-url="https://kerita.me/07/30/2021/replaceAll-is-not-a-function/" data-id="cks5f1gvk003gc1oidgr11u89" data-title="从 replaceAll is not a function 说起"
               class="article-share-link">
               分享
             </a>
@@ -625,7 +695,7 @@
                     
           </div>
           <footer class="article-footer">
-            <a data-url="https://kerita.me/07/29/dive-in-react/11-setState/" data-id="cks0gdzzs004xf7uxfdqs535c" data-title="setState 是同步还是异步的"
+            <a data-url="https://kerita.me/07/29/dive-in-react/11-setState/" data-id="cks5f1gvs0040c1oice8jgsp6" data-title="setState 是同步还是异步的"
               class="article-share-link">
               分享
             </a>
@@ -700,78 +770,7 @@
                     
           </div>
           <footer class="article-footer">
-            <a data-url="https://kerita.me/07/28/dive-in-react/10-reconciliation/" data-id="cks0gdzzp004uf7ux7c1xbgot" data-title="React 15 的调和"
-              class="article-share-link">
-              分享
-            </a>
-            
-                
-                    
-  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/React/" rel="tag">React</a></li></ul>
-
-          </footer>
-  </div>
-  
-</article>
-
-
-    
-        <div id="gitalk-container"></div>
-        <script>
-          if (window.location.pathname !== '/') {
-            var gitalk = new Gitalk({
-              clientID: '572cf28212526e25eb20',
-              clientSecret: 'e3ebf600d6ed24da3f1b447ad85e9a26cced2e58',
-              repo: 'kerita.github.io',
-              owner: 'Kerita',
-              admin: ['Kerita'],
-              id: decodeURI(location.pathname),      // Ensure uniqueness and length less than 50
-              distractionFreeMode: false  // Facebook-like distraction free mode
-            })
-
-            gitalk.render('gitalk-container')
-          }
-        </script>
-  
-    <article id="post-dive-in-react/9-virtual-dom" class="h-entry article article-type-post"
-  itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
-  <div class="article-meta">
-    <a href="/07/28/dive-in-react/9-virtual-dom/" class="article-date">
-  <time class="dt-published" datetime="2021-07-28T00:00:00.000Z" itemprop="datePublished">2021-07-28</time>
-</a>
-      
-  <div class="article-category">
-    <a class="article-category-link" href="/categories/%E6%B7%B1%E5%85%A5%E6%B5%85%E5%87%BA-React/">深入浅出 React</a>
-  </div>
-
-  </div>
-  <div class="article-inner">
-    
-      
-        <header class="article-header">
-          
-  
-    <h1 itemprop="name">
-      <a class="p-name article-title" href="/07/28/dive-in-react/9-virtual-dom/">React 的虚拟 DOM</a>
-    </h1>
-  
-
-        </header>
-        
-          <div class="e-content article-entry" itemprop="articleBody">
-            
-              <p>虚拟 DOM 是使用 JS 对象来描述真实 DOM 结构。在数据发生改变时，虚拟 DOM 也发生改变，通过对比新旧虚拟 DOM 结构(diff)，找出二者差异，对真实 DOM 结构做更新(patch)。</p>
-                
-                  <p class="article-more-link">
-                    <a href="/07/28/dive-in-react/9-virtual-dom/#more">
-                      Read More
-                    </a>
-                  </p>
-                  
-                    
-          </div>
-          <footer class="article-footer">
-            <a data-url="https://kerita.me/07/28/dive-in-react/9-virtual-dom/" data-id="cks0ge004005gf7uxdqho6xwp" data-title="React 的虚拟 DOM"
+            <a data-url="https://kerita.me/07/28/dive-in-react/10-reconciliation/" data-id="cks5f1gvr003yc1oi5fqibfg3" data-title="React 15 的调和"
               class="article-share-link">
               分享
             </a>
@@ -831,6 +830,10 @@
       <ul>
         
           <li>
+            <a href="/08/10/read-source-code/redux-createStore/">Redux createStore 参数传递的精妙之处</a>
+          </li>
+        
+          <li>
             <a href="/08/03/2021/babel-sourceType/">sourceType 错误</a>
           </li>
         
@@ -844,10 +847,6 @@
         
           <li>
             <a href="/08/02/dive-in-react/17-event/">React 合成事件机制</a>
-          </li>
-        
-          <li>
-            <a href="/08/02/2021/preset-env/">babel/preset-env 文档</a>
           </li>
         
       </ul>
