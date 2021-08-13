@@ -1,0 +1,347 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-114680595-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-114680595-1');
+</script>
+<!-- End Google Analytics -->
+
+    
+      <title>
+        
+          Object，Map，Set 区别 | 
+              Kerita
+      </title>
+      <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+      <meta name="description" content="ObjectObject 是 key-value 的数据结构，与 JSON 结构一样。点击链接可查看以下示例  记录器有时候我们也把 Object 当做一个记录器，例如记录某个列表的状态。  12345678910111213141516   const list &#x3D; [     &amp;#123;       id: 1     &amp;#125;,     &amp;#123;       id: 2">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Object，Map，Set 区别">
+<meta property="og:url" content="https://kerita.me/08/13/ES6/obj-map-set/index.html">
+<meta property="og:site_name" content="Kerita">
+<meta property="og:description" content="ObjectObject 是 key-value 的数据结构，与 JSON 结构一样。点击链接可查看以下示例  记录器有时候我们也把 Object 当做一个记录器，例如记录某个列表的状态。  12345678910111213141516   const list &#x3D; [     &amp;#123;       id: 1     &amp;#125;,     &amp;#123;       id: 2">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2021-08-13T00:00:00.000Z">
+<meta property="article:modified_time" content="2021-08-13T13:20:26.286Z">
+<meta property="article:author" content="Kerita">
+<meta name="twitter:card" content="summary">
+        
+          <link rel="alternate" href="/atom.xml" title="Kerita" type="application/atom+xml">
+            
+                  
+                    <link rel="shortcut icon" href="/favicon.png">
+                      
+                        
+                          
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/typeface-source-code-pro@0.0.71/index.min.css">
+
+                            
+                              
+<link rel="stylesheet" href="/css/style.css">
+
+                                
+                                  
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.min.css">
+
+                                    
+
+                                      <link rel="stylesheet"
+                                        href="https://cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.css" />
+                                      <script src="https://cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.min.js"> </script>
+<meta name="generator" content="Hexo 5.3.0"></head>
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">Kerita</a>
+      </h1>
+      
+        <h2 id="subtitle-wrap">
+          <a href="/" id="subtitle">自律谦逊，承担责任，推迟满足感，你要热爱它</a>
+        </h2>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">首页</a>
+        
+          <a class="main-nav-link" href="/archives">归档</a>
+        
+          <a class="main-nav-link" href="/about">关于我</a>
+        
+          <a class="main-nav-link" href="/guestbook">留言板</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS 订阅"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="搜索"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="搜索"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="https://kerita.me"></form>
+      </div>
+    </div>
+  </div>
+</header>
+
+      <div class="outer">
+        <section id="main"><article id="post-ES6/obj-map-set" class="h-entry article article-type-post"
+  itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/08/13/ES6/obj-map-set/" class="article-date">
+  <time class="dt-published" datetime="2021-08-13T00:00:00.000Z" itemprop="datePublished">2021-08-13</time>
+</a>
+      
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/ES6/">ES6</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+      
+        <header class="article-header">
+          
+  
+    <h1 class="p-name article-title" itemprop="headline name">
+      Object，Map，Set 区别
+    </h1>
+  
+
+        </header>
+        
+          <div class="e-content article-entry" itemprop="articleBody">
+            
+                      <h2 id="Object"><a href="#Object" class="headerlink" title="Object"></a>Object</h2><p>Object 是 key-value 的数据结构，与 JSON 结构一样。<a target="_blank" rel="noopener" href="https://codesandbox.io/s/object-nku94?file=/index.html:659-691">点击链接可查看以下示例</a></p>
+<ul>
+<li>记录器<br>有时候我们也把 Object 当做一个记录器，例如记录某个列表的状态。</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">   const list &#x3D; [</span><br><span class="line">     &#123;</span><br><span class="line">       id: 1</span><br><span class="line">     &#125;,</span><br><span class="line">     &#123;</span><br><span class="line">       id: 2</span><br><span class="line">     &#125;</span><br><span class="line">   ];</span><br><span class="line"></span><br><span class="line">   const obj &#x3D; &#123;&#125;;</span><br><span class="line"></span><br><span class="line">   list.forEach((item) &#x3D;&gt; &#123;</span><br><span class="line">     obj[item.id] &#x3D; item.id &gt; 1 ? true : false;</span><br><span class="line">   &#125;);</span><br><span class="line"></span><br><span class="line">console.log(obj); &#x2F;&#x2F; &#123;1: false, 2: true&#125;</span><br></pre></td></tr></table></figure>
+<a id="more"></a>
+
+<ul>
+<li><p>Object 的 key 只能为原型类型<br>如果将引用类型作为 Object 的 key，会自动调用该引用类型的 toString() 方法转为字符串。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">console.log(obj);</span><br><span class="line"></span><br><span class="line">console.log(Object.keys(obj)); &#x2F;&#x2F; &#123;1: false, 2: true, [object Object],[object Object]: 1&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure></li>
+<li><p>Object.keys()<br>Object 的静态方法，将传入的 obj 的 key 放到同一个数组。</p>
+</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">console.log(Object.keys(obj)); &#x2F;&#x2F; [&quot;1&quot;, &quot;2&quot;]</span><br></pre></td></tr></table></figure>
+<ul>
+<li>Object.values()<br>Object 的静态方法，将传入的 obj 的 value 放到同一个数组。</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">console.log(Object.values(obj)); &#x2F;&#x2F; [false, true]</span><br></pre></td></tr></table></figure>
+<h2 id="Map（字典）"><a href="#Map（字典）" class="headerlink" title="Map（字典）"></a>Map（字典）</h2><p>Map 是 key-value 结构，key 可以是任何类型的值。</p>
+<p>操作方法：</p>
+<ul>
+<li>set(key, value)：向字典中添加新元素</li>
+<li>get(key)：通过键查找特定的数值并返回</li>
+<li>has(key)：判断字典中是否存在键 key</li>
+<li>delete(key)：通过键 key 从字典中移除对应的数据</li>
+<li>clear()：将这个字典中的所有元素删除</li>
+</ul>
+<p>遍历方法：</p>
+<ul>
+<li>keys()：将字典中包含的所有键名以迭代器形式返回</li>
+<li>values()：将字典中包含的所有数值以迭代器形式返回</li>
+<li>entries()：返回所有成员的迭代器</li>
+<li>forEach()：遍历字典的所有成员</li>
+</ul>
+<h2 id="WeakMap"><a href="#WeakMap" class="headerlink" title="WeakMap"></a>WeakMap</h2><p>key 是弱引用，即 value 是正常引用。但没有其他地方引用 key，垃圾回收机制就会将 key 回收。WeakMap 是不可枚举的。</p>
+<p>操作方法：</p>
+<ul>
+<li>has(key)：判断是否有 key 关联对象</li>
+<li>get(key)：返回 key 关联对象（没有则则返回 undefined）</li>
+<li>set(key)：设置一组 key 关联对象</li>
+<li>delete(key)：移除 key 的关联对象</li>
+</ul>
+<h2 id="Set（集合）"><a href="#Set（集合）" class="headerlink" title="Set（集合）"></a>Set（集合）</h2><ul>
+<li>成员唯一、无序且不重复。</li>
+<li>[value, value]，键值与键名是一致的（或者说只有键值，没有键名）</li>
+<li>可以遍历，操作方法有：add、delete、has</li>
+</ul>
+<p>遍历方法：</p>
+<ul>
+<li>keys()：返回一个包含集合中所有键的迭代器</li>
+<li>values()：返回一个包含集合中所有值得迭代器</li>
+<li>entries()：返回一个包含 Set 对象中所有元素得键值对迭代器</li>
+<li>forEach(callbackFn, thisArg)：用于对集合成员执行 callbackFn 操作，如果提供了 thisArg 参数，回调中的 this 会是这个参数，没有返回值</li>
+</ul>
+<h2 id="WeakSet"><a href="#WeakSet" class="headerlink" title="WeakSet"></a>WeakSet</h2><ul>
+<li>成员都是对象</li>
+<li>成员都是弱引用，可以被垃圾回收机制回收，可以用来保存 DOM 节点，不容易造成内存泄漏</li>
+<li>不能遍历，方法有 add、delete、has</li>
+</ul>
+<h2 id="使用场景"><a href="#使用场景" class="headerlink" title="使用场景"></a>使用场景</h2><ul>
+<li><p>Map 与 WeakMap<br>Map 可以提供任何值的映射，是更完美的 hash 结构，例如要映射数组对应的值，Object 满足不了，可使用 Map。</p>
+<p>WeakMap 的 key 只能为引用，不再其他地方引用就会回收。下面把 DOM 作为 key，DOM 消失监听函数也会消失。</p>
+</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">&#x2F;&#x2F; 代码1</span><br><span class="line">ele1.addEventListener(&#39;click&#39;, handler1, false);</span><br><span class="line">ele2.addEventListener(&#39;click&#39;, handler2, false);</span><br><span class="line"></span><br><span class="line">&#x2F;&#x2F; 代码2</span><br><span class="line">const listener &#x3D; new WeakMap();</span><br><span class="line"></span><br><span class="line">listener.set(ele1, handler1);</span><br><span class="line">listener.set(ele2, handler2);</span><br><span class="line"></span><br><span class="line">ele1.addEventListener(&#39;click&#39;, listener.get(ele1), false);</span><br><span class="line">ele2.addEventListener(&#39;click&#39;, listener.get(ele2), false);</span><br></pre></td></tr></table></figure>
+<ul>
+<li>Set 与 WeakSet<br>Set 与 WeakSet 可以用展开语法，实现数组去重。当然 WeakSet 的值只能为引用类型。</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">var set &#x3D; new Set([1, 2, 3, 4, 4]);</span><br><span class="line">[...set]</span><br><span class="line">&#x2F;&#x2F; [1, 2, 3, 4]</span><br></pre></td></tr></table></figure>
+<h2 id="参考资料"><a href="#参考资料" class="headerlink" title="参考资料"></a>参考资料</h2><ul>
+<li><a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/81234278">前端面试题之 Set,Map 的区别</a></li>
+</ul>
+
+                        
+          </div>
+          <footer class="article-footer">
+            <a data-url="https://kerita.me/08/13/ES6/obj-map-set/" data-id="cksadqwy4003ucxtdejon55op" data-title="Object，Map，Set 区别"
+              class="article-share-link">
+              分享
+            </a>
+            
+                
+                    
+          </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+  
+    <a href="/08/10/read-source-code/redux-createStore/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">后一篇</strong>
+      <div class="article-nav-title">Redux createStore 参数传递的精妙之处</div>
+    </a>
+  
+</nav>
+
+      
+</article>
+
+
+    
+        <div id="gitalk-container"></div>
+        <script>
+          if (window.location.pathname !== '/') {
+            var gitalk = new Gitalk({
+              clientID: '572cf28212526e25eb20',
+              clientSecret: 'e3ebf600d6ed24da3f1b447ad85e9a26cced2e58',
+              repo: 'kerita.github.io',
+              owner: 'Kerita',
+              admin: ['Kerita'],
+              id: decodeURI(location.pathname),      // Ensure uniqueness and length less than 50
+              distractionFreeMode: false  // Facebook-like distraction free mode
+            })
+
+            gitalk.render('gitalk-container')
+          }
+        </script></section>
+        
+          <aside id="sidebar">
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">标签云</h3>
+    <div class="widget tagcloud">
+      <a href="/tags/Ajax/" style="font-size: 10px;">Ajax</a> <a href="/tags/CSS/" style="font-size: 12.5px;">CSS</a> <a href="/tags/CSS3/" style="font-size: 12.5px;">CSS3</a> <a href="/tags/HTML/" style="font-size: 12.5px;">HTML</a> <a href="/tags/HTTP/" style="font-size: 10px;">HTTP</a> <a href="/tags/JS/" style="font-size: 17.5px;">JS</a> <a href="/tags/Markdown/" style="font-size: 10px;">Markdown</a> <a href="/tags/React/" style="font-size: 20px;">React</a> <a href="/tags/audio/" style="font-size: 10px;">audio</a> <a href="/tags/hexo/" style="font-size: 10px;">hexo</a> <a href="/tags/house/" style="font-size: 10px;">house</a> <a href="/tags/iOS/" style="font-size: 12.5px;">iOS</a> <a href="/tags/less/" style="font-size: 10px;">less</a> <a href="/tags/npm/" style="font-size: 10px;">npm</a> <a href="/tags/travis-ci/" style="font-size: 10px;">travis-ci</a> <a href="/tags/vscode/" style="font-size: 10px;">vscode</a> <a href="/tags/%E4%BA%BA%E7%94%9F/" style="font-size: 10px;">人生</a> <a href="/tags/%E4%BC%98%E5%8C%96/" style="font-size: 10px;">优化</a> <a href="/tags/%E4%BD%93%E7%B3%BB/" style="font-size: 10px;">体系</a> <a href="/tags/%E5%81%A5%E5%BA%B7/" style="font-size: 12.5px;">健康</a> <a href="/tags/%E5%B7%A5%E7%A8%8B%E5%8C%96/" style="font-size: 15px;">工程化</a> <a href="/tags/%E5%B9%B3%E5%87%A1%E4%B9%8B%E8%B7%AF/" style="font-size: 10px;">平凡之路</a> <a href="/tags/%E5%B9%BD%E9%BB%98/" style="font-size: 10px;">幽默</a> <a href="/tags/%E5%BA%94%E7%94%A8/" style="font-size: 10px;">应用</a> <a href="/tags/%E5%BE%AE%E4%BF%A1/" style="font-size: 10px;">微信</a> <a href="/tags/%E6%80%A7%E8%83%BD/" style="font-size: 10px;">性能</a> <a href="/tags/%E6%84%9F%E5%86%92/" style="font-size: 10px;">感冒</a> <a href="/tags/%E6%89%93%E6%89%B0%E4%B8%80%E4%B8%8B/" style="font-size: 10px;">打扰一下</a> <a href="/tags/%E6%9C%B4%E6%A0%91/" style="font-size: 10px;">朴树</a> <a href="/tags/%E6%A8%A1%E5%9D%97%E5%8C%96/" style="font-size: 12.5px;">模块化</a> <a href="/tags/%E6%B5%8F%E8%A7%88%E5%99%A8/" style="font-size: 12.5px;">浏览器</a> <a href="/tags/%E7%A7%BB%E5%8A%A8%E7%AB%AF/" style="font-size: 10px;">移动端</a> <a href="/tags/%E7%BC%96%E8%BE%91%E5%99%A8/" style="font-size: 10px;">编辑器</a> <a href="/tags/%E7%BE%BD%E6%AF%9B%E7%90%83/" style="font-size: 10px;">羽毛球</a> <a href="/tags/%E8%8B%8F%E6%89%93%E7%BB%BF/" style="font-size: 12.5px;">苏打绿</a> <a href="/tags/%E9%A1%B9%E7%9B%AE/" style="font-size: 12.5px;">项目</a>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">最新文章</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/08/13/ES6/obj-map-set/">Object，Map，Set 区别</a>
+          </li>
+        
+          <li>
+            <a href="/08/10/read-source-code/redux-createStore/">Redux createStore 参数传递的精妙之处</a>
+          </li>
+        
+          <li>
+            <a href="/08/03/2021/babel-sourceType/">sourceType 错误</a>
+          </li>
+        
+          <li>
+            <a href="/08/03/read-source-code/react-event/">React 合成事件源码阅读</a>
+          </li>
+        
+          <li>
+            <a href="/08/03/read-source-code/setState/">setState 源码阅读</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">分类</h3>
+    <div class="widget">
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Babel/">Babel</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/ES6/">ES6</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/React/">React</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/node/">node</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E4%BA%A7%E5%93%81/">产品</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E5%81%A5%E5%BA%B7/">健康</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E5%89%8D%E7%AB%AF/">前端</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E5%89%8D%E7%AB%AF%E8%BF%9B%E5%87%BB%E7%AC%94%E8%AE%B0/">前端进击笔记</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E5%90%8D%E4%BA%BA/">名人</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E5%B0%8F%E6%8A%80%E5%B7%A7/">小技巧</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E6%80%BB%E7%BB%93/">总结</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E6%9E%84%E5%BB%BA/">构建</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E6%AD%8C/">歌</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E6%B7%B1%E5%85%A5%E6%B5%85%E5%87%BA-React/">深入浅出 React</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E6%BA%90%E7%A0%81%E9%98%85%E8%AF%BB/">源码阅读</a></li></ul>
+    </div>
+  </div>
+
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+        <div class="outer">
+          <div id="footer-info" class="inner">
+            
+                  &copy; 2021
+                    Kerita<br>
+                      Powered by <a href="https://hexo.io/" target="_blank">Hexo</a>
+          </div>
+        </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">首页</a>
+  
+    <a href="/archives" class="mobile-nav-link">归档</a>
+  
+    <a href="/about" class="mobile-nav-link">关于我</a>
+  
+    <a href="/guestbook" class="mobile-nav-link">留言板</a>
+  
+</nav>
+    
+
+    
+<script src="/js/jquery-3.4.1.min.js"></script>
+
+
+      
+        
+<script src="/fancybox/jquery.fancybox.min.js"></script>
+
+          
+
+            
+<script src="/js/script.js"></script>
+
+              
+
+
+                
+  </div>
+</body>
+</html>
