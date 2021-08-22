@@ -29,7 +29,7 @@
 <meta property="og:description" content="Vue 模板引擎工作过程以 Vue 为例子，对于开发者编写的 Vue 代码，Vue 会将其进行以下处理从而渲染到页面中： 1.解析语法生成 AST 对象； 2.根据生成的 AST 对象，完成 data 数据初始化； 3.根据 AST 对象和 data 数据绑定情况，生成虚拟 DOM 对象； 4.将虚拟 DOM 对象生成真正的 DOM 元素插入到页面中，此时页面会被渲染。">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2021-07-15T00:00:00.000Z">
-<meta property="article:modified_time" content="2021-08-13T13:20:26.310Z">
+<meta property="article:modified_time" content="2021-08-22T02:10:58.567Z">
 <meta property="article:author" content="Kerita">
 <meta property="article:tag" content="浏览器">
 <meta name="twitter:card" content="summary">
@@ -139,7 +139,7 @@
                         
           </div>
           <footer class="article-footer">
-            <a data-url="https://kerita.me/07/15/fe-attack/10-framework/" data-id="cksadqwyn004ucxtddc1j854p" data-title="前端框架模板引擎的实现原理"
+            <a data-url="https://kerita.me/07/15/fe-attack/10-framework/" data-id="cksmkrqp1004wd2n8efzm47zv" data-title="前端框架模板引擎的实现原理"
               class="article-share-link">
               分享
             </a>
@@ -152,46 +152,53 @@
   </div>
   
     
-<nav id="article-nav">
-  
-    <a href="/07/16/fe-attack/11-fe/" id="article-nav-newer" class="article-nav-link-wrap">
-      <strong class="article-nav-caption">前一篇</strong>
-      <div class="article-nav-title">
+  <nav id="article-nav">
+    
+      <a href="/07/16/fe-attack/11-fe/" id="article-nav-newer" class="article-nav-link-wrap">
+        <strong class="article-nav-caption">
+          前一篇
+        </strong>
+        <div class="article-nav-title">
+          
+            几种常见的大前端应用
+              
+        </div>
+      </a>
+      
         
-          几种常见的大前端应用
-        
-      </div>
-    </a>
+          <a href="/07/13/fe-attack/8-render/" id="article-nav-older" class="article-nav-link-wrap">
+            <strong class="article-nav-caption">
+              后一篇
+            </strong>
+            <div class="article-nav-title">
+              浏览器是如何渲染的
+            </div>
+          </a>
+          
+  </nav>
   
-  
-    <a href="/07/13/fe-attack/8-render/" id="article-nav-older" class="article-nav-link-wrap">
-      <strong class="article-nav-caption">后一篇</strong>
-      <div class="article-nav-title">浏览器是如何渲染的</div>
-    </a>
-  
-</nav>
 
+    <div id="gitalk-container"></div>
+    <script>
+      if (window.location.pathname !== '/') {
+        var gitalk = new Gitalk({
+          clientID: '572cf28212526e25eb20',
+          clientSecret: 'e3ebf600d6ed24da3f1b447ad85e9a26cced2e58',
+          repo: 'kerita.github.io',
+          owner: 'Kerita',
+          admin: ['Kerita'],
+          id: decodeURI(location.pathname),      // Ensure uniqueness and length less than 50
+          distractionFreeMode: false  // Facebook-like distraction free mode
+        })
+
+        gitalk.render('gitalk-container')
+      }
+    </script>
       
 </article>
 
 
-    
-        <div id="gitalk-container"></div>
-        <script>
-          if (window.location.pathname !== '/') {
-            var gitalk = new Gitalk({
-              clientID: '572cf28212526e25eb20',
-              clientSecret: 'e3ebf600d6ed24da3f1b447ad85e9a26cced2e58',
-              repo: 'kerita.github.io',
-              owner: 'Kerita',
-              admin: ['Kerita'],
-              id: decodeURI(location.pathname),      // Ensure uniqueness and length less than 50
-              distractionFreeMode: false  // Facebook-like distraction free mode
-            })
-
-            gitalk.render('gitalk-container')
-          }
-        </script></section>
+    </section>
         
           <aside id="sidebar">
   
