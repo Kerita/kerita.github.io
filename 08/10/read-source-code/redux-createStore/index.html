@@ -17,21 +17,23 @@
     
       <title>
         
-          Redux createStore 参数传递的精妙之处 | 
+          Redux createStore 源码 | 
               Kerita
       </title>
       <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-      <meta name="description" content="Redux createStore 是 Redux 初始化函数，在参数传递时有个有意思的实现。 判断 preloadState 是否为函数，如果为函数将其作为 enhancer 处理，并重新赋值 preloadState 为 undefined。">
+      <meta name="description" content="参数传递Redux createStore 是 Redux 初始化函数，在参数传递时有个有意思的实现。 判断 preloadState 是否为函数，如果为函数将其作为 enhancer 处理，并重新赋值 preloadState 为 undefined。">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Redux createStore 参数传递的精妙之处">
+<meta property="og:title" content="Redux createStore 源码">
 <meta property="og:url" content="https://kerita.me/08/10/read-source-code/redux-createStore/index.html">
 <meta property="og:site_name" content="Kerita">
-<meta property="og:description" content="Redux createStore 是 Redux 初始化函数，在参数传递时有个有意思的实现。 判断 preloadState 是否为函数，如果为函数将其作为 enhancer 处理，并重新赋值 preloadState 为 undefined。">
+<meta property="og:description" content="参数传递Redux createStore 是 Redux 初始化函数，在参数传递时有个有意思的实现。 判断 preloadState 是否为函数，如果为函数将其作为 enhancer 处理，并重新赋值 preloadState 为 undefined。">
 <meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://kerita.me/08/10/read-source-code/redux-createStore/createStore-store.png">
 <meta property="article:published_time" content="2021-08-10T00:00:00.000Z">
-<meta property="article:modified_time" content="2021-08-22T02:10:58.591Z">
+<meta property="article:modified_time" content="2021-08-22T08:55:31.033Z">
 <meta property="article:author" content="Kerita">
 <meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://kerita.me/08/10/read-source-code/redux-createStore/createStore-store.png">
         
           <link rel="alternate" href="/atom.xml" title="Kerita" type="application/atom+xml">
             
@@ -118,7 +120,7 @@
           
   
     <h1 class="p-name article-title" itemprop="headline name">
-      Redux createStore 参数传递的精妙之处
+      Redux createStore 源码
     </h1>
   
 
@@ -126,17 +128,25 @@
         
           <div class="e-content article-entry" itemprop="articleBody">
             
-                      <p>Redux createStore 是 Redux 初始化函数，在参数传递时有个有意思的实现。</p>
+                      <h2 id="参数传递"><a href="#参数传递" class="headerlink" title="参数传递"></a>参数传递</h2><p>Redux createStore 是 Redux 初始化函数，在参数传递时有个有意思的实现。</p>
 <p>判断 <code>preloadState</code> 是否为函数，如果为函数将其作为 <code>enhancer</code> 处理，并重新赋值 <code>preloadState</code> 为 <code>undefined</code>。</p>
 <a id="more"></a>
 
 <p>这样即可在不传入第二个 <code>preloadState</code> 的情况下，传入第三个参数 <code>enhancer</code>。</p>
 <p>其实现如下：</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">function createStore(reducer,preloadedState, enhancer) &#123;</span><br><span class="line">    &#x2F;&#x2F; 这里处理的是没有设定初始状态的情况，也就是第一个参数和第二个参数都传 function 的情况</span><br><span class="line">    if (typeof preloadedState &#x3D;&#x3D;&#x3D; &#39;function&#39; &amp;&amp; typeof enhancer &#x3D;&#x3D;&#x3D; &#39;undefined&#39;) &#123;</span><br><span class="line">        &#x2F;&#x2F; 此时第二个参数会被认为是 enhancer（中间件）</span><br><span class="line">        enhancer &#x3D; preloadedState;</span><br><span class="line">        preloadedState &#x3D; undefined;</span><br><span class="line">    &#125;</span><br><span class="line">    &#x2F;&#x2F; 当 enhancer 不为空时，便会将原来的 createStore 作为参数传入到 enhancer 中</span><br><span class="line">    if (typeof enhancer !&#x3D;&#x3D; &#39;undefined&#39;) &#123;</span><br><span class="line">        return enhancer(createStore)(reducer, preloadedState);</span><br><span class="line">    &#125;</span><br><span class="line">		......</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="subscribe-与-dispatch"><a href="#subscribe-与-dispatch" class="headerlink" title="subscribe 与 dispatch"></a>subscribe 与 dispatch</h2><p>Redux 是一个单向的数据流框架，使用“发布-订阅”模式。当 state 发生变化时，就会执行订阅函数，Redux createStore 中暴露出来最常用的也是这两个函数 subscribe 和 dispatch。当然，当使用 react-redux 时，react-redux 将 subscribe 变成透明的，并做优化。</p>
+<p><img src="./createStore-store.png" alt="Store 暴露出来的变量其实很简单"></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br></pre></td><td class="code"><pre><span class="line">&#x2F;&#x2F; subscribe 订阅方法，它将会定义 dispatch 最后执行的 listeners 数组的内容</span><br><span class="line">    function subscribe(listener) &#123;</span><br><span class="line">        &#x2F;&#x2F; 校验 listener 的类型</span><br><span class="line">        if (typeof listener !&#x3D;&#x3D; &#39;function&#39;) &#123;</span><br><span class="line">          throw new Error(&#39;Expected the listener to be a function.&#39;)</span><br><span class="line">        &#125;</span><br><span class="line">        &#x2F;&#x2F; 禁止在 reducer 中调用 subscribe</span><br><span class="line">        &#x2F;&#x2F; 该变量的修改在 dispatch 中，reducer 执行前设置为 true，reducer 执行后设置为 false，保证不会在 reducer 中新增订阅</span><br><span class="line">        if (isDispatching) &#123;</span><br><span class="line">          throw new Error(</span><br><span class="line">            &#39;You may not call store.subscribe() while the reducer is executing. &#39; +</span><br><span class="line">              &#39;If you would like to be notified after the store has been updated, subscribe from a &#39; +</span><br><span class="line">              &#39;component and invoke store.getState() in the callback to access the latest state. &#39; +</span><br><span class="line">              &#39;See https:&#x2F;&#x2F;redux.js.org&#x2F;api-reference&#x2F;store#subscribe(listener) for more details.&#39;</span><br><span class="line">          )</span><br><span class="line">        &#125;</span><br><span class="line">        &#x2F;&#x2F; 该变量用于防止调用多次 unsubscribe 函数</span><br><span class="line">        let isSubscribed &#x3D; true;</span><br><span class="line">        &#x2F;&#x2F; 确保 nextListeners 与 currentListeners 不指向同一个引用</span><br><span class="line">        ensureCanMutateNextListeners();</span><br><span class="line">        &#x2F;&#x2F; 注册监听函数</span><br><span class="line">        nextListeners.push(listener);</span><br><span class="line"></span><br><span class="line">        &#x2F;&#x2F; 返回取消订阅当前 listener 的方法</span><br><span class="line">        return function unsubscribe() &#123;</span><br><span class="line">            if (!isSubscribed) &#123;</span><br><span class="line">                return;</span><br><span class="line">            &#125;</span><br><span class="line">            isSubscribed &#x3D; false;</span><br><span class="line">            ensureCanMutateNextListeners();</span><br><span class="line">            const index &#x3D; nextListeners.indexOf(listener);</span><br><span class="line">            &#x2F;&#x2F; 将当前的 listener 从 nextListeners 数组中删除</span><br><span class="line">            nextListeners.splice(index, 1);</span><br><span class="line">        &#125;;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    &#x2F;&#x2F; 定义 dispatch 方法，用于派发 action</span><br><span class="line">    function dispatch(action) &#123;</span><br><span class="line">        &#x2F;&#x2F; 校验 action 的数据格式是否合法</span><br><span class="line">        if (!isPlainObject(action)) &#123;</span><br><span class="line">          throw new Error(</span><br><span class="line">            &#39;Actions must be plain objects. &#39; +</span><br><span class="line">              &#39;Use custom middleware for async actions.&#39;</span><br><span class="line">          )</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        &#x2F;&#x2F; 约束 action 中必须有 type 属性作为 action 的唯一标识</span><br><span class="line">        if (typeof action.type &#x3D;&#x3D;&#x3D; &#39;undefined&#39;) &#123;</span><br><span class="line">          throw new Error(</span><br><span class="line">            &#39;Actions may not have an undefined &quot;type&quot; property. &#39; +</span><br><span class="line">              &#39;Have you misspelled a constant?&#39;</span><br><span class="line">          )</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        &#x2F;&#x2F; 若当前已经位于 dispatch 的流程中，则不允许再度发起 dispatch（禁止套娃）</span><br><span class="line">        if (isDispatching) &#123;</span><br><span class="line">          throw new Error(&#39;Reducers may not dispatch actions.&#39;)</span><br><span class="line">        &#125;</span><br><span class="line">        try &#123;</span><br><span class="line">          &#x2F;&#x2F; 执行 reducer 前，先&quot;上锁&quot;，标记当前已经存在 dispatch 执行流程</span><br><span class="line">          isDispatching &#x3D; true</span><br><span class="line">          &#x2F;&#x2F; 调用 reducer，计算新的 state</span><br><span class="line">          currentState &#x3D; currentReducer(currentState, action)</span><br><span class="line">        &#125; finally &#123;</span><br><span class="line">          &#x2F;&#x2F; 执行结束后，把&quot;锁&quot;打开，允许再次进行 dispatch</span><br><span class="line">          isDispatching &#x3D; false</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        &#x2F;&#x2F; 触发订阅</span><br><span class="line">        const listeners &#x3D; (currentListeners &#x3D; nextListeners);</span><br><span class="line">        for (let i &#x3D; 0; i &lt; listeners.length; i++) &#123;</span><br><span class="line">            const listener &#x3D; listeners[i];</span><br><span class="line">            listener();</span><br><span class="line">        &#125;</span><br><span class="line">        return action;</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
+<h2 id="getState"><a href="#getState" class="headerlink" title="getState"></a>getState</h2><ul>
+<li>getState 利用闭包机制获取当前最新的 state</li>
+<li>其他地方 dispatch、subscribe 里当然也有用到闭包，只是对于开发者来说是透明的，没有感知的</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">&#x2F;&#x2F; 记录当前的 state</span><br><span class="line">let currentState &#x3D; preloadedState;</span><br><span class="line"></span><br><span class="line">......</span><br><span class="line">&#x2F;&#x2F; 返回当前的 state</span><br><span class="line">function getState() &#123;</span><br><span class="line">    return currentState;</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
                         
           </div>
           <footer class="article-footer">
-            <a data-url="https://kerita.me/08/10/read-source-code/redux-createStore/" data-id="cksmkrqpi006dd2n81wq55a0c" data-title="Redux createStore 参数传递的精妙之处"
+            <a data-url="https://kerita.me/08/10/read-source-code/redux-createStore/" data-id="cksmz7d89006rahou7nai1oof" data-title="Redux createStore 源码"
               class="article-share-link">
               分享
             </a>
@@ -217,7 +227,7 @@
           </li>
         
           <li>
-            <a href="/08/10/read-source-code/redux-createStore/">Redux createStore 参数传递的精妙之处</a>
+            <a href="/08/10/read-source-code/redux-createStore/">Redux createStore 源码</a>
           </li>
         
           <li>
