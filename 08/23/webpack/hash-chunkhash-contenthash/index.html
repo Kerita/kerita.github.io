@@ -17,17 +17,19 @@
     
       <title>
         
-          标签: 编辑器 | 
+          webpack hash, chunkhash, contenthash 区别 | 
               Kerita
       </title>
       <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-      <meta name="description" content="Kerita，个人博客，前端开发，随笔，kerita blog，kerita 博客">
-<meta property="og:type" content="website">
-<meta property="og:title" content="Kerita">
-<meta property="og:url" content="https://kerita.me/tags/%E7%BC%96%E8%BE%91%E5%99%A8/index.html">
+      <meta name="description" content="当我们对 webpack output 的 filename 和 chunkFilename 配置时，使用合理的 hash 值有利于浏览器的缓存，减少二次加载时的文件数量。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="webpack hash, chunkhash, contenthash 区别">
+<meta property="og:url" content="https://kerita.me/08/23/webpack/hash-chunkhash-contenthash/index.html">
 <meta property="og:site_name" content="Kerita">
-<meta property="og:description" content="Kerita，个人博客，前端开发，随笔，kerita blog，kerita 博客">
+<meta property="og:description" content="当我们对 webpack output 的 filename 和 chunkFilename 配置时，使用合理的 hash 值有利于浏览器的缓存，减少二次加载时的文件数量。">
 <meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2021-08-23T00:00:00.000Z">
+<meta property="article:modified_time" content="2021-08-23T11:55:17.088Z">
 <meta property="article:author" content="Kerita">
 <meta name="twitter:card" content="summary">
         
@@ -97,42 +99,101 @@
 </header>
 
       <div class="outer">
-        <section id="main">
-  
-  
-    
-    
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2018" class="archive-year">2018</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      <a href="/02/19/2018/vscode-rg/" class="archive-article-date">
-  <time class="dt-published" datetime="2018-02-19T00:00:00.000Z" itemprop="datePublished">2月 19</time>
+        <section id="main"><article id="post-webpack/hash-chunkhash-contenthash" class="h-entry article article-type-post"
+  itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/08/23/webpack/hash-chunkhash-contenthash/" class="article-date">
+  <time class="dt-published" datetime="2021-08-23T00:00:00.000Z" itemprop="datePublished">2021-08-23</time>
 </a>
       
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/webpack/">webpack</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+      
+        <header class="article-header">
+          
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/02/19/2018/vscode-rg/">rg.exe 占用 100% CPU</a>
+    <h1 class="p-name article-title" itemprop="headline name">
+      webpack hash, chunkhash, contenthash 区别
     </h1>
   
 
-    </header>
+        </header>
+        
+          <div class="e-content article-entry" itemprop="articleBody">
+            
+                      <p>当我们对 webpack output 的 filename 和 chunkFilename 配置时，使用合理的 hash 值有利于浏览器的缓存，减少二次加载时的文件数量。</p>
+<a id="more"></a>
+
+<h2 id="hash"><a href="#hash" class="headerlink" title="hash"></a>hash</h2><p>hash 与整个项目的构建相关，设置为 hash 时，所有 bundle 与 chunk 使用相同的 hash。只要某一个文件发生改变，hash 就会发生改变。</p>
+<h2 id="chunkhash"><a href="#chunkhash" class="headerlink" title="chunkhash"></a>chunkhash</h2><p>chunkhash 计算与 bundle 内容相关，只要其中一个 chunk 内容发生变化，chunkhash 就会发生变化。</p>
+<h2 id="contenthash"><a href="#contenthash" class="headerlink" title="contenthash"></a>contenthash</h2><p>contenthash 只与与文件本身内容相关。</p>
+
+                        
+          </div>
+          <footer class="article-footer">
+            <a data-url="https://kerita.me/08/23/webpack/hash-chunkhash-contenthash/" data-id="cksol2e54006kcpql56r59jr2" data-title="webpack hash, chunkhash, contenthash 区别"
+              class="article-share-link">
+              分享
+            </a>
+            
+                
+                    
+          </footer>
   </div>
+  
+    
+  <nav id="article-nav">
+    
+      <a href="/08/23/webpack/chunk-bundle/" id="article-nav-newer" class="article-nav-link-wrap">
+        <strong class="article-nav-caption">
+          前一篇
+        </strong>
+        <div class="article-nav-title">
+          
+            webpack chunk 与 bundle
+              
+        </div>
+      </a>
+      
+        
+          <a href="/08/13/ES6/obj-map-set/" id="article-nav-older" class="article-nav-link-wrap">
+            <strong class="article-nav-caption">
+              后一篇
+            </strong>
+            <div class="article-nav-title">
+              Object，Map，Set 区别
+            </div>
+          </a>
+          
+  </nav>
+  
+
+    <div id="gitalk-container"></div>
+    <script>
+      if (window.location.pathname !== '/') {
+        var gitalk = new Gitalk({
+          clientID: '572cf28212526e25eb20',
+          clientSecret: 'e3ebf600d6ed24da3f1b447ad85e9a26cced2e58',
+          repo: 'kerita.github.io',
+          owner: 'Kerita',
+          admin: ['Kerita'],
+          id: decodeURI(location.pathname),      // Ensure uniqueness and length less than 50
+          distractionFreeMode: false  // Facebook-like distraction free mode
+        })
+
+        gitalk.render('gitalk-container')
+      }
+    </script>
+      
 </article>
-  
-  
-    </div></section>
-  
 
 
-</section>
+    </section>
         
           <aside id="sidebar">
   

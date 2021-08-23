@@ -98,6 +98,61 @@
       <div class="outer">
         <section id="main">
   
+    <article id="post-2021/replaceAll-is-not-a-function" class="h-entry article article-type-post"
+  itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/07/30/2021/replaceAll-is-not-a-function/" class="article-date">
+  <time class="dt-published" datetime="2021-07-30T00:00:00.000Z" itemprop="datePublished">2021-07-30</time>
+</a>
+      
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/Babel/">Babel</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+      
+        <header class="article-header">
+          
+  
+    <h1 itemprop="name">
+      <a class="p-name article-title" href="/07/30/2021/replaceAll-is-not-a-function/">从 replaceAll is not a function 说起</a>
+    </h1>
+  
+
+        </header>
+        
+          <div class="e-content article-entry" itemprop="articleBody">
+            
+              <p>开发一个项目的时候，发现 @babel/preset-env 的配置如下：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">[</span><br><span class="line">  &#39;@babel&#x2F;preset-env&#39;,</span><br><span class="line">  &#123;</span><br><span class="line">    useBuiltIns: false,</span><br><span class="line">    targets: &#123;</span><br><span class="line">      chrome: 43</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;,</span><br><span class="line">],</span><br></pre></td></tr></table></figure>
+<p>使用这种配置，没有利用 <code>@babel/preset-env</code> 根据 <code>targets</code> 自动引入 polyfill 的能力，而是开发者手动引入。</p>
+                
+                  <p class="article-more-link">
+                    <a href="/07/30/2021/replaceAll-is-not-a-function/#more">
+                      Read More
+                    </a>
+                  </p>
+                  
+                    
+          </div>
+          <footer class="article-footer">
+            <a data-url="https://kerita.me/07/30/2021/replaceAll-is-not-a-function/" data-id="cksol2e3w003gcpql0m8a644z" data-title="从 replaceAll is not a function 说起"
+              class="article-share-link">
+              分享
+            </a>
+            
+                
+                    
+          </footer>
+  </div>
+  
+</article>
+
+
+    
+  
     <article id="post-dive-in-react/11-setState" class="h-entry article article-type-post"
   itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
   <div class="article-meta">
@@ -136,7 +191,7 @@
                     
           </div>
           <footer class="article-footer">
-            <a data-url="https://kerita.me/07/29/dive-in-react/11-setState/" data-id="cksoej7o90045c9yb2d7k638w" data-title="setState 是同步还是异步的"
+            <a data-url="https://kerita.me/07/29/dive-in-react/11-setState/" data-id="cksol2e450045cpqldat9ao8f" data-title="setState 是同步还是异步的"
               class="article-share-link">
               分享
             </a>
@@ -195,7 +250,7 @@
                     
           </div>
           <footer class="article-footer">
-            <a data-url="https://kerita.me/07/28/dive-in-react/10-reconciliation/" data-id="cksoej7o70040c9ybar2pcxp2" data-title="React 15 的调和"
+            <a data-url="https://kerita.me/07/28/dive-in-react/10-reconciliation/" data-id="cksol2e440040cpql3q7ebh1r" data-title="React 15 的调和"
               class="article-share-link">
               分享
             </a>
@@ -250,7 +305,7 @@
                     
           </div>
           <footer class="article-footer">
-            <a data-url="https://kerita.me/07/28/dive-in-react/9-virtual-dom/" data-id="cksoej7oi004mc9yb29u77x7p" data-title="React 的虚拟 DOM"
+            <a data-url="https://kerita.me/07/28/dive-in-react/9-virtual-dom/" data-id="cksol2e4b004mcpqlevt0hgfc" data-title="React 的虚拟 DOM"
               class="article-share-link">
               分享
             </a>
@@ -305,7 +360,7 @@
                     
           </div>
           <footer class="article-footer">
-            <a data-url="https://kerita.me/07/27/dive-in-react/6-hooks/" data-id="cksoej7og004kc9yb6z6xfrf4" data-title="React Hooks 设计思想"
+            <a data-url="https://kerita.me/07/27/dive-in-react/6-hooks/" data-id="cksol2e4a004kcpql5rp4eu6y" data-title="React Hooks 设计思想"
               class="article-share-link">
               分享
             </a>
@@ -361,7 +416,7 @@
                     
           </div>
           <footer class="article-footer">
-            <a data-url="https://kerita.me/07/26/dive-in-react/2-lifecycle/" data-id="cksoej7od004dc9yb94gc7npw" data-title="React 生命周期"
+            <a data-url="https://kerita.me/07/26/dive-in-react/2-lifecycle/" data-id="cksol2e48004dcpql6ipt9ai1" data-title="React 生命周期"
               class="article-share-link">
               分享
             </a>
@@ -419,7 +474,7 @@
                     
           </div>
           <footer class="article-footer">
-            <a data-url="https://kerita.me/07/26/dive-in-react/4-data/" data-id="cksoej7oe004fc9yb1x546i5b" data-title="React 组件之间数据传递"
+            <a data-url="https://kerita.me/07/26/dive-in-react/4-data/" data-id="cksol2e49004fcpql81unhh61" data-title="React 组件之间数据传递"
               class="article-share-link">
               分享
             </a>
@@ -476,7 +531,7 @@
                     
           </div>
           <footer class="article-footer">
-            <a data-url="https://kerita.me/07/25/2021/func/" data-id="cksoej7ns002vc9yb688d9nc3" data-title="什么是函数式编程"
+            <a data-url="https://kerita.me/07/25/2021/func/" data-id="cksol2e3p002vcpqlegwg3fkt" data-title="什么是函数式编程"
               class="article-share-link">
               分享
             </a>
@@ -529,7 +584,7 @@
                     
           </div>
           <footer class="article-footer">
-            <a data-url="https://kerita.me/07/23/dive-in-react/1-jsx/" data-id="cksoej7o6003yc9yb80ak26nn" data-title="什么是 JSX"
+            <a data-url="https://kerita.me/07/23/dive-in-react/1-jsx/" data-id="cksol2e43003ycpqldgz1c8yp" data-title="什么是 JSX"
               class="article-share-link">
               分享
             </a>
@@ -584,60 +639,7 @@
                     
           </div>
           <footer class="article-footer">
-            <a data-url="https://kerita.me/07/21/fe-attack/16-react-vs-vue/" data-id="cksoej7ot005cc9ybf2bfaout" data-title="React 和 Vue 有什么异同"
-              class="article-share-link">
-              分享
-            </a>
-            
-                
-                    
-          </footer>
-  </div>
-  
-</article>
-
-
-    
-  
-    <article id="post-fe-attack/14-design" class="h-entry article article-type-post"
-  itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
-  <div class="article-meta">
-    <a href="/07/20/fe-attack/14-design/" class="article-date">
-  <time class="dt-published" datetime="2021-07-20T00:00:00.000Z" itemprop="datePublished">2021-07-20</time>
-</a>
-      
-  <div class="article-category">
-    <a class="article-category-link" href="/categories/%E5%89%8D%E7%AB%AF%E8%BF%9B%E5%87%BB%E7%AC%94%E8%AE%B0/">前端进击笔记</a>
-  </div>
-
-  </div>
-  <div class="article-inner">
-    
-      
-        <header class="article-header">
-          
-  
-    <h1 itemprop="name">
-      <a class="p-name article-title" href="/07/20/fe-attack/14-design/">前端组件化和模块化</a>
-    </h1>
-  
-
-        </header>
-        
-          <div class="e-content article-entry" itemprop="articleBody">
-            
-              <p>前端有两个大方向一定要掌握，一是组件化和模块化，二是工程化，今天我们来聊一聊组件化和模块化。组件化和模块化满足了软件工程低内聚、高耦合、代码模块化的原则，提高代码的可重用性和可复用性，是提高工作效率的重要法宝。</p>
-                
-                  <p class="article-more-link">
-                    <a href="/07/20/fe-attack/14-design/#more">
-                      Read More
-                    </a>
-                  </p>
-                  
-                    
-          </div>
-          <footer class="article-footer">
-            <a data-url="https://kerita.me/07/20/fe-attack/14-design/" data-id="cksoej7os005ac9ybbnfw3y9i" data-title="前端组件化和模块化"
+            <a data-url="https://kerita.me/07/21/fe-attack/16-react-vs-vue/" data-id="cksol2e4m005ccpqlhtdf5xzr" data-title="React 和 Vue 有什么异同"
               class="article-share-link">
               分享
             </a>
@@ -683,6 +685,10 @@
           </li>
         
           <li>
+            <a href="/08/23/webpack/hash-chunkhash-contenthash/">webpack hash, chunkhash, contenthash 区别</a>
+          </li>
+        
+          <li>
             <a href="/08/13/ES6/obj-map-set/">Object，Map，Set 区别</a>
           </li>
         
@@ -692,10 +698,6 @@
         
           <li>
             <a href="/08/03/2021/babel-sourceType/">sourceType 错误</a>
-          </li>
-        
-          <li>
-            <a href="/08/03/read-source-code/react-event/">React 合成事件源码阅读</a>
           </li>
         
       </ul>
