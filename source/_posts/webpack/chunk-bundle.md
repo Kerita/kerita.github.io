@@ -24,6 +24,10 @@ chunk 和 bundle 都是 webpack 的重要概念，今天我们来理解它们。
 
 bundle 是源代码的最终产物，已经经历过加载和编译过程。
 
+## 总结
+
+chunk 是打包过程描述代码块的概念，bundle 是打包的最终产物，bundle 可以被切割成多个 chunk，实现打包优化。例如将基本不会修改的第三方包打包成独立 chunk，减少重复加载；将异步模块打包成独立的 chunk，实现按需求加载。
+
 ## 参考资料
 
 - [webpack 词汇表](https://webpack.js.org/glossary/)
