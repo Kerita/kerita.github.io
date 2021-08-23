@@ -6,7 +6,7 @@
   <link href="https://kerita.me/atom.xml" rel="self"/>
   
   <link href="https://kerita.me/"/>
-  <updated>2021-08-22T08:55:30.988Z</updated>
+  <updated>2021-08-23T08:26:02.099Z</updated>
   <id>https://kerita.me/</id>
   
   <author>
@@ -17,11 +17,28 @@
   <generator uri="https://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>webpack chunk 与 bundle</title>
+    <link href="https://kerita.me/08/23/webpack/chunk-bundle/"/>
+    <id>https://kerita.me/08/23/webpack/chunk-bundle/</id>
+    <published>2021-08-23T00:00:00.000Z</published>
+    <updated>2021-08-23T08:26:02.099Z</updated>
+    
+    
+    <summary type="html">&lt;p&gt;chunk 和 bundle 都是 webpack 的重要概念，今天我们来理解它们。&lt;/p&gt;</summary>
+    
+    
+    
+    <category term="webpack" scheme="https://kerita.me/categories/webpack/"/>
+    
+    
+  </entry>
+  
+  <entry>
     <title>Object，Map，Set 区别</title>
     <link href="https://kerita.me/08/13/ES6/obj-map-set/"/>
     <id>https://kerita.me/08/13/ES6/obj-map-set/</id>
     <published>2021-08-13T00:00:00.000Z</published>
-    <updated>2021-08-22T08:55:30.988Z</updated>
+    <updated>2021-08-23T08:26:02.055Z</updated>
     
     
     <summary type="html">&lt;h2 id=&quot;Object&quot;&gt;&lt;a href=&quot;#Object&quot; class=&quot;headerlink&quot; title=&quot;Object&quot;&gt;&lt;/a&gt;Object&lt;/h2&gt;&lt;p&gt;Object 是 key-value 的数据结构，与 JSON 结构一样。&lt;a href=&quot;https://codesandbox.io/s/object-nku94?file=/index.html:659-691&quot;&gt;点击链接可查看以下示例&lt;/a&gt;&lt;/p&gt;
@@ -42,7 +59,7 @@
     <link href="https://kerita.me/08/10/read-source-code/redux-createStore/"/>
     <id>https://kerita.me/08/10/read-source-code/redux-createStore/</id>
     <published>2021-08-10T00:00:00.000Z</published>
-    <updated>2021-08-22T08:55:31.033Z</updated>
+    <updated>2021-08-23T08:26:02.099Z</updated>
     
     
     <summary type="html">&lt;h2 id=&quot;参数传递&quot;&gt;&lt;a href=&quot;#参数传递&quot; class=&quot;headerlink&quot; title=&quot;参数传递&quot;&gt;&lt;/a&gt;参数传递&lt;/h2&gt;&lt;p&gt;Redux createStore 是 Redux 初始化函数，在参数传递时有个有意思的实现。&lt;/p&gt;
@@ -60,7 +77,7 @@
     <link href="https://kerita.me/08/03/2021/babel-sourceType/"/>
     <id>https://kerita.me/08/03/2021/babel-sourceType/</id>
     <published>2021-08-03T00:00:00.000Z</published>
-    <updated>2021-08-22T08:55:30.968Z</updated>
+    <updated>2021-08-23T08:26:02.035Z</updated>
     
     
     <summary type="html">&lt;p&gt;升级 Babel 配置过程除了遇到 &lt;a href=&quot;/07/30/2021/replaceAll-is-not-a-function/#more&quot;&gt;&lt;code&gt;replaceAll-is-not-a-function&lt;/code&gt;&lt;/a&gt; 问题，还遇到关于 Babel sourceType 配置的问题。&lt;/p&gt;</summary>
@@ -75,7 +92,7 @@
     <link href="https://kerita.me/08/03/read-source-code/react-event/"/>
     <id>https://kerita.me/08/03/read-source-code/react-event/</id>
     <published>2021-08-03T00:00:00.000Z</published>
-    <updated>2021-08-22T08:55:31.033Z</updated>
+    <updated>2021-08-23T08:26:02.099Z</updated>
     
     
     <summary type="html">&lt;p&gt;React 合成事件是基于事件委托机制，构建的自定义事件体系。将需要监听的事件类型都收集起来放在 document 元素上，待事件触发通过 &lt;code&gt;event.target&lt;/code&gt; 将事件分发给相关元素。&lt;/p&gt;
@@ -93,7 +110,7 @@
     <link href="https://kerita.me/08/03/read-source-code/setState/"/>
     <id>https://kerita.me/08/03/read-source-code/setState/</id>
     <published>2021-08-03T00:00:00.000Z</published>
-    <updated>2021-08-22T08:55:31.033Z</updated>
+    <updated>2021-08-23T08:26:02.099Z</updated>
     
     
     <summary type="html">&lt;p&gt;在理解&lt;a href=&quot;/07/29/dive-in-react/11-setState/&quot;&gt;setState 是同步还是异步的&lt;/a&gt; 时，梳理下 setState 的源码逻辑，如下：&lt;/p&gt;</summary>
@@ -110,7 +127,7 @@
     <link href="https://kerita.me/08/02/dive-in-react/17-event/"/>
     <id>https://kerita.me/08/02/dive-in-react/17-event/</id>
     <published>2021-08-02T00:00:00.000Z</published>
-    <updated>2021-08-22T08:55:30.988Z</updated>
+    <updated>2021-08-23T08:26:02.055Z</updated>
     
     
     <summary type="html">&lt;h2 id=&quot;JavaScript-事件模型&quot;&gt;&lt;a href=&quot;#JavaScript-事件模型&quot; class=&quot;headerlink&quot; title=&quot;JavaScript 事件模型&quot;&gt;&lt;/a&gt;JavaScript 事件模型&lt;/h2&gt;&lt;p&gt;在 JavaScript DOM 事件模型中，事件的传播分为三个阶段：&lt;br&gt;1.事件捕获阶段&lt;br&gt;2.目标阶段&lt;br&gt;3.事件冒泡阶段&lt;/p&gt;
@@ -130,7 +147,7 @@
     <link href="https://kerita.me/08/02/2021/preset-env/"/>
     <id>https://kerita.me/08/02/2021/preset-env/</id>
     <published>2021-08-02T00:00:00.000Z</published>
-    <updated>2021-08-22T08:55:30.984Z</updated>
+    <updated>2021-08-23T08:26:02.051Z</updated>
     
     
     <summary type="html">&lt;p&gt;&lt;code&gt;@babel/preset-env&lt;/code&gt; is a smart preset that allows you to use the latest JavaScript without needing to micromanage which syntax transforms (and optionally, browser polyfills) are needed by your target environment(s). This both makes your life easier and JavaScript bundles smaller!&lt;/p&gt;
@@ -154,7 +171,7 @@
     <link href="https://kerita.me/08/01/2021/micro-fe/"/>
     <id>https://kerita.me/08/01/2021/micro-fe/</id>
     <published>2021-08-01T00:00:00.000Z</published>
-    <updated>2021-08-22T08:55:30.984Z</updated>
+    <updated>2021-08-23T08:26:02.051Z</updated>
     
     
     <summary type="html">&lt;p&gt;微前端的理念源自微服务，使用一个主应用作为主体框架和微应用加载器，根据不用的路由加载不同的微应用。微应用之间做到技术隔离，在展示上却是统一的。&lt;/p&gt;
@@ -170,7 +187,7 @@
     <link href="https://kerita.me/07/30/2021/replaceAll-is-not-a-function/"/>
     <id>https://kerita.me/07/30/2021/replaceAll-is-not-a-function/</id>
     <published>2021-07-30T00:00:00.000Z</published>
-    <updated>2021-08-22T08:55:30.984Z</updated>
+    <updated>2021-08-23T08:26:02.051Z</updated>
     
     
     <summary type="html">&lt;p&gt;开发一个项目的时候，发现 @babel/preset-env 的配置如下：&lt;/p&gt;
@@ -189,7 +206,7 @@
     <link href="https://kerita.me/07/29/dive-in-react/11-setState/"/>
     <id>https://kerita.me/07/29/dive-in-react/11-setState/</id>
     <published>2021-07-29T00:00:00.000Z</published>
-    <updated>2021-08-22T08:55:30.988Z</updated>
+    <updated>2021-08-23T08:26:02.055Z</updated>
     
     
     <summary type="html">&lt;p&gt;在我们使用 class 组件时，基本都会使用到 setState，因为唯有使用 setState 更新数据，才能实现数据驱动视图的效果。&lt;/p&gt;</summary>
@@ -208,7 +225,7 @@
     <link href="https://kerita.me/07/28/dive-in-react/10-reconciliation/"/>
     <id>https://kerita.me/07/28/dive-in-react/10-reconciliation/</id>
     <published>2021-07-28T00:00:00.000Z</published>
-    <updated>2021-08-22T08:55:30.988Z</updated>
+    <updated>2021-08-23T08:26:02.055Z</updated>
     
     
     <summary type="html">&lt;h2 id=&quot;什么是调和（Reconciliation）&quot;&gt;&lt;a href=&quot;#什么是调和（Reconciliation）&quot; class=&quot;headerlink&quot; title=&quot;什么是调和（Reconciliation）&quot;&gt;&lt;/a&gt;什么是调和（Reconciliation）&lt;/h2&gt;&lt;p&gt;React 官方文档如是说：&lt;/p&gt;
@@ -231,7 +248,7 @@
     <link href="https://kerita.me/07/28/dive-in-react/9-virtual-dom/"/>
     <id>https://kerita.me/07/28/dive-in-react/9-virtual-dom/</id>
     <published>2021-07-28T00:00:00.000Z</published>
-    <updated>2021-08-22T08:55:30.996Z</updated>
+    <updated>2021-08-23T08:26:02.059Z</updated>
     
     
     <summary type="html">&lt;p&gt;虚拟 DOM 是使用 JS 对象来描述真实 DOM 结构。在数据发生改变时，虚拟 DOM 也发生改变，通过对比新旧虚拟 DOM 结构(diff)，找出二者差异，对真实 DOM 结构做更新(patch)。&lt;/p&gt;</summary>
@@ -250,7 +267,7 @@
     <link href="https://kerita.me/07/27/dive-in-react/6-hooks/"/>
     <id>https://kerita.me/07/27/dive-in-react/6-hooks/</id>
     <published>2021-07-27T00:00:00.000Z</published>
-    <updated>2021-08-22T08:55:30.996Z</updated>
+    <updated>2021-08-23T08:26:02.059Z</updated>
     
     
     <summary type="html">&lt;h2 id=&quot;什么是-Hooks&quot;&gt;&lt;a href=&quot;#什么是-Hooks&quot; class=&quot;headerlink&quot; title=&quot;什么是 Hooks&quot;&gt;&lt;/a&gt;什么是 Hooks&lt;/h2&gt;&lt;p&gt;Hooks 是 React 16.8 版本出现的特性，它是诸如 useState、useEffect 等一系列钩子函数。Hooks 的出现开发者在不需要写 class 组件时，也能具有 state 和其他 React 特性，函数组件从 stateless 变成 stateful。&lt;/p&gt;</summary>
@@ -269,7 +286,7 @@
     <link href="https://kerita.me/07/26/dive-in-react/2-lifecycle/"/>
     <id>https://kerita.me/07/26/dive-in-react/2-lifecycle/</id>
     <published>2021-07-26T00:00:00.000Z</published>
-    <updated>2021-08-22T08:55:30.988Z</updated>
+    <updated>2021-08-23T08:26:02.055Z</updated>
     
     
     <summary type="html">&lt;h2 id=&quot;React-生命周期&quot;&gt;&lt;a href=&quot;#React-生命周期&quot; class=&quot;headerlink&quot; title=&quot;React 生命周期&quot;&gt;&lt;/a&gt;React 生命周期&lt;/h2&gt;&lt;p&gt;React 是一个构建用户界面的 JavaScript 库，其核心的 Virtual DOM 是由生命周期的 render 方法生成的。初始化时，render 方法生成 Virtual DOM 交给 ReactDOM.render 方法渲染成真实 DOM；更新时， render 方法生成的新 Virtual DOM 与旧 Virtual DOM 进行比较，针对差异部分 ReactDOM.render 对真实 DOM 进行修改。&lt;/p&gt;
@@ -289,7 +306,7 @@
     <link href="https://kerita.me/07/26/dive-in-react/4-data/"/>
     <id>https://kerita.me/07/26/dive-in-react/4-data/</id>
     <published>2021-07-26T00:00:00.000Z</published>
-    <updated>2021-08-22T08:55:30.996Z</updated>
+    <updated>2021-08-23T08:26:02.059Z</updated>
     
     
     <summary type="html">&lt;p&gt;React 是一个构建用户界面的 JavaScript 库，其思想是用数据驱动视图。&lt;/p&gt;
@@ -311,7 +328,7 @@
     <link href="https://kerita.me/07/25/2021/func/"/>
     <id>https://kerita.me/07/25/2021/func/</id>
     <published>2021-07-25T00:00:00.000Z</published>
-    <updated>2021-08-22T08:55:30.984Z</updated>
+    <updated>2021-08-23T08:26:02.051Z</updated>
     
     
     <summary type="html">&lt;h2 id=&quot;什么是函数式编程&quot;&gt;&lt;a href=&quot;#什么是函数式编程&quot; class=&quot;headerlink&quot; title=&quot;什么是函数式编程&quot;&gt;&lt;/a&gt;什么是函数式编程&lt;/h2&gt;&lt;p&gt;函数式编程是一种编程范式。编程范式是基于程序语言的特点对程序语言进行分类的一种方式，常见的编程范式有：函数式编程、指令式编程、过程式编程、面向对象编程等等。&lt;/p&gt;
@@ -330,7 +347,7 @@
     <link href="https://kerita.me/07/23/dive-in-react/1-jsx/"/>
     <id>https://kerita.me/07/23/dive-in-react/1-jsx/</id>
     <published>2021-07-23T00:00:00.000Z</published>
-    <updated>2021-08-22T08:55:30.988Z</updated>
+    <updated>2021-08-23T08:26:02.055Z</updated>
     
     
     <summary type="html">&lt;p&gt;在使用 React 开发项目的过程，我们都会使用 JSX 来描述 UI。今天我们就来聊聊什么是 JSX。&lt;/p&gt;</summary>
@@ -349,7 +366,7 @@
     <link href="https://kerita.me/07/21/fe-attack/16-react-vs-vue/"/>
     <id>https://kerita.me/07/21/fe-attack/16-react-vs-vue/</id>
     <published>2021-07-21T00:00:00.000Z</published>
-    <updated>2021-08-22T08:55:31.013Z</updated>
+    <updated>2021-08-23T08:26:02.079Z</updated>
     
     
     <summary type="html">&lt;p&gt;React 和 Vue 是当下最流行的两大前端框架，今天我们来对比下他们有什么异同。&lt;/p&gt;</summary>
@@ -366,28 +383,10 @@
     <link href="https://kerita.me/07/20/fe-attack/14-design/"/>
     <id>https://kerita.me/07/20/fe-attack/14-design/</id>
     <published>2021-07-20T00:00:00.000Z</published>
-    <updated>2021-08-22T08:55:31.013Z</updated>
+    <updated>2021-08-23T08:26:02.079Z</updated>
     
     
     <summary type="html">&lt;p&gt;前端有两个大方向一定要掌握，一是组件化和模块化，二是工程化，今天我们来聊一聊组件化和模块化。组件化和模块化满足了软件工程低内聚、高耦合、代码模块化的原则，提高代码的可重用性和可复用性，是提高工作效率的重要法宝。&lt;/p&gt;</summary>
-    
-    
-    
-    <category term="前端进击笔记" scheme="https://kerita.me/categories/%E5%89%8D%E7%AB%AF%E8%BF%9B%E5%87%BB%E7%AC%94%E8%AE%B0/"/>
-    
-    
-  </entry>
-  
-  <entry>
-    <title>单页应用与前端路由库设计原理</title>
-    <link href="https://kerita.me/07/18/fe-attack/12-spa/"/>
-    <id>https://kerita.me/07/18/fe-attack/12-spa/</id>
-    <published>2021-07-18T00:00:00.000Z</published>
-    <updated>2021-08-22T08:55:31.013Z</updated>
-    
-    
-    <summary type="html">&lt;h2 id=&quot;什么是单页应用&quot;&gt;&lt;a href=&quot;#什么是单页应用&quot; class=&quot;headerlink&quot; title=&quot;什么是单页应用&quot;&gt;&lt;/a&gt;什么是单页应用&lt;/h2&gt;&lt;p&gt;单页应用就是只有一个 HTML 页面的应用，页面 URL 的变化只是通过浏览器 API 修改，浏览器不会向服务器请求新的 HTML 的，而是通过 JS 控制不同的 URL 渲染相应的内容。&lt;/p&gt;
-&lt;p&gt;单页应用相比传统的 JSP、PHP 多页应用，在切换页面时无需刷新，只需进行局部更新，加载内容快，页面的数据状态和用户数据依然保留。但是，因为单页应用返回的是一个 body 空白的 HTML 文件，HTML 内容由 JS 生成，搜索引擎无法获取到，可能影响搜索引擎排名。&lt;/p&gt;</summary>
     
     
     
