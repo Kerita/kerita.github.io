@@ -6,6 +6,8 @@ date: 2021-08-23
 
 当我们对 webpack output 的 filename 和 chunkFilename 配置时，使用合理的 hash 值有利于浏览器的缓存，减少二次加载时的文件数量。
 
+filename 是对打包后 bundle 名称进行配置，chunkFilename 是对切割出来的 chunk 名称进行配置。
+
 <!-- more -->
 
 ## hash
