@@ -17,21 +17,24 @@
     
       <title>
         
-          前端模块标准和 Webpack 工作流程 | 
+          什么是 Redux——1 | 
               Kerita
       </title>
       <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-      <meta name="description" content="CommonJS 与 ES6 Module 的区别可以参考本博客之前的文章 CommonJS 与 ES6 Module 的区别">
+      <meta name="description" content="什么是 FluxFlux 是 Facebook 用来构建客户端渲染 web 应用的应用框架。Flux 最重要的概念就是单向数据流，Flux 使用单向数据流来补充 React 的可组合式组件。相比一个正式的框架，它更像一种范式和思想，Redux 则是这种范式和思想的具体实现，当然 Redux 不严格遵循 Flux 的设定。 Flux 具有严格的单向数据流，Store 里数据的变化，只能是由 Disp">
 <meta property="og:type" content="article">
-<meta property="og:title" content="前端模块标准和 Webpack 工作流程">
-<meta property="og:url" content="https://kerita.me/07/18/fe-attack/13-module/index.html">
+<meta property="og:title" content="什么是 Redux——1">
+<meta property="og:url" content="https://kerita.me/08/10/dive-in-react/18-redux/index.html">
 <meta property="og:site_name" content="Kerita">
-<meta property="og:description" content="CommonJS 与 ES6 Module 的区别可以参考本博客之前的文章 CommonJS 与 ES6 Module 的区别">
+<meta property="og:description" content="什么是 FluxFlux 是 Facebook 用来构建客户端渲染 web 应用的应用框架。Flux 最重要的概念就是单向数据流，Flux 使用单向数据流来补充 React 的可组合式组件。相比一个正式的框架，它更像一种范式和思想，Redux 则是这种范式和思想的具体实现，当然 Redux 不严格遵循 Flux 的设定。 Flux 具有严格的单向数据流，Store 里数据的变化，只能是由 Disp">
 <meta property="og:locale" content="zh_CN">
-<meta property="article:published_time" content="2021-07-18T00:00:00.000Z">
-<meta property="article:modified_time" content="2021-08-24T06:13:20.356Z">
+<meta property="og:image" content="https://kerita.me/08/10/dive-in-react/18-redux/flux.png">
+<meta property="og:image" content="https://kerita.me/08/10/dive-in-react/18-redux/redux.png">
+<meta property="article:published_time" content="2021-08-10T00:00:00.000Z">
+<meta property="article:modified_time" content="2021-08-24T06:13:20.332Z">
 <meta property="article:author" content="Kerita">
 <meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://kerita.me/08/10/dive-in-react/18-redux/flux.png">
         
           <link rel="alternate" href="/atom.xml" title="Kerita" type="application/atom+xml">
             
@@ -99,15 +102,15 @@
 </header>
 
       <div class="outer">
-        <section id="main"><article id="post-fe-attack/13-module" class="h-entry article article-type-post"
+        <section id="main"><article id="post-dive-in-react/18-redux" class="h-entry article article-type-post"
   itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
   <div class="article-meta">
-    <a href="/07/18/fe-attack/13-module/" class="article-date">
-  <time class="dt-published" datetime="2021-07-18T00:00:00.000Z" itemprop="datePublished">2021-07-18</time>
+    <a href="/08/10/dive-in-react/18-redux/" class="article-date">
+  <time class="dt-published" datetime="2021-08-10T00:00:00.000Z" itemprop="datePublished">2021-08-10</time>
 </a>
       
   <div class="article-category">
-    <a class="article-category-link" href="/categories/%E5%89%8D%E7%AB%AF%E8%BF%9B%E5%87%BB%E7%AC%94%E8%AE%B0/">前端进击笔记</a>
+    <a class="article-category-link" href="/categories/%E6%B7%B1%E5%85%A5%E6%B5%85%E5%87%BA-React/">深入浅出 React</a>
   </div>
 
   </div>
@@ -118,7 +121,7 @@
           
   
     <h1 class="p-name article-title" itemprop="headline name">
-      前端模块标准和 Webpack 工作流程
+      什么是 Redux——1
     </h1>
   
 
@@ -126,20 +129,55 @@
         
           <div class="e-content article-entry" itemprop="articleBody">
             
-                      <h2 id="CommonJS-与-ES6-Module-的区别"><a href="#CommonJS-与-ES6-Module-的区别" class="headerlink" title="CommonJS 与 ES6 Module 的区别"></a>CommonJS 与 ES6 Module 的区别</h2><p>可以参考本博客之前的文章 <a href="/04/03/2021/module/">CommonJS 与 ES6 Module 的区别</a></p>
+                      <h2 id="什么是-Flux"><a href="#什么是-Flux" class="headerlink" title="什么是 Flux"></a>什么是 Flux</h2><p>Flux 是 Facebook 用来构建客户端渲染 web 应用的应用框架。Flux 最重要的概念就是单向数据流，Flux 使用单向数据流来补充 React 的可组合式组件。相比一个正式的框架，它更像一种范式和思想，Redux 则是这种范式和思想的具体实现，当然 Redux 不严格遵循 Flux 的设定。</p>
+<p>Flux 具有严格的单向数据流，Store 里数据的变化，只能是由 Dispatcher 派发的 Action 触发的。这保证了应用的状态是可预测的，避免了应用混乱的情况，让整个流程变得清晰简单。</p>
+<p>当然，严格的单向数据流一方面增加开发者的学习成本，另一方面也增加了代码量，所以往往复杂的项目才需要使用 Flux 架构。</p>
 <a id="more"></a>
 
-<h2 id="Webpack-工作流程"><a href="#Webpack-工作流程" class="headerlink" title="Webpack 工作流程"></a>Webpack 工作流程</h2><p>Webpack 的使用中有 4 个核心概念：入口（entry）、输出（output）、Loader、插件（plugins），其工作流程如下：</p>
-<p>1.通过 entry 指定的入口开始，解析各个文件模块间的依赖。</p>
-<p>2.根据模块间的依赖关系，开始对各个模块进行编译。</p>
-<p>3.编译过程中，根据配置的规则对一些模块使用 Loader 进行编译处理。</p>
-<p>4.根据插件的配置，对 Loader 编译后的代码进行封装、优化、分块、压缩等。</p>
-<p>5.最终 Webpack 整合各个模块，根据依赖关系将它们打包成最终的一个或者多个文件。</p>
+<h2 id="Flux-的架构"><a href="#Flux-的架构" class="headerlink" title="Flux 的架构"></a>Flux 的架构</h2><p>Flux 分成四个部分：</p>
+<ul>
+<li><p>Dispatcher<br>Dispatcher 接收 Actions 并把 Actions 分发给注册在 Dispatcher 的 Store。</p>
+</li>
+<li><p>Store<br>Store 存储整个应用的数据。</p>
+</li>
+<li><p>Actions<br>Actions 定义了应用内部的 API。Actions 就是简单的 Objects，有一个 <code>type</code> 字段和一些数据。</p>
+</li>
+<li><p>Views<br>Views 展示 Store 里的数据，Views 可以使用任何框架。</p>
+</li>
+</ul>
+<p>更详细了解 Flux 可阅读这篇文章<a target="_blank" rel="noopener" href="https://github.com/facebook/flux/tree/master/examples/flux-concepts">这篇文章</a>。</p>
+<p><img src="./flux.png" alt="Flux 流程"></p>
+<h2 id="Redux-的架构"><a href="#Redux-的架构" class="headerlink" title="Redux 的架构"></a>Redux 的架构</h2><p>Redux 是基于 Flux 架构的产物，严格遵循单向数据流.Redux 很多地方与 Flux 一样，但并不完全与 Flux 设计保持一致。</p>
+<p>Redux 分成四个部分：</p>
+<ul>
+<li><p>View<br>用户界面，展示 Store 的数据和触发 Action。</p>
+</li>
+<li><p>Action<br>Action 是一个函数，实现具体操作，然后将变化交给 Reducer。</p>
+</li>
+<li><p>Reducer<br>Reducer 也是一个函数，负责对变化进行处理和分发。接收来自 Action 的变化，将新的数据变更到 Store。</p>
+</li>
+<li><p>Store<br>Store 是应用的数据中心，展示在用户界面上。</p>
+<p><img src="./redux.png" alt="Redux 架构"></p>
+</li>
+</ul>
+<h2 id="Redux-的特点"><a href="#Redux-的特点" class="headerlink" title="Redux 的特点"></a>Redux 的特点</h2><ul>
+<li><p>可预测<br>Redux 让应用表现一致，可运行在不同的环境（浏览器、服务端、原生应用），并且非常容易测试。</p>
+</li>
+<li><p>中心化<br>让应用状态和应用逻辑中心化，让 Redux 拥有超强的能力，例如撤销、重做、状态持久化等等。</p>
+</li>
+<li><p>可调试<br>Redux DevTools 可以非常方便的知道应用状态在何时、何地、为什么、怎么发生了变化。Redux 的架构，让你能够记录这些变化，使用 <code>time-travel</code> 来进行调试，甚至可以将错误上报到服务器。</p>
+</li>
+<li><p>灵活<br>Redux 可以和一切 UI 框架一起配合，并且有一个非常大的生态插件去满足你的需求。</p>
+</li>
+</ul>
+<h2 id="time-travel"><a href="#time-travel" class="headerlink" title="time-travel"></a>time-travel</h2><h2 id="参考资料"><a href="#参考资料" class="headerlink" title="参考资料"></a>参考资料</h2><ul>
+<li><a target="_blank" rel="noopener" href="https://github.com/facebook/flux/tree/master/examples/flux-concepts">flux concepts</a></li>
+</ul>
 
                         
           </div>
           <footer class="article-footer">
-            <a data-url="https://kerita.me/07/18/fe-attack/13-module/" data-id="ckspoakvz005acnwzfgxrfl3l" data-title="前端模块标准和 Webpack 工作流程"
+            <a data-url="https://kerita.me/08/10/dive-in-react/18-redux/" data-id="ckspoakvm004dcnwzar8i87zb" data-title="什么是 Redux——1"
               class="article-share-link">
               分享
             </a>
@@ -152,24 +190,24 @@
     
   <nav id="article-nav">
     
-      <a href="/07/18/fe-attack/12-spa/" id="article-nav-newer" class="article-nav-link-wrap">
+      <a href="/08/13/ES6/obj-map-set/" id="article-nav-newer" class="article-nav-link-wrap">
         <strong class="article-nav-caption">
           前一篇
         </strong>
         <div class="article-nav-title">
           
-            单页应用与前端路由库设计原理
+            Object，Map，Set 区别
               
         </div>
       </a>
       
         
-          <a href="/07/16/fe-attack/11-fe/" id="article-nav-older" class="article-nav-link-wrap">
+          <a href="/08/10/read-source-code/redux-createStore/" id="article-nav-older" class="article-nav-link-wrap">
             <strong class="article-nav-caption">
               后一篇
             </strong>
             <div class="article-nav-title">
-              几种常见的大前端应用
+              Redux createStore 源码
             </div>
           </a>
           
