@@ -98,6 +98,151 @@
       <div class="outer">
         <section id="main">
   
+    <article id="post-fe-attack/7-http" class="h-entry article article-type-post"
+  itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/07/12/fe-attack/7-http/" class="article-date">
+  <time class="dt-published" datetime="2021-07-12T00:00:00.000Z" itemprop="datePublished">2021-07-12</time>
+</a>
+      
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/%E5%89%8D%E7%AB%AF%E8%BF%9B%E5%87%BB%E7%AC%94%E8%AE%B0/">前端进击笔记</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+      
+        <header class="article-header">
+          
+  
+    <h1 itemprop="name">
+      <a class="p-name article-title" href="/07/12/fe-attack/7-http/">什么是 HTTP 协议</a>
+    </h1>
+  
+
+        </header>
+        
+          <div class="e-content article-entry" itemprop="articleBody">
+            
+              <h2 id="什么是-RESTful-接口"><a href="#什么是-RESTful-接口" class="headerlink" title="什么是 RESTful 接口"></a>什么是 RESTful 接口</h2><p>RESTful 不是一种协议，而是一种接口设计风格，其要点如下：</p>
+<ul>
+<li>URL 只有名词</li>
+<li>看 URL 就知道是什么业务</li>
+<li>看 method 就知道是什么操作</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">GET &#x2F;orders&#x2F;1234	&#x2F;&#x2F; 查询订单</span><br><span class="line">POST &#x2F;orders&#x2F;1234	&#x2F;&#x2F; 新增订单</span><br><span class="line">PUT &#x2F;orders&#x2F;1234	&#x2F;&#x2F; 修改订单</span><br><span class="line">DELETE &#x2F;orders&#x2F;1234	&#x2F;&#x2F; 删除订单</span><br></pre></td></tr></table></figure>
+                
+                  <p class="article-more-link">
+                    <a href="/07/12/fe-attack/7-http/#more">
+                      Read More
+                    </a>
+                  </p>
+                  
+                    
+          </div>
+          <footer class="article-footer">
+            <a data-url="https://kerita.me/07/12/fe-attack/7-http/" data-id="cksqwwre20064b3pv4rqbetpf" data-title="什么是 HTTP 协议"
+              class="article-share-link">
+              分享
+            </a>
+            
+                
+                    
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/HTTP/" rel="tag">HTTP</a></li></ul>
+
+          </footer>
+  </div>
+  
+</article>
+
+
+    
+  
+    <article id="post-2021/api" class="h-entry article article-type-post"
+  itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/07/08/2021/api/" class="article-date">
+  <time class="dt-published" datetime="2021-07-08T00:00:00.000Z" itemprop="datePublished">2021-07-08</time>
+</a>
+      
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/%E5%89%8D%E7%AB%AF/">前端</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+      
+        <header class="article-header">
+          
+  
+    <h1 itemprop="name">
+      <a class="p-name article-title" href="/07/08/2021/api/">接口对接 SOP —及时沟通、前置风险并解决</a>
+    </h1>
+  
+
+        </header>
+        
+          <div class="e-content article-entry" itemprop="articleBody">
+            
+                      <h2 id="接口对接过程遇到的问题"><a href="#接口对接过程遇到的问题" class="headerlink" title="接口对接过程遇到的问题"></a>接口对接过程遇到的问题</h2><p>在开发一个项目的时候，接口对接是必不可少的。接口对接也不止发生在前端后端之间，也发生在后端与其他业务线、后端与外部系统，也就是说接口对接是频繁的，并且是重要的。</p>
+<p>然而，在对接过程中，往往我们会遇到以下问题：</p>
+<ul>
+<li>没有接口文档，接口口头或者企业微信简单确认（特别是只有一两个接口时）</li>
+<li>接口文档没有确定交付时间，或者到时间没有交付</li>
+<li>接口文档不全，接口缺失或者接口字段缺失</li>
+<li>接口变更，实际接口与接口文档不一致</li>
+<li>……</li>
+</ul>
+<h2 id="SOP-的重要性"><a href="#SOP-的重要性" class="headerlink" title="SOP 的重要性"></a>SOP 的重要性</h2><p>接口对接是一个很小但是很重要的事情，接口对接不顺畅，可能会导致项目返工以及进度落后。在丰富的工程实践中，我总结了一套接口对接 SOP，针对接口对接过程中的种种问题，将接口对接变成一步步标准化的流程，减少遗漏和错误，提高接口对接过程中的工作效率。</p>
+<p>该 SOP 的策略是：通过主动沟通、及时沟通，保证接口不成为阻塞开发的障碍，及时将在对接过程中存在的风险暴露，将风险前置并且解决，达到对接流畅的目的。</p>
+<h2 id="我的接口对接-SOP"><a href="#我的接口对接-SOP" class="headerlink" title="我的接口对接 SOP"></a>我的接口对接 SOP</h2><h3 id="1-确定接口文档交付时间"><a href="#1-确定接口文档交付时间" class="headerlink" title="1.确定接口文档交付时间"></a>1.确定接口文档交付时间</h3><p>在项目评审阶段，确定好接口文档交付时间，有两个主要原因。</p>
+<p>接口交付时间会影响到接口对接下游的开发进度和排期<br>在企业微信消息或者项目进度表确定时间，尽量确保接口文档按时交付</p>
+<h3 id="2-主动索要接口"><a href="#2-主动索要接口" class="headerlink" title="2.主动索要接口"></a>2.主动索要接口</h3><p>临近交付时间了，可以主动索取接口文档，提高交付准时性。</p>
+<p>有时候虽然按时交付了，但是交付质量非常一般，如多个接口缺失、接口返回错误。所以，交付时对齐、评估并快照接口就显得非常重要。</p>
+<h3 id="3-交付时对齐、评估并快照接口"><a href="#3-交付时对齐、评估并快照接口" class="headerlink" title="3.交付时对齐、评估并快照接口"></a>3.交付时对齐、评估并快照接口</h3><p>接口文档交付时，作为下游，不是回一句 ”收到“ 就够了，而应该分三步走。</p>
+<ul>
+<li><p>对齐接口</p>
+<p>对齐本次有哪些接口<br>接口分别在哪些地方使用<br>就算只有一两个接口也应该落地到接口文档，方便自己还有后来人对接</p>
+</li>
+<li><p>评估接口</p>
+<p>评估接口的方法就是：一个个看接口返回，评估不通过的，及时沟通调整。<br>对于比较复杂的接口，交付前应该协商好接口方案，上下游共同将方案确定。</p>
+<ul>
+<li>确定接口字段，确定是否满足前端业务需求</li>
+<li>评估接口方案是否会影响性能</li>
+<li>确定有推送，以及推送的数据结构</li>
+<li>…..</li>
+</ul>
+</li>
+<li><p>快照接口</p>
+<p>快照接口是将接口文档通过截图、或者复制等方式快照，包括接口请求方法、content-type、以及返回。</p>
+<p>快照接口主要是防止开发过程接口变更，导致联调时接口与一开始约定不一致，最后浪费时间在最终的沟通上。当然，快照接口策略是比较麻烦的，对于一些复杂的接口或者一些特殊情况，我们才视情况使用。</p>
+</li>
+</ul>
+<h3 id="4-明白我们的最终目标"><a href="#4-明白我们的最终目标" class="headerlink" title="4.明白我们的最终目标"></a>4.明白我们的最终目标</h3><p>接口上下游最终目标是一致，都是把项目完成，把项目做好。可能接口对接过程中，会有出现这样那样问题，但我们都应该保持积极向上昂扬的态度，推动事情发展，保证最终目标的达成。永远相信美好的事情将会发生。</p>
+<p>以上。</p>
+
+                        
+          </div>
+          <footer class="article-footer">
+            <a data-url="https://kerita.me/07/08/2021/api/" data-id="cksqwwrcg002bb3pv3t184ap8" data-title="接口对接 SOP —及时沟通、前置风险并解决"
+              class="article-share-link">
+              分享
+            </a>
+            
+                
+                    
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E9%A1%B9%E7%9B%AE/" rel="tag">项目</a></li></ul>
+
+          </footer>
+  </div>
+  
+</article>
+
+
+    
+  
     <article id="post-fe-attack/6-request" class="h-entry article article-type-post"
   itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
   <div class="article-meta">
@@ -141,7 +286,7 @@
                     
           </div>
           <footer class="article-footer">
-            <a data-url="https://kerita.me/07/06/fe-attack/6-request/" data-id="cksqw06xd0060e9ub9tfrh79x" data-title="浏览器如何进行网络请求"
+            <a data-url="https://kerita.me/07/06/fe-attack/6-request/" data-id="cksqwwre00060b3pv6xbhe121" data-title="浏览器如何进行网络请求"
               class="article-share-link">
               分享
             </a>
@@ -196,7 +341,7 @@
                     
           </div>
           <footer class="article-footer">
-            <a data-url="https://kerita.me/07/05/fe-attack/5-js-run/" data-id="cksqw06xc005xe9ubgy4h4ck1" data-title="JavaScript 的运行机制"
+            <a data-url="https://kerita.me/07/05/fe-attack/5-js-run/" data-id="cksqwwrdz005xb3pv0494012v" data-title="JavaScript 的运行机制"
               class="article-share-link">
               分享
             </a>
@@ -260,7 +405,7 @@
                     
           </div>
           <footer class="article-footer">
-            <a data-url="https://kerita.me/06/30/fe-attack/4-js/" data-id="cksqw06xb005se9ub43y8h9ud" data-title="JavaScript 实现继承"
+            <a data-url="https://kerita.me/06/30/fe-attack/4-js/" data-id="cksqwwrdy005sb3pv71a4gx01" data-title="JavaScript 实现继承"
               class="article-share-link">
               分享
             </a>
@@ -315,7 +460,7 @@
                     
           </div>
           <footer class="article-footer">
-            <a data-url="https://kerita.me/06/28/fe-attack/3-css/" data-id="cksqw06xa005pe9ube94u6uq1" data-title="CSS 知识点"
+            <a data-url="https://kerita.me/06/28/fe-attack/3-css/" data-id="cksqwwrdx005pb3pvbjhdbacs" data-title="CSS 知识点"
               class="article-share-link">
               分享
             </a>
@@ -370,7 +515,7 @@
                     
           </div>
           <footer class="article-footer">
-            <a data-url="https://kerita.me/06/27/fe-attack/2-html/" data-id="cksqw06x8005ke9ubdvnc960u" data-title="HTML 加载过程"
+            <a data-url="https://kerita.me/06/27/fe-attack/2-html/" data-id="cksqwwrdv005kb3pv3548faul" data-title="HTML 加载过程"
               class="article-share-link">
               分享
             </a>
@@ -427,7 +572,7 @@
                     
           </div>
           <footer class="article-footer">
-            <a data-url="https://kerita.me/06/24/2021/babel/" data-id="cksqw06vq002ie9ub4wsg6sq2" data-title="什么是 Babel？"
+            <a data-url="https://kerita.me/06/24/2021/babel/" data-id="cksqwwrcj002ib3pv62rk4fu9" data-title="什么是 Babel？"
               class="article-share-link">
               分享
             </a>
@@ -482,7 +627,7 @@
                     
           </div>
           <footer class="article-footer">
-            <a data-url="https://kerita.me/06/24/fe-attack/1-system/" data-id="cksqw06wq004ue9ubebfzeanb" data-title="前端知识体系"
+            <a data-url="https://kerita.me/06/24/fe-attack/1-system/" data-id="cksqwwrdj004ub3pvdmygf2xt" data-title="前端知识体系"
               class="article-share-link">
               分享
             </a>
@@ -537,7 +682,7 @@
                     
           </div>
           <footer class="article-footer">
-            <a data-url="https://kerita.me/06/23/2021/npx/" data-id="cksqw06w1003ce9ubfuzq2ezi" data-title="什么是 npx？"
+            <a data-url="https://kerita.me/06/23/2021/npx/" data-id="cksqwwrcv003cb3pvcvx473ut" data-title="什么是 npx？"
               class="article-share-link">
               分享
             </a>
@@ -545,119 +690,6 @@
                 
                     
   <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E5%B7%A5%E7%A8%8B%E5%8C%96/" rel="tag">工程化</a></li></ul>
-
-          </footer>
-  </div>
-  
-</article>
-
-
-    
-  
-    <article id="post-2021/devops-ci-cd" class="h-entry article article-type-post"
-  itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
-  <div class="article-meta">
-    <a href="/06/21/2021/devops-ci-cd/" class="article-date">
-  <time class="dt-published" datetime="2021-06-21T00:00:00.000Z" itemprop="datePublished">2021-06-21</time>
-</a>
-      
-  <div class="article-category">
-    <a class="article-category-link" href="/categories/%E5%89%8D%E7%AB%AF/">前端</a>
-  </div>
-
-  </div>
-  <div class="article-inner">
-    
-      
-        <header class="article-header">
-          
-  
-    <h1 itemprop="name">
-      <a class="p-name article-title" href="/06/21/2021/devops-ci-cd/">什么是 DevOps、CI、CD？</a>
-    </h1>
-  
-
-        </header>
-        
-          <div class="e-content article-entry" itemprop="articleBody">
-            
-              <p>在了解前端工程化的时候，经常听到 DevOps、CI、CD，I 借这个机会搞清楚。</p>
-<p>DevOps 指用自动化工具更好的完成软件周期中的开发、测试和交付工作。</p>
-<p>CI 和 CD 是 DevOps 的一部分。CI 是指持续集成 (Continuous Integration)，CD 即指持续部署(Continuous Deploy)，也指持续交付(Continuous Delivery)。</p>
-                
-                  <p class="article-more-link">
-                    <a href="/06/21/2021/devops-ci-cd/#more">
-                      Read More
-                    </a>
-                  </p>
-                  
-                    
-          </div>
-          <footer class="article-footer">
-            <a data-url="https://kerita.me/06/21/2021/devops-ci-cd/" data-id="cksqw06vs002pe9ub86q50ydj" data-title="什么是 DevOps、CI、CD？"
-              class="article-share-link">
-              分享
-            </a>
-            
-                
-                    
-  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E5%B7%A5%E7%A8%8B%E5%8C%96/" rel="tag">工程化</a></li></ul>
-
-          </footer>
-  </div>
-  
-</article>
-
-
-    
-  
-    <article id="post-2021/cold" class="h-entry article article-type-post"
-  itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
-  <div class="article-meta">
-    <a href="/05/27/2021/cold/" class="article-date">
-  <time class="dt-published" datetime="2021-05-27T00:00:00.000Z" itemprop="datePublished">2021-05-27</time>
-</a>
-      
-  <div class="article-category">
-    <a class="article-category-link" href="/categories/%E5%81%A5%E5%BA%B7/">健康</a>
-  </div>
-
-  </div>
-  <div class="article-inner">
-    
-      
-        <header class="article-header">
-          
-  
-    <h1 itemprop="name">
-      <a class="p-name article-title" href="/05/27/2021/cold/">记一次感冒</a>
-    </h1>
-  
-
-        </header>
-        
-          <div class="e-content article-entry" itemprop="articleBody">
-            
-              <p>5 月 24 日-5 月 26 日去南昌出差，三天基本没有午睡，晚上又没有休息好，食物多是多油且极辣的，导致感冒了。26 日早上喉咙有点干渴，而后双臂开始发酸，没有重视，下午到晚上开始发冷、疲劳。</p>
-<p>27、28 日勉强带着疲劳的身躯度过工作日，29、30 日周末开始喉咙痛。喉咙痛是扁桃体的发炎。包扁桃体发炎可分为以下两种：</p>
-                
-                  <p class="article-more-link">
-                    <a href="/05/27/2021/cold/#more">
-                      Read More
-                    </a>
-                  </p>
-                  
-                    
-          </div>
-          <footer class="article-footer">
-            <a data-url="https://kerita.me/05/27/2021/cold/" data-id="cksqw06vs002me9ubdcbvc0qz" data-title="记一次感冒"
-              class="article-share-link">
-              分享
-            </a>
-            
-                
-                    
-  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E6%84%9F%E5%86%92/" rel="tag">感冒</a></li></ul>
 
           </footer>
   </div>
@@ -694,6 +726,10 @@
       <ul>
         
           <li>
+            <a href="/08/24/webpack/scope-hoisting/">webpack Scope Hoisting 配置</a>
+          </li>
+        
+          <li>
             <a href="/08/23/webpack/chunk-bundle/">webpack chunk 与 bundle</a>
           </li>
         
@@ -706,11 +742,7 @@
           </li>
         
           <li>
-            <a href="/08/13/ES6/obj-map-set/">Object，Map，Set 区别</a>
-          </li>
-        
-          <li>
-            <a href="/08/10/dive-in-react/18-redux/">什么是 Redux——1</a>
+            <a href="/08/17/webpack/tree-shaking/">Webpack Tree Shaking 配置</a>
           </li>
         
       </ul>
