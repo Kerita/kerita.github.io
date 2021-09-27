@@ -5,6 +5,13 @@ tags: React
 date: 2021-07-29
 ---
 
+## 知识点：
+
+### setState 为什么是异步执行？
+
+- 在生命周期和合成事件中，React 为了性能优化开启了批量更新，此时 setState 只会被放到更新队列，不会马上执行，而是稍后一起批量更新，所以表现为异步的。
+- 在 setTimeout/setInterval/addEventListener/Promsie 中，因为脱离了 React 的掌控，所以表现为同步。
+
 在我们使用 class 组件时，基本都会使用到 setState，因为唯有使用 setState 更新数据，才能实现数据驱动视图的效果。
 
 <!-- more -->

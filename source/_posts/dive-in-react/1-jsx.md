@@ -11,6 +11,8 @@ date: 2021-07-23
 
 ## 什么是 JSX
 
+知识点：JSX 是 JavaScript 的一种语法拓展
+
 根据 [React 官网](https://reactjs.org/docs/introducing-jsx.html)介绍 JSX 是 JavaScript 的语法拓展，它看起来像是模板语言，但拥有 JavaScript 的全部能力。解释一下就是：
 
 - 可以使用类 HTML 语法和 JavaScript 语法来描述 UI
@@ -58,3 +60,9 @@ React.createElement("div", null, /*#__PURE__*/React.createElement("h2", null, /*
   className: "test"
 }, "6")));
 ```
+
+## React.createElement
+
+React.createElement 的调用方式是这样的 React.createElement(type, config, child1, child2)。
+
+- type: 表现元素类型，

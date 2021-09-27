@@ -5,6 +5,29 @@ tags: React
 date: 2021-07-27
 ---
 
+## 知识点：
+
+### 为什么推出 Hooks
+
+- 难以复用的状态逻辑
+- 不相关逻辑的写在一起，相关逻辑分开，造成难用和复杂的生命周期
+- 复杂和麻烦的 this
+
+hooks 使用原则
+
+- 只能在函数组件或者自定义 Hooks 中调用 Hooks
+- 不能在条件语句或者循环语句使用 Hooks
+
+为什么不能在条件语句或者循环语句使用 Hooks？
+
+以 `const [count, setCount] = useState()` 为例，当 React 内部存储 count 这个值时并没有指定一个名字存储。当下一次 render 时，React 想要重新取出 count 的值时，是从链表结构里按照执行顺序取出来。因而，为了保证执行 hooks 的准确性，React 使用链表的数据结构并顺序取值，如果在条件语句或者循环语句使用 Hooks，取值就会出错。
+
+要解决这种办法，可以传入一个 key 作为 useState 的第二个参数，但是实现起来没那么优雅。
+
+```
+const [count, setCount] = useState(initState, key)
+```
+
 ## 什么是 Hooks
 
 Hooks 是 React 16.8 版本出现的特性，它是诸如 useState、useEffect 等一系列钩子函数。Hooks 的出现开发者在不需要写 class 组件时，也能具有 state 和其他 React 特性，函数组件从 stateless 变成 stateful。
@@ -65,3 +88,7 @@ Hooks 组件在部分场景可完全替换 class 组件，提升开发体验，�
 ## Hooks 实现
 
 Hooks 是基于链表的结构实现，所以不要在循环、条件或嵌套函数中调用 Hook。
+
+## 参考资料
+
+- [Hooks 的动机](https://zh-hans.reactjs.org/docs/hooks-intro.html)

@@ -7,6 +7,8 @@ date: 2021-07-26
 
 ## React 生命周期
 
+知识点： render 是灵魂，生成虚拟 DOM，其他生命周期是躯干，灵魂必须有，躯干不一定。
+
 React 是一个构建用户界面的 JavaScript 库，其核心的 Virtual DOM 是由生命周期的 render 方法生成的。初始化时，render 方法生成 Virtual DOM 交给 ReactDOM.render 方法渲染成真实 DOM；更新时， render 方法生成的新 Virtual DOM 与旧 Virtual DOM 进行比较，针对差异部分 ReactDOM.render 对真实 DOM 进行修改。
 
 React 生命周期中的 render 在其中扮演着 Virtual DOM 生成的关键角色，其他生命周期则像是 render 方法的辅助，做数据的初始化或者修改，辅助 render 方法完成 Virtual DOM 的生成。
@@ -18,10 +20,8 @@ React 生命周期中的 render 在其中扮演着 Virtual DOM 生成的关键�
 对于 React 15 的生命周期可以从以下几个方面进行理解：
 
 - 组件初始化：在 componentDidMount 做数据请求或者 DOM 操作
-- 组件的父组件更新：此时 componentWillReceiveProps 都会执行
-- 组件的自身更新
+- 组件的父组件更新：此时子组件的 componentWillReceiveProps 都会执行，而不是 props 发生变化才执行
 - 组件更新过程中：可以在 shouldComponentUpdate 返回 true/false，控制是否更新组件
-- 组件卸载
 
 ![React15 生命周期](./react15-lifecycle.png)
 
@@ -38,7 +38,7 @@ React 生命周期中的 render 在其中扮演着 Virtual DOM 生成的关键�
 
 ## React 16 改造生命周期的主要动机是为了配合 Fiber 架构带来的异步渲染机制
 
-- 为同步渲染改异步渲染的 Fiber 铺路，把 有可能多次执行的 render 阶段中 componentWillMount/componentWillUpdate/componentWillRecevieProps 三个方法弃用；
+- 为同步渲染改异步渲染的 Fiber 铺路，把有可能多次执行的 render 阶段中 componentWillMount/componentWillUpdate/componentWillRecevieProps 三个方法弃用；
 - 为在一定程度上防止用户对生命周期的错用和滥用，把新增的 getDerivedStateFromProps 用 static 修饰，阻止用户在其内部使用 this 。
 
 ![React 16 生命周期工作流](./process.png)

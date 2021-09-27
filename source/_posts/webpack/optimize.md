@@ -4,7 +4,7 @@ categories: webpack
 date: 2021-09-15
 ---
 
-优化 webpack，提高打包速度，减少打包体积。
+优化 webpack 配置，提高打包速度，减少打包体积。
 
 <!-- more -->
 

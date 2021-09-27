@@ -5,6 +5,11 @@ tags: React
 date: 2021-07-26
 ---
 
+知识点：
+
+- 单向数据流即数据只能从父组件向自组件流动
+- 四种 React 组件进行数据传递的方法：props/context/EventEmitter/Redux
+
 React 是一个构建用户界面的 JavaScript 库，其思想是用数据驱动视图。
 
 可以用如下代码来表示：

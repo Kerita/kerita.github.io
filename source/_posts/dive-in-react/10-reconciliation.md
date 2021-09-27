@@ -5,6 +5,14 @@ tags: React
 date: 2021-07-28
 ---
 
+## 知识点：
+
+### Diff 算法过程
+
+- 分层对比
+- 类型一致才对比
+- 使用 key 尽可能复用节点
+
 ## 什么是调和（Reconciliation）
 
 React 官方文档如是说：
