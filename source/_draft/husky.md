@@ -1,11 +1,5 @@
----
-title: Husky 7 配置过程
-categories: 工程化
-date: 2021-08-13
----
+husky 是一个 Node.js 包，可以让我们更方便地管理 Git Hook。基于 Git pre-commit Hook，我们可以在代码 commit 之前做格式检查，保证代码规范。
 
-<!-- more -->
+如何配置 husky + ESlint + Prettier + lint-staged 可以参考这篇文章，讲得很详细，这里不再赘述。
 
-## 参考资料
-
-- [husky 文档](https://typicode.github.io/husky/#/)
+下面我们分析下 husky 的源码。
