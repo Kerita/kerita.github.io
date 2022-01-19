@@ -1,8 +1,6 @@
 ---
 title: 记一次感冒
-categories: 健康
 toc: true
-tags: 感冒
 date: 2021/5/27
 ---
 

@@ -1,6 +1,6 @@
 ---
 title: 4-ts--TypeScript
-categories: 前端进击
+categories: 前端进阶
 date: 2021-11-04
 ---
 
