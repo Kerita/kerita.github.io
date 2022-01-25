@@ -83,6 +83,8 @@
         
           <a class="main-nav-link" href="/tags/React/">React系列</a>
         
+          <a class="main-nav-link" href="/categories/webpack/">webpack系列</a>
+        
           <a class="main-nav-link" href="/categories/%E5%89%8D%E7%AB%AF%E8%BF%9B%E5%87%BB%E7%AC%94%E8%AE%B0/">前端进击系列</a>
         
       </nav>
@@ -129,18 +131,15 @@
         
           <div class="e-content article-entry" itemprop="articleBody">
             
-              <p>在 Parallels 安装了 Windows 10 系统，直接编辑 hosts 文件提示没有权限保存，用以下方法解决：</p>
-                
-                  <p class="article-more-link">
-                    <a href="/01/05/2022/windows-open-hosts/#more">
-                      Read More
-                    </a>
-                  </p>
-                  
-                    
+                      <p>在 Parallels 安装了 Windows 10 系统，直接编辑 hosts 文件提示没有权限保存，用以下方法解决：</p>
+<p>1.打开 hosts 文件所在的文件夹</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">cd C:\Windows\System32\drivers\etc</span><br></pre></td></tr></table></figure>
+<p>2.cmd 用管理员身份打开<br>3.cmd 上输入命令 notepad hosts</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">notepad hosts</span><br></pre></td></tr></table></figure>
+                        
           </div>
           <footer class="article-footer">
-            <a data-url="https://kerita.me/01/05/2022/windows-open-hosts/" data-id="ckytitxlb0044ltreey1ogwhh" data-title="Parallels 上的 Windows 系统编辑 Hosts 文件"
+            <a data-url="https://kerita.me/01/05/2022/windows-open-hosts/" data-id="ckytvclls0040kdm6gkw33xv8" data-title="Parallels 上的 Windows 系统编辑 Hosts 文件"
               class="article-share-link">
               分享
             </a>
@@ -180,6 +179,8 @@
             
               <p>某次升级完 VS Code 之后，打开窗口便一直出现一个错误提示。如下所示。</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">Unable to resolve your shell environment in a reasonable time.</span><br><span class="line">Please review your shell configuration.</span><br></pre></td></tr></table></figure>
+<p>点击错误提示下方的官方文档按钮，进入官方文档，查看如何解决。文档说是加载终端配置的时间太长了，才出现的错误；终端配置文件可能是 <code>~/.bashrc</code> 和 <code>~/.zshrc</code>。</p>
+<p>查看终端配置文件，发现我并没有 <code>~/.bashrc</code>，猜想可能是该文件缺失导致的。</p>
                 
                   <p class="article-more-link">
                     <a href="/12/14/2021/vscode-bashrc/#more">
@@ -190,7 +191,7 @@
                     
           </div>
           <footer class="article-footer">
-            <a data-url="https://kerita.me/12/14/2021/vscode-bashrc/" data-id="ckytitxl8003wltre27sk4l4w" data-title="VS Code Resolving shell environment fails 提示"
+            <a data-url="https://kerita.me/12/14/2021/vscode-bashrc/" data-id="ckytvcllr003wkdm64s8f9c95" data-title="VS Code Resolving shell environment fails 提示"
               class="article-share-link">
               分享
             </a>
@@ -235,8 +236,7 @@
               <p>TypeScript 是一种类型安全的 JavaScript 语言，以下使用 TS 进行代称，使用的 TS 的好处如下：</p>
 <ul>
 <li>引入静态类型声明，减少不必要的类型判断和文档注释；</li>
-<li>及早发现错误，静态类型检查 1 或编译时发现问题，不用等到运行；</li>
-</ul>
+<li>及早发现错误，静态类型检查 1 或编译时发现问题，不用等到运行；
                 
                   <p class="article-more-link">
                     <a href="/11/04/fe-advance/4-ts/#more">
@@ -247,7 +247,7 @@
                     
           </div>
           <footer class="article-footer">
-            <a data-url="https://kerita.me/11/04/fe-advance/4-ts/" data-id="ckytitxm2005oltree5ocbdgc" data-title="4-ts--TypeScript"
+            <a data-url="https://kerita.me/11/04/fe-advance/4-ts/" data-id="ckytvclmi005mkdm6dwnccry7" data-title="4-ts--TypeScript"
               class="article-share-link">
               分享
             </a>
@@ -289,18 +289,16 @@
         
           <div class="e-content article-entry" itemprop="articleBody">
             
-              <p>前端有各种模块化标注 AMD/CMD/CommonJS/ES6 module，各种模块化标准实现各有不同。</p>
-                
-                  <p class="article-more-link">
-                    <a href="/11/01/fe-advance/2-module/#more">
-                      Read More
-                    </a>
-                  </p>
-                  
-                    
+                      <p>前端有各种模块化标注 AMD/CMD/CommonJS/ES6 module，各种模块化标准实现各有不同。</p>
+<h2 id="AMD"><a href="#AMD" class="headerlink" title="AMD"></a>AMD</h2><p>在声明依赖时，就加载。</p>
+<h2 id="CMD"><a href="#CMD" class="headerlink" title="CMD"></a>CMD</h2><p>在使用依赖时，才加载</p>
+<h2 id="CommonJS"><a href="#CommonJS" class="headerlink" title="CommonJS"></a>CommonJS</h2><p>针对服务端，运行时加载；值拷贝。</p>
+<h2 id="ES6-module"><a href="#ES6-module" class="headerlink" title="ES6 module"></a>ES6 module</h2><p>针对客户端，编译时加载；引用拷贝。</p>
+
+                        
           </div>
           <footer class="article-footer">
-            <a data-url="https://kerita.me/11/01/fe-advance/2-module/" data-id="ckytitxlz005gltre8q26frks" data-title="2-各种模块化标准"
+            <a data-url="https://kerita.me/11/01/fe-advance/2-module/" data-id="ckytvclmf005ekdm6hndmh7j7" data-title="2-各种模块化标准"
               class="article-share-link">
               分享
             </a>
@@ -338,7 +336,16 @@
         
           <div class="e-content article-entry" itemprop="articleBody">
             
-              <h2 id="浏览器对象"><a href="#浏览器对象" class="headerlink" title="浏览器对象"></a>浏览器对象</h2>
+              <h2 id="浏览器对象"><a href="#浏览器对象" class="headerlink" title="浏览器对象"></a>浏览器对象</h2><ul>
+<li><p>window 对象<br>1.关注 window.onerror，用于前端错误收集和上报，ps 阿里云有免费的日志服务，可以收集前端错误，上报到阿里云服务器<br>2.使用 setTimeout 替换 setInterval 用于定时器，setInterval 缺点是不能控制间隔时间，有可能浏览器重新获得焦点后会执行多次<br>3.innerWidth 和 innerHeight 可以获取浏览器窗口的宽高，有些浏览器不支持，比如 IE，可以使用 document.body.clientWidth 和 document.body.clientHeight 获取</p>
+</li>
+<li><p>location 对象<br>1.关注 location.href，用于获取当前页面的 url 和替换当前页面的 url，可回退<br>2.关注 location.replace，用于替换当前页面的 url，不可回退</p>
+</li>
+<li><p>navigator 对象<br>1.关注 navigator.userAgent，用于获取当前浏览器的 userAgent<br>2.关注 navigator.language，用于获取当前浏览器的语言<br>3.关注 navigator.onLine，用于获取当前网络是否连接</p>
+</li>
+<li><p>history 对象<br>1.关注 history.pushState，用于替换当前页面的 url，可回退<br>2.关注 history.replaceState，用于替换当前页面的 url，不可回退</p>
+</li>
+</ul>
                 
                   <p class="article-more-link">
                     <a href="/11/01/fe-advance/3-browser/#more">
@@ -349,7 +356,7 @@
                     
           </div>
           <footer class="article-footer">
-            <a data-url="https://kerita.me/11/01/fe-advance/3-browser/" data-id="ckytitxm1005kltreb6b8hwir" data-title="3-浏览器详解"
+            <a data-url="https://kerita.me/11/01/fe-advance/3-browser/" data-id="ckytvclmh005ikdm6an8z55my" data-title="3-浏览器详解"
               class="article-share-link">
               分享
             </a>
@@ -392,6 +399,11 @@
           <div class="e-content article-entry" itemprop="articleBody">
             
               <p>Promise 是 ES6 内置的对象，用一个对象实例表示某个操作最终是成功或者失败，并且将成功值或者原因暴露出来，它主要解决了异步编程过程中存在的两个问题：<br>1.回调地狱问题<br>2.信任问题</p>
+<h2 id="解决的问题"><a href="#解决的问题" class="headerlink" title="解决的问题"></a>解决的问题</h2><p>1.回调地狱问题</p>
+<ul>
+<li>传统异步编程<br>传统异步编程中，如果需要多次将请求的返回结果当做下次请求的参数，便需要不断在回调函数中嵌套请求，形成回调地狱。回调地狱代码嵌套，可读性差。</li>
+</ul>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">ajax(<span class="string">&#x27;/url1&#x27;</span>, &#123;<span class="attr">param</span>: &#123;&#125;&#125;,  <span class="function">(<span class="params">res1</span>) =&gt;</span> &#123;</span><br><span class="line">    ajax(<span class="string">&#x27;/url2, &#123;param: res1&#125;, (res2) =&gt; &#123;</span></span><br><span class="line"><span class="string">        ajax(&#x27;</span>/url3, &#123;<span class="attr">param</span>: res2&#125;, <span class="function">(<span class="params">res3</span>) =&gt;</span> &#123;</span><br><span class="line">            <span class="comment">// 继续回调</span></span><br><span class="line">        &#125;)</span><br><span class="line">    &#125;)</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
                 
                   <p class="article-more-link">
                     <a href="/09/29/fe-advance/1-promise/#more">
@@ -402,54 +414,7 @@
                     
           </div>
           <footer class="article-footer">
-            <a data-url="https://kerita.me/09/29/fe-advance/1-promise/" data-id="ckytitxlx005cltreh4fg6s2d" data-title="1-了解 Promise"
-              class="article-share-link">
-              分享
-            </a>
-            
-                
-                    
-          </footer>
-  </div>
-  
-</article>
-
-
-    
-  
-    <article id="post-2021/websocket" class="h-entry article article-type-post"
-  itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
-  <div class="article-meta">
-    <a href="/09/17/2021/websocket/" class="article-date">
-  <time class="dt-published" datetime="2021-09-17T00:00:00.000Z" itemprop="datePublished">2021-09-17</time>
-</a>
-      
-  <div class="article-category">
-    <a class="article-category-link" href="/categories/js/">js</a>
-  </div>
-
-  </div>
-  <div class="article-inner">
-    
-      
-        <header class="article-header">
-          
-  
-    <h1 itemprop="name">
-      <a class="p-name article-title" href="/09/17/2021/websocket/">前端如何建立 websocket 连接</a>
-    </h1>
-  
-
-        </header>
-        
-          <div class="e-content article-entry" itemprop="articleBody">
-            
-                      <a id="more"></a>
-
-                        
-          </div>
-          <footer class="article-footer">
-            <a data-url="https://kerita.me/09/17/2021/websocket/" data-id="ckytitxl90040ltre2kzvc8jc" data-title="前端如何建立 websocket 连接"
+            <a data-url="https://kerita.me/09/29/fe-advance/1-promise/" data-id="ckytvclmd005akdm6gnhv48l4" data-title="1-了解 Promise"
               class="article-share-link">
               分享
             </a>
@@ -491,18 +456,18 @@
         
           <div class="e-content article-entry" itemprop="articleBody">
             
-              <p>Hooks 是 React 16.8 版本新出的功能，比 class 具有很多优点。</p>
-                
-                  <p class="article-more-link">
-                    <a href="/09/16/dive-in-react/hooks/#more">
-                      Read More
-                    </a>
-                  </p>
-                  
-                    
+                      <p>Hooks 是 React 16.8 版本新出的功能，比 class 具有很多优点。</p>
+<ul>
+<li>class 组件需要手动绑定 this 或者使用利用 class property 和箭头函数绑定</li>
+<li>抽象并复用状态逻辑</li>
+<li>替换逻辑复杂的高阶组件</li>
+<li>useEffect 让相关的逻辑聚合</li>
+</ul>
+
+                        
           </div>
           <footer class="article-footer">
-            <a data-url="https://kerita.me/09/16/dive-in-react/hooks/" data-id="ckytitxlt0054ltre638a9axf" data-title="Hooks 组件的优点"
+            <a data-url="https://kerita.me/09/16/dive-in-react/hooks/" data-id="ckytvclma0053kdm6dlvue1v2" data-title="Hooks 组件的优点"
               class="article-share-link">
               分享
             </a>
@@ -544,18 +509,18 @@
         
           <div class="e-content article-entry" itemprop="articleBody">
             
-              <p>使用一些技巧优化 React 性能。</p>
-                
-                  <p class="article-more-link">
-                    <a href="/09/16/dive-in-react/optimize/#more">
-                      Read More
-                    </a>
-                  </p>
-                  
-                    
+                      <p>使用一些技巧优化 React 性能。</p>
+<ul>
+<li>shouldComponentUpdate 与 React.memo, useMemo</li>
+<li>使用虚拟滚动</li>
+<li>React Fragments 减少标签</li>
+<li>尽量不要使用内联函数定义</li>
+</ul>
+
+                        
           </div>
           <footer class="article-footer">
-            <a data-url="https://kerita.me/09/16/dive-in-react/optimize/" data-id="ckytitxlu0058ltre3coo6cxk" data-title="React 优化技巧"
+            <a data-url="https://kerita.me/09/16/dive-in-react/optimize/" data-id="ckytvclmc0056kdm6e0an7p6l" data-title="React 优化技巧"
               class="article-share-link">
               分享
             </a>
@@ -597,18 +562,85 @@
         
           <div class="e-content article-entry" itemprop="articleBody">
             
-              <p>优化 webpack 配置，提高打包速度，减少打包体积。</p>
-                
-                  <p class="article-more-link">
-                    <a href="/09/15/webpack/optimize/#more">
-                      Read More
-                    </a>
-                  </p>
-                  
-                    
+                      <p>优化 webpack 配置，提高打包速度，减少打包体积。</p>
+<h2 id="一些插件"><a href="#一些插件" class="headerlink" title="一些插件"></a>一些插件</h2><ul>
+<li>DLL</li>
+<li>moment-locales-webpack-plugin</li>
+<li>mini-css-extract-plugin</li>
+<li>thread-loader</li>
+</ul>
+<h2 id="loader"><a href="#loader" class="headerlink" title="loader"></a>loader</h2><ul>
+<li>image-webpack-loader<br>压缩图片</li>
+<li>url-loader<br>将图片转出 base64</li>
+</ul>
+<h2 id="babel"><a href="#babel" class="headerlink" title="babel"></a>babel</h2><ul>
+<li>babel-import-plugin</li>
+</ul>
+<h2 id="模块使用"><a href="#模块使用" class="headerlink" title="模块使用"></a>模块使用</h2><ul>
+<li>lodash-es</li>
+</ul>
+<h2 id="配置"><a href="#配置" class="headerlink" title="配置"></a>配置</h2><ul>
+<li>cache</li>
+<li>sourcemap</li>
+</ul>
+<h2 id="参考资料"><a href="#参考资料" class="headerlink" title="参考资料"></a>参考资料</h2><ul>
+<li><a target="_blank" rel="noopener" href="https://github.com/GoogleChromeLabs/webpack-libs-optimizations">Optimize your libraries with webpack</a></li>
+</ul>
+
+                        
           </div>
           <footer class="article-footer">
-            <a data-url="https://kerita.me/09/15/webpack/optimize/" data-id="ckytitxmn007mltre836vexq4" data-title="webpack 优化策略"
+            <a data-url="https://kerita.me/09/15/webpack/optimize/" data-id="ckytvclnb007lkdm6eiiicptp" data-title="webpack 优化策略"
+              class="article-share-link">
+              分享
+            </a>
+            
+                
+                    
+          </footer>
+  </div>
+  
+</article>
+
+
+    
+  
+    <article id="post-webpack/scope-hoisting" class="h-entry article article-type-post"
+  itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/08/24/webpack/scope-hoisting/" class="article-date">
+  <time class="dt-published" datetime="2021-08-24T00:00:00.000Z" itemprop="datePublished">2021-08-24</time>
+</a>
+      
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/webpack/">webpack</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+      
+        <header class="article-header">
+          
+  
+    <h1 itemprop="name">
+      <a class="p-name article-title" href="/08/24/webpack/scope-hoisting/">webpack Scope Hoisting 配置</a>
+    </h1>
+  
+
+        </header>
+        
+          <div class="e-content article-entry" itemprop="articleBody">
+            
+                      <p>JavaScript 中就存在 Hoisting，将“变量声明”和“函数声明”提升到作用域顶部，Webpack 的 Scope Hoisting 也是类似的道理，将引入模块提升到当前模块声明，减少引入模块的声明，减少函数声明，缩小体积。</p>
+<h2 id="参考资料"><a href="#参考资料" class="headerlink" title="参考资料"></a>参考资料</h2><ul>
+<li><a target="_blank" rel="noopener" href="https://cloud.tencent.com/developer/article/1663231#:~:text=Scope%20Hoisting%20%E6%98%AFwebpack3%20%E7%9A%84,%EF%BC%8C%E3%80%8C%E8%BF%90%E8%A1%8C%E6%9B%B4%E5%BF%AB%E3%80%8D%E3%80%82">Scope Hoisting 配置</a></li>
+</ul>
+
+                        
+          </div>
+          <footer class="article-footer">
+            <a data-url="https://kerita.me/08/24/webpack/scope-hoisting/" data-id="ckytvclnn008lkdm6djwu8jxv" data-title="webpack Scope Hoisting 配置"
               class="article-share-link">
               分享
             </a>
@@ -678,7 +710,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">分类</h3>
     <div class="widget">
-      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Babel/">Babel</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/ES6/">ES6</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/React/">React</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/js/">js</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/node/">node</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/webpack/">webpack</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E4%BA%A7%E5%93%81/">产品</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E5%89%8D%E7%AB%AF/">前端</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E5%89%8D%E7%AB%AF%E8%BF%9B%E5%87%BB%E7%AC%94%E8%AE%B0/">前端进击笔记</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E5%89%8D%E7%AB%AF%E8%BF%9B%E9%98%B6/">前端进阶</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E5%90%8D%E4%BA%BA/">名人</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E5%B0%8F%E6%8A%80%E5%B7%A7/">小技巧</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E5%B7%A5%E5%85%B7/">工具</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E6%80%BB%E7%BB%93/">总结</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E6%9E%84%E5%BB%BA/">构建</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E6%AD%8C/">歌</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E6%B7%B1%E5%85%A5%E6%B5%85%E5%87%BA-React/">深入浅出 React</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E6%BA%90%E7%A0%81%E9%98%85%E8%AF%BB/">源码阅读</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E8%BF%90%E5%8A%A8/">运动</a></li></ul>
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Babel/">Babel</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/ES6/">ES6</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/React/">React</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/node/">node</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/webpack/">webpack</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E4%BA%A7%E5%93%81/">产品</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E5%89%8D%E7%AB%AF/">前端</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E5%89%8D%E7%AB%AF%E8%BF%9B%E5%87%BB%E7%AC%94%E8%AE%B0/">前端进击笔记</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E5%89%8D%E7%AB%AF%E8%BF%9B%E9%98%B6/">前端进阶</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E5%90%8D%E4%BA%BA/">名人</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E5%B0%8F%E6%8A%80%E5%B7%A7/">小技巧</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E5%B7%A5%E5%85%B7/">工具</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E6%80%BB%E7%BB%93/">总结</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E6%9E%84%E5%BB%BA/">构建</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E6%AD%8C/">歌</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E6%B7%B1%E5%85%A5%E6%B5%85%E5%87%BA-React/">深入浅出 React</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E6%BA%90%E7%A0%81%E9%98%85%E8%AF%BB/">源码阅读</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E8%BF%90%E5%8A%A8/">运动</a></li></ul>
     </div>
   </div>
 
@@ -710,6 +742,8 @@
     <a href="/guestbook" class="mobile-nav-link">留言板</a>
   
     <a href="/tags/React/" class="mobile-nav-link">React系列</a>
+  
+    <a href="/categories/webpack/" class="mobile-nav-link">webpack系列</a>
   
     <a href="/categories/%E5%89%8D%E7%AB%AF%E8%BF%9B%E5%87%BB%E7%AC%94%E8%AE%B0/" class="mobile-nav-link">前端进击系列</a>
   
