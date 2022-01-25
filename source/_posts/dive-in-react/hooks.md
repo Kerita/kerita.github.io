@@ -1,5 +1,5 @@
 ---
-title: Hooks 组件的有点
+title: Hooks 组件的优点
 categories: 深入浅出 React
 date: 2021-09-16
 ---
