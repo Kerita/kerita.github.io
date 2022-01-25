@@ -6,12 +6,9 @@ date: 2021-09-15
 
 优化 webpack 配置，提高打包速度，减少打包体积。
 
-<!-- more -->
-
 ## 一些插件
 
 - DLL
-- moment-locales-webpack-plugin
 - moment-locales-webpack-plugin
 - mini-css-extract-plugin
 - thread-loader

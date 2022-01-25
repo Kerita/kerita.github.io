@@ -6,8 +6,6 @@ date: 2021-11-01
 
 ## 浏览器对象
 
-<!-- more -->
-
 - window 对象  
   1.关注 window.onerror，用于前端错误收集和上报，ps 阿里云有免费的日志服务，可以收集前端错误，上报到阿里云服务器  
   2.使用 setTimeout 替换 setInterval 用于定时器，setInterval 缺点是不能控制间隔时间，有可能浏览器重新获得焦点后会执行多次
@@ -25,6 +23,8 @@ date: 2021-11-01
 - history 对象  
   1.关注 history.pushState，用于替换当前页面的 url，可回退  
   2.关注 history.replaceState，用于替换当前页面的 url，不可回退
+
+<!-- more -->
 
 ## 事件模型
 

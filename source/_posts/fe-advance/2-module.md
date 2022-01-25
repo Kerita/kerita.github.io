@@ -6,8 +6,6 @@ date: 2021-11-01
 
 前端有各种模块化标注 AMD/CMD/CommonJS/ES6 module，各种模块化标准实现各有不同。
 
-<!-- more -->
-
 ## AMD
 
 在声明依赖时，就加载。

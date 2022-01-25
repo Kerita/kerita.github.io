@@ -6,8 +6,6 @@ date: 2021-08-23
 
 entry 是 webpack 打包项目的入口，可配置打包单个文件或者文件，可使用 dependOn 与其他 入口 chunk 共享模块。
 
-<!-- more -->
-
 以下大部分例子可参考[这个项目](https://github.com/Kerita/learn-webpack)的 entry 工程。
 
 ## 默认 entry
@@ -39,6 +37,8 @@ webpack 4 之后，为了简化配置，其 entry 值默认为 `./src/index.js`�
 	./dist/page1.js
 	./dist/page2.js
 ```
+
+<!-- more -->
 
 ## dependOn 配置 chunk 共享模块
 

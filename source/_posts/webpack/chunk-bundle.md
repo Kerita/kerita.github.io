@@ -6,8 +6,6 @@ date: 2021-08-23
 
 chunk 和 bundle 都是 webpack 的重要概念，今天我们来理解它们。
 
-<!-- more -->
-
 ## chunk
 
 来自 webpack 词汇表的诠释：
