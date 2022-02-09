@@ -46,6 +46,13 @@ vue-router 三种路由模式分别是 History,Hash 和 Abstract，History 和 H
 
 Abstract 支持所有 JavaScript 运行环境，如 Node.js 服务器端。如果发现没有浏览器的 API，路由会自动强制进入这个模式。使用 Abstract 模式，可以在已存在的路由页面中内嵌其他的路由页面，而保持在浏览器当中依旧显示当前页面的路由。
 
+## 总结
+
+- history 模式依赖 popstate 事件
+  - 使用 window.history.back 和 window.history.forward 改变 URL，触发 popstate 事件，可以实现单页应用的路由切换
+  - 使用 window.history.pushState 和 window.history.replaceState 无法触发事件，因而无法实现单页应用路由切换
+- hash 模式依赖 hashchange 事件，使用 window.location.hash 修改和获取路由
+
 ## 参考资料
 
 [浅析 vue-router 的三种模式](https://segmentfault.com/a/1190000039692879)

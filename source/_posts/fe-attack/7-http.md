@@ -147,6 +147,14 @@ Cache-Control 这个字段是 http 1.1 的规范，一般常用该字段的 max-
 
 ![HTTP 缓存命中策略](./cache.png)
 
+## 为什么既有 cache-control，又有 expired
+
+cache-control 比 expired 有更多的缓存控制选项，同时 expired 在服务器与浏览器的时间不一致时，浏览器会出现判断错误的情况。
+
+## 为什么既有 Etag 又有 last-Modified
+
+last-Modified 使用只能精确到秒，如果一个文件在 1s 内变化了几次，服务器无法识别出是否有更改，Etag 使用文件 hash 则可以解决这个问题。
+
 ## 客户端服务端双向通信
 
 ![双向通信](two.png)
