@@ -4,9 +4,10 @@ menu:
   归档: /archives
   关于我: /about
   留言板: /guestbook
-  React系列: /tags/React/
-  webpack系列: /categories/webpack/
   前端进击系列: /categories/前端进击笔记/
+  webpack系列: /categories/webpack/
+  React系列: /tags/React/
+  Babel系列: /categories/Babel/
 rss: /atom.xml
 banner: "images/banner.jpg"
 

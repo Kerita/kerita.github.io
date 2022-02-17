@@ -1,6 +1,6 @@
 ---
 title: 什么是 Babel？
-categories: 前端
+categories: Babel
 toc: true
 tags: 工程化
 date: 2021/6/24
