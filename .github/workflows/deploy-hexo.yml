@@ -1,0 +1,59 @@
+name: Build & Deploy Hexo (npm + package-lock, source -> master)
+
+on:
+  push:
+    branches: [ "source" ]
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: hexo-deploy
+  cancel-in-progress: true
+
+jobs:
+  build-deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout source
+        uses: actions/checkout@v4
+        with:
+          ref: source
+          fetch-depth: 0
+
+      - name: Setup Node 12
+        uses: actions/setup-node@v4
+        with:
+          node-version: "12"
+          cache: "npm"
+
+      # 严格按 package-lock.json 安装：不会更新 lock，不会做版本漂移
+      - name: Install dependencies (lockfile strict)
+        run: |
+          npm ci
+
+      - name: Install Hexo CLI
+        run: |
+          npm i -g hexo-cli
+
+      - name: Generate static files
+        run: |
+          hexo generate
+
+      # 等价 travis fqdn: kerita.me
+      # 如果你最终用 www 主站，把 kerita.me 改成 www.kerita.me
+      - name: Add CNAME
+        run: |
+          echo "www.kerita.me" > public/CNAME
+
+      - name: Deploy to master
+        uses: peaceiris/actions-gh-pages@v4
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_branch: master
+          publish_dir: ./public
+          keep_files: true
+          user_name: github-actions[bot]
+          user_email: github-actions[bot]@users.noreply.github.com
