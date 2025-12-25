@@ -106,6 +106,126 @@
       <div class="outer">
         <section id="main">
   
+    <article id="post-webpack/optimize" class="h-entry article article-type-post"
+  itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/09/15/webpack/optimize/" class="article-date">
+  <time class="dt-published" datetime="2021-09-15T00:00:00.000Z" itemprop="datePublished">2021-09-15</time>
+</a>
+      
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/webpack/">webpack</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+      
+        <header class="article-header">
+          
+  
+    <h1 itemprop="name">
+      <a class="p-name article-title" href="/09/15/webpack/optimize/">webpack 优化策略</a>
+    </h1>
+  
+
+        </header>
+        
+          <div class="e-content article-entry" itemprop="articleBody">
+            
+                      <p>优化 webpack 配置，提高打包速度，减少打包体积。</p>
+<h2 id="一些插件"><a href="#一些插件" class="headerlink" title="一些插件"></a>一些插件</h2><ul>
+<li>DLL</li>
+<li>moment-locales-webpack-plugin</li>
+<li>mini-css-extract-plugin</li>
+<li>thread-loader</li>
+</ul>
+<h2 id="loader"><a href="#loader" class="headerlink" title="loader"></a>loader</h2><ul>
+<li>image-webpack-loader<br>压缩图片</li>
+<li>url-loader<br>将图片转出 base64</li>
+</ul>
+<h2 id="babel"><a href="#babel" class="headerlink" title="babel"></a>babel</h2><ul>
+<li>babel-import-plugin</li>
+</ul>
+<h2 id="模块使用"><a href="#模块使用" class="headerlink" title="模块使用"></a>模块使用</h2><ul>
+<li>lodash-es</li>
+</ul>
+<h2 id="配置"><a href="#配置" class="headerlink" title="配置"></a>配置</h2><ul>
+<li>cache</li>
+<li>sourcemap</li>
+</ul>
+<h2 id="参考资料"><a href="#参考资料" class="headerlink" title="参考资料"></a>参考资料</h2><ul>
+<li><a target="_blank" rel="noopener" href="https://github.com/GoogleChromeLabs/webpack-libs-optimizations">Optimize your libraries with webpack</a></li>
+</ul>
+
+                        
+          </div>
+          <footer class="article-footer">
+            <a data-url="https://kerita.me/09/15/webpack/optimize/" data-id="cmjlgozry007kpm1khvvq695q" data-title="webpack 优化策略"
+              class="article-share-link">
+              分享
+            </a>
+            
+                
+                    
+          </footer>
+  </div>
+  
+</article>
+
+
+    
+  
+    <article id="post-webpack/scope-hoisting" class="h-entry article article-type-post"
+  itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/08/24/webpack/scope-hoisting/" class="article-date">
+  <time class="dt-published" datetime="2021-08-24T00:00:00.000Z" itemprop="datePublished">2021-08-24</time>
+</a>
+      
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/webpack/">webpack</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+      
+        <header class="article-header">
+          
+  
+    <h1 itemprop="name">
+      <a class="p-name article-title" href="/08/24/webpack/scope-hoisting/">webpack Scope Hoisting 配置</a>
+    </h1>
+  
+
+        </header>
+        
+          <div class="e-content article-entry" itemprop="articleBody">
+            
+                      <p>JavaScript 中就存在 Hoisting，将“变量声明”和“函数声明”提升到作用域顶部，Webpack 的 Scope Hoisting 也是类似的道理，将引入模块提升到当前模块声明，减少引入模块的声明，减少函数声明，缩小体积。</p>
+<h2 id="参考资料"><a href="#参考资料" class="headerlink" title="参考资料"></a>参考资料</h2><ul>
+<li><a target="_blank" rel="noopener" href="https://cloud.tencent.com/developer/article/1663231#:~:text=Scope%20Hoisting%20%E6%98%AFwebpack3%20%E7%9A%84,%EF%BC%8C%E3%80%8C%E8%BF%90%E8%A1%8C%E6%9B%B4%E5%BF%AB%E3%80%8D%E3%80%82">Scope Hoisting 配置</a></li>
+</ul>
+
+                        
+          </div>
+          <footer class="article-footer">
+            <a data-url="https://kerita.me/08/24/webpack/scope-hoisting/" data-id="cmjlgozrz007opm1k9mo1hw20" data-title="webpack Scope Hoisting 配置"
+              class="article-share-link">
+              分享
+            </a>
+            
+                
+                    
+          </footer>
+  </div>
+  
+</article>
+
+
+    
+  
     <article id="post-webpack/chunk-bundle" class="h-entry article article-type-post"
   itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
   <div class="article-meta">
@@ -153,7 +273,7 @@
                         
           </div>
           <footer class="article-footer">
-            <a data-url="https://kerita.me/08/23/webpack/chunk-bundle/" data-id="ckzqewg1k007cq6pzdx6cguok" data-title="webpack chunk 与 bundle"
+            <a data-url="https://kerita.me/08/23/webpack/chunk-bundle/" data-id="cmjlgozrv007cpm1kd1fcae4a" data-title="webpack chunk 与 bundle"
               class="article-share-link">
               分享
             </a>
@@ -214,7 +334,7 @@
                     
           </div>
           <footer class="article-footer">
-            <a data-url="https://kerita.me/08/23/webpack/entry/" data-id="ckzqewg1k007eq6pzfley0uwt" data-title="webpack entry 配置"
+            <a data-url="https://kerita.me/08/23/webpack/entry/" data-id="cmjlgozrw007epm1kbhat6vbh" data-title="webpack entry 配置"
               class="article-share-link">
               分享
             </a>
@@ -268,7 +388,7 @@
                     
           </div>
           <footer class="article-footer">
-            <a data-url="https://kerita.me/08/23/webpack/hash-chunkhash-contenthash/" data-id="ckzqewg1m007jq6pz7az32k8o" data-title="webpack hash, chunkhash, contenthash 区别"
+            <a data-url="https://kerita.me/08/23/webpack/hash-chunkhash-contenthash/" data-id="cmjlgozrx007ipm1k5a45fhbh" data-title="webpack hash, chunkhash, contenthash 区别"
               class="article-share-link">
               分享
             </a>
@@ -321,7 +441,7 @@
                     
           </div>
           <footer class="article-footer">
-            <a data-url="https://kerita.me/08/17/webpack/tree-shaking/" data-id="ckzqewg1y008oq6pz3eq5him0" data-title="Webpack Tree Shaking 配置"
+            <a data-url="https://kerita.me/08/17/webpack/tree-shaking/" data-id="cmjlgozsa0093pm1ke34385mu" data-title="Webpack Tree Shaking 配置"
               class="article-share-link">
               分享
             </a>
@@ -378,7 +498,7 @@
                     
           </div>
           <footer class="article-footer">
-            <a data-url="https://kerita.me/08/13/ES6/obj-map-set/" data-id="ckzqewg0b0044q6pz8frx965z" data-title="Object，Map，Set 区别"
+            <a data-url="https://kerita.me/08/13/ES6/obj-map-set/" data-id="cmjlgozqy004apm1k81pz8uqa" data-title="Object，Map，Set 区别"
               class="article-share-link">
               分享
             </a>
@@ -433,7 +553,7 @@
                     
           </div>
           <footer class="article-footer">
-            <a data-url="https://kerita.me/08/10/dive-in-react/18-redux/" data-id="ckzqewg0i004kq6pzgxjjfegt" data-title="什么是 Redux——1"
+            <a data-url="https://kerita.me/08/10/dive-in-react/18-redux/" data-id="cmjlgozr5004opm1kgid5fwpn" data-title="什么是 Redux——1"
               class="article-share-link">
               分享
             </a>
@@ -487,7 +607,7 @@
                     
           </div>
           <footer class="article-footer">
-            <a data-url="https://kerita.me/08/10/read-source-code/redux-createStore/" data-id="ckzqewg1h0074q6pzblymgbd2" data-title="Redux createStore 源码"
+            <a data-url="https://kerita.me/08/10/read-source-code/redux-createStore/" data-id="cmjlgozrs0075pm1k0gu40gzv" data-title="Redux createStore 源码"
               class="article-share-link">
               分享
             </a>
@@ -540,110 +660,7 @@
                     
           </div>
           <footer class="article-footer">
-            <a data-url="https://kerita.me/08/08/2021/flux-concepts/" data-id="ckzqewfzs002wq6pzdfb948a8" data-title="关于的 Flux 的几个概念"
-              class="article-share-link">
-              分享
-            </a>
-            
-                
-                    
-          </footer>
-  </div>
-  
-</article>
-
-
-    
-  
-    <article id="post-2021/babel-sourceType" class="h-entry article article-type-post"
-  itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
-  <div class="article-meta">
-    <a href="/08/03/2021/babel-sourceType/" class="article-date">
-  <time class="dt-published" datetime="2021-08-03T00:00:00.000Z" itemprop="datePublished">2021-08-03</time>
-</a>
-      
-  </div>
-  <div class="article-inner">
-    
-      
-        <header class="article-header">
-          
-  
-    <h1 itemprop="name">
-      <a class="p-name article-title" href="/08/03/2021/babel-sourceType/">sourceType 错误</a>
-    </h1>
-  
-
-        </header>
-        
-          <div class="e-content article-entry" itemprop="articleBody">
-            
-              <p>升级 Babel 配置过程除了遇到 <a href="/07/30/2021/replaceAll-is-not-a-function/#more"><code>replaceAll-is-not-a-function</code></a> 问题，还遇到关于 Babel sourceType 配置的问题。</p>
-                
-                  <p class="article-more-link">
-                    <a href="/08/03/2021/babel-sourceType/#more">
-                      Read More
-                    </a>
-                  </p>
-                  
-                    
-          </div>
-          <footer class="article-footer">
-            <a data-url="https://kerita.me/08/03/2021/babel-sourceType/" data-id="ckzqewfzm002fq6pz1zw86nf6" data-title="sourceType 错误"
-              class="article-share-link">
-              分享
-            </a>
-            
-                
-                    
-          </footer>
-  </div>
-  
-</article>
-
-
-    
-  
-    <article id="post-read-source-code/react-event" class="h-entry article article-type-post"
-  itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
-  <div class="article-meta">
-    <a href="/08/03/read-source-code/react-event/" class="article-date">
-  <time class="dt-published" datetime="2021-08-03T00:00:00.000Z" itemprop="datePublished">2021-08-03</time>
-</a>
-      
-  <div class="article-category">
-    <a class="article-category-link" href="/categories/%E6%BA%90%E7%A0%81%E9%98%85%E8%AF%BB/">源码阅读</a>
-  </div>
-
-  </div>
-  <div class="article-inner">
-    
-      
-        <header class="article-header">
-          
-  
-    <h1 itemprop="name">
-      <a class="p-name article-title" href="/08/03/read-source-code/react-event/">React 合成事件源码阅读</a>
-    </h1>
-  
-
-        </header>
-        
-          <div class="e-content article-entry" itemprop="articleBody">
-            
-              <p>React 合成事件是基于事件委托机制，构建的自定义事件体系。将需要监听的事件类型都收集起来放在 document 元素上，待事件触发通过 <code>event.target</code> 将事件分发给相关元素。</p>
-<p>以下是分发时收集相关元素代码，包括两次遍历和获取父元素：</p>
-                
-                  <p class="article-more-link">
-                    <a href="/08/03/read-source-code/react-event/#more">
-                      Read More
-                    </a>
-                  </p>
-                  
-                    
-          </div>
-          <footer class="article-footer">
-            <a data-url="https://kerita.me/08/03/read-source-code/react-event/" data-id="ckzqewg1g0070q6pzdxft49rs" data-title="React 合成事件源码阅读"
+            <a data-url="https://kerita.me/08/08/2021/flux-concepts/" data-id="cmjlgozqi002wpm1k0ttr8ir6" data-title="关于的 Flux 的几个概念"
               class="article-share-link">
               分享
             </a>
@@ -685,6 +702,14 @@
       <ul>
         
           <li>
+            <a href="/05/10/2022/ts-declaration/">Could not find a declaration file for module-name</a>
+          </li>
+        
+          <li>
+            <a href="/05/08/2022/monorepo/">什么是 Monorepo</a>
+          </li>
+        
+          <li>
             <a href="/01/05/2022/windows-open-hosts/">Parallels 上的 Windows 系统编辑 Hosts 文件</a>
           </li>
         
@@ -696,14 +721,6 @@
             <a href="/11/04/fe-advance/4-ts/">4-ts--TypeScript</a>
           </li>
         
-          <li>
-            <a href="/11/01/fe-advance/2-module/">2-各种模块化标准</a>
-          </li>
-        
-          <li>
-            <a href="/11/01/fe-advance/3-browser/">3-浏览器详解</a>
-          </li>
-        
       </ul>
     </div>
   </div>
@@ -713,7 +730,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">分类</h3>
     <div class="widget">
-      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Babel/">Babel</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/ES6/">ES6</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/React/">React</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/node/">node</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/webpack/">webpack</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E4%BA%A7%E5%93%81/">产品</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E5%89%8D%E7%AB%AF/">前端</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E5%89%8D%E7%AB%AF%E8%BF%9B%E5%87%BB%E7%AC%94%E8%AE%B0/">前端进击笔记</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E5%89%8D%E7%AB%AF%E8%BF%9B%E9%98%B6/">前端进阶</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E5%90%8D%E4%BA%BA/">名人</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E5%B0%8F%E6%8A%80%E5%B7%A7/">小技巧</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E5%B7%A5%E5%85%B7/">工具</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E6%80%BB%E7%BB%93/">总结</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E6%9E%84%E5%BB%BA/">构建</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E6%AD%8C/">歌</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E6%B7%B1%E5%85%A5%E6%B5%85%E5%87%BA-React/">深入浅出 React</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E6%BA%90%E7%A0%81%E9%98%85%E8%AF%BB/">源码阅读</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E8%BF%90%E5%8A%A8/">运动</a></li></ul>
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Babel/">Babel</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/ES6/">ES6</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/React/">React</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/TS/">TS</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/node/">node</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/webpack/">webpack</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E4%BA%A7%E5%93%81/">产品</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E5%89%8D%E7%AB%AF/">前端</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E5%89%8D%E7%AB%AF%E8%BF%9B%E5%87%BB%E7%AC%94%E8%AE%B0/">前端进击笔记</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E5%89%8D%E7%AB%AF%E8%BF%9B%E9%98%B6/">前端进阶</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E5%90%8D%E4%BA%BA/">名人</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E5%B0%8F%E6%8A%80%E5%B7%A7/">小技巧</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E5%B7%A5%E5%85%B7/">工具</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E5%B7%A5%E7%A8%8B%E5%8C%96/">工程化</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E6%80%BB%E7%BB%93/">总结</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E6%9E%84%E5%BB%BA/">构建</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E6%AD%8C/">歌</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E6%B7%B1%E5%85%A5%E6%B5%85%E5%87%BA-React/">深入浅出 React</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E6%BA%90%E7%A0%81%E9%98%85%E8%AF%BB/">源码阅读</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E8%BF%90%E5%8A%A8/">运动</a></li></ul>
     </div>
   </div>
 
@@ -727,7 +744,7 @@
         <div class="outer">
           <div id="footer-info" class="inner">
             
-                  &copy; 2022
+                  &copy; 2025
                     Kerita<br>
                       Powered by <a href="https://hexo.io/" target="_blank">Hexo</a>
           </div>
